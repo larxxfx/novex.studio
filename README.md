@@ -1,5 +1,9 @@
 # novex.studio — NØVEX · Claude × ChatGPT ortak üretim deposu
 
+> **3 Kasım 2026: Kanal global ve İngilizce.** Editoryal strateji (tek doğruluk kaynağı): `strateji/EDITORIAL_STRATEGY.md` ·
+> kategoriler/modlar: `strateji/kategoriler.json` · İngilizce şablonlar: `sablonlar/en/` · fikir seçimi: `araclar/fikir_puanla.py` + `konu_kaydi.csv`.
+> Aşağıdaki Türkçe düzen (5 slot, Türkçe şablonlar) arşiv/geçiş durumundadır; silinmedi.
+
 Depo: `github.com/larxxfx/novex.studio` (özel)
 
 **NØVEX · Beyond the Ordinary.** Türkçe, sinematik, belgesel tarzı dikey kısa videolar

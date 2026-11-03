@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "modes": {
+    "REALITY": {"label": "Reality", "requires_sources": true, "on_screen_label": null},
+    "SPECULATION": {"label": "Speculation", "requires_sources": true, "on_screen_label": "SCENARIO · based on current science"},
+    "FICTION": {"label": "Fiction / What If", "requires_sources": false, "on_screen_label": "FICTION"}
+  },
+  "categories": {
+    "A": {"name": "History & Ancient Civilizations", "default_mode": "REALITY", "visual_style": "history_cinematic"},
+    "B": {"name": "Earth, Nature & the Unknown", "default_mode": "REALITY", "visual_style": "earth_scale"},
+    "C": {"name": "Space & the Universe", "default_mode": "REALITY", "visual_style": "space_vast"},
+    "D": {"name": "Mysteries & Extraordinary Facts", "default_mode": "REALITY", "visual_style": "mystery_suspense"},
+    "E": {"name": "Science & Humanity", "default_mode": "REALITY", "visual_style": "science_clear"},
+    "F": {"name": "Technology & the Future", "default_mode": "REALITY", "visual_style": "tech_modern"},
+    "G": {"name": "What If? — Alternative Scenarios", "default_mode": "SPECULATION", "visual_style": "whatif_globe"},
+    "H": {"name": "Cinematic Fiction & Imaginative Stories", "default_mode": "FICTION", "visual_style": "fiction_illustrated"}
+  },
+  "visual_styles": {
+    "history_cinematic": {"look": "warm, grounded, archival textures, maps, cross-sections, reconstructions labelled RECONSTRUCTION", "engine": "image plates + camera (karakter motoru katmanları) / kure_v1 maps"},
+    "earth_scale": {"look": "real geodata, globe and map transforms, scale comparisons, counters", "engine": "kure_v1"},
+    "space_vast": {"look": "deep black-blue, scientifically plausible scales, NASA/ESA public-domain imagery where licensed", "engine": "kure_v1 sky/planet + image plates"},
+    "mystery_suspense": {"look": "low key light, fog, slow push-ins, evidence boards", "engine": "image plates + camera"},
+    "science_clear": {"look": "clean diagrams, macro visuals, animated explanations", "engine": "code diagrams + image plates"},
+    "tech_modern": {"look": "credible modern hardware, clean UI, no fake product claims", "engine": "image plates + code UI"},
+    "whatif_globe": {"look": "early-NØVEX style: globe/map experiment, assumption card, data counters", "engine": "kure_v1"},
+    "fiction_illustrated": {"look": "illustrated character style (white round heads, dot eyes, thick outlines)", "engine": "motor/karakter"}
+  },
+  "scoring_weights": {"hook": 15, "global_appeal": 12, "curiosity": 12, "retention": 12, "comments": 10, "visual": 10, "research": 12, "originality": 10, "repetition": 7},
+  "diversity": {"daily_shorts": 4, "min_candidates": 6, "max_per_category": 2, "min_whatif_candidates": 1, "max_tech_selected": 2}
+}

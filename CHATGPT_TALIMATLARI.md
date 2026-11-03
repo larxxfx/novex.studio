@@ -1,3 +1,5 @@
+> **Önce oku:** `strateji/EDITORIAL_STRATEGY.md` (3 Kasım 2026 — global, İngilizce, 3 mod: REALITY / SPECULATION / FICTION). Fikir değerlendirmesinde 100 puanlık ölçek ve `konu_kaydi.csv` kullanılır.
+
 # ChatGPT için proje talimatları
 
 > Emir: Bu metnin tamamını ChatGPT'de bir **Proje** açıp "Talimatlar" alanına yapıştır.
