@@ -1,6 +1,6 @@
 # NØVEX görsel stil kılavuzu — "çizgi roman sahne" tarzı (3 Kasım 2026)
 
-Emir'in referans ekran kaydına (56 sn, Türkçe zombi dizisi bölümü) göre çıkarıldı. **Amaç tarzı yakalamak, o kanalın karakterlerini,
+Emir'in referans ekran kaydına (56 sn, başka bir kanalın Türkçe animasyon dizisi bölümü) göre çıkarıldı. **Amaç tarzı yakalamak, o kanalın karakterlerini,
 sahnelerini, dizi adını veya kurgu öğelerini kopyalamak değil.** NØVEX'in kendi karakterleri, mekânları ve hikâyesi kullanılır.
 
 ## 1. Tarzın tanımı (referanstan gözlenen)
@@ -24,7 +24,8 @@ sahnelerini, dizi adını veya kurgu öğelerini kopyalamak değil.** NØVEX'in 
 ## 2. NØVEX'i ayırt eden kurallar (kopya görünmemek için)
 - Kendi karakter kadromuz: her karakterin `KART.md`'si; referanstaki kişiler, kıyafet kombinasyonları ve mekânlar birebir kullanılmaz.
 - İmza: gece sahnelerinde NØVEX turkuaz/elektrik mavisi ikincil ışık (telsiz ekranı, sinyal, uzak şehir), sıcak ampul ışığının yanında.
-- SON SİNYAL: İstanbul (köprüler, yokuşlar, apartman çatıları, Galata) — köy düğünü değil. Kurgu etiketi ekranda.
+- SON SİNYAL: 2047 İstanbul'unda yapay zekâ ve insansı robotlar (bilim kurgu; zombi/salgın yok) — `seriler/son-sinyal/SERIES_BIBLE.md`.
+  Robotlar aynı çizgi dilinde ama insanlardan anında ayrılır: kapsül kafa, koyu vizör, turkuaz LED nokta gözler. "KURGU · BİLİM KURGU" etiketi ekranda.
 - Başlık/kapak tipografisi NØVEX kimliğinde; başka kanalın başlık yapısı taklit edilmez.
 
 ## 3. Üretim tarifi (çekim başına)
