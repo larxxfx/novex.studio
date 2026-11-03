@@ -134,7 +134,18 @@
     {
      "metin": "Could you survive a single day on Venus?",
      "hiz": 1.04,
-     "perde": 0.5
+     "perde": 0.4
+    },
+    {
+     "metin": "And which planet should we explore next:",
+     "hiz": 1.02,
+     "once": 0.45
+    },
+    {
+     "metin": "Mars, or Mercury?",
+     "hiz": 1.1,
+     "kazanc_db": 2.0,
+     "once": 0.12
     }
    ]
   }

@@ -6,8 +6,8 @@
 | Piksel formatı yuv420p | yuv420p | ✅ |
 | Rec.709 / SDR | bt709/bt709/bt709 | ✅ |
 | Ses AAC 48 kHz | aac 48000 | ✅ |
-| Süre (Shorts ≤ 60 sn) | 46.000 sn | ✅ |
-| Kare sayısı | 1380 | ✅ |
+| Süre (Shorts ≤ 60 sn) | 46.667 sn | ✅ |
+| Kare sayısı | 1400 | ✅ |
 | Tam çözümleme | hata yok | ✅ |
 | Ses yüksekliği ≈ −14 LUFS | -13.9 LUFS | ✅ |
 | Ses lisansı yayına uygun | HF rhasspy/piper-voices lisans etiketi + MODEL_CARD) | ❌ |

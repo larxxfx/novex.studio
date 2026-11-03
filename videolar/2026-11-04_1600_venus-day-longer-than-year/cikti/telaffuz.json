@@ -1,5 +1,5 @@
 {
- "wer_toplam": 1.1,
+ "wer_toplam": 1.0,
  "cumleler": [
   {
    "i": 1,
@@ -10,7 +10,7 @@
   {
    "i": 2,
    "metin": "Venus takes two hundred and twenty-five Earth days to orbit the Sun.",
-   "duyulan": "Venus takes 225 Earth days to orbit a sun.",
+   "duyulan": "Venus takes 225 Earth days to orbit the Sun.",
    "wer": 0.0
   },
   {
@@ -34,19 +34,19 @@
   {
    "i": 6,
    "metin": "So on Venus, the Sun rises in the west, and sets in the east.",
-   "duyulan": "So on Venus the sun rises in the west and sets in the east.",
+   "duyulan": "So on Venus, the sun rises in the west and sets in the east.",
    "wer": 0.0
   },
   {
    "i": 7,
    "metin": "From one sunrise to the next takes about a hundred and seventeen Earth days.",
-   "duyulan": "from one sunrise to the next takes about 117 Earth days.",
+   "duyulan": "From one sunrise to the next takes about 117 Earth days.",
    "wer": 9.1
   },
   {
    "i": 8,
    "metin": "Just two sunrises in a whole Venus year.",
-   "duyulan": "just two sunrises in a whole Venus year.",
+   "duyulan": "Just two sunrises, in a whole Venus year.",
    "wer": 0.0
   },
   {
@@ -57,8 +57,8 @@
   },
   {
    "i": 10,
-   "metin": "Could you survive a single day on Venus?",
-   "duyulan": "Could you survive a single day on Venus?",
+   "metin": "Could you survive a single day on Venus? And which planet should we explore next: Mars, or Mercury?",
+   "duyulan": "Could you survive a single day on Venus? And which planet should we explore next, Mars or Mercury?",
    "wer": 0.0
   }
  ]

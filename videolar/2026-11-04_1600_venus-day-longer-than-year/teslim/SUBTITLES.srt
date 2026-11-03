@@ -1,39 +1,39 @@
 1
-00:00:00,350 --> 00:00:05,129
+00:00:00,350 --> 00:00:04,316
 On Venus, a single day lasts longer than an entire year.
 
 2
-00:00:05,679 --> 00:00:10,130
+00:00:04,866 --> 00:00:08,379
 Venus takes 225 Earth days to orbit the Sun.
 
 3
-00:00:10,530 --> 00:00:15,737
+00:00:08,779 --> 00:00:13,248
 But it takes 243 Earth days to spin around just once.
 
 4
-00:00:16,236 --> 00:00:19,218
+00:00:13,748 --> 00:00:16,747
 No planet in the solar system spins slower.
 
 5
-00:00:19,618 --> 00:00:21,226
+00:00:17,147 --> 00:00:18,620
 And it spins backwards.
 
 6
-00:00:21,676 --> 00:00:25,879
+00:00:19,070 --> 00:00:22,781
 So on Venus, the Sun rises in the west, and sets in the east.
 
 7
-00:00:26,329 --> 00:00:30,968
+00:00:23,231 --> 00:00:27,614
 From one sunrise to the next takes about 117 Earth days.
 
 8
-00:00:31,368 --> 00:00:34,439
+00:00:28,014 --> 00:00:30,739
 Just two sunrises in a whole Venus year.
 
 9
-00:00:34,889 --> 00:00:40,891
+00:00:31,189 --> 00:00:36,712
 Under clouds of sulfuric acid, at around 465 °C.
 
 10
-00:00:41,441 --> 00:00:43,815
-Could you survive a single day on Venus?
+00:00:37,262 --> 00:00:44,260
+Could you survive a single day on Venus? And which planet should we explore next: Mars, or Mercury?

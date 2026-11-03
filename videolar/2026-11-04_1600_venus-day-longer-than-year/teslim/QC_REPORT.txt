@@ -1,12 +1,12 @@
 NØVEX QC REPORT — On Venus, a Day Is Longer Than a Year
-Slot: 2026-11-04 16:00 (Europe/Istanbul) · rendered 2026-11-04T01:18:17
-VIDEO.mp4 126.7 MB sha256 7d55f9860147f4786f981d4313f64997f83442079c4c4ed9ad0826335c8e6bcd
+Slot: 2026-11-04 16:00 (Europe/Istanbul) · rendered 2026-11-04T02:22:07
+VIDEO.mp4 127.6 MB sha256 958de103d0c313d19cef2cddef75450e6100d1f9027906f02ec93eaec283b843
 
-VIDEO   technical checks 10/10 · black segments 1 · frozen segments 0 · 1380 frames / 46.015 s
-AUDIO   loudness/true peak [-13.9, -2.2] · min speech-over-background 21.3 dB (need >= 12) · warnings []
+VIDEO   technical checks 10/10 · black segments 0 · frozen segments 0 · 1400 frames / 46.66 s
+AUDIO   loudness/true peak [-13.8, -1.6] · min speech-over-background 15.5 dB (need >= 12) · warnings []
 SYNC    narration vs MP4 offset 2.0 ms
-VOICE   piper-ljspeech · Whisper small.en WER 1.1% · flagged sentences [7]
-        s7: heard "from one sunrise to the next takes about 117 Earth days."
+VOICE   piper-norman · Whisper small.en WER 1.0% · flagged sentences [7]
+        s7: heard "From one sunrise to the next takes about 117 Earth days."
 SUBS    SUBTITLES.srt, 10 cues, timing from synthesis (exact); burned-in inside safe area
 LICENCE voice: GEÇMEDİ (see ses/LISANS.txt) · visuals: own code + Natural Earth (public domain) · fonts: OFL/Apache · music/SFX: own synthesis
 HUMAN   listening/viewing by Emir: PENDING (Claude cannot listen)
@@ -27,8 +27,8 @@ qc.py table:
 | Piksel formatı yuv420p | yuv420p | ✅ |
 | Rec.709 / SDR | bt709/bt709/bt709 | ✅ |
 | Ses AAC 48 kHz | aac 48000 | ✅ |
-| Süre (Shorts ≤ 60 sn) | 46.000 sn | ✅ |
-| Kare sayısı | 1380 | ✅ |
+| Süre (Shorts ≤ 60 sn) | 46.667 sn | ✅ |
+| Kare sayısı | 1400 | ✅ |
 | Tam çözümleme | hata yok | ✅ |
 | Ses yüksekliği ≈ −14 LUFS | -13.9 LUFS | ✅ |
 | Ses lisansı yayına uygun | HF rhasspy/piper-voices lisans etiketi + MODEL_CARD) | ❌ |

@@ -87,3 +87,44 @@ Her video kendi görsel yönünü alır; aynı grafik, arka plan, palet, geçiş
 - Ücret ve yayın onaya bağlıdır.
 
 **ChatGPT ile:** Önceki yaratıcı kararlar `inceleme_chatgpt.md` ve `GORSEL_KAYIT.md` üzerinden karşılıklı sorgulanır.
+
+## 8. Görsel, ses ve hikâye kalite standardı (Emir, 4 Kasım 2026 01:51)
+Tam metin: `strateji/KALITE_STANDARDI_4KASIM.md`.
+
+**Referans:** İlk "What If Turkey Were in America?" / Antarktika videolarının sinematik kalitesi. Tam ekran ışın izlemeli küre, kamera dalışı, partikül, parlayan çizgiler, kelime vurgulu altyazı.
+- Yeni videolar bunun altına düşmez.
+- **4 Kasım'da üretilen 4 Short (sahne_v1 düz slayt) bu standardın ALTINDADIR.** Bu yüzden onları "standarda uygun" saymıyorum.
+
+**Görsel:**
+- Her videoda baskın görsel 3D/sinematik olmalı:
+  - `gezegen` sahnesi (Venüs/Mars/Ay/buz/gaz/Dünya dokulu ışın izlemeli küre)
+  - `kure_v1` (Dünya)
+  - partikül (`partikul`), ışık huzmesi (`isik_huzme`), parlama (`parlama`)
+  - kamera itme ve kaydırma
+- Harita yalnızca gerektiğinde kullanılır. Düz tipografi sahnesi yalnızca destek amaçlıdır.
+- Kling, Higgsfield ve benzeri ücretli üretim araçları onaysız kullanılmaz. ChatGPT sahne promptlarını hazırlar; ücretli üretim Emir onayıyla yapılır.
+
+**Anlatıcı:**
+- Öncelik doğal, sıcak bir erkek ses.
+- Lisansı temiz aday: Piper `en_US-norman-medium` (`piper-norman`, hız çarpanı ~1.1).
+- **Emir dinleyip onaylayana kadar yayına hazır sayılmaz.**
+- Agresif gürültü azaltma, keskinleştirme ve aşırı sıkıştırma yapılmaz.
+
+**Tipografi:** Kilit kelimeler `vurgu_kelimeler` ile altyazıda vurgu rengiyle gösterilir. Mobilde okunabilirlik kontrol edilir.
+
+**QC'ye eklenen sorular:**
+- İlk 2 saniye güçlü mü?
+- Referans kaliteye yakın mı?
+- Durağan sahne var mı?
+- Harita fazla mı?
+- Kamera hareketi yeterli mi?
+- Anlatıcı robotik mi?
+- Akış izleyiciyi sona kadar tutar mı?
+
+## 9. Video sonu katılım sorusu (Emir, 4 Kasım 2026 01:53) — ZORUNLU
+- Her video, izleyiciye **sırada neyi keşfetmemizi istediğini** soran doğal bir İngilizce soruyla biter: konu, gizem, yer, uygarlık, bilim sorusu ya da What If senaryosu.
+- Soru videonun konusuyla ilgili olur ve her videoda farklı ifade edilir.
+- Shorts'ta kısa ve doğrudan, uzun videoda daha düşündürücü olur.
+- Ara sıra iki seçenek sunulur (ör. "Mars, or Mercury?").
+- Soru kapanış anlatımına ve sinematik ekran tipografisine (`soru` sahnesi) entegre edilir; duygusal kapanışı zayıflatmaz.
+- Jenerik "abone ol / yorum yap" kalıbı kullanılmaz.

@@ -43,6 +43,12 @@ def sentezle(motor, metin, hiz, out):
         d = DIZIN["kokoro"]; sid = motor.split(":")[1]
         a = [f"--kokoro-model={d}/model.onnx", f"--kokoro-voices={d}/voices.bin", f"--kokoro-tokens={d}/tokens.txt",
              f"--kokoro-data-dir={d}/espeak-ng-data", f"--sid={sid}", f"--kokoro-length-scale={hiz}"]
+    elif motor.startswith("piper-") and motor not in MOTOR:   # herhangi bir Piper sesi: piper-<ad> → ~/.novex_cache/dl_*/vits-piper-*-<ad>-*/
+        import glob as _g
+        d = (_g.glob(f"{C}/dl_*/vits-piper-*-{motor[6:]}-*") or [None])[0]
+        if not d: raise SystemExit(f"Piper sesi bulunamadı: {motor} (kurulum_ortam.sh)")
+        a = [f"--vits-model={_g.glob(d + '/*.onnx')[0]}", f"--vits-tokens={d}/tokens.txt", f"--vits-data-dir={d}/espeak-ng-data",
+             f"--vits-length-scale={hiz}", "--vits-noise-scale=0.667", "--vits-noise-scale-w=0.8"]
     else:
         a = MOTOR[motor](DIZIN[motor]) + [f"--{'vits' if motor.startswith('piper') else 'matcha'}-length-scale={hiz}"]
         if motor.startswith("piper"): a += ["--vits-noise-scale=0.667", "--vits-noise-scale-w=0.8"]   # varsayılan: yüksek değişkenlik ilk sesleri bozuyordu (4 Kas telaffuz testi)

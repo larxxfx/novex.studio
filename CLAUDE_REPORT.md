@@ -43,3 +43,11 @@ Her oturum en üste eklenir. Biçim: ne yapıldı → kanıt (commit, dosya, tes
 - vidIQ'da kanal yok.
 - Canlı Claude↔ChatGPT kanalı yok (N-07).
 - Uzun video hattı yok (N-06; Cumartesi görevi kurmaya çalışacak).
+
+## 2026-11-04 02:30 · Venus Short v2 (yeni kalite standardı)
+- Ses: Piper `en_US-norman-medium` (erkek, LibriVox kamu malı + MIT). Emir onayı bekliyor (T-20261104-15).
+- Görsel: `sahne_v1` içinde yeni `gezegen` sahnesi (ışın izlemeli küre, prosedürel doku, atmosfer, dönüş), partikül, ışık huzmesi, parlama, vurgu kelimeli altyazı.
+- Kapanış: "Which planet should NØVEX explore next? Mars or Mercury?" (anlatım + ekran yazısı).
+- QC: teknik 10/10, −13.9 LUFS, TP −1.6, konuşma/fon ≥ 15.5 dB, telaffuz WER %1,0. Lisans: GEÇMEDİ (onay yok) → yayına hazır DEĞİL.
+- Düzeltilen: MERCURY kutu taşması, gezegen üstü etiket kontrastı, kapakta çift yazı. Eski 3 Short'un kapakları byte-aynı (regresyon yok).
+- Referansla fark: kure_v1 (Antarktika) kamera dalışları ve parlak kıta hatları burada yok; gezegen dokusu prosedürel ve yumuşak. Sonraki adım: Dünya konulu Short'larda kure_v1 / `dunya` dokusu.
