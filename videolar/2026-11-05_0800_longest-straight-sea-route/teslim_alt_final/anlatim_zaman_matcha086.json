@@ -1,0 +1,215 @@
+[
+ {
+  "i": 1,
+  "metin": "This line runs thirty-two thousand kilometers, and never touches land.",
+  "bas": 0.3,
+  "son": 5.332,
+  "duygu": "şaşkınlık (kanca)",
+  "parcalar": [
+   {
+    "metin": "This line runs thirty-two thousand kilometers,",
+    "bas": 0.3,
+    "son": 3.314,
+    "vurgu_db": 1.0
+   },
+   {
+    "metin": "and never touches land.",
+    "bas": 3.634,
+    "son": 5.332,
+    "vurgu_db": 2.5
+   }
+  ]
+ },
+ {
+  "i": 2,
+  "metin": "Point a ship west from Pakistan, and sail perfectly straight.",
+  "bas": 5.932,
+  "son": 10.086,
+  "duygu": "keşif",
+  "parcalar": [
+   {
+    "metin": "Point a ship west from Pakistan,",
+    "bas": 5.932,
+    "son": 7.972,
+    "vurgu_db": 0.0
+   },
+   {
+    "metin": "and sail perfectly straight.",
+    "bas": 8.112,
+    "son": 10.086,
+    "vurgu_db": 1.5
+   }
+  ]
+ },
+ {
+  "i": 3,
+  "metin": "On a flat map, the route curves like a snake.",
+  "bas": 10.506,
+  "son": 13.652,
+  "duygu": "gizem / ipucu",
+  "parcalar": [
+   {
+    "metin": "On a flat map,",
+    "bas": 10.506,
+    "son": 11.667,
+    "vurgu_db": 0.0
+   },
+   {
+    "metin": "the route curves like a snake.",
+    "bas": 11.787,
+    "son": 13.652,
+    "vurgu_db": 0.0
+   }
+  ]
+ },
+ {
+  "i": 4,
+  "metin": "But wrap it around the globe, and it's one straight line.",
+  "bas": 14.032,
+  "son": 18.123,
+  "duygu": "açılım / hayranlık",
+  "parcalar": [
+   {
+    "metin": "But wrap it around the globe,",
+    "bas": 14.032,
+    "son": 15.881,
+    "vurgu_db": 0.0
+   },
+   {
+    "metin": "and it's one straight line.",
+    "bas": 16.241,
+    "son": 18.123,
+    "vurgu_db": 2.5
+   }
+  ]
+ },
+ {
+  "i": 5,
+  "metin": "First, you slip between Africa and Madagascar.",
+  "bas": 18.743,
+  "son": 21.774,
+  "duygu": "yolculuk (tempo)",
+  "parcalar": [
+   {
+    "metin": "First, you slip between Africa and Madagascar.",
+    "bas": 18.743,
+    "son": 21.774,
+    "vurgu_db": 0.0
+   }
+  ]
+ },
+ {
+  "i": 6,
+  "metin": "Then between the tip of South America and Antarctica.",
+  "bas": 22.094,
+  "son": 25.33,
+  "duygu": "yolculuk (gerilim)",
+  "parcalar": [
+   {
+    "metin": "Then between the tip of South America and Antarctica.",
+    "bas": 22.094,
+    "son": 25.33,
+    "vurgu_db": 0.0
+   }
+  ]
+ },
+ {
+  "i": 7,
+  "metin": "Then across the entire Pacific.",
+  "bas": 25.65,
+  "son": 27.78,
+  "duygu": "genişlik / heyecan",
+  "parcalar": [
+   {
+    "metin": "Then across the entire Pacific.",
+    "bas": 25.65,
+    "son": 27.78,
+    "vurgu_db": 1.5
+   }
+  ]
+ },
+ {
+  "i": 8,
+  "metin": "And the first land you reach is Russia's Kamchatka Peninsula.",
+  "bas": 28.23,
+  "son": 32.239,
+  "duygu": "doruk / varış",
+  "parcalar": [
+   {
+    "metin": "And the first land you reach",
+    "bas": 28.23,
+    "son": 29.845,
+    "vurgu_db": 0.0
+   },
+   {
+    "metin": "is Russia's Kamchatka Peninsula.",
+    "bas": 30.065,
+    "son": 32.239,
+    "vurgu_db": 2.5
+   }
+  ]
+ },
+ {
+  "i": 9,
+  "metin": "In 2018, two researchers confirmed it with an algorithm.",
+  "bas": 32.889,
+  "son": 37.245,
+  "duygu": "güven / kanıt",
+  "parcalar": [
+   {
+    "metin": "In 2018, two researchers confirmed it with an algorithm.",
+    "bas": 32.889,
+    "son": 37.245,
+    "vurgu_db": 0.0
+   }
+  ]
+ },
+ {
+  "i": 10,
+  "metin": "And the longest straight line on land? Portugal to China, over eleven thousand kilometers.",
+  "bas": 37.695,
+  "son": 44.099,
+  "duygu": "merak (bonus)",
+  "parcalar": [
+   {
+    "metin": "And the longest straight line on land?",
+    "bas": 37.695,
+    "son": 40.082,
+    "vurgu_db": 0.0
+   },
+   {
+    "metin": "Portugal to China,",
+    "bas": 40.462,
+    "son": 41.743,
+    "vurgu_db": 1.5
+   },
+   {
+    "metin": "over eleven thousand kilometers.",
+    "bas": 41.823,
+    "son": 44.099,
+    "vurgu_db": 1.0
+   }
+  ]
+ },
+ {
+  "i": 11,
+  "metin": "So, could a real ship sail it without stopping? Yes or no?",
+  "bas": 44.649,
+  "son": 49.178,
+  "duygu": "soru / katılım",
+  "parcalar": [
+   {
+    "metin": "So, could a real ship sail it without stopping?",
+    "bas": 44.649,
+    "son": 47.819,
+    "vurgu_db": 0.0
+   },
+   {
+    "metin": "Yes or no?",
+    "bas": 48.179,
+    "son": 49.178,
+    "vurgu_db": 2.0
+   }
+  ]
+ }
+]

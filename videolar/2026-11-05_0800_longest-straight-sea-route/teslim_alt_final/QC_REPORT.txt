@@ -1,0 +1,51 @@
+NØVEX — QC REPORT — Ocean route (EN Short) — ALTERNATIVE FINAL (Matcha voice)
+Render: 3 Nov 2026 · all checks below were run on THIS file (not earlier renders)
+
+FILES
+VIDEO.mp4          202 MB  sha256 cd87a1094184c6eb0beb1a9c2100c1ec34ab21424b1a5b7efc7045b3ace7d747  (master, x264 crf 17)
+VIDEO_preview.mp4  74 MB  sha256 7fddae11991b7cf963512a9dbb42e437490479385f5491182ccdefb3d21c124a  (crf 21, same checks pass)
+
+VIDEO                                   RESULT
+1080x1920 (9:16), 30/1 fps              PASS
+H.264 High, yuv420p, Rec.709 tags       PASS
+Duration 51.367 s, 1541 frames          PASS (Shorts <= 3 min)
+Full decode, no errors                  PASS
+blackdetect / freezedetect              PASS (no findings)
+Text safe area x 140-940, y < 1520      PASS (by design + frame sheet)
+Start/end: fade-in hook, card holds 2.2 s after narration, fade to black   PASS
+
+AUDIO
+AAC 48 kHz, -13.9 LUFS integrated       PASS (target -14)
+True peak -1.9 dBTP (mix), sample peak -2.0 dBFS   PASS (<= -1)
+Speech above music+SFX, per sentence: 16.5 / 24.3 / 26.0 / 14.6 / 20.2 / 25.6 / 27.3 / 18.1 / 24.0 / 21.8 / 15.7 dB   PASS (all >= 12)
+Clipping / distortion                   PASS (limiter, no sample above -2 dBFS)
+A/V sync (cross-correlation MP4 vs narration) 2.0 ms   PASS
+Human listening of final mix            NOT DONE (Claude cannot listen; Emir must)
+
+NARRATION
+Model: Matcha-TTS (k2-fsa icefall, LJ Speech) + Vocos 22 kHz vocoder, local, free
+Expressive performance file: anlatim_performans.json (per-phrase pace, emphasis dB, pitch, pauses)
+Whisper medium check: WER 1.8 % — s7 "Then"->"than", s11 "ship"->"chip" (listen to verify)
+Pace 2.43 words/s, pitch range 12.2 semitones
+
+SUBTITLES
+Burned-in + SUBTITLES.srt; timing taken from synthesis (exact), 11 cues   PASS
+
+SOUND DESIGN (code-generated, original)
+Opening signature, whoosh on every scene change, riser + impact on 4 reveal phrases,
+low atmosphere on the mystery line, ocean ambience (sentences 2-8), closing hit + chime
+
+LICENCES
+Map data: Natural Earth, public domain               VERIFIED
+Textures: procedural (own)                           VERIFIED
+Fonts: Inter, SIL OFL                                VERIFIED
+Music / SFX: own code synthesis                      VERIFIED
+Voice data: LJ Speech, public domain (model card + README)   VERIFIED
+Vocoder: BSC-LT vocos-mel-22khz, Apache-2.0 (size match 53.9 MB; data LJSpeech PD, LibriTTS-R CC BY 4.0, Catalan sets)   LIKELY - file identity by size only
+Matcha acoustic model weights: no licence file in the sherpa-onnx package (icefall code is Apache-2.0)   NOT VERIFIED
+=> PUBLISH-READY: NO (voice model weight licence must be confirmed)
+
+KNOWN VISUAL ISSUES
+Antarctica: smooth but a large bright white mass in the Drake/Pacific shots
+"11,241 km" overlaps the ice at the globe's top edge (Portugal-China scene)
+Same globe aesthetic as the Antarctica video (see strateji/GORSEL_KAYIT.md)

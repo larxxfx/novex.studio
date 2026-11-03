@@ -63,8 +63,32 @@ def main(zaman, out):
         koy(noise_sweep(0.7, 300, 3500, rng), s["bas"] - 0.55, 0.35, 0.3 if k % 2 else -0.3)
     tt = np.arange(int(1.6 * SR)) / SR
     darbe = (np.sin(2 * np.pi * 48 * tt * (1 + 0.6 * np.exp(-tt * 8))) * np.exp(-tt * 3.0))
-    for at in (0.2, z[7]["bas"] + 0.3, z[10]["son"] + 0.05):
-        koy(darbe, at, 0.8)
+    if not any("parcalar" in c for c in z):          # eski zaman.json: sabit üç darbe (v1/v2 davranışı)
+        for at in (0.2, z[7]["bas"] + 0.3, z[10]["son"] + 0.05):
+            koy(darbe, at, 0.8)
+    else:                                            # olay tabanlı ses tasarımı (anlatim_ifade.py zaman.json)
+        # açılış imzası: alçak darbe + parlak tını (ilk kelimeden önce biter)
+        imza = darbe[: int(1.2 * SR)] + 0.25 * np.sin(2 * np.pi * 880 * tt[: int(1.2 * SR)]) * np.exp(-tt[: int(1.2 * SR)] * 4)
+        koy(imza, 0.0, 0.7)
+        for c in z:
+            for p in c["parcalar"]:
+                if p.get("vurgu_db", 0) >= 2.0:      # açılım anı: 1,1 sn riser + vurgu darbesi
+                    rs = noise_sweep(1.1, 400, 6000, rng) * np.linspace(0.2, 1, int(1.1 * SR)) ** 2
+                    koy(rs, p["bas"] - 1.1, 0.15)
+                    koy(darbe, p["bas"] - 0.02, 0.42)
+            if "gizem" in c.get("duygu", ""):         # gizem: alçak, filtreli atmosfer
+                d = c["son"] - c["bas"] + 1.0; n2 = int(d * SR)
+                atm = lowpass(rng.standard_normal(n2), 220) * env(n2, 0.4, 0.6); atm /= np.abs(atm).max() + 1e-9
+                koy(atm, c["bas"] - 0.3, 0.18)
+        # okyanus ortam sesi: 2.–8. cümle boyunca dalga benzeri yavaş genlikli gürültü
+        a0, a1 = z[1]["bas"] - 0.5, z[7]["son"] + 0.5; n3 = int((a1 - a0) * SR); t3 = np.arange(n3) / SR
+        dalga = lowpass(rng.standard_normal(n3), 700) * (0.55 + 0.45 * np.sin(2 * np.pi * 0.11 * t3) ** 2) * env(n3, 1.5, 1.5)
+        dalga /= np.abs(dalga).max() + 1e-9; koy(dalga, a0, 0.14)
+        # kapanış imzası: soru bittikten sonra yumuşak darbe + yükselen beşli parıltı
+        sonu = z[-1]["son"] + 0.05
+        koy(darbe, sonu, 0.6)
+        n4 = int(1.8 * SR); t4 = np.arange(n4) / SR
+        koy((np.sin(2 * np.pi * 587.3 * t4) + 0.6 * np.sin(2 * np.pi * 880 * t4)) * env(n4, 0.3, 1.2) * 0.3, sonu + 0.1, 0.5)
     e /= np.abs(e).max() + 1e-9
     os.makedirs(out, exist_ok=True)
     wavfile.write(os.path.join(out, "muzik.wav"), SR, (mus * 0.9 * 32767).astype(np.int16))

@@ -1,0 +1,33 @@
+{"bas_sessizlik": 0.3,
+ "cumleler": [
+  {"duygu": "şaşkınlık (kanca)", "sonra": 0.6, "parcalar": [
+    {"metin": "This line runs thirty-two thousand kilometers,", "hiz": 1.0, "kazanc_db": 1.0},
+    {"metin": "and never touches land.", "hiz": 1.14, "kazanc_db": 2.5, "perde": -0.6, "once": 0.32}]},
+  {"duygu": "keşif", "sonra": 0.42, "parcalar": [
+    {"metin": "Point a ship west from Pakistan,", "hiz": 0.97},
+    {"metin": "and sail perfectly straight.", "hiz": 1.1, "kazanc_db": 1.5, "once": 0.14}]},
+  {"duygu": "gizem / ipucu", "sonra": 0.38, "parcalar": [
+    {"metin": "On a flat map,", "hiz": 1.04, "perde": -0.4},
+    {"metin": "the route curves like a snake.", "hiz": 1.06, "once": 0.12}]},
+  {"duygu": "açılım / hayranlık", "sonra": 0.62, "parcalar": [
+    {"metin": "But wrap it around the globe,", "hiz": 1.02, "perde": 0.5},
+    {"metin": "and it's one straight line.", "hiz": 1.16, "kazanc_db": 2.5, "once": 0.36}]},
+  {"duygu": "yolculuk (tempo)", "sonra": 0.32, "parcalar": [
+    {"metin": "First, you slip between Africa and Madagascar.", "hiz": 0.96}]},
+  {"duygu": "yolculuk (gerilim)", "sonra": 0.32, "parcalar": [
+    {"metin": "Then between the tip of South America and Antarctica.", "hiz": 0.97, "perde": -0.3}]},
+  {"duygu": "genişlik / heyecan", "sonra": 0.45, "parcalar": [
+    {"metin": "Then across the entire Pacific.", "hiz": 1.08, "kazanc_db": 1.5}]},
+  {"duygu": "doruk / varış", "sonra": 0.65, "parcalar": [
+    {"metin": "And the first land you reach", "hiz": 1.0},
+    {"metin": "is Russia's Kamchatka Peninsula.", "hiz": 1.08, "kazanc_db": 2.5, "once": 0.22}]},
+  {"duygu": "güven / kanıt", "sonra": 0.45, "parcalar": [
+    {"metin": "In 2018, two researchers confirmed it with an algorithm.", "hiz": 1.0}]},
+  {"duygu": "merak (bonus)", "sonra": 0.55, "parcalar": [
+    {"metin": "And the longest straight line on land?", "hiz": 1.02, "perde": 0.7},
+    {"metin": "Portugal to China,", "hiz": 1.04, "kazanc_db": 1.5, "once": 0.38},
+    {"metin": "over eleven thousand kilometers.", "hiz": 1.04, "kazanc_db": 1.0, "once": 0.08}]},
+  {"duygu": "soru / katılım", "sonra": 0.3, "parcalar": [
+    {"metin": "So, could a real ship sail it without stopping?", "hiz": 1.02, "perde": 0.5},
+    {"metin": "Yes or no?", "hiz": 1.12, "kazanc_db": 2.0, "once": 0.36}]}
+ ]}

@@ -24,7 +24,7 @@
 - Alt 2: The Longest Straight Line You Can Sail on Earth
 
 ## Description
-Point a ship west from Pakistan and never turn the wheel. For 32,090 km you won't touch land: you slip between Africa and Madagascar, pass between South America and Antarctica, cross the entire Pacific, and finally reach Russia's Kamchatka Peninsula.
+Point a ship west from Pakistan and follow one perfectly straight line around the globe. For 32,090 km you won't touch land: you slip between Africa and Madagascar, pass between South America and Antarctica, cross the entire Pacific, and finally reach Russia's Kamchatka Peninsula.
 
 On a flat map the route looks like a snake. On a globe, it's one perfectly straight line (a great circle).
 
