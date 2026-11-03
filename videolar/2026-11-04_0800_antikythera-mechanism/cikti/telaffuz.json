@@ -16,19 +16,19 @@
   {
    "i": 3,
    "metin": "At least thirty of them, cut by hand, more than two thousand years ago.",
-   "duyulan": "At least 30 of them, cut by hand more than 2,000 years ago.",
+   "duyulan": "At least 30 of them cut by hand more than 2,000 years ago.",
    "wer": 0.0
   },
   {
    "i": 4,
    "metin": "This is the Antikythera Mechanism.",
-   "duyulan": "This is the anti-kippurum mechanism.",
+   "duyulan": "This is the anti-achipirum mechanism.",
    "wer": 50.0
   },
   {
    "i": 5,
    "metin": "Turn a handle, and it showed the Sun, the Moon, and the planets,",
-   "duyulan": "Turn the handle and it showed the Sun, the Moon and the planets.",
+   "duyulan": "turn a handle and it showed the sun, the moon and the planets.",
    "wer": 0.0
   },
   {
@@ -40,7 +40,7 @@
   {
    "i": 7,
    "metin": "Only about a third of it survived, in eighty-two fragments.",
-   "duyulan": "only about a third of it survived in 82 fragments.",
+   "duyulan": "Only about a third of it survived in 82 fragments.",
    "wer": 0.0
   },
   {

@@ -1,0 +1,100 @@
+{
+ "asamalar": {
+  "ses": {
+   "durum": "tamam",
+   "zaman": "2026-11-04T01:13:01",
+   "sure": 43.81,
+   "cumle": 10
+  },
+  "telaffuz": {
+   "durum": "tamam",
+   "zaman": "2026-11-04T01:13:48",
+   "wer": 1.1,
+   "sorunlu": [
+    7
+   ]
+  },
+  "altyazi": {
+   "durum": "tamam",
+   "zaman": "2026-11-04T01:13:48",
+   "satir": 10
+  },
+  "render": {
+   "durum": "tamam",
+   "zaman": "2026-11-04T01:18:05",
+   "sure": 46.015,
+   "kare": 1380,
+   "parca": 4
+  },
+  "ses_tasarim": {
+   "durum": "tamam",
+   "zaman": "2026-11-04T01:18:09",
+   "ruh": "hayranlik",
+   "ortam": "uzay"
+  },
+  "miks": {
+   "durum": "tamam",
+   "zaman": "2026-11-04T01:18:15",
+   "lufs_tp": [
+    -13.9,
+    -2.2
+   ],
+   "ses_fon_min": 21.3,
+   "uyarilar": []
+  },
+  "birlestir": {
+   "durum": "tamam",
+   "zaman": "2026-11-04T01:18:17",
+   "dosya": "/home/claude/novex.studio/videolar/2026-11-04_1600_venus-day-longer-than-year/cikti/VIDEO.mp4",
+   "mb": 126.7
+  },
+  "qc": {
+   "durum": "tamam",
+   "zaman": "2026-11-04T01:19:20",
+   "teknik": "10/10",
+   "siyah": 1,
+   "donuk": 0,
+   "senkron_ms": 2.0,
+   "lisans": "GEÇMEDİ",
+   "tablo": [
+    "| Kontrol | Değer | Sonuç |",
+    "|---|---|---|",
+    "| Çözünürlük 1080×1920 | 1080×1920 | ✅ |",
+    "| Kare hızı 30 | 30/1 | ✅ |",
+    "| Video codec H.264 | h264 High | ✅ |",
+    "| Piksel formatı yuv420p | yuv420p | ✅ |",
+    "| Rec.709 / SDR | bt709/bt709/bt709 | ✅ |",
+    "| Ses AAC 48 kHz | aac 48000 | ✅ |",
+    "| Süre (Shorts ≤ 60 sn) | 46.000 sn | ✅ |",
+    "| Kare sayısı | 1380 | ✅ |",
+    "| Tam çözümleme | hata yok | ✅ |",
+    "| Ses yüksekliği ≈ −14 LUFS | -13.9 LUFS | ✅ |",
+    "| Ses lisansı yayına uygun | HF rhasspy/piper-voices lisans etiketi + MODEL_CARD) | ❌ |"
+   ]
+  },
+  "kapak": {
+   "durum": "tamam",
+   "zaman": "2026-11-04T01:19:21",
+   "dosya": "teslim/THUMBNAIL.jpg"
+  },
+  "paket": {
+   "durum": "tamam",
+   "zaman": "2026-11-04T01:19:21",
+   "dosyalar": [
+    "DESCRIPTION.txt",
+    "HASHTAGS.txt",
+    "INSTAGRAM_REELS.txt",
+    "PINNED_COMMENT.txt",
+    "QC_REPORT.txt",
+    "SOURCES.txt",
+    "SUBTITLES.srt",
+    "TAGS.txt",
+    "THUMBNAIL.jpg",
+    "TIKTOK.txt",
+    "TITLE.txt",
+    "YOUTUBE.txt"
+   ]
+  }
+ },
+ "hatalar": []
+}

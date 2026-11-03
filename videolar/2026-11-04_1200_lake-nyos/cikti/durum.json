@@ -1,0 +1,101 @@
+{
+ "asamalar": {
+  "ses": {
+   "durum": "tamam",
+   "zaman": "2026-11-04T00:43:51",
+   "sure": 50.22,
+   "cumle": 10
+  },
+  "telaffuz": {
+   "durum": "tamam",
+   "zaman": "2026-11-04T00:44:47",
+   "wer": 1.9,
+   "sorunlu": [
+    1,
+    3
+   ]
+  },
+  "altyazi": {
+   "durum": "tamam",
+   "zaman": "2026-11-04T00:44:47",
+   "satir": 10
+  },
+  "render": {
+   "durum": "tamam",
+   "zaman": "2026-11-04T01:22:01",
+   "sure": 52.419,
+   "kare": 1573,
+   "parca": 4
+  },
+  "ses_tasarim": {
+   "durum": "tamam",
+   "zaman": "2026-11-04T01:22:04",
+   "ruh": "gerilim",
+   "ortam": "ruzgar"
+  },
+  "miks": {
+   "durum": "tamam",
+   "zaman": "2026-11-04T01:22:10",
+   "lufs_tp": [
+    -13.9,
+    -1.7
+   ],
+   "ses_fon_min": 19.4,
+   "uyarilar": []
+  },
+  "birlestir": {
+   "durum": "tamam",
+   "zaman": "2026-11-04T01:22:14",
+   "dosya": "/home/claude/novex.studio/videolar/2026-11-04_1200_lake-nyos/cikti/VIDEO.mp4",
+   "mb": 150.6
+  },
+  "qc": {
+   "durum": "tamam",
+   "zaman": "2026-11-04T01:23:34",
+   "teknik": "10/10",
+   "siyah": 1,
+   "donuk": 0,
+   "senkron_ms": 2.0,
+   "lisans": "GEÇMEDİ",
+   "tablo": [
+    "| Kontrol | Değer | Sonuç |",
+    "|---|---|---|",
+    "| Çözünürlük 1080×1920 | 1080×1920 | ✅ |",
+    "| Kare hızı 30 | 30/1 | ✅ |",
+    "| Video codec H.264 | h264 High | ✅ |",
+    "| Piksel formatı yuv420p | yuv420p | ✅ |",
+    "| Rec.709 / SDR | bt709/bt709/bt709 | ✅ |",
+    "| Ses AAC 48 kHz | aac 48000 | ✅ |",
+    "| Süre (Shorts ≤ 60 sn) | 52.433 sn | ✅ |",
+    "| Kare sayısı | 1573 | ✅ |",
+    "| Tam çözümleme | hata yok | ✅ |",
+    "| Ses yüksekliği ≈ −14 LUFS | -13.9 LUFS | ✅ |",
+    "| Ses lisansı yayına uygun | HF rhasspy/piper-voices lisans etiketi + MODEL_CARD) | ❌ |"
+   ]
+  },
+  "kapak": {
+   "durum": "tamam",
+   "zaman": "2026-11-04T01:23:35",
+   "dosya": "teslim/THUMBNAIL.jpg"
+  },
+  "paket": {
+   "durum": "tamam",
+   "zaman": "2026-11-04T01:23:35",
+   "dosyalar": [
+    "DESCRIPTION.txt",
+    "HASHTAGS.txt",
+    "INSTAGRAM_REELS.txt",
+    "PINNED_COMMENT.txt",
+    "QC_REPORT.txt",
+    "SOURCES.txt",
+    "SUBTITLES.srt",
+    "TAGS.txt",
+    "THUMBNAIL.jpg",
+    "TIKTOK.txt",
+    "TITLE.txt",
+    "YOUTUBE.txt"
+   ]
+  }
+ },
+ "hatalar": []
+}

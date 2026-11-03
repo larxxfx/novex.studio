@@ -1,0 +1,160 @@
+{
+ "bas_sessizlik": 0.35,
+ "cumleler": [
+  {
+   "duygu": "gerilim (kanca)",
+   "sonra": 0.55,
+   "parcalar": [
+    {
+     "metin": "On the night of August twenty-first, nineteen eighty-six,",
+     "hiz": 1.02
+    },
+    {
+     "metin": "a lake in Cameroon exhaled.",
+     "soyle": "a lake, in Cameroon, exhaled.",
+     "hiz": 1.1,
+     "kazanc_db": 2.5,
+     "perde": -0.6,
+     "once": 0.3
+    }
+   ],
+   "altyazi": "On the night of 21 August 1986, a lake in Cameroon exhaled."
+  },
+  {
+   "duygu": "gizem",
+   "sonra": 0.45,
+   "parcalar": [
+    {
+     "metin": "There was no fire. No flood. No explosion.",
+     "hiz": 1.08
+    }
+   ]
+  },
+  {
+   "duygu": "gizem / gerilim",
+   "sonra": 0.45,
+   "parcalar": [
+    {
+     "metin": "Just a silent cloud of carbon dioxide,",
+     "hiz": 1.04,
+     "perde": -0.3
+    },
+    {
+     "metin": "rising from the bottom of Lake Nyos.",
+     "soyle": "rising from the bottom of Lake Nee-ohss.",
+     "hiz": 1.04,
+     "once": 0.12
+    }
+   ]
+  },
+  {
+   "duygu": "gerilim",
+   "sonra": 0.35,
+   "parcalar": [
+    {
+     "metin": "The gas was heavier than air.",
+     "hiz": 1.04,
+     "kazanc_db": 1.5
+    }
+   ]
+  },
+  {
+   "duygu": "gerilim",
+   "sonra": 0.6,
+   "parcalar": [
+    {
+     "metin": "It flowed down the valleys,",
+     "hiz": 1.02
+    },
+    {
+     "metin": "into the villages,",
+     "hiz": 1.04,
+     "once": 0.1
+    },
+    {
+     "metin": "while people slept.",
+     "hiz": 1.12,
+     "kazanc_db": 1.5,
+     "perde": -0.4,
+     "once": 0.18
+    }
+   ]
+  },
+  {
+   "duygu": "doruk / hüzün",
+   "sonra": 0.6,
+   "parcalar": [
+    {
+     "metin": "By morning, one thousand seven hundred and forty-six people were dead,",
+     "hiz": 1.04,
+     "kazanc_db": 2.5
+    },
+    {
+     "metin": "and three thousand five hundred animals.",
+     "hiz": 1.04,
+     "once": 0.15
+    }
+   ],
+   "altyazi": "By morning, 1,746 people were dead, and 3,500 animals."
+  },
+  {
+   "duygu": "açıklama",
+   "sonra": 0.45,
+   "parcalar": [
+    {
+     "metin": "Volcanic gas had been slowly building up deep in the water,",
+     "hiz": 1.0,
+     "soyle": "Volcanic gas had been slowly building up, deep in the water,"
+    },
+    {
+     "metin": "until the lake could not hold it.",
+     "hiz": 1.04,
+     "once": 0.12
+    }
+   ]
+  },
+  {
+   "duygu": "umut",
+   "sonra": 0.45,
+   "parcalar": [
+    {
+     "metin": "Today, pipes vent that gas safely,",
+     "hiz": 1.0
+    },
+    {
+     "metin": "shooting fountains high above the lake.",
+     "hiz": 1.02,
+     "once": 0.1
+    }
+   ]
+  },
+  {
+   "duygu": "gizem",
+   "sonra": 0.55,
+   "parcalar": [
+    {
+     "metin": "And just two years earlier,",
+     "hiz": 1.02
+    },
+    {
+     "metin": "nearby Lake Monoun had done the same.",
+     "hiz": 1.04,
+     "kazanc_db": 2.0,
+     "once": 0.15,
+     "soyle": "nearby Lake Mo-noon had done the same."
+    }
+   ]
+  },
+  {
+   "duygu": "soru / katılım",
+   "sonra": 0.3,
+   "parcalar": [
+    {
+     "metin": "Would you live beside a lake that can breathe?",
+     "hiz": 1.04,
+     "perde": 0.5
+    }
+   ]
+  }
+ ]
+}

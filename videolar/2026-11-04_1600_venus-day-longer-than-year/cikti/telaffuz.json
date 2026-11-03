@@ -1,0 +1,65 @@
+{
+ "wer_toplam": 1.1,
+ "cumleler": [
+  {
+   "i": 1,
+   "metin": "On Venus, a single day lasts longer than an entire year.",
+   "duyulan": "On Venus, a single day lasts longer than an entire year.",
+   "wer": 0.0
+  },
+  {
+   "i": 2,
+   "metin": "Venus takes two hundred and twenty-five Earth days to orbit the Sun.",
+   "duyulan": "Venus takes 225 Earth days to orbit a sun.",
+   "wer": 0.0
+  },
+  {
+   "i": 3,
+   "metin": "But it takes two hundred and forty-three Earth days to spin around just once.",
+   "duyulan": "but it takes 243 Earth days to spin around just once.",
+   "wer": 0.0
+  },
+  {
+   "i": 4,
+   "metin": "No planet in the solar system spins slower.",
+   "duyulan": "No planet in the solar system spins slower.",
+   "wer": 0.0
+  },
+  {
+   "i": 5,
+   "metin": "And it spins backwards.",
+   "duyulan": "and it spins backwards.",
+   "wer": 0.0
+  },
+  {
+   "i": 6,
+   "metin": "So on Venus, the Sun rises in the west, and sets in the east.",
+   "duyulan": "So on Venus the sun rises in the west and sets in the east.",
+   "wer": 0.0
+  },
+  {
+   "i": 7,
+   "metin": "From one sunrise to the next takes about a hundred and seventeen Earth days.",
+   "duyulan": "from one sunrise to the next takes about 117 Earth days.",
+   "wer": 9.1
+  },
+  {
+   "i": 8,
+   "metin": "Just two sunrises in a whole Venus year.",
+   "duyulan": "just two sunrises in a whole Venus year.",
+   "wer": 0.0
+  },
+  {
+   "i": 9,
+   "metin": "Under clouds of sulfuric acid, at around four hundred and sixty-five degrees Celsius.",
+   "duyulan": "under clouds of sulfuric acid at around 465 degrees Celsius.",
+   "wer": 0.0
+  },
+  {
+   "i": 10,
+   "metin": "Could you survive a single day on Venus?",
+   "duyulan": "Could you survive a single day on Venus?",
+   "wer": 0.0
+  }
+ ]
+}

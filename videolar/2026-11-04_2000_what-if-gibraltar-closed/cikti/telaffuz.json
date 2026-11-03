@@ -1,0 +1,65 @@
+{
+ "wer_toplam": 0.0,
+ "cumleler": [
+  {
+   "i": 1,
+   "metin": "What if someone closed the Strait of Gibraltar tomorrow?",
+   "duyulan": "What if someone closed the Strait of Gibraltar tomorrow?",
+   "wer": 0.0
+  },
+  {
+   "i": 2,
+   "metin": "It's only about thirteen kilometers wide, but it keeps the Mediterranean alive.",
+   "duyulan": "It's only about 13 kilometers wide, but it keeps the Mediterranean alive.",
+   "wer": 0.0
+  },
+  {
+   "i": 3,
+   "metin": "The sea loses more water to evaporation than its rivers bring in.",
+   "duyulan": "The sea loses more water to evaporation than its rivers bring in.",
+   "wer": 0.0
+  },
+  {
+   "i": 4,
+   "metin": "Cut off from the Atlantic, its level would fall by up to a meter every year.",
+   "duyulan": "Cut off from the Atlantic. Its level would fall by up to a meter every year.",
+   "wer": 0.0
+  },
+  {
+   "i": 5,
+   "metin": "In about a thousand years, most of it would be gone.",
+   "duyulan": "in about a thousand years. Most of it would be gone.",
+   "wer": 0.0
+  },
+  {
+   "i": 6,
+   "metin": "A salt desert, kilometers below sea level.",
+   "duyulan": "A salt desert, kilometers below sea level.",
+   "wer": 0.0
+  },
+  {
+   "i": 7,
+   "metin": "And this isn't just a thought experiment. It happened, about six million years ago.",
+   "duyulan": "And this isn't just a thought experiment. It happened about six million years ago.",
+   "wer": 0.0
+  },
+  {
+   "i": 8,
+   "metin": "Then the Atlantic broke back through, in what may have been the biggest flood in Earth's history.",
+   "duyulan": "Then the Atlantic broke back through in what may have been the biggest flood in Earth's history.",
+   "wer": 0.0
+  },
+  {
+   "i": 9,
+   "metin": "Refilling most of the sea in as little as two years.",
+   "duyulan": "refilling most of the sea in as little as two years.",
+   "wer": 0.0
+  },
+  {
+   "i": 10,
+   "metin": "Would you walk across the dry Mediterranean?",
+   "duyulan": "Would you walk across the dry Mediterranean?",
+   "wer": 0.0
+  }
+ ]
+}

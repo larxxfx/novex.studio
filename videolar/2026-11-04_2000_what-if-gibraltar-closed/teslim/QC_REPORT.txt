@@ -1,0 +1,34 @@
+NØVEX QC REPORT — What If the Strait of Gibraltar Closed?
+Slot: 2026-11-04 20:00 (Europe/Istanbul) · rendered 2026-11-04T01:26:28
+VIDEO.mp4 137.2 MB sha256 1576995eccbd68bafa53738e5a2e11a4a6125bf42874c1da463251983ec8a286
+
+VIDEO   technical checks 10/10 · black segments 0 · frozen segments 0 · 1429 frames / 47.642 s
+AUDIO   loudness/true peak [-13.8, -2.0] · min speech-over-background 20.1 dB (need >= 12) · warnings []
+SYNC    narration vs MP4 offset 2.0 ms
+VOICE   piper-ljspeech · Whisper small.en WER 0.0% · flagged sentences []
+SUBS    SUBTITLES.srt, 10 cues, timing from synthesis (exact); burned-in inside safe area
+LICENCE voice: GEÇMEDİ (see ses/LISANS.txt) · visuals: own code + Natural Earth (public domain) · fonts: OFL/Apache · music/SFX: own synthesis
+HUMAN   listening/viewing by Emir: PENDING (Claude cannot listen)
+
+TITLE LINT (yt-package/title.py):
+"What If the Strait of Gibraltar Closed?"
+  39 chars   score 98/100
+    x  no-number    no number, date or name - the most reliable single fix
+    ok              39 characters, inside the 60-character desktop cut
+    ok              open question in the title
+    ok              thumbnail and title carry different words
+
+qc.py table:
+| Kontrol | Değer | Sonuç |
+|---|---|---|
+| Çözünürlük 1080×1920 | 1080×1920 | ✅ |
+| Kare hızı 30 | 30/1 | ✅ |
+| Video codec H.264 | h264 High | ✅ |
+| Piksel formatı yuv420p | yuv420p | ✅ |
+| Rec.709 / SDR | bt709/bt709/bt709 | ✅ |
+| Ses AAC 48 kHz | aac 48000 | ✅ |
+| Süre (Shorts ≤ 60 sn) | 47.633 sn | ✅ |
+| Kare sayısı | 1429 | ✅ |
+| Tam çözümleme | hata yok | ✅ |
+| Ses yüksekliği ≈ −14 LUFS | -13.9 LUFS | ✅ |
+| Ses lisansı yayına uygun | HF rhasspy/piper-voices lisans etiketi + MODEL_CARD) | ❌ |

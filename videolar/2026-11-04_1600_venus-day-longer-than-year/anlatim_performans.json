@@ -1,0 +1,142 @@
+{
+ "bas_sessizlik": 0.35,
+ "cumleler": [
+  {
+   "duygu": "şaşkınlık (kanca)",
+   "sonra": 0.55,
+   "parcalar": [
+    {
+     "metin": "On Venus,",
+     "hiz": 1.04
+    },
+    {
+     "metin": "a single day lasts longer than an entire year.",
+     "hiz": 1.06,
+     "kazanc_db": 2.5,
+     "once": 0.22
+    }
+   ]
+  },
+  {
+   "duygu": "merak",
+   "sonra": 0.4,
+   "parcalar": [
+    {
+     "metin": "Venus takes two hundred and twenty-five Earth days to orbit the Sun.",
+     "hiz": 1.0
+    }
+   ],
+   "altyazi": "Venus takes 225 Earth days to orbit the Sun."
+  },
+  {
+   "duygu": "açılım",
+   "sonra": 0.5,
+   "parcalar": [
+    {
+     "metin": "But it takes two hundred and forty-three Earth days",
+     "hiz": 1.0
+    },
+    {
+     "metin": "to spin around just once.",
+     "hiz": 1.1,
+     "kazanc_db": 2.0,
+     "once": 0.15
+    }
+   ],
+   "altyazi": "But it takes 243 Earth days to spin around just once."
+  },
+  {
+   "duygu": "hayranlık",
+   "sonra": 0.4,
+   "parcalar": [
+    {
+     "metin": "No planet in the solar system spins slower.",
+     "hiz": 1.04
+    }
+   ]
+  },
+  {
+   "duygu": "şaşkınlık",
+   "sonra": 0.45,
+   "parcalar": [
+    {
+     "metin": "And it spins backwards.",
+     "hiz": 1.12,
+     "kazanc_db": 2.0,
+     "perde": -0.4
+    }
+   ]
+  },
+  {
+   "duygu": "merak",
+   "sonra": 0.45,
+   "parcalar": [
+    {
+     "metin": "So on Venus, the Sun rises in the west,",
+     "hiz": 1.0
+    },
+    {
+     "metin": "and sets in the east.",
+     "hiz": 1.06,
+     "once": 0.12
+    }
+   ]
+  },
+  {
+   "duygu": "açıklama",
+   "sonra": 0.4,
+   "parcalar": [
+    {
+     "metin": "From one sunrise to the next takes about a hundred and seventeen Earth days.",
+     "hiz": 1.02
+    }
+   ],
+   "altyazi": "From one sunrise to the next takes about 117 Earth days."
+  },
+  {
+   "duygu": "hayranlık",
+   "sonra": 0.45,
+   "parcalar": [
+    {
+     "metin": "Just two sunrises",
+     "hiz": 1.04,
+     "kazanc_db": 1.5
+    },
+    {
+     "metin": "in a whole Venus year.",
+     "hiz": 1.06,
+     "once": 0.12
+    }
+   ]
+  },
+  {
+   "duygu": "gerilim",
+   "sonra": 0.55,
+   "parcalar": [
+    {
+     "metin": "Under clouds of sulfuric acid,",
+     "hiz": 1.02,
+     "perde": -0.3
+    },
+    {
+     "metin": "at around four hundred and sixty-five degrees Celsius.",
+     "hiz": 1.06,
+     "kazanc_db": 2.0,
+     "once": 0.15
+    }
+   ],
+   "altyazi": "Under clouds of sulfuric acid, at around 465 °C."
+  },
+  {
+   "duygu": "soru / katılım",
+   "sonra": 0.3,
+   "parcalar": [
+    {
+     "metin": "Could you survive a single day on Venus?",
+     "hiz": 1.04,
+     "perde": 0.5
+    }
+   ]
+  }
+ ]
+}

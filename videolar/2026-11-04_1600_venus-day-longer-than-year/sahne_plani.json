@@ -1,0 +1,87 @@
+{
+ "dil": "modern",
+ "doku": "yildiz",
+ "kamera": "itme",
+ "kapanis_sn": 2.2,
+ "palet": {
+  "zemin0": "#070302",
+  "zemin1": "#2a1206",
+  "vurgu": "#ffb347",
+  "metin": "#fff1dc",
+  "ikincil": "#c08a5a",
+  "kara": "#5a3418"
+ },
+ "kapak": {
+  "ust": "Venus",
+  "ana": "Day > Year",
+  "zemin_sahne": 2
+ },
+ "sahneler": [
+  {
+   "cumle": 1,
+   "tur": "baslik",
+   "ust": "Venus",
+   "ana": "A day longer than a year",
+   "alt": "the slowest spin in the solar system"
+  },
+  {
+   "cumle": 2,
+   "tur": "sayi",
+   "bas": 0,
+   "son": 225,
+   "birim": "EARTH DAYS",
+   "etiket": "one Venus year (one orbit)",
+   "sure": 2.0
+  },
+  {
+   "cumle": 3,
+   "tur": "karsilastir",
+   "baslik": "Venus, in Earth days",
+   "birim": "days",
+   "ogeler": [
+    [
+     "One year (orbit)",
+     225
+    ],
+    [
+     "One day (spin)",
+     243
+    ]
+   ]
+  },
+  {
+   "cumle": 5,
+   "tur": "baslik",
+   "ust": "Retrograde rotation",
+   "ana": "It spins backwards",
+   "alt": "Sun rises in the west"
+  },
+  {
+   "cumle": 7,
+   "tur": "sayi",
+   "bas": 0,
+   "son": 117,
+   "birim": "EARTH DAYS",
+   "etiket": "sunrise to sunrise",
+   "sure": 2.0
+  },
+  {
+   "cumle": 9,
+   "tur": "sayi",
+   "bas": 0,
+   "son": 465,
+   "birim": "°C",
+   "etiket": "surface, under sulfuric acid clouds",
+   "sure": 2.0
+  },
+  {
+   "cumle": 10,
+   "tur": "soru",
+   "metin": "Could you survive a single day on Venus?",
+   "secenekler": [
+    "YES",
+    "NO"
+   ]
+  }
+ ]
+}

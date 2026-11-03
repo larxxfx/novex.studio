@@ -1,0 +1,34 @@
+NØVEX QC REPORT — On Venus, a Day Is Longer Than a Year
+Slot: 2026-11-04 16:00 (Europe/Istanbul) · rendered 2026-11-04T01:18:17
+VIDEO.mp4 126.7 MB sha256 7d55f9860147f4786f981d4313f64997f83442079c4c4ed9ad0826335c8e6bcd
+
+VIDEO   technical checks 10/10 · black segments 1 · frozen segments 0 · 1380 frames / 46.015 s
+AUDIO   loudness/true peak [-13.9, -2.2] · min speech-over-background 21.3 dB (need >= 12) · warnings []
+SYNC    narration vs MP4 offset 2.0 ms
+VOICE   piper-ljspeech · Whisper small.en WER 1.1% · flagged sentences [7]
+        s7: heard "from one sunrise to the next takes about 117 Earth days."
+SUBS    SUBTITLES.srt, 10 cues, timing from synthesis (exact); burned-in inside safe area
+LICENCE voice: GEÇMEDİ (see ses/LISANS.txt) · visuals: own code + Natural Earth (public domain) · fonts: OFL/Apache · music/SFX: own synthesis
+HUMAN   listening/viewing by Emir: PENDING (Claude cannot listen)
+
+TITLE LINT (yt-package/title.py):
+"On Venus, a Day Is Longer Than a Year"
+  37 chars   score 76/100
+    x  no-number    no number, date or name - the most reliable single fix
+    x  duplicate    thumbnail repeats the title on day, year - the thumbnail should say what the title does not
+    ok              37 characters, inside the 60-character desktop cut
+
+qc.py table:
+| Kontrol | Değer | Sonuç |
+|---|---|---|
+| Çözünürlük 1080×1920 | 1080×1920 | ✅ |
+| Kare hızı 30 | 30/1 | ✅ |
+| Video codec H.264 | h264 High | ✅ |
+| Piksel formatı yuv420p | yuv420p | ✅ |
+| Rec.709 / SDR | bt709/bt709/bt709 | ✅ |
+| Ses AAC 48 kHz | aac 48000 | ✅ |
+| Süre (Shorts ≤ 60 sn) | 46.000 sn | ✅ |
+| Kare sayısı | 1380 | ✅ |
+| Tam çözümleme | hata yok | ✅ |
+| Ses yüksekliği ≈ −14 LUFS | -13.9 LUFS | ✅ |
+| Ses lisansı yayına uygun | HF rhasspy/piper-voices lisans etiketi + MODEL_CARD) | ❌ |

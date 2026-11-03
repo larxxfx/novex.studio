@@ -1,13 +1,13 @@
 NØVEX QC REPORT — A 2,000-Year-Old Machine With Gears Inside
-Slot: 2026-11-04 08:00 (Europe/Istanbul) · rendered 2026-11-04T00:06:16
-VIDEO.mp4 294.2 MB sha256 5fc9940494a246590d55479ec662a0ebbeaa58bacea170505942918c0c5c8422
+Slot: 2026-11-04 08:00 (Europe/Istanbul) · rendered 2026-11-04T01:10:19
+VIDEO.mp4 190.4 MB sha256 c440eccbb71a499191b6f7772045ed9a007c7406bb60738a836596abedabb1c4
 
-VIDEO   technical checks 10/10 · black segments 0 · frozen segments 0 · 1449 frames / 48.302 s
-AUDIO   loudness/true peak [-13.9, -2.0] · min speech-over-background 19.6 dB (need >= 12) · warnings []
+VIDEO   technical checks 10/10 · black segments 0 · frozen segments 0 · 1431 frames / 47.705 s
+AUDIO   loudness/true peak [-13.9, -1.9] · min speech-over-background 19.9 dB (need >= 12) · warnings []
 SYNC    narration vs MP4 offset 2.0 ms
 VOICE   piper-ljspeech · Whisper small.en WER 3.0% · flagged sentences [1, 4]
         s1: heard "In 1901, sponge divers pulled a lump of corroded bronze from a Roman era shipwreck."
-        s4: heard "This is the anti-kippurum mechanism."
+        s4: heard "This is the anti-achipirum mechanism."
 SUBS    SUBTITLES.srt, 10 cues, timing from synthesis (exact); burned-in inside safe area
 LICENCE voice: GEÇMEDİ (see ses/LISANS.txt) · visuals: own code + Natural Earth (public domain) · fonts: OFL/Apache · music/SFX: own synthesis
 HUMAN   listening/viewing by Emir: PENDING (Claude cannot listen)
@@ -29,8 +29,8 @@ qc.py table:
 | Piksel formatı yuv420p | yuv420p | ✅ |
 | Rec.709 / SDR | bt709/bt709/bt709 | ✅ |
 | Ses AAC 48 kHz | aac 48000 | ✅ |
-| Süre (Shorts ≤ 60 sn) | 48.300 sn | ✅ |
-| Kare sayısı | 1449 | ✅ |
+| Süre (Shorts ≤ 60 sn) | 47.700 sn | ✅ |
+| Kare sayısı | 1431 | ✅ |
 | Tam çözümleme | hata yok | ✅ |
 | Ses yüksekliği ≈ −14 LUFS | -13.9 LUFS | ✅ |
 | Ses lisansı yayına uygun | HF rhasspy/piper-voices lisans etiketi + MODEL_CARD) | ❌ |
