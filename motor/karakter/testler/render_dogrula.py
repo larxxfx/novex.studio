@@ -27,7 +27,13 @@ ham = subprocess.run(["ffmpeg", "-v", "error", "-i", v, "-vf", f"scale={w}:{h}",
 kareler = np.frombuffer(ham, np.uint8).reshape(-1, h, w).astype(np.int16)
 k("siyah kare yok", int((kareler.mean((1, 2)) < 8).sum()) == 0)
 fark = np.abs(np.diff(kareler, axis=0)).mean((1, 2))
-anim = [next((x["anim"] for x in kr if x["ad"] == "kasif_on"), None) for kr in olay["kareler"]]
+# kimlik sistemi: etkin kimlik = ad varsa ad, yoksa id (src/characters/kimlik.js, karakter_render.etkin_kimlik)
+kimlikler, ana = olay.get("karakterler", []), olay.get("ana_karakter")
+k("kimlik listesi tekil ve ana karakter içinde", bool(kimlikler) and len(set(kimlikler)) == len(kimlikler) and ana in kimlikler, f"{kimlikler} · ana: {ana}")
+kayitta = {x["ad"] for kr in olay["kareler"] for x in kr}
+k("render kaydındaki kimlikler = sahne kimlikleri", kayitta == set(kimlikler), str(sorted(kayitta)))
+k("ses olaylarının karakterleri sahnede", {o["karakter"] for o in olay["olaylar"]} <= set(kimlikler))
+anim = [next((x["anim"] for x in kr if x["ad"] == ana), None) for kr in olay["kareler"]]
 hareketli = [i for i in range(1, len(anim)) if anim[i] in ("run", "jump")]
 donuk = [i for i in hareketli if fark[i - 1] < 0.05]
 k("hareket bölümünde donmuş kare yok", not donuk, f"donuk: {len(donuk)}/{len(hareketli)}")
@@ -43,7 +49,7 @@ def sapmalar(x):
     # başlangıç: 2 ms pencere enerjisi, olaydan önceki 30 ms'lik yerel tabanın üstüne çıktığı ilk an
     pen = sr // 500; e = np.sqrt(np.convolve(x ** 2, np.ones(pen) / pen, "same")); r = []
     for o in olay["olaylar"]:
-        if o["karakter"] != "kasif_on": continue
+        if o["karakter"] != ana: continue
         i0 = int((o["t"] - 0.02) * sr); seg = e[i0:i0 + int(0.12 * sr)]
         taban = np.median(e[max(0, i0 - int(0.03 * sr)):i0]) if i0 > 0 else 0.0
         r.append((i0 + int(np.argmax(seg > taban + 0.3 * (seg.max() - taban)))) / sr - o["t"])

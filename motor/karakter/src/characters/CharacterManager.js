@@ -2,6 +2,7 @@
  * Karakter kayıt defteri: tanımlar (yüklenmiş manifest + kareler) ve sahnedeki örnekler.
  * Motor belirli bir karaktere bağlı değildir; yeni karakter = yeni klasör + manifest.
  */
+import { etkinKimlik } from "./kimlik.js";
 import { SpriteCharacter } from "../animation/SpriteCharacter.js";
 
 export class CharacterManager {
@@ -26,7 +27,7 @@ export class CharacterManager {
   liste() { return [...this.tanimlar.keys()]; }
 
   /** Sahne için yeni örnek (aynı karakterden birden fazla örnek olabilir). */
-  ornek(id, ayarlar) {
-    return new SpriteCharacter({ tanim: this.tanim(id), ...ayarlar });
+  ornek(id, ayarlar = {}) {
+    return new SpriteCharacter({ tanim: this.tanim(id), ...ayarlar, ad: etkinKimlik({ id, ad: ayarlar.ad }) });
   }
 }

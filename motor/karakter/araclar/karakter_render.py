@@ -68,6 +68,19 @@ def ambiyans(n):
                    + 0.4 * np.sin(2 * np.pi * 110 * t)) * np.minimum(1, t / 1.5) * np.minimum(1, (t[-1] - t) / 1.5)
 
 
+def etkin_kimlik(k):
+    """Motorla aynı kural (src/characters/kimlik.js): ad varsa ad, yoksa id."""
+    return str(k["ad"]) if k.get("ad") else str(k["id"])
+
+
+def sahne_kimlikleri(sahne):
+    """Sahnedeki TÜM karakterlerin etkin kimlikleri, sahne sırasıyla; tekrar eden kimlik hata."""
+    ids = [etkin_kimlik(k) for k in sahne["karakterler"]]
+    tekrar = sorted({x for x in ids if ids.count(x) > 1})
+    if tekrar: sys.exit(f"aynı etkin kimlik iki kez: {tekrar} (karakterlere farklı \"ad\" verin)")
+    return ids
+
+
 def ses_olaylari(kayit, fps, ad):
     """Kare kaydından ses olayları: run 0/3. kare = ayak teması, jump 2. kare = kalkış, jump→idle = iniş."""
     olay, onceki = [], None
@@ -129,7 +142,10 @@ def main():
     print(f"render: {N} kare, {time.time() - t0:.1f} sn ({bilgi})")
     # ses
     r = np.random.default_rng(7); efekt = np.zeros(int(sure * SR) + SR); olaylar = []
-    for k in {k["ad"] for k in sahne["karakterler"] if "ad" in k} or {sahne["karakterler"][0]["id"]}:
+    kimlikler = sahne_kimlikleri(sahne)
+    kayitta = {x["ad"] for kr in kayit for x in kr}
+    if kayitta - set(kimlikler): sys.exit(f"render kaydında sahnede olmayan kimlik: {sorted(kayitta - set(kimlikler))}")
+    for k in kimlikler:
         olaylar += [dict(o, karakter=k) for o in ses_olaylari(kayit, fps, k)]
     if not a.sessiz_efekt:
         uret = {"adim": adim, "sicrama": sicrama, "inis": inis}
@@ -147,7 +163,7 @@ def main():
                            "[v][d]amix=inputs=2:normalize=0,apad", cikti_args)
     else:
         loudnorm_iki_gecis(["-i", sessiz, "-i", efekt_yol], "[1:a]anull", cikti_args)
-    json.dump({"fps": fps, "kare_sayisi": N, "olaylar": olaylar, "kareler": kayit}, open(os.path.join(a.cikti, "olaylar.json"), "w"), ensure_ascii=False)
+    json.dump({"fps": fps, "kare_sayisi": N, "karakterler": kimlikler, "ana_karakter": kimlikler[0], "olaylar": olaylar, "kareler": kayit}, open(os.path.join(a.cikti, "olaylar.json"), "w"), ensure_ascii=False)
     qc = subprocess.run([sys.executable, os.path.join(DEPO, "araclar", "qc.py"), son, os.path.join(a.cikti, "qc_rapor.md")], capture_output=True, text=True)
     print(qc.stdout[-1500:] or qc.stderr[-800:])
     print(f"ses olayı: {len(olaylar)} · çıktı: {son}")

@@ -12,6 +12,7 @@
 import { CharacterLoader } from "../characters/CharacterLoader.js";
 import { CharacterManager } from "../characters/CharacterManager.js";
 import { SceneRenderer } from "./SceneRenderer.js";
+import { kimlikleriDogrula } from "../characters/kimlik.js";
 
 const RENK = { gece0: "#08122B", gece1: "#0B2A4A", turkuaz: "#3FD0C9", elektrik: "#2E8BFF", krem: "#F2EAD8" };
 
@@ -59,6 +60,7 @@ export function yaziKatmani(yazilar = []) {
 /** sahneJson + temel URL → { sahne: SceneRenderer, sure_ms, fps } (tüm kareler önceden yüklenmiş) */
 export async function sahneKur(sahneJson, temelUrl, { loader = new CharacterLoader() } = {}) {
   const W = sahneJson.genislik || 1080, H = sahneJson.yukseklik || 1920;
+  kimlikleriDogrula(sahneJson.karakterler);
   const yonetici = new CharacterManager(loader);
   for (const id of new Set(sahneJson.karakterler.map((k) => k.id))) {
     const kok = sahneJson.karakterler.find((k) => k.id === id).kok;

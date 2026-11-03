@@ -7,6 +7,7 @@ import { CharacterLoader, EksikVarlikHatasi } from "../src/characters/CharacterL
 import { CharacterManager } from "../src/characters/CharacterManager.js";
 import { SceneRenderer } from "../src/scene/SceneRenderer.js";
 import { CameraController } from "../src/scene/CameraController.js";
+import { etkinKimlik, kimlikleriDogrula } from "../src/characters/kimlik.js";
 
 const KOK = new URL("../karakterler/explorer/", import.meta.url);
 const gercek = JSON.parse(readFileSync(new URL("manifest.json", KOK), "utf8"));
@@ -93,6 +94,18 @@ await test("çoklu karakter: z sırasıyla çizilir, giriş/çıkış ve aynalam
   assert.equal(d[1].olcek, 3); // piksel sanatı → tam sayı ölçek
   assert.ok(c.kayit.some(([k, sx]) => k === "scale" && sx === -2)); // arka plandaki aynalı
   s.cikar(s.karakterler[0]); assert.equal(s.karakterler.length, 1);
+});
+await test("etkin kimlik: ad varsa ad, yoksa id; karışık sahnede hepsi ayrı; tekrar hata", async () => {
+  assert.equal(etkinKimlik({ id: "explorer", ad: "kasif_on" }), "kasif_on");
+  assert.equal(etkinKimlik({ id: "explorer" }), "explorer");
+  assert.deepEqual(kimlikleriDogrula([{ id: "explorer", ad: "kasif_on" }, { id: "robot" }, { id: "explorer", ad: "kasif_arka" }]),
+    ["kasif_on", "robot", "kasif_arka"]);
+  assert.throws(() => kimlikleriDogrula([{ id: "explorer" }, { id: "explorer" }]), /aynı etkin kimlik/);
+  const y = new CharacterManager(sahteYukleyici()); await y.kaydet("explorer", KOK.href);
+  assert.equal(y.ornek("explorer", {}).ad, "explorer"); // motor da id'ye düşer (manifest characterId'ye değil)
+  assert.equal(y.ornek("explorer", { ad: "kasif_on" }).ad, "kasif_on");
+  const sahne = JSON.parse(readFileSync(new URL("../sahneler/ornek_kasif.json", import.meta.url)));
+  assert.equal(etkinKimlik(sahne.karakterler[0]), "kasif_on"); // örnek sahnenin ana karakteri
 });
 await test("karakter farklı sahnelere eklenebilir (aynı tanım, bağımsız örnekler)", async () => {
   const y = new CharacterManager(sahteYukleyici()); await y.kaydet("explorer", KOK.href);
