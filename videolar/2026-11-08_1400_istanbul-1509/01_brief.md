@@ -4,6 +4,7 @@ slot: "14.00"
 durum: fikir
 sahip: claude
 seri: ""
+anlatici: YUSUF
 ---
 # Tarih Dosyası — İstanbul'un Küçük Kıyameti: 1509
 

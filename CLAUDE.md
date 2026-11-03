@@ -12,8 +12,8 @@ render, teknik QC ve yayın paketi. ChatGPT eleştirir ve doğrular (`inceleme_c
 - **Gizli bilgi yok:** API anahtarı, token, parola, imzalı bağlantı (`Signature=`, `oobCode=`) depoya yazılmaz. Commit'ten önce tara.
 - **Büyük dosya yok:** MP4/WAV/MP3/MOV depoya girmez (`.gitignore`). Depoda QC raporu, kontrol kareleri ve SHA-256 durur.
 - **Doğruluk:** Her rakamın `02_kaynaklar.md`'de kaynağı olur; doğrulanmamış iddia ⚠️ ile işaretlenir; varsayım gerçek gibi sunulmaz.
-- **Ödeme yok:** Ücretli servis, kredi veya abonelik Emir'in izni olmadan kullanılmaz. ElevenLabs askıda (`marka/SESLENDIRME.md`).
-- **Ses lisansı:** Yayın sesi Emir'in kaydıdır. TTS yalnızca taslaktır; `ses/LISANS.txt` `yayin_uygun: evet` olmadan video yayına hazır sayılmaz (`qc.py --lisans`).
+- **Ödeme yok:** Ücretli servis, kredi veya abonelik Emir'in izni olmadan kullanılmaz; Descript yükseltme bağlantısı açılmaz. Descript dışa aktarımları `private`. ElevenLabs askıda (`marka/SESLENDIRME.md`).
+- **Ses lisansı:** Ana anlatıcılar YUSUF (bilim/teknoloji/tarih/doğa/keşif) ve ZEYNEP (gizem/hikâye/SON SİNYAL), Descript AI Speech; Emir'in sesi yalnızca yedek. Bir videoda anlatıcı sebepsiz değişmez; hata olursa diğer sese geçmeden raporla. Ticari lisans doğrulanana kadar Yusuf/Zeynep yayına uygun değil. Yerel TTS yalnızca taslaktır; `ses/LISANS.txt` `yayin_uygun: evet` olmadan video yayına hazır sayılmaz (`qc.py --lisans`).
 - **Dürüst rapor:** Yapılmayan render, yükleme veya kontrol yapılmış gibi yazılmaz.
 
 ## Teknik standart (kısa)

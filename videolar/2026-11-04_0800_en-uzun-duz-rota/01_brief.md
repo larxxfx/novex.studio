@@ -4,6 +4,8 @@ slot: "08.00"
 durum: senaryo-inceleme
 sahip: chatgpt
 seri: ""
+anlatici: YUSUF
+descript_proje: "" # ses üretilince doldurulacak
 ---
 # Harita Şoku — Dümeni hiç kırmadan 32 bin kilometre
 

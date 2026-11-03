@@ -4,6 +4,7 @@ slot: "14.00"
 durum: fikir
 sahip: claude
 seri: ""
+anlatici: YUSUF
 ---
 # Tarih Dosyası — Piramitlerden 7.000 yıl önce
 

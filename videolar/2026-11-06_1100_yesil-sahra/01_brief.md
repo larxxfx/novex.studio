@@ -4,6 +4,7 @@ slot: "11.00"
 durum: fikir
 sahip: claude
 seri: ""
+anlatici: YUSUF
 ---
 # Ya Şöyle Olsaydı? — Sahra yeniden yeşerseydi
 

@@ -1,4 +1,5 @@
-# Okuyan: Emir · Ton: sakin ama merak uyandıran belgesel anlatıcısı; sorularda hafif yükselme.
+# Okuyan: YUSUF · Araç: Descript AI Speech · marka/SESLENDIRME.md
+# Ton: sakin ama merak uyandıran belgesel anlatıcısı; sorularda hafif yükselme.
 # Her satır bir cümle. Her satırdan sonra yarım saniye dur. Vurgulu kelimeler *yıldız* içinde.
 Dümeni kilitle. Pakistan'dan çık.
 Otuz iki *bin* kilometre boyunca, hiç karaya çarpmayacaksın.

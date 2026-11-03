@@ -4,6 +4,7 @@ slot: "08.00"
 durum: fikir
 sahip: claude
 seri: ""
+anlatici: YUSUF
 ---
 # Harita Şoku — Dünyadaki göllerin %62'si tek ülkede
 

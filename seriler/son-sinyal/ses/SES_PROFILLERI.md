@@ -10,10 +10,10 @@ Her karakterin sesi **tek bir kaynaktan** gelir ve her bölümde aynı kayıt ko
 | K3 | (bible'da) | Karar bekliyor | 20 cm | kuru | — |
 | K4 | (bible'da) | Karar bekliyor | 20 cm | kuru | — |
 | S | Sinyaldeki ses | Karar bekliyor | 20 cm | `telsiz` (300–3000 Hz bant, hafif bozulma, cızırtı yatağı) | — |
-| A | Anlatıcı (bölüm girişi/özet) | Emir | 15–20 cm | kuru | — |
+| A | Anlatıcı (bölüm girişi/özet) | **ZEYNEP** (Descript AI Speech — `marka/SESLENDIRME.md`) | Descript dışa aktarımı | kuru | — |
 
 **Kurallar**
 1. Seslendiren kişi bölüm ortasında değişmez. Değişirse bible'da gerekçe yazılır.
 2. Lisans: yalnızca seslendirenin yazılı izni olan kayıtlar (`ses/izinler/` altında imzalı not; depoya kişisel veri yazılmaz, yalnızca "izin var: evet/tarih").
-3. TTS yalnızca taslak/animatik içindir (`marka/SESLENDIRME.md`).
+3. Anlatıcı her bölümde ZEYNEP'tir; karakter seslerinin kaynağı (Descript stok ses / insan) bible kilitlenince seçilir ve lisansı ayrı doğrulanır. Yerel TTS yalnızca taslak/animatik içindir.
 4. Her bölümün QC'sinde karakter replikleri referans klipleriyle aynı perde aralığında mı diye `araclar/ses_isle.py` raporu karşılaştırılır.

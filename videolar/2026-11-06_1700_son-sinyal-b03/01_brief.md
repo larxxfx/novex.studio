@@ -4,6 +4,7 @@ slot: "17.00"
 durum: fikir
 sahip: claude
 seri: "son-sinyal/B03"
+anlatici: ZEYNEP
 ---
 # SON SİNYAL — Bölüm 3 — Karşı Kıyı
 

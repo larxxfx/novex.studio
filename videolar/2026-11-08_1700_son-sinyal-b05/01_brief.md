@@ -4,6 +4,7 @@ slot: "17.00"
 durum: fikir
 sahip: claude
 seri: "son-sinyal/B05"
+anlatici: ZEYNEP
 ---
 # SON SİNYAL — Bölüm 5 — Eksik Kişi
 

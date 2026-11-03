@@ -1,3 +1,6 @@
-kaynak: bekleniyor (Emir'in kaydı)
-lisans: —
+anlatici: YUSUF
+kaynak: bekleniyor (descript-ai-speech)
+ses_id: bilinmiyor (Descript'ten okunacak)
+plan: free (AI kredisi 3 Kasım'da tükendi)
+lisans: Descript stok AI ses ticari kullanımı doğrulanmadı — marka/SESLENDIRME.md §3
 yayin_uygun: hayir

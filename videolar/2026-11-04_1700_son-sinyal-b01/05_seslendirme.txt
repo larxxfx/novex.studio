@@ -1,3 +1,3 @@
 # Seslendirme metni — her satır bir cümle (hizala.py bunu kullanır). '#' ile başlayan satırlar okunmaz.
-# Okuyan: Emir (kendi sesi) · Kayıt rehberi: marka/SESLENDIRME.md §3
+# Okuyan: ZEYNEP · Araç: Descript AI Speech · marka/SESLENDIRME.md
 # Vurgulanacak kelimeyi *yıldız* içine al. Sayılar yazıyla, kısaltma yok. Hedef hız: ~2,6–2,9 kelime/sn. Her cümleden sonra yarım saniye dur.

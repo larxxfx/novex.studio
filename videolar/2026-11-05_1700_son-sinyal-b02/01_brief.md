@@ -4,6 +4,7 @@ slot: "17.00"
 durum: fikir
 sahip: claude
 seri: "son-sinyal/B02"
+anlatici: ZEYNEP
 ---
 # SON SİNYAL — Bölüm 2 — İlk Sinyal
 

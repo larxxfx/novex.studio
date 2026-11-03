@@ -4,6 +4,7 @@ slot: "20.00"
 durum: fikir
 sahip: claude
 seri: ""
+anlatici: ZEYNEP
 ---
 # Dünya Düzeni — Tokyo artık dünyanın en büyük şehri değil
 

@@ -4,6 +4,7 @@ slot: "20.00"
 durum: fikir
 sahip: claude
 seri: ""
+anlatici: ZEYNEP
 ---
 # Dünya Düzeni — Kıyamet günü tohum kasası
 

@@ -12,7 +12,8 @@ kaynağıdır. Claude ile ChatGPT arasında doğrudan bir bağlantı yoktur; ba�
 
 | Taraf | Rol | Depoya erişim | iPad'de nereden |
 |---|---|---|---|
-| **Emir** (sahip) | Onay, yayın, **seslendirme kaydı** (kendi sesi) | Tam | GitHub uygulaması / Safari |
+| **Emir** (sahip) | Onay, yayın, Descript sesini iPad'den sohbete aktarma (yedek: kendi sesi) | Tam | GitHub uygulaması / Safari / Descript |
+| **Yusuf / Zeynep** | Kalıcı ana anlatıcılar (Descript AI Speech) — lisans doğrulanana kadar yayına uygun değil | — | `marka/SESLENDIRME.md` |
 | **Claude** | Senaryo taslağı, görsel/video üretimi, ses işleme ve hizalama, kurgu, ses tasarımı, render, teknik QC | Okuma + yazma (doğrudan commit) | Claude uygulaması |
 | **ChatGPT** | Fikir karşılaştırma, kaynak doğrulama, senaryo/tutma eleştirisi, başlık stratejisi, son QC | **Okuma**: GitHub bağlayıcısı · **Yazma**: yalnızca Codex üzerinden PR | ChatGPT uygulaması |
 
