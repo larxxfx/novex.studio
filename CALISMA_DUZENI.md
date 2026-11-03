@@ -7,9 +7,9 @@
 | 1 | `fikir` | Claude | 3–5 fikir, puan tablosu | `01_brief.md` |
 | 2 | `fikir-inceleme` | ChatGPT | Kendi fikirleriyle karşılaştırır, seçimi onaylar ya da değiştirir | `inceleme_chatgpt.md` §1 |
 | 3 | `kaynak` | Claude + ChatGPT | Her olgusal iddia birincil/kurumsal kaynakla eşleşir | `02_kaynaklar.md` |
-| 4 | `senaryo` | Claude | Senaryo + zaman kodlu sahne planı + ElevenLabs metni | `03_senaryo.md`, `04_sahne_plani.md`, `05_seslendirme_elevenlabs.txt` |
+| 4 | `senaryo` | Claude | Senaryo + zaman kodlu sahne planı + seslendirme metni | `03_senaryo.md`, `04_sahne_plani.md`, `05_seslendirme.txt` |
 | 5 | `senaryo-inceleme` | ChatGPT | Kanca, tutma, doğruluk, dil | `inceleme_chatgpt.md` §2 |
-| 6 | `ses` | Claude → Emir | Claude ElevenLabs bağlantısıyla seslendirir; dosya Claude ortamına inemediği sürece Emir MP3'ü ElevenLabs'ten indirip Claude sohbetine ekler | `marka/ELEVENLABS.md` |
+| 6 | `ses` | Emir → Claude | Emir `05_seslendirme.txt`'yi iPad'de kaydeder, sohbete ekler; Claude `ses_isle.py` + `hizala.py --whisper` ile işler ve okuma hatalarını işaretler | `ses/LISANS.txt`, `07_ses_zamanlama.json` |
 | 7 | `uretimde` | Claude | Görsel, animasyon, kurgu, müzik/efekt, altyazı, render | (MP4 depo dışı) |
 | 8 | `qc` | Claude | Teknik QC + kontrol kareleri | `qc/qc_rapor.md`, `qc/*.jpg` |
 | 9 | `son-inceleme` | ChatGPT | Kareler + metin + paket üzerinden son kontrol | `inceleme_chatgpt.md` §3 |

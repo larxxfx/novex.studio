@@ -1,0 +1,5 @@
+{
+  "kuru":   {"aciklama": "işlenmiş ses, ek efekt yok", "ffmpeg_af": "anull"},
+  "telsiz": {"aciklama": "SON SİNYAL imzası: telsiz", "ffmpeg_af": "highpass=f=300,lowpass=f=3000,acrusher=bits=10:mix=0.25,volume=2dB"},
+  "uzak":   {"aciklama": "başka odadan / uzaktan", "ffmpeg_af": "lowpass=f=5000,aecho=0.8:0.6:40|80:0.25|0.15,volume=-4dB"}
+}

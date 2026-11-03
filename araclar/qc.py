@@ -1,4 +1,4 @@
-"""NØVEX teknik kalite kontrolü. Kullanım: python3 qc.py video.mp4 [rapor.md]
+"""NØVEX teknik kalite kontrolü. Kullanım: python3 qc.py video.mp4 [rapor.md] [--lisans ses/LISANS.txt]
 NØVEX standardını denetler ve kontrol karesi sayfası üretir (video_qc.jpg)."""
 import json, subprocess, sys, re, os
 
@@ -28,6 +28,13 @@ checks = [
     ("Tam çözümleme", "hata yok" if not dec else dec[:120], not dec),
     ("Ses yüksekliği ≈ −14 LUFS", f"{lufs} LUFS" if lufs is not None else "yok", lufs is not None and -16 <= lufs <= -12),
 ]
+# Ses lisansı: --lisans <ses/LISANS.txt> verilirse yayın uygunluğu da denetlenir
+if "--lisans" in sys.argv:
+    lp = sys.argv[sys.argv.index("--lisans") + 1]
+    lt = open(lp, encoding="utf-8").read() if os.path.exists(lp) else ""
+    kaynak = (re.search(r"kaynak:\s*(.+)", lt) or [None, "yok"])[1].strip()
+    ok_lic = bool(re.search(r"yayin_uygun:\s*evet", lt))
+    checks.append(("Ses lisansı yayına uygun", kaynak, ok_lic))
 lines = ["| Kontrol | Değer | Sonuç |", "|---|---|---|"] + [f"| {n} | {val} | {'✅' if ok else '❌'} |" for n, val, ok in checks]
 report = "\n".join(lines)
 print(report)
@@ -38,5 +45,6 @@ ts = [0.2] + [x for x in range(3, int(dur), 3)] + [max(0, dur - 0.3)]
 run("ffmpeg", "-y", "-v", "error", "-i", v, "-vf",
     f"select='{'+'.join(f'between(t,{t},{t}+0.034)' for t in ts)}',scale=216:384,tile={len(ts)}x1",
     "-frames:v", "1", "-fps_mode", "vfr", qc)
-if len(sys.argv) > 2: open(sys.argv[2], "w", encoding="utf-8").write(report + "\n")
+rap = [a for a in sys.argv[2:] if a.endswith(".md")]
+if rap: open(rap[0], "w", encoding="utf-8").write(report + "\n")
 sys.exit(0 if all(ok for _, _, ok in checks) else 1)

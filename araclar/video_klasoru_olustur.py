@@ -37,7 +37,7 @@ SLOTLAR = [
 ]
 
 ASAMALAR = ["01_brief.md:brief.md", "02_kaynaklar.md:kaynaklar.md", "03_senaryo.md:senaryo.md",
-            "04_sahne_plani.md:sahne_plani.md", "05_seslendirme_elevenlabs.txt:seslendirme_elevenlabs.txt",
+            "04_sahne_plani.md:sahne_plani.md", "05_seslendirme.txt:seslendirme.txt",
             "06_paket.md:paket.md", "inceleme_chatgpt.md:inceleme_chatgpt.md"]
 
 for tarih, saat, ad, slot, baslik, bolum in SLOTLAR:

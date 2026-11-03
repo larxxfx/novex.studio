@@ -1,4 +1,8 @@
-# ElevenLabs — bağlantı durumu ve kullanım (3 Kasım 2026 testi)
+# ElevenLabs — ASKIDA (Emir'in 3 Kasım 2026 kararı: kullanılmıyor)
+
+> Bu dosya yalnızca test kaydıdır. Güncel ses politikası: `SESLENDIRME.md`.
+
+## 3 Kasım 2026 testi
 
 ## Durum
 - Claude'un ElevenLabs bağlantısı **çalışıyor** (ses listesi, model listesi, üretim).

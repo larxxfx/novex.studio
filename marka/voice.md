@@ -50,7 +50,7 @@
 ## Formatım
 
 - Shorts: ~30–35 sn (kesin süre seslendirme kaydına göre).
-- Seslendirme: ElevenLabs "Adam – Dominant, Firm" sesi (kanal sahibinin sağladığı kayıtlar).
+- Seslendirme: Emir'in kendi sesi (bkz. `marka/SESLENDIRME.md`). İlk iki videoda ElevenLabs "Adam" ve yerel TTS kullanılmıştı.
 - Kapanış: NØVEX marka kapanışı.
 <!-- DOLDURULACAK: açılış nasıl, intro var mı, yüz görünüyor mu, CTA kullanıyor musun,
      uzun video formatı olacak mı? -->

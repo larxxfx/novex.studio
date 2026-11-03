@@ -12,8 +12,8 @@ kaynağıdır. Claude ile ChatGPT arasında doğrudan bir bağlantı yoktur; ba�
 
 | Taraf | Rol | Depoya erişim | iPad'de nereden |
 |---|---|---|---|
-| **Emir** (sahip) | Onay, yayın, (geçici) ElevenLabs MP3 aktarımı | Tam | GitHub uygulaması / Safari |
-| **Claude** | Senaryo taslağı, ElevenLabs seslendirme/görsel/video üretimi, kurgu, ses tasarımı, render, teknik QC | Okuma + yazma (doğrudan commit) | Claude uygulaması |
+| **Emir** (sahip) | Onay, yayın, **seslendirme kaydı** (kendi sesi) | Tam | GitHub uygulaması / Safari |
+| **Claude** | Senaryo taslağı, görsel/video üretimi, ses işleme ve hizalama, kurgu, ses tasarımı, render, teknik QC | Okuma + yazma (doğrudan commit) | Claude uygulaması |
 | **ChatGPT** | Fikir karşılaştırma, kaynak doğrulama, senaryo/tutma eleştirisi, başlık stratejisi, son QC | **Okuma**: GitHub bağlayıcısı · **Yazma**: yalnızca Codex üzerinden PR | ChatGPT uygulaması |
 
 ChatGPT'nin GitHub bağlayıcısı **salt okunur**dur. ChatGPT'nin depoya yazması için Codex (Plus ve

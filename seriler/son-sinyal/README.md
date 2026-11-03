@@ -7,8 +7,9 @@ her bölümde "KURGU" etiketi ve açıklamada "kurgusal dizi" ibaresi bulunur.
 |---|---|
 | `SERIES_BIBLE.md` | Evren, salgın kuralları, karakterler, 7 bölüm, kurallar — **tek doğruluk kaynağı** |
 | `karakterler/` | Her karakter için kimlik kartı (değişmez görünüm + referans görsel kimlikleri + ses) |
-| `referans-gorseller/` | Onaylı karakter/mekân referanslarının **kimlik listesi** (görseller ElevenLabs akışında; büyük dosya depoya girmez) |
+| `referans-gorseller/` | Onaylı karakter/mekân referanslarının **kimlik listesi** (büyük dosyalar depoya girmez) |
 | `mekanlar/` | Mekân kartları (ışık, saat, hasar durumu) |
+| `ses/SES_PROFILLERI.md` | Karakter sesleri: kim seslendiriyor, kayıt mesafesi, işleme ve efekt ön ayarı |
 | `stil/STIL.md` | Renk, ışık, kamera, ses tasarımı kuralları |
 | `promptlar/` | Onaylı üretim promptları (görsel/video/ses) — her bölüm aynı tabanı kullanır |
 | `devamlilik/` | Bölüm bölüm süreklilik kaydı: kıyafet, yara, eşya, saat, hava, kim nerede |

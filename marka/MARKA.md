@@ -26,7 +26,7 @@ Kaçınılacak: çocukça ikonlar, doygun gökkuşağı renkler, sabit görselin
 
 ## Ses
 Anlatım önde; müzik konuşmada otomatik kısılır; −14 LUFS; telifsiz/üretilmiş müzik.
-Birinci tercih ElevenLabs (Claude bağlantı üzerinden üretir; ayrıntı ELEVENLABS.md). Yedek: yerel ücretsiz Türkçe TTS (`araclar/`).
+Yayın sesi: Emir'in kendi kaydı. Ücretsiz TTS yalnızca taslak. Ayrıntı ve lisanslar: `SESLENDIRME.md`.
 
 ## Kapak
 YouTube: 1280×720 (kanalın düzenleyicisi 16:9 kırpıyor), metin ortada, kenarlardan ≥ 56 px içeride,

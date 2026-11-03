@@ -4,7 +4,7 @@ Bu depo NØVEX'in (Türkçe, sinematik, belgesel tarzı dikey video kanalı) Cla
 Önce `README.md` ve `CALISMA_DUZENI.md` dosyalarını izle; bu dosya yalnızca Claude'a özgü kuralları özetler.
 
 ## Rol
-Claude üretim ve teknik tarafı yürütür: senaryo taslağı, ElevenLabs seslendirme/görsel/video, kurgu, ses tasarımı,
+Claude üretim ve teknik tarafı yürütür: senaryo taslağı, görsel/video, ses işleme ve hizalama, kurgu, ses tasarımı,
 render, teknik QC ve yayın paketi. ChatGPT eleştirir ve doğrular (`inceleme_chatgpt.md`). Son onay Emir'dedir.
 
 ## Kesin kurallar
@@ -12,7 +12,8 @@ render, teknik QC ve yayın paketi. ChatGPT eleştirir ve doğrular (`inceleme_c
 - **Gizli bilgi yok:** API anahtarı, token, parola, imzalı bağlantı (`Signature=`, `oobCode=`) depoya yazılmaz. Commit'ten önce tara.
 - **Büyük dosya yok:** MP4/WAV/MP3/MOV depoya girmez (`.gitignore`). Depoda QC raporu, kontrol kareleri ve SHA-256 durur.
 - **Doğruluk:** Her rakamın `02_kaynaklar.md`'de kaynağı olur; doğrulanmamış iddia ⚠️ ile işaretlenir; varsayım gerçek gibi sunulmaz.
-- **Kredi:** ElevenLabs'te uzun/çoklu video üretiminden önce `estimate_only` ile fiyat alınır ve Emir'e sorulur. Başarısız üretim yeniden denenmeden önce Emir'e bildirilir.
+- **Ödeme yok:** Ücretli servis, kredi veya abonelik Emir'in izni olmadan kullanılmaz. ElevenLabs askıda (`marka/SESLENDIRME.md`).
+- **Ses lisansı:** Yayın sesi Emir'in kaydıdır. TTS yalnızca taslaktır; `ses/LISANS.txt` `yayin_uygun: evet` olmadan video yayına hazır sayılmaz (`qc.py --lisans`).
 - **Dürüst rapor:** Yapılmayan render, yükleme veya kontrol yapılmış gibi yazılmaz.
 
 ## Teknik standart (kısa)

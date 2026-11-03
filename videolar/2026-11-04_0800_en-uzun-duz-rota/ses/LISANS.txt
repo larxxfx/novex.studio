@@ -1,0 +1,3 @@
+kaynak: bekleniyor (Emir'in kaydı)
+lisans: —
+yayin_uygun: hayir
