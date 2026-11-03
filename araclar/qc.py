@@ -33,7 +33,7 @@ if "--lisans" in sys.argv:
     lp = sys.argv[sys.argv.index("--lisans") + 1]
     lt = open(lp, encoding="utf-8").read() if os.path.exists(lp) else ""
     kaynak = (re.search(r"kaynak:\s*(.+)", lt) or [None, "yok"])[1].strip()
-    ok_lic = bool(re.search(r"yayin_uygun:\s*evet", lt))
+    ok_lic = bool(re.search(r"^yayin_uygun:\s*evet\s*$", lt, re.M))   # yalnız satır başındaki anahtar (not metnindeki geçiş sayılmaz)
     checks.append(("Ses lisansı yayına uygun", kaynak, ok_lic))
 lines = ["| Kontrol | Değer | Sonuç |", "|---|---|---|"] + [f"| {n} | {val} | {'✅' if ok else '❌'} |" for n, val, ok in checks]
 report = "\n".join(lines)

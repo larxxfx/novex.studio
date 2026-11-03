@@ -1,0 +1,65 @@
+{
+ "wer_toplam": 3.0,
+ "cumleler": [
+  {
+   "i": 1,
+   "metin": "In nineteen-oh-one, sponge divers pulled a lump of corroded bronze from a Roman-era shipwreck.",
+   "duyulan": "In 1901, sponge divers pulled a lump of corroded bronze from a Roman era shipwreck.",
+   "wer": 6.7
+  },
+  {
+   "i": 2,
+   "metin": "Inside it were gears.",
+   "duyulan": "Inside it were gears.",
+   "wer": 0.0
+  },
+  {
+   "i": 3,
+   "metin": "At least thirty of them, cut by hand, more than two thousand years ago.",
+   "duyulan": "At least 30 of them, cut by hand more than 2,000 years ago.",
+   "wer": 0.0
+  },
+  {
+   "i": 4,
+   "metin": "This is the Antikythera Mechanism.",
+   "duyulan": "This is the anti-kippurum mechanism.",
+   "wer": 50.0
+  },
+  {
+   "i": 5,
+   "metin": "Turn a handle, and it showed the Sun, the Moon, and the planets,",
+   "duyulan": "Turn the handle and it showed the Sun, the Moon and the planets.",
+   "wer": 0.0
+  },
+  {
+   "i": 6,
+   "metin": "predicted eclipses, and even tracked the dates of the Olympic Games.",
+   "duyulan": "predicted eclipses, and even tracked the dates of the Olympic Games.",
+   "wer": 0.0
+  },
+  {
+   "i": 7,
+   "metin": "Only about a third of it survived, in eighty-two fragments.",
+   "duyulan": "only about a third of it survived in 82 fragments.",
+   "wer": 0.0
+  },
+  {
+   "i": 8,
+   "metin": "In twenty twenty-one, a team at University College London rebuilt its front display from X-ray scans.",
+   "duyulan": "In 2021, a team at University College London rebuilt its front display from X-ray scans.",
+   "wer": 0.0
+  },
+  {
+   "i": 9,
+   "metin": "Nothing this complex appears again for more than a thousand years.",
+   "duyulan": "Nothing this complex appears again for more than a thousand years.",
+   "wer": 0.0
+  },
+  {
+   "i": 10,
+   "metin": "So was it one of a kind, or the only one that survived?",
+   "duyulan": "So was it one of a kind or the only one that survived?",
+   "wer": 0.0
+  }
+ ]
+}

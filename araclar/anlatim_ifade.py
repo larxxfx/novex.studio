@@ -9,6 +9,7 @@ performans.json:
    {"duygu": "merak", "sonra": 0.55,
     "parcalar": [{"metin": "This line runs thirty-two thousand kilometers,", "hiz": 0.92},
                  {"metin": "and never touches land.", "hiz": 1.12, "kazanc_db": 2.0, "perde": -0.5, "once": 0.25}]}]}
+  soyle: (isteğe bağlı) telaffuz için fonetik yazım, ör. "Kamchatka" → "Kam-chat-ka"; altyazıda metin kullanılır
   hiz: >1 yavaş (length_scale) · kazanc_db: vurgu · perde: yarım ton (rubberband, formant korunur) · once/sonra: duraklama (sn)
 Çıktı: anlatim.wav (48 kHz mono), zaman.json [{i, metin, bas, son, duygu, parcalar:[{metin, bas, son, vurgu_db}]}] (altyazı + sahne zamanlaması için), parcalar/.
 """
@@ -76,13 +77,13 @@ def main(perf_yol, motor, cikti, carpan="1.0"):
         for pi, pr in enumerate(c["parcalar"]):
             ekle_sessiz(pr.get("once", 0.0) if pi else 0.0)
             ham = f"{pd}/h{ci:02d}_{pi}.wav"; son = f"{pd}/p{ci:02d}_{pi}.wav"
-            sentezle(motor, pr["metin"], round(pr.get("hiz", 1.0) * carpan, 3), ham)
+            sentezle(motor, pr.get("soyle", pr["metin"]), round(pr.get("hiz", 1.0) * carpan, 3), ham)   # soyle: yalnız TTS'e giden fonetik yazım; altyazı metin'i kullanır
             isle(ham, pr.get("kazanc_db", 0.0), pr.get("perde", 0.0), son)
             bas = t if bas is None else bas
             d = sure(son); pz.append({"metin": pr["metin"], "bas": round(t, 3), "son": round(t + d, 3), "vurgu_db": pr.get("kazanc_db", 0.0)})
             liste.append(son); t += d
         zaman.append({"i": ci, "metin": " ".join(x["metin"] for x in c["parcalar"]), "bas": round(bas, 3), "son": round(t, 3),
-                      "duygu": c.get("duygu", ""), "parcalar": pz})
+                      "duygu": c.get("duygu", ""), "altyazi": c.get("altyazi", " ".join(x["metin"] for x in c["parcalar"])), "parcalar": pz})
         ekle_sessiz(c.get("sonra", 0.45))
     lst = f"{pd}/liste.txt"; open(lst, "w").write("".join(f"file '{os.path.abspath(f)}'\n" for f in liste))
     run(["ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", lst, "-c:a", "pcm_s24le", os.path.join(cikti, "anlatim.wav")])

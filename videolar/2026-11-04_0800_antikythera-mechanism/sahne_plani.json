@@ -1,0 +1,112 @@
+{
+ "dil": "arsiv",
+ "doku": "kagit",
+ "kamera": "itme",
+ "kapanis_sn": 2.2,
+ "palet": {
+  "zemin0": "#1a120a",
+  "zemin1": "#3b2814",
+  "vurgu": "#d9a441",
+  "metin": "#f2e3c4",
+  "ikincil": "#a08a64",
+  "kara": "#6b5436"
+ },
+ "kapak": {
+  "ust": "2,000 years old",
+  "ana": "It had gears.",
+  "zemin_sahne": 1
+ },
+ "sahneler": [
+  {
+   "cumle": 1,
+   "tur": "baslik",
+   "ust": "1901 · Antikythera, Greece",
+   "ana": "A lump of bronze from the sea",
+   "alt": "Roman-era shipwreck"
+  },
+  {
+   "cumle": 2,
+   "tur": "sayi",
+   "bas": 0,
+   "son": 30,
+   "birim": "BRONZE GEARS",
+   "etiket": "at least 30 survive, cut by hand",
+   "sure": 2.4
+  },
+  {
+   "cumle": 4,
+   "tur": "harita",
+   "bas_bolge": [
+    -15,
+    25,
+    45,
+    50
+   ],
+   "bolge": [
+    19,
+    33,
+    30,
+    41
+   ],
+   "noktalar": [
+    [
+     23.3,
+     35.87,
+     "Antikythera"
+    ]
+   ],
+   "baslik": "Found off Antikythera"
+  },
+  {
+   "cumle": 5,
+   "tur": "liste",
+   "baslik": "What it calculated",
+   "maddeler": [
+    "The Sun",
+    "The Moon & its phases",
+    "The planets",
+    "Eclipses",
+    "Olympic Games dates"
+   ]
+  },
+  {
+   "cumle": 7,
+   "tur": "sayi",
+   "bas": 0,
+   "son": 82,
+   "birim": "FRAGMENTS",
+   "etiket": "only about a third survives",
+   "sure": 1.8
+  },
+  {
+   "cumle": 8,
+   "tur": "alinti",
+   "metin": "The first model that conforms to all the physical evidence.",
+   "kaynak": "Prof. Tony Freeth, UCL, 2021"
+  },
+  {
+   "cumle": 9,
+   "tur": "zaman",
+   "baslik": "The gap",
+   "olaylar": [
+    [
+     "c. 100 BC",
+     "Antikythera Mechanism"
+    ],
+    [
+     "1300s",
+     "Astronomical clocks in Europe"
+    ]
+   ]
+  },
+  {
+   "cumle": 10,
+   "tur": "soru",
+   "metin": "One of a kind, or the only survivor?",
+   "secenekler": [
+    "ONE",
+    "MANY"
+   ]
+  }
+ ]
+}
