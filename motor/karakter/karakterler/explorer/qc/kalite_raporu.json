@@ -1,0 +1,276 @@
+{
+ "kit": "explorer_kit_v1",
+ "kareler": {
+  "idle/frame_01.png": {
+   "boyut": [
+    129,
+    232
+   ],
+   "silinen_kalinti_px": 56,
+   "yari_saydam_px": 0,
+   "kenara_degiyor": false,
+   "referans_eslesme": [
+    72,
+    108,
+    0.0
+   ],
+   "zemin_ustu_px": 0
+  },
+  "idle/frame_02.png": {
+   "boyut": [
+    126,
+    232
+   ],
+   "silinen_kalinti_px": 11,
+   "yari_saydam_px": 0,
+   "kenara_degiyor": false,
+   "referans_eslesme": [
+    227,
+    108,
+    0.0
+   ],
+   "zemin_ustu_px": 0
+  },
+  "idle/frame_03.png": {
+   "boyut": [
+    129,
+    232
+   ],
+   "silinen_kalinti_px": 78,
+   "yari_saydam_px": 0,
+   "kenara_degiyor": false,
+   "referans_eslesme": [
+    378,
+    108,
+    0.0
+   ],
+   "zemin_ustu_px": 0
+  },
+  "idle/frame_04.png": {
+   "boyut": [
+    113,
+    232
+   ],
+   "silinen_kalinti_px": 16,
+   "yari_saydam_px": 0,
+   "kenara_degiyor": false,
+   "referans_eslesme": [
+    537,
+    108,
+    0.0
+   ],
+   "zemin_ustu_px": 0
+  },
+  "idle/frame_05.png": {
+   "boyut": [
+    107,
+    232
+   ],
+   "silinen_kalinti_px": 15,
+   "yari_saydam_px": 0,
+   "kenara_degiyor": false,
+   "referans_eslesme": [
+    689,
+    108,
+    0.0
+   ],
+   "zemin_ustu_px": 0
+  },
+  "idle/frame_06.png": {
+   "boyut": [
+    107,
+    232
+   ],
+   "silinen_kalinti_px": 19,
+   "yari_saydam_px": 0,
+   "kenara_degiyor": false,
+   "referans_eslesme": [
+    841,
+    108,
+    0.0
+   ],
+   "zemin_ustu_px": 0
+  },
+  "run/frame_01.png": {
+   "boyut": [
+    162,
+    220
+   ],
+   "silinen_kalinti_px": 0,
+   "yari_saydam_px": 0,
+   "kenara_degiyor": false,
+   "referans_eslesme": [
+    41,
+    413,
+    0.0
+   ],
+   "zemin_ustu_px": 0
+  },
+  "run/frame_02.png": {
+   "boyut": [
+    141,
+    224
+   ],
+   "silinen_kalinti_px": 126,
+   "yari_saydam_px": 0,
+   "kenara_degiyor": false,
+   "referans_eslesme": [
+    211,
+    409,
+    0.0
+   ],
+   "zemin_ustu_px": 0
+  },
+  "run/frame_03.png": {
+   "boyut": [
+    159,
+    221
+   ],
+   "silinen_kalinti_px": 0,
+   "yari_saydam_px": 0,
+   "kenara_degiyor": false,
+   "referans_eslesme": [
+    353,
+    412,
+    0.0
+   ],
+   "zemin_ustu_px": 0
+  },
+  "run/frame_04.png": {
+   "boyut": [
+    143,
+    221
+   ],
+   "silinen_kalinti_px": 128,
+   "yari_saydam_px": 0,
+   "kenara_degiyor": false,
+   "referans_eslesme": [
+    518,
+    412,
+    0.0
+   ],
+   "zemin_ustu_px": 0
+  },
+  "run/frame_05.png": {
+   "boyut": [
+    163,
+    221
+   ],
+   "silinen_kalinti_px": 0,
+   "yari_saydam_px": 0,
+   "kenara_degiyor": false,
+   "referans_eslesme": [
+    668,
+    409,
+    0.0
+   ],
+   "zemin_ustu_px": 3
+  },
+  "run/frame_06.png": {
+   "boyut": [
+    168,
+    223
+   ],
+   "silinen_kalinti_px": 0,
+   "yari_saydam_px": 0,
+   "kenara_degiyor": false,
+   "referans_eslesme": [
+    823,
+    410,
+    0.0
+   ],
+   "zemin_ustu_px": 0
+  },
+  "jump/frame_01.png": {
+   "boyut": [
+    146,
+    214
+   ],
+   "silinen_kalinti_px": 0,
+   "yari_saydam_px": 0,
+   "kenara_degiyor": false,
+   "referans_eslesme": [
+    61,
+    749,
+    0.0
+   ],
+   "zemin_ustu_px": 0
+  },
+  "jump/frame_02.png": {
+   "boyut": [
+    123,
+    242
+   ],
+   "silinen_kalinti_px": 0,
+   "yari_saydam_px": 0,
+   "kenara_degiyor": false,
+   "referans_eslesme": [
+    226,
+    721,
+    0.0
+   ],
+   "zemin_ustu_px": 0
+  },
+  "jump/frame_03.png": {
+   "boyut": [
+    143,
+    262
+   ],
+   "silinen_kalinti_px": 0,
+   "yari_saydam_px": 0,
+   "kenara_degiyor": false,
+   "referans_eslesme": [
+    371,
+    674,
+    0.01
+   ],
+   "zemin_ustu_px": 27
+  },
+  "jump/frame_04.png": {
+   "boyut": [
+    145,
+    224
+   ],
+   "silinen_kalinti_px": 0,
+   "yari_saydam_px": 0,
+   "kenara_degiyor": false,
+   "referans_eslesme": [
+    519,
+    672,
+    0.0
+   ],
+   "zemin_ustu_px": 67
+  },
+  "jump/frame_05.png": {
+   "boyut": [
+    130,
+    240
+   ],
+   "silinen_kalinti_px": 0,
+   "yari_saydam_px": 0,
+   "kenara_degiyor": false,
+   "referans_eslesme": [
+    674,
+    722,
+    0.0
+   ],
+   "zemin_ustu_px": 1
+  },
+  "jump/frame_06.png": {
+   "boyut": [
+    131,
+    210
+   ],
+   "silinen_kalinti_px": 0,
+   "yari_saydam_px": 0,
+   "kenara_degiyor": false,
+   "referans_eslesme": [
+    833,
+    753,
+    0.0
+   ],
+   "zemin_ustu_px": 0
+  }
+ },
+ "uyarilar": []
+}

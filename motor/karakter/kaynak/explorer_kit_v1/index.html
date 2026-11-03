@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NØVEX Character Engine — Prototype</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#101722;color:#f5f1e8;font:16px system-ui}
+main{max-width:900px;margin:0 auto;padding:24px}
+h1{font-size:clamp(24px,5vw,38px);margin:0 0 8px}
+p{color:#b7c0cb;line-height:1.5}
+.stage{margin-top:20px;border:1px solid #344154;border-radius:18px;overflow:hidden;background:linear-gradient(#9fb3c1 0%,#d7d1b7 72%,#74765e 72%,#4d5549 100%);height:min(65vh,600px);position:relative}
+.stage:before{content:"";position:absolute;left:0;right:0;bottom:28%;height:1px;background:#5b604f;opacity:.5}
+canvas{width:100%;height:100%;display:block}
+.controls{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+button{border:1px solid #536174;background:#1b293a;color:#fff;border-radius:12px;padding:12px 18px;font-weight:650}
+button.active{background:#c7a66b;color:#17130d;border-color:#e0c48e}
+.note{font-size:13px;color:#aeb8c5;margin-top:12px}
+</style>
+</head>
+<body>
+<main>
+<h1>NØVEX Character Engine</h1>
+<p>Explorer Base Character · Şeffaf PNG kareleri · Canvas tabanlı animasyon prototipi</p>
+<div class="stage"><canvas id="scene" width="900" height="600"></canvas></div>
+<div class="controls">
+<button data-anim="idle" class="active">Idle</button>
+<button data-anim="run">Run</button>
+<button data-anim="jump">Jump</button>
+</div>
+<div class="note">Bu prototip, gönderdiğin referans görselden ayrıştırılmış karakter karelerini oynatır. Üretim entegrasyonunda sahne/karakter konumları ve zaman çizelgesi render motoruna bağlanacak.</div>
+</main>
+<script type="module">
+import {SpriteCharacter} from "./sprite-character.js";
+const canvas=document.querySelector("#scene");
+const manifest=await fetch("./assets/explorer/manifest.json").then(r=>r.json());
+const character=new SpriteCharacter({canvas,manifest,x:.5,y:.92,height:.68});
+await character.loadPromise;
+character.start();
+document.querySelectorAll("[data-anim]").forEach(btn=>btn.addEventListener("click",()=>{
+  document.querySelectorAll("button").forEach(b=>b.classList.remove("active"));
+  btn.classList.add("active");
+  character.setAnimation(btn.dataset.anim,{restart:true});
+}));
+</script>
+</body></html>
