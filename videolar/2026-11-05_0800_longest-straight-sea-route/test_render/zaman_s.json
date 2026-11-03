@@ -1,0 +1,68 @@
+[
+ {
+  "i": 1,
+  "metin": "This line runs thirty-two thousand kilometers, and never touches land.",
+  "bas": 0.25,
+  "son": 4.414
+ },
+ {
+  "i": 2,
+  "metin": "Point a ship west from Pakistan, and sail perfectly straight.",
+  "bas": 4.834,
+  "son": 8.321
+ },
+ {
+  "i": 3,
+  "metin": "On a flat map, the route curves like a snake.",
+  "bas": 8.741,
+  "son": 11.552
+ },
+ {
+  "i": 4,
+  "metin": "But wrap it around the globe, and it's one straight line.",
+  "bas": 11.972,
+  "son": 14.827
+ },
+ {
+  "i": 5,
+  "metin": "First, you slip between Africa and Madagascar.",
+  "bas": 15.247,
+  "son": 18.282
+ },
+ {
+  "i": 6,
+  "metin": "Then between the tip of South America and Antarctica.",
+  "bas": 18.702,
+  "son": 21.909
+ },
+ {
+  "i": 7,
+  "metin": "Then across the entire Pacific.",
+  "bas": 22.329,
+  "son": 24.393
+ },
+ {
+  "i": 8,
+  "metin": "And the first land you reach is Russia's Kamchatka Peninsula.",
+  "bas": 24.813,
+  "son": 28.529
+ },
+ {
+  "i": 9,
+  "metin": "In 2018, two researchers confirmed it with an algorithm.",
+  "bas": 28.949,
+  "son": 32.944
+ },
+ {
+  "i": 10,
+  "metin": "And the longest straight line on land? Portugal to China, over eleven thousand kilometers.",
+  "bas": 33.364,
+  "son": 38.784
+ },
+ {
+  "i": 11,
+  "metin": "So, could a real ship sail it without stopping? Yes or no?",
+  "bas": 39.204,
+  "son": 43.039
+ }
+]

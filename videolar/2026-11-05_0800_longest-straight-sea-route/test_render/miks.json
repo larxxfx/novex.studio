@@ -1,0 +1,1 @@
+{"ses": "ses.wav", "muzik": "muzik.wav", "efekt": "efekt.wav", "ses_db": 0, "muzik_db": -9, "efekt_db": -8, "ducking_muzik": {"esik": 0.02, "oran": 10}, "ducking_efekt": {"esik": 0.015, "oran": 5}, "hedef_lufs": -14, "true_peak": -1.5, "cikti": "miks.wav", "zamanlama": "zamanlama.json"}
