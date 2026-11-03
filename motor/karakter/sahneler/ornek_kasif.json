@@ -1,0 +1,140 @@
+{
+  "aciklama": "Karakter motoru test sahnesi: idle → run → jump → idle; arka planda ikinci (aynalı, küçük) örnek; kamera takibi.",
+  "sure_ms": 9000,
+  "fps": 30,
+  "genislik": 1080,
+  "yukseklik": 1920,
+  "arkaplan": {
+    "tur": "novex_gece",
+    "zemin_y": 1500
+  },
+  "karakterler": [
+    {
+      "id": "explorer",
+      "kok": "karakterler/explorer/",
+      "ad": "kasif_on",
+      "z": 2,
+      "klipler": [
+        {
+          "anim": "idle",
+          "start": 0
+        },
+        {
+          "anim": "run",
+          "start": 2000
+        },
+        {
+          "anim": "jump",
+          "start": 5600
+        },
+        {
+          "anim": "idle",
+          "start": 7400
+        }
+      ],
+      "hareket": [
+        {
+          "t": 0,
+          "x": 240,
+          "y": 1500,
+          "olcek": 3
+        },
+        {
+          "t": 2000,
+          "x": 240,
+          "y": 1500
+        },
+        {
+          "t": 5600,
+          "x": 600,
+          "y": 1500,
+          "ease": "linear"
+        },
+        {
+          "t": 6350,
+          "x": 680,
+          "y": 1500,
+          "ease": "linear"
+        }
+      ]
+    },
+    {
+      "id": "explorer",
+      "ad": "kasif_arka",
+      "kok": "karakterler/explorer/",
+      "z": 1,
+      "giris": 800,
+      "klipler": [
+        {
+          "anim": "idle",
+          "start": 0,
+          "speed": 0.8
+        }
+      ],
+      "hareket": [
+        {
+          "t": 0,
+          "x": 900,
+          "y": 1440,
+          "olcek": 2
+        }
+      ],
+      "yon": [
+        {
+          "t": 0,
+          "yon": -1
+        }
+      ]
+    }
+  ],
+  "kamera": [
+    {
+      "t": 0,
+      "x": 540,
+      "y": 960,
+      "zoom": 1.0
+    },
+    {
+      "t": 2000,
+      "x": 540,
+      "y": 960,
+      "zoom": 1.0
+    },
+    {
+      "t": 5600,
+      "x": 600,
+      "y": 980,
+      "zoom": 1.06
+    },
+    {
+      "t": 9000,
+      "x": 580,
+      "y": 960,
+      "zoom": 1.02
+    }
+  ],
+  "yazilar": [
+    {
+      "t0": 0,
+      "t1": 2000,
+      "metin": "IDLE · bekleme"
+    },
+    {
+      "t0": 2000,
+      "t1": 5600,
+      "metin": "RUN · koşu"
+    },
+    {
+      "t0": 5600,
+      "t1": 7400,
+      "metin": "JUMP · zıplama"
+    },
+    {
+      "t0": 7400,
+      "t1": 9000,
+      "metin": "TEST SAHNESİ — yayın değil",
+      "boyut": 44,
+      "renk": "#3FD0C9"
+    }
+  ]
+}

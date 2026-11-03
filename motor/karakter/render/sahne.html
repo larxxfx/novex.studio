@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="tr">
+<head><meta charset="utf-8"><title>NØVEX sahne render</title>
+<style>html,body{margin:0;background:#000}canvas{display:block}</style></head>
+<body>
+<canvas id="c" width="1080" height="1920"></canvas>
+<script type="module">
+// MP4 render girişi: araclar/karakter_render.py bu sayfayı başsız Chromium'da açar ve
+// her kare için NOVEX.kare(tMs) çağırır. requestAnimationFrame KULLANILMAZ (deterministik).
+import { sahneKur } from "../src/scene/sahneKur.js";
+const canvas = document.getElementById("c");
+const ctx = canvas.getContext("2d", { alpha: false });
+let durum = null;
+window.NOVEX = {
+  async hazirla(sahneJson) {
+    canvas.width = sahneJson.genislik || 1080; canvas.height = sahneJson.yukseklik || 1920;
+    await document.fonts.ready;
+    durum = await sahneKur(sahneJson, new URL("../", location.href).href);
+    return { sure_ms: durum.sure_ms, fps: durum.fps, karakterler: durum.yonetici.liste() };
+  },
+  kare(tMs) { return durum.sahne.renderFrame(ctx, tMs); },
+  png() { return canvas.toDataURL("image/png"); },
+};
+window.NOVEX_HAZIR = true;
+</script>
+</body></html>

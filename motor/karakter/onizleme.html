@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NØVEX karakter motoru — canlı önizleme</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#08122B;color:#F2EAD8;font:16px -apple-system,system-ui,sans-serif}
+main{max-width:520px;margin:0 auto;padding:16px}
+h1{font-size:20px;margin:4px 0 12px}
+.sahne{aspect-ratio:9/16;width:100%;border-radius:14px;overflow:hidden;border:1px solid #23415f}
+canvas{width:100%;height:100%;display:block}
+.kontrol{display:flex;gap:8px;align-items:center;margin-top:12px}
+button{border:1px solid #3FD0C9;background:#0B2A4A;color:#F2EAD8;border-radius:10px;padding:10px 16px;font-weight:600;font-size:16px}
+input[type=range]{flex:1}
+.not{font-size:13px;color:#9fb0c4;margin-top:10px;line-height:1.45}
+</style>
+</head>
+<body>
+<main>
+<h1>NØVEX karakter motoru — önizleme</h1>
+<div class="sahne"><canvas id="c" width="1080" height="1920"></canvas></div>
+<div class="kontrol"><button id="oynat">Durdur</button><input id="zaman" type="range" min="0" max="1000" value="0"><span id="sn">0.0 sn</span></div>
+<p class="not">Önizleme, MP4 render'ıyla aynı <code>renderFrame(t)</code> fonksiyonunu kullanır; burada zamanı yalnızca
+requestAnimationFrame ilerletir. Sunucu gerekir (ES modülleri): depo kökünde <code>python3 -m http.server</code> →
+<code>/motor/karakter/onizleme.html</code>. Sahne: <code>?sahne=sahneler/ornek_kasif.json</code></p>
+</main>
+<script type="module">
+import { sahneKur } from "./src/scene/sahneKur.js";
+const yol = new URLSearchParams(location.search).get("sahne") || "sahneler/ornek_kasif.json";
+const json = await fetch(yol).then((r) => r.json());
+const { sahne, sure_ms } = await sahneKur(json, location.href);
+const ctx = document.getElementById("c").getContext("2d", { alpha: false });
+const kaydir = document.getElementById("zaman"), sn = document.getElementById("sn"), btn = document.getElementById("oynat");
+let oynuyor = true, t = 0, onceki = 0;
+function ciz() { sahne.renderFrame(ctx, t); kaydir.value = String(Math.round((t / sure_ms) * 1000)); sn.textContent = (t / 1000).toFixed(1) + " sn"; }
+function dongu(simdi) { if (oynuyor) { if (onceki) t = (t + simdi - onceki) % sure_ms; onceki = simdi; ciz(); } requestAnimationFrame(dongu); }
+btn.onclick = () => { oynuyor = !oynuyor; onceki = 0; btn.textContent = oynuyor ? "Durdur" : "Oynat"; };
+kaydir.oninput = () => { t = (kaydir.value / 1000) * sure_ms; ciz(); };
+requestAnimationFrame(dongu);
+</script>
+</body></html>
