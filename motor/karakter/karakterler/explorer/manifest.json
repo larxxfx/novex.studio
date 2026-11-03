@@ -1,0 +1,75 @@
+{
+ "schema": 2,
+ "characterId": "explorer",
+ "displayName": "NØVEX Explorer",
+ "canvas": {
+  "width": 182,
+  "height": 275,
+  "anchor": {
+   "x": 91,
+   "y": 271
+  }
+ },
+ "render": {
+  "pixelArt": true,
+  "note": "Düşük çözünürlüklü kaynak: tam sayı katlarla, yumuşatmasız ölçekle."
+ },
+ "source": {
+  "kit": "explorer_kit_v1",
+  "license": "BEKLİYOR — kaynak/izin bilgisi Emir'den (LISANS.md)"
+ },
+ "animations": {
+  "idle": {
+   "frames": [
+    "idle/frame_01.png",
+    "idle/frame_02.png",
+    "idle/frame_03.png",
+    "idle/frame_04.png",
+    "idle/frame_05.png",
+    "idle/frame_06.png"
+   ],
+   "fps": 5,
+   "loop": true
+  },
+  "run": {
+   "frames": [
+    "run/frame_01.png",
+    "run/frame_02.png",
+    "run/frame_03.png",
+    "run/frame_04.png",
+    "run/frame_05.png",
+    "run/frame_06.png"
+   ],
+   "fps": 10,
+   "loop": true
+  },
+  "jump": {
+   "frames": [
+    "jump/frame_01.png",
+    "jump/frame_02.png",
+    "jump/frame_03.png",
+    "jump/frame_04.png",
+    "jump/frame_05.png",
+    "jump/frame_06.png"
+   ],
+   "fps": 8,
+   "loop": false,
+   "next": "idle"
+  }
+ },
+ "planned": [
+  "walk",
+  "talk",
+  "point",
+  "lookLeft",
+  "lookRight",
+  "wave",
+  "sit",
+  "stand",
+  "crouch",
+  "interact",
+  "surprise",
+  "think",
+  "explain"
+ ]
+}

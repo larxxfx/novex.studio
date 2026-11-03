@@ -1,0 +1,43 @@
+{
+  "characterId": "novex-explorer-base",
+  "displayName": "NØVEX Explorer",
+  "source": "User-provided Evelyn Explorer sprite reference",
+  "animations": {
+    "idle": {
+      "frames": [
+        "assets/explorer/idle/frame_01.png",
+        "assets/explorer/idle/frame_02.png",
+        "assets/explorer/idle/frame_03.png",
+        "assets/explorer/idle/frame_04.png",
+        "assets/explorer/idle/frame_05.png",
+        "assets/explorer/idle/frame_06.png"
+      ],
+      "fps": 5,
+      "loop": true
+    },
+    "run": {
+      "frames": [
+        "assets/explorer/run/frame_01.png",
+        "assets/explorer/run/frame_02.png",
+        "assets/explorer/run/frame_03.png",
+        "assets/explorer/run/frame_04.png",
+        "assets/explorer/run/frame_05.png",
+        "assets/explorer/run/frame_06.png"
+      ],
+      "fps": 10,
+      "loop": true
+    },
+    "jump": {
+      "frames": [
+        "assets/explorer/jump/frame_01.png",
+        "assets/explorer/jump/frame_02.png",
+        "assets/explorer/jump/frame_03.png",
+        "assets/explorer/jump/frame_04.png",
+        "assets/explorer/jump/frame_05.png",
+        "assets/explorer/jump/frame_06.png"
+      ],
+      "fps": 8,
+      "loop": false
+    }
+  }
+}
