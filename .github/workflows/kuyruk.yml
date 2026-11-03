@@ -1,0 +1,22 @@
+# Ortak görev kuyruğu denetimi: TASK_QUEUE.md veya rapor dosyaları değişince çalışır (Claude ↔ ChatGPT çakışma koruması).
+name: kuyruk-denetimi
+on:
+  push:
+    paths: ["TASK_QUEUE.md", "CHATGPT_REPORT.md", "CLAUDE_REPORT.md", "araclar/kuyruk_dogrula.py", "testler/**"]
+  pull_request:
+    paths: ["TASK_QUEUE.md", "araclar/kuyruk_dogrula.py", "testler/**"]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  denetle:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: Kuyruk doğrulama
+        run: python3 araclar/kuyruk_dogrula.py TASK_QUEUE.md
+      - name: Birim testleri
+        run: python3 -m unittest discover -s testler -p "test_*.py" -v
