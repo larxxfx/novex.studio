@@ -1,0 +1,12 @@
+# One sentence per line. *emphasis*. Lines starting with # are not read.
+Point a ship west from Pakistan, and sail perfectly straight.
+For thirty-two thousand kilometers, you never touch land.
+On a flat map, the route curves like a snake.
+But wrap it around the globe, and it's one straight line.
+First, you slip between Africa and Madagascar.
+Then between the tip of South America and Antarctica.
+Then across the entire Pacific.
+And the first land you reach is Russia's Kamchatka Peninsula.
+In 2018, two researchers confirmed it with an algorithm.
+And the longest straight line on land? Portugal to China, over eleven thousand kilometers.
+So, could a real ship sail it without stopping? Yes or no?

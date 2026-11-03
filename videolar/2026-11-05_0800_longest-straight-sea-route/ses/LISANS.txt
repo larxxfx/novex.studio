@@ -1,0 +1,6 @@
+anlatici: EN aday — Kokoro v0.19 "am_michael" (sid 6), sherpa-onnx v1.12.15, cümle başına sentez + 0,42 sn ara
+kaynak: kokoro-en-v0_19 (k2-fsa/sherpa-onnx tts-models sürümü)
+lisans: Apache-2.0 model ağırlıkları (huggingface.co/hexgrad/Kokoro-82M model kartı, 3 Kasım 2026 kontrolü); eğitim verisi kartta "permissive/non-copyrighted" beyanı
+yayin_uygun: hayir  # Emir'in kulak onayı bekleniyor (aday)
+sure_sn: 44.94
+sha256_ilk16: 0fde51266f285771
