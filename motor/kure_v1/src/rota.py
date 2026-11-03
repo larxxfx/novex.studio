@@ -14,6 +14,18 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import render as R  # noqa: E402  (mevcut motor; içeriği değiştirilmedi)
 
 W, H, FPS = R.W, R.H, R.FPS
+
+# Antarktika benek düzeltmesi (yalnız rota modu; render.py değişmez): render_globe kutup mip seviyesini ekran MERKEZİNİN
+# ayak izinden seçer → eğik/uzak açılarda 4800 px doku örneklenip aliasing (benek) yapar. Rotada kutba yakın çekim yok:
+# 2 seviye kaba + yumuşatılmış piramit kullanılır (POLAR_KM aynı oranda büyür, geometri tp.shape'ten hesaplandığı için doğru kalır).
+def _kutup_yumusat():
+    taban = cv2.GaussianBlur(R.POLAR[2], (0, 0), 1.6)
+    taban = cv2.bilateralFilter(taban, 7, 40, 5)
+    pir = [taban]
+    while pir[-1].shape[0] > 300: pir.append(cv2.pyrDown(pir[-1]))
+    R.POLAR_KM *= R.POLAR[0].shape[0] / taban.shape[0]
+    R.POLAR[:] = pir
+_kutup_yumusat()
 ROTA = json.load(open(os.path.join(R.B, "rota_okyanus.json")))
 RLL = np.asarray(ROTA["nokta_10km"], float)          # 10 km aralıklı (lon, lat)
 RKM = ROTA["uzunluk_km"]
@@ -55,6 +67,9 @@ def etiket(tx, cam, ll, s, dy=-46, a=1.0, boyut=34, renk=(235, 244, 255)):
     return xy[0] if vis[0] else None
 
 
+def _say(km, a=1.0): return (float(km), float(a))
+
+
 def sayac(tx, km, a=1.0, y=300):
     tx.text((W / 2, y), f"{int(round(km)):,} km", R.font("InterDisplay-Black.otf", 104), (255, 255, 255), a)
 
@@ -77,7 +92,7 @@ def sahne_zamanlari(z):
     b = [s["bas"] for s in z]
     return {"s1": (0.0, b[1] - 0.2), "s2": (b[1] - 0.2, b[2] - 0.2), "s3": (b[2] - 0.2, b[3] - 0.2), "s4": (b[3] - 0.2, b[4] - 0.2),
             "s5": (b[4] - 0.2, b[5] - 0.2), "s6": (b[5] - 0.2, b[6] - 0.2), "s7": (b[6] - 0.2, b[7] - 0.2), "s8": (b[7] - 0.2, b[8] - 0.2),
-            "s9": (b[8] - 0.2, b[9] - 0.2), "s10": (b[9] - 0.2, b[10] - 0.2), "s11": (b[10] - 0.2, z[-1]["son"] + 0.9)}
+            "s9": (b[8] - 0.2, b[9] - 0.2), "s10": (b[9] - 0.2, b[10] - 0.2), "s11": (b[10] - 0.2, z[-1]["son"] + KAPANIS_SN)}
 
 
 def srt_oku(yol):
@@ -106,9 +121,53 @@ def altyazi(tx, t, caps):
                 tx.text((W / 2, 1300 + k * 64), s, f, (255, 255, 255), al)
 
 
+KAPANIS_SN = 2.2   # anlatım bittikten sonra kapanış kartının ekranda kaldığı süre (video sesten erken bitmez)
+SIRA = ["s1", "s2", "s3", "s4", "s5", "s6", "s7", "s8", "s9", "s10", "s11"]
+GECIS = 0.30   # sahne sınırında çapraz geçiş yarı genişliği (sn)
+
+
+def aktif_sahne(t, S):
+    for ad in SIRA:
+        if t < S[ad][1]: return ad
+    return SIRA[-1]
+
+
 def kare(t, Z, caps, prev=None):
-    S = Z["sahne"]; tx = R.Text(); mb = 0.0
-    def ic(ad): a, b = S[ad]; return a <= t < b
+    """Sahne sınırlarında ±GECIS içinde iki sahne ayrı çizilip yumuşak harmanlanır (ekran metinleri dahil);
+    altyazı, üst NØVEX ve alt karartma harmanın üstüne bir kez çizilir."""
+    S = Z["sahne"]; ad = aktif_sahne(t, S); i = SIRA.index(ad)
+    img, mb, say = sahne_kare(ad, t, S)
+    komsu = None
+    if i + 1 < len(SIRA) and t > S[ad][1] - GECIS: komsu, sinir = SIRA[i + 1], S[ad][1]
+    elif i > 0 and t < S[ad][0] + GECIS: komsu, sinir = SIRA[i - 1], S[ad][0]
+    if komsu is not None:
+        w = R.ease_io3(R.clamp01((t - (sinir - GECIS)) / (2 * GECIS)))      # 0: önceki sahne, 1: sonraki
+        img2, _, say2 = sahne_kare(komsu, t, S)
+        (onceki, so), (sonraki, ss) = ((img, say), (img2, say2)) if SIRA.index(komsu) > i else ((img2, say2), (img, say))
+        img = onceki * (1 - w) + sonraki * w; mb = 0.0
+        # tek sayaç: iki sahnede de varsa değer ve görünürlük birlikte akar (üst üste iki sayı yok)
+        if so and ss: say = (so[0] + (ss[0] - so[0]) * w, so[1] + (ss[1] - so[1]) * w)
+        elif so or ss: say = ((so or ss)[0], (so or ss)[1] * ((1 - w) if so else w))
+        else: say = None
+    tx = R.Text()
+    if say and say[1] > 0.01: sayac(tx, say[0], say[1])
+    if t < 2.6:
+        tx.text((W / 2, 175), "NØVEX", R.font("InterDisplay-SemiBold.otf", 30), (150, 190, 255), R.ease(R.seg(t, 0.1, 0.4)) * (1 - R.seg(t, 2.2, 2.6)), shadow=False)
+    if R.SCRIM is None:
+        yy = np.arange(H, dtype=np.float32)[:, None, None]
+        R.SCRIM = (np.exp(-((yy - 1330) / 220) ** 2) * 0.55).astype(np.float32)
+    img = img * (1 - R.SCRIM) + np.array([0.0, 0.01, 0.04], np.float32) * R.SCRIM
+    altyazi(tx, t, caps)
+    img = tx.composite(img)
+    son = S["s11"][1]
+    img = img * (1 - R.ease(R.seg(t, son - 0.6, son)))                      # kapanışta siyaha yumuşak iniş
+    return R.post(img, t, prev, mb if prev is not None else 0)
+
+
+def sahne_kare(zorla, t, S):
+    """Tek sahnenin görüntüsü + o sahnenin ekran metinleri (altyazısız)."""
+    tx = R.Text(); mb = 0.0; say = None
+    def ic(ad): return ad == zorla
     def lt(ad): return t - S[ad][0]
     def ln(ad): a, b = S[ad]; return R.clamp01((t - a) / (b - a))
     if ic("s1"):                                    # kanca: çizgi küre üzerinde koşar, sayaç
@@ -116,7 +175,7 @@ def kare(t, Z, caps, prev=None):
         img, _, _ = R.render_globe(cam, isik(cam), 1.0, 0, t)
         f = R.ease_io3(R.seg(t, 0.25, S["s1"][1] - 0.4))
         cizgi(img, cam, rota_on(f), WHITE, 5, 26)
-        sayac(tx, RKM * f, R.ease(R.seg(t, 0.1, 0.4)))
+        say = _say(RKM * f, R.ease(R.seg(t, 0.1, 0.4)))
         tx.text((W / 2, 400), "NO LAND", R.font("InterDisplay-Bold.otf", 52), (120, 230, 220), R.ease(R.seg(t, 2.4, 2.8)))
     elif ic("s2"):                                  # Sonmiani, batıya çıkış
         u = ln("s2"); cam = kamera((lerp(66.0, 62.0, u), 24.5), lerp(0.55, 0.42, u), P=lerp(30, 45, u), head=-15)
@@ -132,7 +191,7 @@ def kare(t, Z, caps, prev=None):
         u = ln("s4")
         mid = RLL[len(RLL) // 2]; nrm = np.cross(ll3(*RLL[0]), ll3(*mid)); nrm /= np.linalg.norm(nrm)
         hedef = ll3(*RLL[int(len(RLL) * 0.74)])
-        cam = R.Cam(hedef, nrm, lerp(3.4, 3.0, u), P=0, head=lerp(25, 0, R.ease_io3(R.seg(u, 0, 0.6))))
+        cam = R.Cam(hedef, nrm, lerp(2.6, 3.2, R.ease_io3(u)), P=0, head=0.0)
         img, _, _ = R.render_globe(cam, isik(cam), 1.0, 0, t)
         cizgi(img, cam, RLL, WHITE, 6, 28)
         tx.text((W / 2, 520), "ON A GLOBE: ONE STRAIGHT LINE", R.font("InterDisplay-Bold.otf", 44), (120, 230, 220), R.ease(R.seg(u, 0.35, 0.55)))
@@ -150,14 +209,14 @@ def kare(t, Z, caps, prev=None):
         else:
             etiket(tx, cam, (-69.0, -53.5), "SOUTH AMERICA", 0, R.ease(R.seg(u, 0.1, 0.3)), 36)
             etiket(tx, cam, (-62.0, -64.5), "ANTARCTICA", 0, R.ease(R.seg(u, 0.2, 0.4)), 36)
-        sayac(tx, k["km"] + lerp(-400, 600, u), 0.9, 300)
+        say = _say(k["km"] + lerp(-400, 600, u), 0.9)
     elif ic("s7"):                                  # Pasifik: hızlı uçuş + sayaç
         u = R.ease_io3(ln("s7")); i0 = km_index(KEY["drake"]["km"] + 700); i1 = km_index(RKM - 2500)
         i = int(lerp(i0, i1, u)); lon, lat = RLL[i]
         cam = kamera((lon, lat), 1.1, P=25, head=-30)
         img, _, _ = R.render_globe(cam, isik(cam), 1.0, 0, t, fog=0.1)
         cizgi(img, cam, RLL[: i + 1], WHITE, 6, 24)
-        sayac(tx, i / (len(RLL) - 1) * RKM, 1.0); mb = 0.25
+        say = _say(i / (len(RLL) - 1) * RKM, 1.0); mb = 0.25
         tx.text((W / 2, 400), "PACIFIC OCEAN", R.font("InterDisplay-Bold.otf", 44), (150, 190, 255), R.ease(R.seg(u, 0.1, 0.3)))
     elif ic("s8"):                                  # Kamçatka varış
         u = ln("s8"); cam = kamera((lerp(168, 163.5, R.ease(u)), lerp(55, 58.2, R.ease(u))), lerp(0.9, 0.45, R.ease_io3(u)), P=40, head=-20)
@@ -166,7 +225,7 @@ def kare(t, Z, caps, prev=None):
         xy = etiket(tx, cam, ROTA["son"], "KAMCHATKA, RUSSIA", -60, R.ease(R.seg(u, 0.3, 0.5)))
         if xy is not None:
             pa = R.ease_out(R.seg(u, 0.25, 0.45)); R.dot(img, xy, 10 * pa, GOLD, 16, pa)
-        sayac(tx, RKM, 1.0)
+        say = _say(RKM, 1.0)
     elif ic("s9"):                                  # kaynak kartı
         u = ln("s9"); cam = kamera((lerp(140, 100, u), 10), lerp(2.2, 3.4, R.ease_io3(u)), P=0)
         img, _, _ = R.render_globe(cam, isik(cam), 1.0, 0, t)
@@ -193,15 +252,7 @@ def kare(t, Z, caps, prev=None):
         tx.text((W / 2, 440), "non-stop?", R.font("InterDisplay-Bold.otf", 50), (255, 255, 255), a, shadow=False)
         tx.text((W / 2, 610), "YES  or  NO?", R.font("InterDisplay-Black.otf", 76), (120, 230, 220), R.ease(R.seg(u, 0.25, 0.4)))
         tx.text((W / 2, 1150), "NØVEX", R.font("InterDisplay-Black.otf", 70), (255, 255, 255), R.ease(R.seg(u, 0.6, 0.8)))
-    if t < 2.6:
-        tx.text((W / 2, 175), "NØVEX", R.font("InterDisplay-SemiBold.otf", 30), (150, 190, 255), R.ease(R.seg(t, 0.1, 0.4)) * (1 - R.seg(t, 2.2, 2.6)), shadow=False)
-    if R.SCRIM is None:
-        yy = np.arange(H, dtype=np.float32)[:, None, None]
-        R.SCRIM = (np.exp(-((yy - 1330) / 220) ** 2) * 0.55).astype(np.float32)
-    img = img * (1 - R.SCRIM) + np.array([0.0, 0.01, 0.04], np.float32) * R.SCRIM
-    altyazi(tx, t, caps)
-    img = tx.composite(img)
-    return R.post(img, t, prev, mb if prev is not None else 0)
+    return tx.composite(img), mb, say
 
 
 def lerp(a, b, u): return a + (b - a) * u

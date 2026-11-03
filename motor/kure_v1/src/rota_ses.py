@@ -39,7 +39,7 @@ def noise_sweep(dur, f0, f1, rng):
 
 
 def main(zaman, out):
-    z = json.load(open(zaman)); T = z[-1]["son"] + 0.9; n = int(T * SR); rng = np.random.default_rng(7)
+    z = json.load(open(zaman)); T = z[-1]["son"] + 2.2; n = int(T * SR); rng = np.random.default_rng(7)  # 2.2 = rota.KAPANIS_SN
     t = np.arange(n) / SR
     # müzik: Dm → Bb → F → C (her ~11 sn), drone D2
     m = 0.5 * np.sin(2 * np.pi * 73.42 * t) * (0.6 + 0.4 * np.sin(2 * np.pi * 0.07 * t))
