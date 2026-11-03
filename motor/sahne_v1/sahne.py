@@ -178,7 +178,7 @@ def c_harita(L, dr, plan, s, u, ts):
 
 def c_zaman(L, dr, plan, s, u, ts):
     dil, p = plan["dil"], plan["palet"]; ol = s["olaylar"]; n = len(ol)
-    x0, x1, y = 170, 910, 820
+    x0, x1, y = 300, 780, 820   # etiket genişliği 300 → merkezler 300–780 ise metin x 150–930 (güvenli alan 140–940)
     dr.line((x0, y, x0 + (x1 - x0) * ease(seg(ts, 0.1, 1.0)), y), fill=renk(p["ikincil"], 220), width=4)
     for i, (yil, et) in enumerate(ol):
         x = x0 + (x1 - x0) * (i / max(n - 1, 1)); a = ease(seg(ts, 0.4 + i * 0.45, 0.8 + i * 0.45))
@@ -186,8 +186,9 @@ def c_zaman(L, dr, plan, s, u, ts):
         dr.ellipse((x - 12, y - 12, x + 12, y + 12), fill=renk(p["vurgu"], int(255 * a)))
         ust = i % 2 == 0
         yazi(dr, (x, y - 70 if ust else y + 70), str(yil), font(dil, "agir", 50), renk(p["vurgu"]), a)
-        for j, sa in enumerate(satirla(et, font(dil, "orta", 34), 300)):
-            yazi(dr, (x, (y - 130 - j * 40) if ust else (y + 130 + j * 40)), sa, font(dil, "orta", 34), renk(p["metin"]), a)
+        sats = satirla(et, font(dil, "orta", 34), 300)
+        for j, sa in enumerate(sats):   # üstteki etiket yukarı doğru büyür ama satır sırası korunur
+            yazi(dr, (x, (y - 130 - (len(sats) - 1 - j) * 40) if ust else (y + 130 + j * 40)), sa, font(dil, "orta", 34), renk(p["metin"]), a)
     if s.get("baslik"): yazi(dr, (W / 2, 420), s["baslik"].upper(), font(dil, "kalin", 50), renk(p["vurgu"]), ease(seg(ts, 0.1, 0.5)))
 
 def c_karsilastir(L, dr, plan, s, u, ts):

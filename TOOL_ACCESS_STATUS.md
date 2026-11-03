@@ -18,6 +18,8 @@ Her satır bu oturumda **gerçek çağrıyla** test edildi. ChatGPT tarafı yaln
 | TikTok | BAĞLAYICI YOK | Kayıtta TikTok bağlayıcısı yok | |
 | YouTube yükleme | YOK (vidIQ'da `video_upload` aracı var ama kanal yetkisiz ve onaysız kullanılmaz) | | |
 | Cloudflare (Claude'daki bağlayıcı) | KISITLI: eski "Workers Bindings" MCP; Worker yükleyemiyor | `r2_buckets_list` → "R2'yi panelden etkinleştirin" | R2 kapalı; Worker deploy için wrangler kimliği yok |
+| Cloudflare Worker'a erişim (Claude ortamından) | **YOK** | `curl *.workers.dev` → 000 (4 Kas 00:50) | Claude oturumları Cloudflare'deki bir uç noktaya bağlanamaz → canlı kanal Claude için kullanılamaz |
+| GitHub Actions | ÇALIŞIYOR | `kuyruk-denetimi` çalıştırma 41723258226 success | — |
 | Descript | AI kredisi bitmiş (3 Kas) | GUNLUK.md | |
 | ElevenLabs | Askıda (marka kararı) | `marka/SESLENDIRME.md` | |
 | Kling / Higgsfield / GPT Images | ADAPTÖR İSKELETİ VAR, BAĞLANTI YOK | `motor/servisler/` (EntegrasyonYok) | Ücretli; onay yok |

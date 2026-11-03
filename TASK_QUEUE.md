@@ -34,5 +34,5 @@
 | T-20261104-09 | Piper sesini dinle; onay ya da ret | Emir | P0 | açık | 04.11 | `ses/LISANS.txt` → `yayin_uygun` |
 | T-20261104-10 | Depoyu Private yap (GitHub → Settings → Danger zone) | Emir | P0 | açık | 04.11 | Claude'un isteği güvenlik denetimi tarafından engellendi |
 | T-20261104-11 | YouTube kanalını vidIQ'da yetkilendir | Emir | P1 | açık | 04.11 | `vidiq_user_channels` boş |
-| T-20261104-12 | Claude ↔ ChatGPT canlı mesajlaşma: Cloudflare Worker + Durable Objects tasarımı + mock testler | Claude | P2 | açık | 04.11 | `NEXT_ACTIONS.md` N-07 |
-| T-20261104-13 | "Antikythera" telaffuzu: Piper "anti-kippurum" diyor → `soyle` alanında fonetik yazımı düzelt | Claude | P1 | açık | 04.11 | `cikti/telaffuz.json` |
+| T-20261104-12 | Claude ↔ ChatGPT canlı mesajlaşma (Cloudflare) | Claude | P2 | engelli | 04.11 | Claude ortamı workers.dev erişemiyor; strateji/CANLI_ILETISIM_MIMARISI.md |
+| T-20261104-13 | Telaffuz düzeltmesi (en iyi 3 seçim + fonetik yazım), 4 Short sesini yeniden üret | Claude | P1 | devam | 04.11 | `cikti/anlatim/secim.json` |

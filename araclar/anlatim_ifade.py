@@ -45,7 +45,7 @@ def sentezle(motor, metin, hiz, out):
              f"--kokoro-data-dir={d}/espeak-ng-data", f"--sid={sid}", f"--kokoro-length-scale={hiz}"]
     else:
         a = MOTOR[motor](DIZIN[motor]) + [f"--{'vits' if motor.startswith('piper') else 'matcha'}-length-scale={hiz}"]
-        if motor.startswith("piper"): a += ["--vits-noise-scale=0.72", "--vits-noise-scale-w=0.85"]   # biraz daha canlı prozodi
+        if motor.startswith("piper"): a += ["--vits-noise-scale=0.667", "--vits-noise-scale-w=0.8"]   # varsayılan: yüksek değişkenlik ilk sesleri bozuyordu (4 Kas telaffuz testi)
     run([f"{S}/bin/sherpa-onnx-offline-tts", *a, "--num-threads=2", f"--output-filename={out}", metin], env=ENV)
 
 
@@ -55,7 +55,7 @@ def sessizlik(sn, out):
 
 def isle(ham, kazanc, perde, out):
     """48 kHz'e çevir, uç sessizliği kırp (parça birleşimleri doğal olsun), kazanç ve perde uygula, 8 ms yumuşak giriş/çıkış."""
-    f = [f"aresample={SR}", "silenceremove=start_periods=1:start_threshold=-50dB:start_silence=0.02",
+    f = [f"aresample={SR}", "silenceremove=start_periods=1:start_threshold=-55dB:start_silence=0.09",
          "areverse", "silenceremove=start_periods=1:start_threshold=-50dB:start_silence=0.06", "areverse"]
     if abs(perde) > 0.01: f.append(f"rubberband=pitch={2 ** (perde / 12):.5f}:formant=preserved")
     if abs(kazanc) > 0.01: f.append(f"volume={kazanc}dB")
@@ -63,33 +63,62 @@ def isle(ham, kazanc, perde, out):
     run(["ffmpeg", "-v", "error", "-y", "-i", ham, "-af", ",".join(f), "-ac", "1", "-c:a", "pcm_s24le", out])
 
 
-def main(perf_yol, motor, cikti, carpan="1.0"):
-    carpan = float(carpan)   # tüm parçaların hızına uygulanan genel çarpan (<1 hızlı)
+def whisper_wer(wav, metin):
+    """Cümle wav'ını Whisper small.en ile yazıya çevirip WER döndürür (yoksa None)."""
+    W = f"{C}/sherpa-onnx-whisper-small.en"
+    if not os.path.exists(f"{W}/small.en-encoder.int8.onnx"): return None, ""
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__))); from short_uret import nrm, wer
+    run(["ffmpeg", "-v", "error", "-y", "-i", wav, "-ar", "16000", "-ac", "1", "/tmp/_secim.wav"])
+    o = subprocess.run([f"{S}/bin/sherpa-onnx-offline", f"--whisper-encoder={W}/small.en-encoder.int8.onnx", f"--whisper-decoder={W}/small.en-decoder.int8.onnx",
+                        f"--tokens={W}/small.en-tokens.txt", "--num-threads=2", "/tmp/_secim.wav"], capture_output=True, text=True, env=ENV)
+    import re as _re
+    h = (_re.findall(r'"text":\s*"(.*?)"', o.stdout + o.stderr) or [""])[-1].strip()
+    return wer(nrm(metin), nrm(h)), h
+
+
+def main(perf_yol, motor, cikti, carpan="1.0", sec="3"):
+    """sec: cümle başına en çok kaç deneme (Piper/Matcha rastlantısal; en düşük WER'li deneme seçilir, WER=0 bulununca durur)."""
+    carpan, sec = float(carpan), int(sec)
     p = json.load(open(perf_yol, encoding="utf-8")); pd = os.path.join(cikti, "parcalar"); os.makedirs(pd, exist_ok=True)
-    liste, zaman, t, n = [], [], 0.0, 0
-    def ekle_sessiz(sn):
-        nonlocal t, n
-        if sn <= 0: return
-        f = f"{pd}/s{n:03d}.wav"; sessizlik(sn, f); liste.append(f); t += sn; n += 1
-    ekle_sessiz(p.get("bas_sessizlik", 0.3))
+    liste, zaman, t, n, secim = [], [], 0.0, 0, []
+    def sessiz_dosya(sn):
+        nonlocal n
+        f = f"{pd}/s{n:03d}.wav"; sessizlik(sn, f); n += 1; return f
+    if p.get("bas_sessizlik", 0.3) > 0:
+        f = sessiz_dosya(p.get("bas_sessizlik", 0.3)); liste.append(f); t += sure(f)
     for ci, c in enumerate(p["cumleler"], 1):
-        bas = None; pz = []
-        for pi, pr in enumerate(c["parcalar"]):
-            ekle_sessiz(pr.get("once", 0.0) if pi else 0.0)
-            ham = f"{pd}/h{ci:02d}_{pi}.wav"; son = f"{pd}/p{ci:02d}_{pi}.wav"
-            sentezle(motor, pr.get("soyle", pr["metin"]), round(pr.get("hiz", 1.0) * carpan, 3), ham)   # soyle: yalnız TTS'e giden fonetik yazım; altyazı metin'i kullanır
-            isle(ham, pr.get("kazanc_db", 0.0), pr.get("perde", 0.0), son)
-            bas = t if bas is None else bas
-            d = sure(son); pz.append({"metin": pr["metin"], "bas": round(t, 3), "son": round(t + d, 3), "vurgu_db": pr.get("kazanc_db", 0.0)})
-            liste.append(son); t += d
-        zaman.append({"i": ci, "metin": " ".join(x["metin"] for x in c["parcalar"]), "bas": round(bas, 3), "son": round(t, 3),
-                      "duygu": c.get("duygu", ""), "altyazi": c.get("altyazi", " ".join(x["metin"] for x in c["parcalar"])), "parcalar": pz})
-        ekle_sessiz(c.get("sonra", 0.45))
+        metin = " ".join(x["metin"] for x in c["parcalar"]); en_iyi = None
+        for deneme in range(max(1, sec)):
+            dosyalar = []   # (dosya, parça_indeksi veya None=sessizlik)
+            for pi, pr in enumerate(c["parcalar"]):
+                if pi and pr.get("once", 0.0) > 0: dosyalar.append((sessiz_dosya(pr["once"]), None))
+                ham = f"{pd}/h{ci:02d}_{pi}_{deneme}.wav"; son = f"{pd}/p{ci:02d}_{pi}_{deneme}.wav"
+                sentezle(motor, pr.get("soyle", pr["metin"]), round(pr.get("hiz", 1.0) * carpan, 3), ham)   # soyle: yalnız TTS'e giden fonetik yazım
+                isle(ham, pr.get("kazanc_db", 0.0), pr.get("perde", 0.0), son); dosyalar.append((son, pi))
+            cw = f"{pd}/c{ci:02d}_{deneme}.wav"; l = f"{pd}/c{ci:02d}_{deneme}.txt"
+            open(l, "w").write("".join(f"file '{os.path.abspath(f)}'\n" for f, _ in dosyalar))
+            run(["ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", l, "-c:a", "pcm_s24le", cw])
+            w, duyulan = whisper_wer(cw, metin) if sec > 1 else (None, "")
+            if en_iyi is None or (w is not None and w < en_iyi[0]): en_iyi = (w if w is not None else 0.0, dosyalar, deneme, duyulan)
+            if w is None or w == 0: break
+        w, dosyalar, deneme, duyulan = en_iyi
+        secim.append({"i": ci, "deneme": deneme + 1, "wer": round(100 * w, 1), "duyulan": duyulan})
+        bas = t; pz = []
+        for f, pi in dosyalar:
+            d = sure(f)
+            if pi is not None:
+                pr = c["parcalar"][pi]; pz.append({"metin": pr["metin"], "bas": round(t, 3), "son": round(t + d, 3), "vurgu_db": pr.get("kazanc_db", 0.0)})
+            liste.append(f); t += d
+        zaman.append({"i": ci, "metin": metin, "bas": round(bas, 3), "son": round(t, 3),
+                      "duygu": c.get("duygu", ""), "altyazi": c.get("altyazi", metin), "parcalar": pz})
+        if c.get("sonra", 0.45) > 0:
+            f = sessiz_dosya(c.get("sonra", 0.45)); liste.append(f); t += sure(f)
     lst = f"{pd}/liste.txt"; open(lst, "w").write("".join(f"file '{os.path.abspath(f)}'\n" for f in liste))
     run(["ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", lst, "-c:a", "pcm_s24le", os.path.join(cikti, "anlatim.wav")])
     json.dump(zaman, open(os.path.join(cikti, "zaman.json"), "w"), indent=1, ensure_ascii=False)
-    print(f"{motor}: {len(zaman)} cümle, {t:.2f} sn → {cikti}/anlatim.wav")
+    json.dump(secim, open(os.path.join(cikti, "secim.json"), "w"), indent=1, ensure_ascii=False)
+    print(f"{motor}: {len(zaman)} cümle, {t:.2f} sn, deneme {sum(x['deneme'] for x in secim)} → {cikti}/anlatim.wav")
 
 
 if __name__ == "__main__":
-    main(*sys.argv[1:5])
+    main(*sys.argv[1:6])

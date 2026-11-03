@@ -63,6 +63,14 @@ class Uretim:
         self.dy = os.path.join(self.c, "durum.json")
         self.d = json.load(open(self.dy)) if os.path.exists(self.dy) else {"asamalar": {}, "hatalar": []}
         self.paralel, self.parca = paralel, parca
+        # durum.json depodan gelebilir ama büyük dosyalar git dışıdır: "tamam" aşamanın çıktısı yoksa o ve sonrası yeniden yapılır
+        kanit = {"ses": f"{self.c}/anlatim/zaman.json", "render": f"{self.c}/parcalar.txt", "ses_tasarim": f"{self.c}/ses/muzik.wav",
+                 "miks": f"{self.c}/ses/miks.wav", "birlestir": f"{self.c}/VIDEO.mp4"}
+        for a in ASAMALAR:
+            if self.bitti(a) and a in kanit and not os.path.exists(kanit[a]):
+                print(f"! {a} 'tamam' görünüyor ama çıktısı yok → {a} ve sonrası yeniden", flush=True)
+                for b in ASAMALAR[ASAMALAR.index(a):]: self.d["asamalar"].pop(b, None)
+                self.kaydet(); break
 
     def kaydet(self): json.dump(self.d, open(self.dy, "w"), indent=1, ensure_ascii=False)
     def bitti(self, a): return self.d["asamalar"].get(a, {}).get("durum") == "tamam"
