@@ -21,7 +21,7 @@
 | Model | Ses | Sonuç | Süre | Kredi |
 |---|---|---|---|---|
 | eleven_multilingual_v2 | Adam – Dominant, Firm (premade) | ✅ üretildi | 7,15 sn | 109 |
-| eleven_v4 | Adam – Dominant, Firm (premade) | ⏸ 2 denemede de başlamadı (12.16 ve 12.33; `free_shared`) | — | 0 |
+| eleven_v4 | Adam – Dominant, Firm (premade) | ⏸ 3 denemede de başlamadı (12.16, 12.33, 12.40; `free_shared`) | — | 0 |
 
 Test cümlesi: "Bu gemi, dümeni hiç kırmadan otuz iki bin kilometre gidebilir. Pakistan'dan Kamçatka'ya... tek bir düz çizgi."
 Karşılaştırma (telaffuz, vurgu, nefes, doğallık) **Emir'in dinlemesine** bağlı: Claude ses dosyasına erişemediği için kulak testi yapamadı.
