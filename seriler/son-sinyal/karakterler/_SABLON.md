@@ -6,7 +6,7 @@ durum: taslak   # taslak → referans-uretildi → onaylandi (kilitli)
 # <Ad> — karakter kartı
 
 ## Değişmez görünüm (her üretimde aynen)
-- Yaş görünümü · boy/yapı · ten · yüz hatları · saç (renk, uzunluk, biçim) · ayırt edici iz (yara izi, gözlük vb.)
+- Yaş görünümü · boy/yapı · ten · yüz hatları · saç (renk, uzunluk, biçim) · ayırt edici iz (gözlük, aksesuar; robotsa seri no, vizör, LED rengi)
 
 ## Temel kıyafet (B01 başlangıcı)
 - Üst · alt · ayakkabı · aksesuar · renk paleti (HEX)
@@ -25,5 +25,5 @@ durum: taslak   # taslak → referans-uretildi → onaylandi (kilitli)
 - 3 sıfat · konuşma tarzı · asla söylemeyeceği şey
 
 ## Bölüm bölüm değişimler
-| Bölüm | Değişiklik (yara, kir, kıyafet, eşya) | Sebep (sahne) |
+| Bölüm | Değişiklik (kıyafet, eşya, hasar) | Sebep (sahne) |
 |---|---|---|

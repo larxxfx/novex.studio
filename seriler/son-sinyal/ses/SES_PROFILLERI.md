@@ -5,12 +5,12 @@ Her karakterin sesi **tek bir kaynaktan** gelir ve her bölümde aynı kayıt ko
 
 | Kod | Karakter | Seslendiren | Kayıt koşulu | Efekt ön ayarı | Referans klip (SHA-256) |
 |---|---|---|---|---|---|
-| K1 | (bible'da) | Karar bekliyor | 20 cm, aynı oda | kuru | — |
-| K2 | (bible'da) | Karar bekliyor | 20 cm | kuru | — |
-| K3 | (bible'da) | Karar bekliyor | 20 cm | kuru | — |
-| K4 | (bible'da) | Karar bekliyor | 20 cm | kuru | — |
-| S | Sinyaldeki ses | Karar bekliyor | 20 cm | `telsiz` (300–3000 Hz bant, hafif bozulma, cızırtı yatağı) | — |
-| A | Anlatıcı (bölüm girişi/özet) | **ZEYNEP** (Descript AI Speech — `marka/SESLENDIRME.md`) | Descript dışa aktarımı | kuru | — |
+| DENIZ | Deniz | Karar bekliyor | ses kaynağına göre | kuru | — |
+| ECE | Ece | Karar bekliyor | ses kaynağına göre | kuru | — |
+| YEDI | Yedi (robot) | Karar bekliyor | ses kaynağına göre | `robot` (eklenecek: hafif metalik, dar bant) — 03.17 replikleri `telsiz` | — |
+| PUSULA | Şehir yapay zekâsı | Karar bekliyor | ses kaynağına göre | `uzak` (sakin, hafif yankı) | — |
+| S | Analog radyodaki sinyal | Karar bekliyor | ses kaynağına göre | `telsiz` (300–3000 Hz bant, hafif bozulma, cızırtı yatağı) | — |
+| A | Anlatıcı Zeynep (birinci tekil) | **ZEYNEP** (Descript AI Speech — `marka/SESLENDIRME.md`) | Descript dışa aktarımı | kuru | — |
 
 **Kurallar**
 1. Seslendiren kişi bölüm ortasında değişmez. Değişirse bible'da gerekçe yazılır.

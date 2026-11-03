@@ -1,18 +1,18 @@
 # SON SİNYAL — proje klasörü
 
-Kurgusal, yapay zekâ destekli haftalık dikey dizi. **Gerçek olay veya haber gibi sunulmaz**;
+Kurgusal bilim kurgu dizisi: 2047 İstanbul'u, yapay zekâ ve insansı robotlar. Zombi/salgın teması yoktur. **Gerçek olay veya haber gibi sunulmaz**;
 her bölümde "KURGU" etiketi ve açıklamada "kurgusal dizi" ibaresi bulunur.
 
 | Klasör / dosya | Ne için |
 |---|---|
-| `SERIES_BIBLE.md` | Evren, salgın kuralları, karakterler, 7 bölüm, kurallar — **tek doğruluk kaynağı** |
+| `SERIES_BIBLE.md` | Evren ve kuralları, karakterler, robot tasarımı, 7 bölüm — **tek doğruluk kaynağı** |
 | `karakterler/` | Her karakter için kimlik kartı (değişmez görünüm + referans görsel kimlikleri + ses) |
 | `referans-gorseller/` | Onaylı karakter/mekân referanslarının **kimlik listesi** (büyük dosyalar depoya girmez) |
-| `mekanlar/` | Mekân kartları (ışık, saat, hasar durumu) |
+| `mekanlar/` | Mekân kartları (ışık, saat, teknoloji düzeyi) |
 | `ses/SES_PROFILLERI.md` | Karakter sesleri: kim seslendiriyor, kayıt mesafesi, işleme ve efekt ön ayarı |
 | `stil/STIL.md` | Renk, ışık, kamera, ses tasarımı kuralları |
 | `promptlar/` | Onaylı üretim promptları (görsel/video/ses) — her bölüm aynı tabanı kullanır |
-| `devamlilik/` | Bölüm bölüm süreklilik kaydı: kıyafet, yara, eşya, saat, hava, kim nerede |
+| `devamlilik/` | Bölüm bölüm süreklilik kaydı: kıyafet, eşya, robot durumu, saat, hava, kim nerede |
 | `bolumler/bolum_takip.csv` | 7 bölümün durum, tarih, klasör, cliffhanger ve açık soru takibi |
 | `uzun-film/` | Haftalık uzun YouTube filmi kurgu planı |
 
