@@ -3,7 +3,7 @@
 Her oturum en üste eklenir. Biçim: ne yapıldı → kanıt (commit, dosya, test) → sorunlar → sonraki adım.
 
 ### [Claude] — Üretim hattı + 4 Kasım Short'ları — 2026-11-04 00:40 TSİ
-**Dal:** `claude/uretim-hatti`. Açık PR yok; Emir birleştirir. Varlık dalı: `varliklar`.
+**Dal:** `claude/uretim-hatti` · **PR #2:** https://github.com/larxxfx/novex.studio/pull/2 (Emir birleştirir; ChatGPT inceler). Varlık dalı: `varliklar`.
 
 **Yapılanlar ve kanıtları:**
 1. **Natural Earth 403 çözüldü.** Varlıklar `varliklar` dalında (`debda67`). Temiz dizinde `sha256 -c` OK.
