@@ -1,6 +1,5 @@
-motor: piper en_US-norman-medium (rhasspy/piper-voices, MIT; Piper motoru MIT; çalıştırıcı sherpa-onnx Apache-2.0)
-veri: LibriVox "Norman" kayıtları — kamu malı; model kartı: sıfırdan eğitim (lessac türevi değil)
-lisans_dogrulandi: evet (4 Kasım 2026; kaynak: HF rhasspy/piper-voices MODEL_CARD + LibriVox kamu malı beyanı)
-emir_ses_onayi: bekliyor
+motor: Kokoro-82M v0.19 (hexgrad), ses am_adam (sid 5), sherpa-onnx paketi kokoro-en-v0_19 (sha256 912804855a04…); çalıştırıcı sherpa-onnx Apache-2.0
+emir_ses_onayi: evet (4 Kasım 2026 11:07 — "erkek_3_Adam_ABD.mp3 NØVEX'in RESMÎ SES REFERANSIDIR"; ölçümle doğrulandı: f0 129/130 Hz, tını uzaklığı 2,3)
+lisans_dogrulandi: kismen — model ağırlıkları Apache-2.0 (ticari kullanım serbest); eğitim verisinin bir kısmı kapalı ticari TTS çıktısı ve ses bazında açıklanmıyor (marka/SES_LISANS_ARASTIRMASI_EN.md)
 yayin_uygun: hayir
-not: erkek anlatıcı adayı. Emir dinleyip açıkça onaylamadan yayin_uygun "evet" yapılmaz (CLAUDE.md, ses kuralı).
+not: Emir bu kalan lisans riskini yazılı kabul ederse yayin_uygun evet yapılır. ElevenLabs kullanılmadı (kredi yok, bu ortamdan erişim yok).

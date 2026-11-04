@@ -210,6 +210,8 @@ def dogrula(klasor):
         motor = (uretim or {}).get("ses_motoru", "")
         ad = motor.split("-", 1)[1] if motor.startswith("piper-") else motor
         ilk = t.splitlines()[0] if t else ""
+        if motor.startswith("kokoro:"):   # ör. kokoro:5 → LISANS ilk satırı "Kokoro … (sid 5)"
+            ad = "" if ("kokoro" in ilk.lower() and f"sid {motor.split(':')[1]})" in ilk) else motor
         if ad and ad not in ilk: H.append(f"LISANS.txt başka bir sesi kaydediyor (uretim.json: {motor}; LISANS: {ilk[:60]})")
         B["ses_motoru"] = motor
 

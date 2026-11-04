@@ -26,7 +26,14 @@ else echo "✓ kure_v1 varlıkları (var)"; fi
 indir "$GH/v1.12.15/sherpa-onnx-v1.12.15-linux-x64-shared.tar.bz2" sherpa-onnx-v1.12.15-linux-x64-shared
 # 3) EN anlatım sesi: Piper en_US-ljspeech-high (MIT + LJ Speech kamu malı) — anlatim_ifade.py 'piper-ljspeech'
 mkdir -p "$C/dl_piper"; [ -d "$C/dl_piper/vits-piper-en_US-ljspeech-high" ] || { C0="$C"; C="$C/dl_piper"; indir "$GH/tts-models/vits-piper-en_US-ljspeech-high.tar.bz2" vits-piper-en_US-ljspeech-high; C="$C0"; }
-# 3b) erkek anlatıcı adayı: Piper en_US-norman-medium (LibriVox kamu malı, sıfırdan eğitim; rhasspy/piper-voices MIT) — anlatim_ifade.py 'piper-norman'
+# 3a) NØVEX RESMÎ SESİ (Emir, 4 Kas 2026): Kokoro v0.19 `am_adam` (sid 5) — anlatim_ifade.py 'kokoro:5'. Ağırlıklar Apache-2.0.
+mkdir -p "$C/dl_kokoro"
+if [ ! -d "$C/dl_kokoro/kokoro-en-v0_19" ]; then
+  curl -fsSL -o "$C/dl_kokoro/k.tar.bz2" "$GH/tts-models/kokoro-en-v0_19.tar.bz2"
+  echo "912804855a04745fa77a30be545b3f9a5d15c4d66db00b88cbcd4921df605ac7  $C/dl_kokoro/k.tar.bz2" | sha256sum -c - || { echo "Kokoro sha256 UYUŞMUYOR"; exit 1; }
+  tar -xjf "$C/dl_kokoro/k.tar.bz2" -C "$C/dl_kokoro" && rm "$C/dl_kokoro/k.tar.bz2"
+fi
+# 3b) (YASAK 4 Kas 11:07 — Emir: Norman kullanılmayacak; yalnız eski kayıtların yeniden üretimi için) Piper en_US-norman-medium (LibriVox kamu malı, sıfırdan eğitim; rhasspy/piper-voices MIT) — anlatim_ifade.py 'piper-norman'
 mkdir -p "$C/dl_erkek"; [ -d "$C/dl_erkek/vits-piper-en_US-norman-medium" ] || { C0="$C"; C="$C/dl_erkek"; indir "$GH/tts-models/vits-piper-en_US-norman-medium.tar.bz2" vits-piper-en_US-norman-medium; C="$C0"; }
 # 4) telaffuz kontrolü: Whisper small.en
 indir "$GH/asr-models/sherpa-onnx-whisper-small.en.tar.bz2" sherpa-onnx-whisper-small.en

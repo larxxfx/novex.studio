@@ -18,12 +18,13 @@ ChatGPT strateji, araştırma, sahne promptları ve eleştirel QC yapar (`CHATGP
 - **Doğruluk:** Her rakamın `02_sources.md`/`SOURCES.txt`'de kaynağı olur. REALITY / SPECULATION / FICTION ayrımı her videoda korunur; varsayım gerçek gibi sunulmaz.
 - **Dürüst rapor:** Gerçek MP4 üretilmeden video "hazır" denmez. Yapılmayan render, yükleme veya kontrol yapılmış gibi yazılmaz. Emülasyon/önizleme gerçek cihaz testi değildir.
 
-## Ses ve lisans
-- Anlatıcı: doğal, sıcak, belgesel tonunda **erkek ses**; robotik değil. Sese agresif gürültü azaltma, keskinleştirme veya aşırı sıkıştırma uygulanmaz. Müzik anlatımı asla bastırmaz (konuşma fonun ≥ 12 dB üstünde).
-- Güncel aday: Piper `en_US-norman-medium` (`ses_motoru: piper-norman`, `hiz_carpani` ≈ 1.1). Lisans zinciri temiz (LibriVox kamu malı + MIT) — **Emir onaylamadan yayına uygun DEĞİL.**
-- Matcha **onaylanmadı**. Kadın ses (ljspeech) yalnızca taslak/yedek.
-- Bir sesin yayına uygun sayılması için ikisi birden gerekir: ticari + YouTube/Instagram/TikTok lisansı doğrulanmış **ve** Emir'in açık onayı. Kayıt: `videolar/<v>/ses/LISANS.txt` → `yayin_uygun: evet` yalnızca Emir onayından sonra yazılır.
-- Yeni ses modeli: aynı metinle karşılaştırılır, Emir örnekleri dinler; mevcut model onaysız değiştirilmez. Bir videoda anlatıcı sebepsiz değişmez.
+## Ses ve lisans — RESMÎ SES (Emir, 4 Kasım 2026 11:07)
+- **NØVEX'in tek ve sabit anlatıcısı: "Adam"** = Kokoro-82M v0.19 `am_adam` (`ses_motoru: kokoro:5`, `hiz_carpani: 1.0`). Amerikan İngilizcesi erkek ses.
+- Referans dosya: Emir'in `erkek_3_Adam_ABD.mp3`'ü (SHA-256 `2596c85ad98561dd…`). Ölçümle doğrulandı: perde 129/130 Hz, tını uzaklığı 2,3 (en yakın diğer aday 4,3), cümle zamanlaması aynı. Kayıt: `marka/SES_RESMI_ADAM.md`.
+- **Norman, Matcha, ljspeech, Yusuf, Zeynep ve başka hiçbir anlatıcı kullanılmaz.** Rastgele ses seçilmez; ses kimliği her üretimde aynı kalır. Referansa uymayan seslendirme nihai teslim sayılmaz.
+- Yerel ve ücretsiz: model `kurulum_ortam.sh` ile GitHub'dan indirilir (sha256 doğrulamalı). ElevenLabs'te aynı adlı "Adam" sesi var ama kredi harcar ve bu ortamdan sunucusuna erişilemiyor; kullanılmaz.
+- Lisans: ağırlıklar Apache-2.0 (ticari kullanım serbest); eğitim verisinin bir kısmı kapalı ticari TTS çıktısı (ses bazında açıklanmıyor) → `yayin_uygun: hayir`, Emir bu kalan riski yazılı kabul edince `evet`.
+- Ses doğal ve duygulu olur (duygu, vurgu, duraklama `anlatim_performans.json`'da); agresif işlem yok; müzik anlatımı bastırmaz (konuşma fonun ≥ 12 dB üstünde).
 
 ## Görsel kalite standardı (Emir, 4 Kasım 2026)
 - **Referans:** İlk video *"What If Turkey Were in America?"* ve aynı motorla (`motor/kure_v1`) üretilen Antarktika videosu. Kayıt ve kontrol kareleri: `strateji/GORSEL_REFERANS.md`. Yeni video bu kalitenin altına düşmez; her videoda geliştirmeye çalışılır.

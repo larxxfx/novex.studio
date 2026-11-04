@@ -2,7 +2,7 @@
  "dil": "daktilo",
  "doku": "gren",
  "kamera": "itme",
- "kapanis_sn": 2.2,
+ "kapanis_sn": 2.6,
  "palet": {
   "zemin0": "#06141d",
   "zemin1": "#1c3a4b",
@@ -55,6 +55,20 @@
      "Strait of Gibraltar",
      "#ffb347"
     ]
+   ],
+   "bolge": [
+    {
+     "ulke": "Spain",
+     "renk": "#ffb347",
+     "dolgu": 0.0,
+     "bas": 0.5
+    },
+    {
+     "ulke": "Morocco",
+     "renk": "#ffb347",
+     "dolgu": 0.0,
+     "bas": 0.7
+    }
    ]
   },
   {
@@ -109,6 +123,20 @@
      "",
      "#ffb347"
     ]
+   ],
+   "bolge": [
+    {
+     "ulke": "Spain",
+     "renk": "#ffb347",
+     "dolgu": 0.0,
+     "bas": 0.5
+    },
+    {
+     "ulke": "Morocco",
+     "renk": "#ffb347",
+     "dolgu": 0.0,
+     "bas": 0.7
+    }
    ]
   },
   {
@@ -376,7 +404,9 @@
    "secenekler": [
     "BOSPHORUS",
     "MALACCA"
-   ]
+   ],
+   "yorum_rozeti": true,
+   "bitis_karti": true
   }
  ],
  "parlama": true,

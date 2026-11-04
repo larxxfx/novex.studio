@@ -2,7 +2,7 @@
  "dil": "arsiv",
  "doku": "kagit",
  "kamera": "itme",
- "kapanis_sn": 2.2,
+ "kapanis_sn": 2.6,
  "palet": {
   "zemin0": "#1a120a",
   "zemin1": "#3b2814",
@@ -54,6 +54,14 @@
      "Antikythera wreck",
      "#ffcf7a"
     ]
+   ],
+   "bolge": [
+    {
+     "ulke": "Greece",
+     "renk": "#ffcf7a",
+     "dolgu": 0.25,
+     "bas": 0.8
+    }
    ]
   },
   {
@@ -360,7 +368,9 @@
    "secenekler": [
     "DAMASCUS STEEL",
     "ROMAN CONCRETE"
-   ]
+   ],
+   "yorum_rozeti": true,
+   "bitis_karti": true
   }
  ],
  "parlama": true,

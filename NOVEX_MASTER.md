@@ -39,7 +39,12 @@ python3 araclar/short_uret.py videolar/<klasör>     # ses → telaffuz → alty
 - `main`'e doğrudan değişiklik yok.
 - Yapılmayan iş yapılmış gibi raporlanmaz; gerçek MP4 yoksa video hazır değildir.
 - **Her video**, konuya özel doğal bir İngilizce "sırada neyi keşfedelim?" sorusuyla biter (anlatım + ekran). Jenerik abone ol çağrısı yok.
-- Erkek anlatıcı (Piper Norman) Emir onaylamadan yayına uygun değildir.
+- **Resmî ses: "Adam" (Kokoro am_adam, `kokoro:5`)**; Norman ve diğer anlatıcılar yasak. Ayrıntı: `marka/SES_RESMI_ADAM.md`.
 - Baskın görsel 3D/sinematik; `soru` kartı dışında her sahnede somut görsel varlık; düz slayt veya yalnız harita videosu yok.
 - Gerçek / arşiv / AI görselleri ayrılır, kaynak ve lisans kaydedilir; AI görseli gerçek gibi sunulmaz.
 - Her videoda bir `gelisim_hedefi`; kapanış soruları tekrar etmez (teslim_dogrula).
+
+## Hatlar
+- **Shorts hattı** (9:16, 30–60 sn): `araclar/short_uret.py` → günde 4.
+- **Uzun belgesel hattı** (16:9, 8–12 dk): ayrı hat, henüz kurulmadı (N-06) → haftada 1, Pazar 19:00.
+- Teslim edilmiş slot yeniden üretilmez; gerçek MP4 olmadan "hazır" denmez; yayın, ücretli harcama ve PR birleştirme Emir onayıyla.

@@ -2,7 +2,7 @@
  "dil": "modern",
  "doku": "yildiz",
  "kamera": "itme",
- "kapanis_sn": 2.4,
+ "kapanis_sn": 2.6,
  "parlama": true,
  "palet": {
   "zemin0": "#030101",
@@ -289,7 +289,9 @@
    "secenekler": [
     "MARS",
     "MERCURY"
-   ]
+   ],
+   "yorum_rozeti": true,
+   "bitis_karti": true
   }
  ]
 }

@@ -26,7 +26,8 @@ MOTOR = {
                                   f"--matcha-data-dir={d}/matcha-icefall-en_US-ljspeech/espeak-ng-data"],
 }
 DIZIN = {"piper-ljspeech": f"{C}/dl_piper/vits-piper-en_US-ljspeech-high", "matcha-ljspeech": f"{C}/dl_matcha",
-         "kokoro": "/home/claude/tts_eval/dl/kokoro-en-v0_19"}
+         "kokoro": next((d for d in (f"{C}/dl_kokoro/kokoro-en-v0_19", "/home/claude/tts_eval/dl/kokoro-en-v0_19") if os.path.isdir(d)),
+                        f"{C}/dl_kokoro/kokoro-en-v0_19")}   # resmî ses: kokoro:5 (am_adam); kurulum_ortam.sh indirir
 SR = 48000
 
 
@@ -90,6 +91,7 @@ def whisper_wer(wav, metin):
 def main(perf_yol, motor, cikti, carpan="1.0", sec="3"):
     """sec: cümle başına en çok kaç deneme (Piper/Matcha rastlantısal; en düşük WER'li deneme seçilir, WER=0 bulununca durur)."""
     carpan, sec = float(carpan), int(sec)
+    if motor.startswith("kokoro"): sec = 1   # Kokoro belirlenimli: aynı metin hep aynı ses → çoklu çekim boşa zaman
     p = json.load(open(perf_yol, encoding="utf-8")); pd = os.path.join(cikti, "parcalar"); os.makedirs(pd, exist_ok=True)
     liste, zaman, t, n, secim = [], [], 0.0, 0, []
     def sessiz_dosya(sn):

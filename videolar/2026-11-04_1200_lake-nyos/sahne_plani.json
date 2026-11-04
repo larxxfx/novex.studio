@@ -2,7 +2,7 @@
  "dil": "modern",
  "doku": "gren",
  "kamera": "itme",
- "kapanis_sn": 2.2,
+ "kapanis_sn": 2.6,
  "palet": {
   "zemin0": "#04080b",
   "zemin1": "#0c1c21",
@@ -54,6 +54,14 @@
      "Lake Nyos",
      "#5fe3b8"
     ]
+   ],
+   "bolge": [
+    {
+     "ulke": "Cameroon",
+     "renk": "#5fe3b8",
+     "dolgu": 0.3,
+     "bas": 0.6
+    }
    ]
   },
   {
@@ -80,7 +88,15 @@
    ],
    "kontur": 3,
    "ana": "No fire. No flood. No explosion.",
-   "boyut": 84
+   "boyut": 84,
+   "bolge": [
+    {
+     "ulke": "Cameroon",
+     "renk": "#5fe3b8",
+     "dolgu": 0.0,
+     "bas": 0.0
+    }
+   ]
   },
   {
    "tur": "gezegen",
@@ -114,6 +130,14 @@
      "Lake Nyos",
      "#5fe3b8"
     ]
+   ],
+   "bolge": [
+    {
+     "ulke": "Cameroon",
+     "renk": "#5fe3b8",
+     "dolgu": 0.0,
+     "bas": 0.0
+    }
    ]
   },
   {
@@ -157,6 +181,14 @@
      "",
      "#5fe3b8"
     ]
+   ],
+   "bolge": [
+    {
+     "ulke": "Cameroon",
+     "renk": "#5fe3b8",
+     "dolgu": 0.0,
+     "bas": 0.0
+    }
    ]
   },
   {
@@ -190,6 +222,14 @@
      "",
      "#5fe3b8"
     ]
+   ],
+   "bolge": [
+    {
+     "ulke": "Cameroon",
+     "renk": "#5fe3b8",
+     "dolgu": 0.0,
+     "bas": 0.0
+    }
    ]
   },
   {
@@ -221,7 +261,15 @@
     "birim": "PEOPLE",
     "etiket": "and 3,500 animals, in one night",
     "sure": 2.6
-   }
+   },
+   "bolge": [
+    {
+     "ulke": "Cameroon",
+     "renk": "#5fe3b8",
+     "dolgu": 0.0,
+     "bas": 0.0
+    }
+   ]
   },
   {
    "tur": "gezegen",
@@ -256,6 +304,14 @@
      "",
      "#ffcf7a"
     ]
+   ],
+   "bolge": [
+    {
+     "ulke": "Cameroon",
+     "renk": "#5fe3b8",
+     "dolgu": 0.0,
+     "bas": 0.0
+    }
    ]
   },
   {
@@ -295,7 +351,15 @@
     "birim": "DEGASSING PIPES",
     "etiket": "first in 2001, two more in 2011",
     "sure": 1.2
-   }
+   },
+   "bolge": [
+    {
+     "ulke": "Cameroon",
+     "renk": "#5fe3b8",
+     "dolgu": 0.0,
+     "bas": 0.0
+    }
+   ]
   },
   {
    "tur": "gezegen",
@@ -340,13 +404,23 @@
      "#ff8a6a",
      "alt"
     ]
+   ],
+   "bolge": [
+    {
+     "ulke": "Cameroon",
+     "renk": "#5fe3b8",
+     "dolgu": 0.0,
+     "bas": 0.0
+    }
    ]
   },
   {
    "cumle": 10,
    "tur": "soru",
    "metin": "Which deadly place on Earth should NØVEX explore next?",
-   "secenekler": []
+   "secenekler": [],
+   "yorum_rozeti": true,
+   "bitis_karti": true
   }
  ],
  "parlama": true,

@@ -3,8 +3,8 @@
  "slot": "16:00",
  "kategori": "C Space & Universe",
  "mod": "REALITY",
- "ses_motoru": "piper-norman",
- "hiz_carpani": 1.12,
+ "ses_motoru": "kokoro:5",
+ "hiz_carpani": 1.0,
  "ruh": "hayranlik",
  "ortam": "uzay",
  "gelisim_hedefi": "Yalnız sayaç olan v1'e karşı ışın izlemeli 3D Venüs, retrograd dönüş oku ve partikül/ışık katmanları."
