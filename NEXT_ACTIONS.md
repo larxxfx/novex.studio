@@ -18,3 +18,5 @@
 | N-14 | Kamera kayma yönü rastgele (`hash()`) | Claude | — | `zlib.crc32` ile belirlenimli; aynı kare iki kez aynı | ÇÖZÜLDÜ (4 Kas): paralel parçalarda sahne ortasında yön sıçraması yapabiliyordu (kaydirma kameralı eski planlar) |
 | N-15 | Referans videonun MP4'ü depoda yok | Emir | 2 dk | "What If Turkey Were in America?" MP4'ünü sohbete ekle → SHA-256 + kontrol kareleri `strateji/referans/` | BEKLİYOR (şimdilik aynı motorun Antarktika kareleri kullanılıyor) |
 | N-16 | Dünya dokusu yakın planda bulanık/gri | Claude | 0,5 gün | `dalis` R ≥ 3000'de kıyı keskin | AÇIK: `world_tex` 6144 px, 4096'ya indirildi; yakın dalışta kure_v1 kadar keskin değil |
+| N-17 | Gerçek/arşiv görsel erişimi | Emir | 5 dk/video | Kamu malı görsel sohbette → `gorseller/` + `foto` sahnesi | ENGELLİ: Wikimedia, NASA, LoC, Openverse bu ortamdan erişilemiyor (curl 000, 4 Kas 10:20). ElevenLabs/vidIQ/Descript görsel üretimi kredi harcar → onaysız yok. `foto` sahnesi hazır ve testli. |
+| N-18 | Telaffuz: Whisper ölçümü kararsız (aynı ses bir turda doğru bir turda yanlış) | Claude/Emir | — | Emir'in dinlemesi son karar | AÇIK: sapma listesi her videonun `REFERANS_QC.md`'sinde |
