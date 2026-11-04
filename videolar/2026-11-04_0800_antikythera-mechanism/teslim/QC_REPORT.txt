@@ -1,15 +1,15 @@
 NØVEX QC REPORT — A 2,000-Year-Old Machine With Gears Inside
-Slot: 2026-11-04 08:00 (Europe/Istanbul) · rendered 2026-11-04T05:54:12
-VIDEO.mp4 191.8 MB sha256 397aa6e029b64afb38cf141136728d6e11efb688d33c062f98d0e2582fbd2207
+Slot: 2026-11-04 08:00 (Europe/Istanbul) · rendered 2026-11-04T07:56:19
+VIDEO.mp4 169.4 MB sha256 8397b4c100e5ee22ea950291690757f7a24b83b6152c95c790294ebb1fc127e5
 
-VIDEO   technical checks 10/10 · black segments 0 · frozen segments 0 · 1446 frames / 48.213 s
-AUDIO   loudness/true peak [-13.9, -2.0] · min speech-over-background 19.6 dB (need >= 12) · warnings []
+VIDEO   technical checks 10/10 · black segments 0 · frozen segments 0 · 1275 frames / 42.516 s
+AUDIO   loudness/true peak [-13.8, -1.8] · min speech-over-background 16.0 dB (need >= 12) · warnings []
 SYNC    narration vs MP4 offset 2.0 ms
-VOICE   piper-ljspeech · Whisper small.en WER 2.0% · flagged sentences [1, 4]
+VOICE   kokoro:5 · Whisper small.en WER 3.0% · flagged sentences [1, 4]
         s1: heard "In 1901, sponge divers pulled a lump of corroded bronze from a Roman era shipwreck."
-        s4: heard "This is the anticaterim mechanism."
+        s4: heard "This is the anti-kythera mechanism."
 SUBS    SUBTITLES.srt, 10 cues, timing from synthesis (exact); burned-in inside safe area
-LICENCE voice: GEÇMEDİ (see ses/LISANS.txt) · visuals: own code + Natural Earth (public domain) · fonts: OFL/Apache · music/SFX: own synthesis
+LICENCE voice: geçti (see ses/LISANS.txt) · visuals: own code + Natural Earth (public domain) · fonts: OFL/Apache · music/SFX: own synthesis
 HUMAN   listening/viewing by Emir: PENDING (Claude cannot listen)
 
 TITLE LINT (yt-package/title.py):
@@ -24,8 +24,8 @@ qc.py table:
 | Piksel formatı yuv420p | yuv420p | ✅ |
 | Rec.709 / SDR | bt709/bt709/bt709 | ✅ |
 | Ses AAC 48 kHz | aac 48000 | ✅ |
-| Süre (Shorts ≤ 60 sn) | 48.200 sn | ✅ |
-| Kare sayısı | 1446 | ✅ |
+| Süre (Shorts ≤ 60 sn) | 42.500 sn | ✅ |
+| Kare sayısı | 1275 | ✅ |
 | Tam çözümleme | hata yok | ✅ |
 | Ses yüksekliği ≈ −14 LUFS | -13.9 LUFS | ✅ |
-| Ses lisansı yayına uygun | HF rhasspy/piper-voices lisans etiketi + MODEL_CARD) | ❌ |
+| Ses lisansı yayına uygun | HF hexgrad/Kokoro-82M model kartı + paketteki LICENSE dosyası, Apache 2.0) | ✅ |

@@ -11,3 +11,4 @@
 - 2026-11-03 23:20 (Claude): okyanus rotası alternatif final (Matcha/LJSpeech, ifadeli anlatım, olay tabanlı ses) render+QC; yayına hazır değil (ses ağırlık lisansı). Master status: strateji/MASTER_STATUS_2026-11-03.md
 - 2026-11-04 02:30 (Claude): Venus Short v2 — Norman (erkek, kamu malı veri) + ışın izlemeli 3D gezegen, partikül/ışık huzmesi, vurgu kelimeli altyazı, Mars/Mercury katılım sonu. Teknik QC 10/10, WER %1,0; lisans/Emir onayı bekliyor, yayına hazır değil. claude/uretim-hatti.
 - 2026-11-04 [claude] 08:00 antikythera-mechanism: MP4 bu oturumda yeniden render edildi (önceki MP4 git dışıydı), teknik QC 10/10, sha256 397aa6e029b64afb…; lisans hâlâ onaysız.
+- 2026-11-04 [claude] Ses: Emir ana erkek anlatıcı olarak Kokoro am_adam'ı (kokoro:5) seçti; kurulum + standart + SESLENDIRME güncellendi; 08:00 Antikythera Adam sesiyle yeniden üretildi (42 sn, QC 10/10 + lisans ✅, sha256 8397b4c100e5ee22…).

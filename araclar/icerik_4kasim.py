@@ -21,7 +21,7 @@ def c(duygu, parcalar, sonra=0.42, altyazi=None):
 VIDEOLAR = {
 # ------------------------------------------------------------------ 08:00 TARİH
 "2026-11-04_0800_antikythera-mechanism": dict(
- uretim=dict(tarih="2026-11-04", slot="08:00", kategori="A History & Ancient Civilizations", mod="REALITY", ses_motoru="piper-ljspeech", hiz_carpani=1.0, ruh="gizem", ortam="okyanus"),
+ uretim=dict(tarih="2026-11-04", slot="08:00", kategori="A History & Ancient Civilizations", mod="REALITY", ses_motoru="kokoro:5", hiz_carpani=1.0, ruh="gizem", ortam="okyanus"),
  performans=dict(bas_sessizlik=0.35, cumleler=[
   c("merak (kanca)", [p("In nineteen-oh-one, sponge divers pulled a lump of corroded bronze", hiz=1.0), p("from a Roman-era shipwreck.", hiz=1.04, once=0.12)], 0.5,
     altyazi="In 1901, sponge divers pulled a lump of corroded bronze from a Roman-era shipwreck."),

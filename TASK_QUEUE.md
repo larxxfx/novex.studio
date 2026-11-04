@@ -37,5 +37,5 @@
 | T-20261104-12 | Claude ↔ ChatGPT canlı mesajlaşma (Cloudflare) | Claude | P2 | engelli | 04.11 | Claude ortamı workers.dev erişemiyor; strateji/CANLI_ILETISIM_MIMARISI.md |
 | T-20261104-13 | Telaffuz düzeltmesi (en iyi 3 seçim + fonetik yazım), 4 Short sesini yeniden üret | Claude | P1 | tamam | 04.11 | `cikti/anlatim/secim.json` |
 | T-20261104-14 | Venus Short v2: Norman erkek ses + 3D gezegen sahnesi + katılım sorusu (Mars/Mercury) | Claude | P0 | tamam | 04.11 02:30 | `videolar/2026-11-04_1600_venus-day-longer-than-year/cikti/qc_rapor.md` (teknik 10/10) |
-| T-20261104-15 | Norman sesini (en_US-norman-medium) dinle; onay ya da ret | Emir | P0 | açık | 04.11 | lisans: LibriVox kamu malı + MIT; `ses/LISANS.txt` |
+| T-20261104-15 | Norman sesini (en_US-norman-medium) dinle; onay ya da ret | Emir | P0 | kapandı: Emir 5 ses arasından Kokoro am_adam (kokoro:5) seçti, 4 Kas | 04.11 | lisans: LibriVox kamu malı + MIT; `ses/LISANS.txt` |
 | T-20261104-16 | Diğer 3 Short'u yeni kalite standardına taşı (3D sahne, erkek ses, katılım sonu) | Claude | P1 | açık | 04.11 | Norman onayına bağlı |

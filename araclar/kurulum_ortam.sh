@@ -28,6 +28,8 @@ indir "$GH/v1.12.15/sherpa-onnx-v1.12.15-linux-x64-shared.tar.bz2" sherpa-onnx-v
 mkdir -p "$C/dl_piper"; [ -d "$C/dl_piper/vits-piper-en_US-ljspeech-high" ] || { C0="$C"; C="$C/dl_piper"; indir "$GH/tts-models/vits-piper-en_US-ljspeech-high.tar.bz2" vits-piper-en_US-ljspeech-high; C="$C0"; }
 # 3b) erkek anlatıcı adayı: Piper en_US-norman-medium (LibriVox kamu malı, sıfırdan eğitim; rhasspy/piper-voices MIT) — anlatim_ifade.py 'piper-norman'
 mkdir -p "$C/dl_erkek"; [ -d "$C/dl_erkek/vits-piper-en_US-norman-medium" ] || { C0="$C"; C="$C/dl_erkek"; indir "$GH/tts-models/vits-piper-en_US-norman-medium.tar.bz2" vits-piper-en_US-norman-medium; C="$C0"; }
+# 3c) ANA ANLATICI (Emir onayı, 4 Kas 2026): Kokoro-82M v0.19, ses am_adam = 'kokoro:5' (ağırlıklar Apache 2.0)
+mkdir -p "$C/dl_kokoro"; [ -d "$C/dl_kokoro/kokoro-en-v0_19" ] || { C0="$C"; C="$C/dl_kokoro"; indir "$GH/tts-models/kokoro-en-v0_19.tar.bz2" kokoro-en-v0_19; C="$C0"; }
 # 4) telaffuz kontrolü: Whisper small.en
 indir "$GH/asr-models/sherpa-onnx-whisper-small.en.tar.bz2" sherpa-onnx-whisper-small.en
 # 5) Python bağımlılıkları (sistemde olmalı; pip ağı kapalı olabilir)
