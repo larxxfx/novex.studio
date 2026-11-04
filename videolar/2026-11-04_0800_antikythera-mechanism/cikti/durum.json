@@ -1,0 +1,102 @@
+{
+ "asamalar": {
+  "ses": {
+   "durum": "tamam",
+   "zaman": "2026-11-04T07:53:45",
+   "sure": 40.32,
+   "cumle": 10
+  },
+  "telaffuz": {
+   "durum": "tamam",
+   "zaman": "2026-11-04T07:54:21",
+   "wer": 3.0,
+   "sorunlu": [
+    1,
+    4
+   ]
+  },
+  "altyazi": {
+   "durum": "tamam",
+   "zaman": "2026-11-04T07:54:21",
+   "satir": 10
+  },
+  "render": {
+   "durum": "tamam",
+   "zaman": "2026-11-04T07:56:11",
+   "sure": 42.516,
+   "kare": 1275,
+   "parca": 4
+  },
+  "ses_tasarim": {
+   "durum": "tamam",
+   "zaman": "2026-11-04T07:56:13",
+   "ruh": "gizem",
+   "ortam": "okyanus"
+  },
+  "miks": {
+   "durum": "tamam",
+   "zaman": "2026-11-04T07:56:17",
+   "lufs_tp": [
+    -13.8,
+    -1.8
+   ],
+   "ses_fon_min": 16.0,
+   "uyarilar": []
+  },
+  "birlestir": {
+   "durum": "tamam",
+   "zaman": "2026-11-04T07:56:19",
+   "dosya": "/home/claude/novex.studio/videolar/2026-11-04_0800_antikythera-mechanism/cikti/VIDEO.mp4",
+   "mb": 169.4
+  },
+  "qc": {
+   "durum": "tamam",
+   "zaman": "2026-11-04T07:56:53",
+   "teknik": "10/10",
+   "siyah": 0,
+   "donuk": 0,
+   "senkron_ms": 2.0,
+   "lisans": "geçti",
+   "tablo": [
+    "| Kontrol | Değer | Sonuç |",
+    "|---|---|---|",
+    "| Çözünürlük 1080×1920 | 1080×1920 | ✅ |",
+    "| Kare hızı 30 | 30/1 | ✅ |",
+    "| Video codec H.264 | h264 High | ✅ |",
+    "| Piksel formatı yuv420p | yuv420p | ✅ |",
+    "| Rec.709 / SDR | bt709/bt709/bt709 | ✅ |",
+    "| Ses AAC 48 kHz | aac 48000 | ✅ |",
+    "| Süre (Shorts ≤ 60 sn) | 42.500 sn | ✅ |",
+    "| Kare sayısı | 1275 | ✅ |",
+    "| Tam çözümleme | hata yok | ✅ |",
+    "| Ses yüksekliği ≈ −14 LUFS | -13.9 LUFS | ✅ |",
+    "| Ses lisansı yayına uygun | HF hexgrad/Kokoro-82M model kartı + paketteki LICENSE dosyası, Apache 2.0) | ✅ |"
+   ]
+  },
+  "kapak": {
+   "durum": "tamam",
+   "zaman": "2026-11-04T07:56:53",
+   "dosya": "teslim/THUMBNAIL.jpg"
+  },
+  "paket": {
+   "durum": "tamam",
+   "zaman": "2026-11-04T07:56:54",
+   "dosyalar": [
+    "DESCRIPTION.txt",
+    "HASHTAGS.txt",
+    "INSTAGRAM_REELS.txt",
+    "PINNED_COMMENT.txt",
+    "QC_REPORT.txt",
+    "SOURCES.txt",
+    "SUBTITLES.srt",
+    "TAGS.txt",
+    "TESLIM.txt",
+    "THUMBNAIL.jpg",
+    "TIKTOK.txt",
+    "TITLE.txt",
+    "YOUTUBE.txt"
+   ]
+  }
+ },
+ "hatalar": []
+}

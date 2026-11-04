@@ -1,0 +1,5 @@
+1. Chabukswar, R. & Mukherjee, K. (2018). Longest Straight Line Paths on Water or Land on the Earth. arXiv:1804.07389. https://arxiv.org/abs/1804.07389
+   - Water route: Sonmiani, Pakistan → Karaginsky, Kamchatka (Russia), 32,089.7 km. Land route: Portugal → China, 11,241 km.
+2. Own geometry check (motor/kure_v1/src/rota_geo.py): great-circle long arc 32,090.0 km; 0 points on land against Natural Earth 10 m land mask (15 km endpoint buffers).
+3. Map data: Natural Earth 1:10m / 1:50m (public domain), naturalearthdata.com.
+Full claim-by-claim list: videolar/2026-11-05_0800_longest-straight-sea-route/02_sources.md

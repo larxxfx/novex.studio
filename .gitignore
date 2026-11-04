@@ -5,3 +5,8 @@
 *.mkv
 *.part.*
 __pycache__/
+# üretim ara çıktıları (short_uret.py): yalnız durum ve raporlar depoya girer
+videolar/*/cikti/*
+!videolar/*/cikti/durum.json
+!videolar/*/cikti/telaffuz.json
+!videolar/*/cikti/qc_rapor.md

@@ -1,0 +1,150 @@
+{
+ "bas_sessizlik": 0.35,
+ "cumleler": [
+  {
+   "duygu": "merak (kanca)",
+   "sonra": 0.5,
+   "parcalar": [
+    {
+     "metin": "In nineteen-oh-one, sponge divers pulled a lump of corroded bronze",
+     "hiz": 1.0
+    },
+    {
+     "metin": "from a Roman-era shipwreck.",
+     "hiz": 1.04,
+     "once": 0.12
+    }
+   ],
+   "altyazi": "In 1901, sponge divers pulled a lump of corroded bronze from a Roman-era shipwreck."
+  },
+  {
+   "duygu": "şaşkınlık",
+   "sonra": 0.55,
+   "parcalar": [
+    {
+     "metin": "Inside it were gears.",
+     "hiz": 1.15,
+     "kazanc_db": 2.5,
+     "perde": -0.5
+    }
+   ]
+  },
+  {
+   "duygu": "hayranlık",
+   "sonra": 0.45,
+   "parcalar": [
+    {
+     "metin": "At least thirty of them,",
+     "hiz": 1.04,
+     "kazanc_db": 1.0
+    },
+    {
+     "metin": "cut by hand, more than two thousand years ago.",
+     "hiz": 1.02,
+     "once": 0.16
+    }
+   ],
+   "altyazi": "At least 30 of them, cut by hand, more than 2,000 years ago."
+  },
+  {
+   "duygu": "açılım",
+   "sonra": 0.45,
+   "parcalar": [
+    {
+     "metin": "This is the Antikythera Mechanism.",
+     "soyle": "This is the Anti-kythera Mechanism.",
+     "hiz": 1.06,
+     "kazanc_db": 2.0
+    }
+   ]
+  },
+  {
+   "duygu": "keşif",
+   "sonra": 0.2,
+   "parcalar": [
+    {
+     "metin": "Turn a handle, and it showed the Sun, the Moon, and the planets,",
+     "hiz": 1.0
+    }
+   ]
+  },
+  {
+   "duygu": "hayranlık",
+   "sonra": 0.5,
+   "parcalar": [
+    {
+     "metin": "predicted eclipses,",
+     "hiz": 1.02
+    },
+    {
+     "metin": "and even tracked the dates of the Olympic Games.",
+     "hiz": 1.04,
+     "kazanc_db": 1.5,
+     "once": 0.1
+    }
+   ]
+  },
+  {
+   "duygu": "gizem",
+   "sonra": 0.42,
+   "parcalar": [
+    {
+     "metin": "Only about a third of it survived,",
+     "hiz": 1.04,
+     "perde": -0.3
+    },
+    {
+     "metin": "in eighty-two fragments.",
+     "hiz": 1.08,
+     "once": 0.14
+    }
+   ],
+   "altyazi": "Only about a third of it survived, in 82 fragments."
+  },
+  {
+   "duygu": "güven / kanıt",
+   "sonra": 0.45,
+   "parcalar": [
+    {
+     "metin": "In twenty twenty-one, a team at University College London rebuilt its front display from X-ray scans.",
+     "hiz": 1.0
+    }
+   ],
+   "altyazi": "In 2021, a team at University College London rebuilt its front display from X-ray scans."
+  },
+  {
+   "duygu": "doruk",
+   "sonra": 0.6,
+   "parcalar": [
+    {
+     "metin": "Nothing this complex appears again",
+     "hiz": 1.02
+    },
+    {
+     "metin": "for more than a thousand years.",
+     "hiz": 1.1,
+     "kazanc_db": 2.5,
+     "once": 0.22
+    }
+   ],
+   "altyazi": "Nothing this complex appears again for more than 1,000 years."
+  },
+  {
+   "duygu": "soru / katılım",
+   "sonra": 0.3,
+   "parcalar": [
+    {
+     "metin": "So was it one of a kind,",
+     "hiz": 1.02,
+     "perde": 0.5
+    },
+    {
+     "metin": "or the only one that survived?",
+     "hiz": 1.08,
+     "kazanc_db": 1.5,
+     "once": 0.3
+    }
+   ]
+  }
+ ]
+}

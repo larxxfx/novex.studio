@@ -1,0 +1,58 @@
+{
+ "lufs_tp": [
+  -13.9,
+  -1.7
+ ],
+ "ayarlar": {
+  "ses_db": 0,
+  "muzik_db": -9,
+  "efekt_db": -8
+ },
+ "ses_fon": [
+  {
+   "cumle": 1,
+   "ses_fon_farki_db": 17.7
+  },
+  {
+   "cumle": 2,
+   "ses_fon_farki_db": 21.0
+  },
+  {
+   "cumle": 3,
+   "ses_fon_farki_db": 24.5
+  },
+  {
+   "cumle": 4,
+   "ses_fon_farki_db": 27.3
+  },
+  {
+   "cumle": 5,
+   "ses_fon_farki_db": 20.2
+  },
+  {
+   "cumle": 6,
+   "ses_fon_farki_db": 20.0
+  },
+  {
+   "cumle": 7,
+   "ses_fon_farki_db": 23.1
+  },
+  {
+   "cumle": 8,
+   "ses_fon_farki_db": 24.7
+  },
+  {
+   "cumle": 9,
+   "ses_fon_farki_db": 21.3
+  },
+  {
+   "cumle": 10,
+   "ses_fon_farki_db": 18.7
+  },
+  {
+   "cumle": 11,
+   "ses_fon_farki_db": 22.0
+  }
+ ],
+ "uyarilar": []
+}

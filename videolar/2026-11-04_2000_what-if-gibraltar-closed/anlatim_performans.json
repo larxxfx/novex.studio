@@ -1,0 +1,155 @@
+{
+ "bas_sessizlik": 0.35,
+ "cumleler": [
+  {
+   "duygu": "merak (kanca)",
+   "sonra": 0.5,
+   "parcalar": [
+    {
+     "metin": "What if someone closed the Strait of Gibraltar",
+     "hiz": 1.0
+    },
+    {
+     "metin": "tomorrow?",
+     "hiz": 1.12,
+     "kazanc_db": 2.0,
+     "perde": 0.4,
+     "once": 0.15
+    }
+   ]
+  },
+  {
+   "duygu": "keşif",
+   "sonra": 0.42,
+   "parcalar": [
+    {
+     "metin": "It's only about thirteen kilometers wide,",
+     "hiz": 1.02
+    },
+    {
+     "metin": "but it keeps the Mediterranean alive.",
+     "hiz": 1.04,
+     "kazanc_db": 1.5,
+     "once": 0.12
+    }
+   ],
+   "altyazi": "It's only about 13 kilometers wide, but it keeps the Mediterranean alive."
+  },
+  {
+   "duygu": "açıklama",
+   "sonra": 0.42,
+   "parcalar": [
+    {
+     "metin": "The sea loses more water to evaporation than its rivers bring in.",
+     "hiz": 1.0
+    }
+   ]
+  },
+  {
+   "duygu": "gerilim",
+   "sonra": 0.45,
+   "parcalar": [
+    {
+     "metin": "Cut off from the Atlantic,",
+     "hiz": 1.02,
+     "perde": -0.3
+    },
+    {
+     "metin": "its level would fall by up to a meter every year.",
+     "hiz": 1.04,
+     "kazanc_db": 1.5,
+     "once": 0.12
+    }
+   ],
+   "altyazi": "Cut off from the Atlantic, its level would fall by up to 1 meter every year."
+  },
+  {
+   "duygu": "gerilim",
+   "sonra": 0.5,
+   "parcalar": [
+    {
+     "metin": "In about a thousand years,",
+     "hiz": 1.04
+    },
+    {
+     "metin": "most of it would be gone.",
+     "hiz": 1.1,
+     "kazanc_db": 2.5,
+     "perde": -0.5,
+     "once": 0.2
+    }
+   ],
+   "altyazi": "In about 1,000 years, most of it would be gone."
+  },
+  {
+   "duygu": "hayranlık",
+   "sonra": 0.5,
+   "parcalar": [
+    {
+     "metin": "A salt desert,",
+     "hiz": 1.04
+    },
+    {
+     "metin": "kilometers below sea level.",
+     "hiz": 1.06,
+     "once": 0.12
+    }
+   ]
+  },
+  {
+   "duygu": "açılım",
+   "sonra": 0.5,
+   "parcalar": [
+    {
+     "metin": "And this isn't just a thought experiment.",
+     "hiz": 1.02
+    },
+    {
+     "metin": "It happened, about six million years ago.",
+     "hiz": 1.06,
+     "kazanc_db": 2.0,
+     "once": 0.18
+    }
+   ]
+  },
+  {
+   "duygu": "epik",
+   "sonra": 0.4,
+   "parcalar": [
+    {
+     "metin": "Then the Atlantic broke back through,",
+     "hiz": 1.02,
+     "kazanc_db": 1.0
+    },
+    {
+     "metin": "in what may have been the biggest flood in Earth's history.",
+     "hiz": 1.04,
+     "once": 0.12
+    }
+   ]
+  },
+  {
+   "duygu": "hayranlık",
+   "sonra": 0.55,
+   "parcalar": [
+    {
+     "metin": "Refilling most of the sea in as little as two years.",
+     "hiz": 1.04,
+     "kazanc_db": 1.5,
+     "soyle": "Refilling most of the sea, in as little as two years."
+    }
+   ]
+  },
+  {
+   "duygu": "soru / katılım",
+   "sonra": 0.3,
+   "parcalar": [
+    {
+     "metin": "Would you walk across the dry Mediterranean?",
+     "hiz": 1.04,
+     "perde": 0.5
+    }
+   ]
+  }
+ ]
+}

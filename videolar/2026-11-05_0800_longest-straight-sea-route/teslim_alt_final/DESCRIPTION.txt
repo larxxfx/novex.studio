@@ -1,0 +1,12 @@
+Point a ship west from Pakistan and follow one perfectly straight line around the globe. For 32,090 km you won't touch land: you slip between Africa and Madagascar, pass between South America and Antarctica, cross the entire Pacific, and finally reach Russia's Kamchatka Peninsula.
+
+On a flat map the route looks like a snake. On a globe, it's one perfectly straight line (a great circle).
+
+In 2018, researchers Rohan Chabukswar and Kushal Mukherjee used a computer algorithm to confirm it is the longest straight-line path on water. The longest straight line on land? Portugal to China, about 11,241 km.
+
+Could a real ship sail it without stopping? Yes or no? Tell us in the comments.
+
+Source: Chabukswar & Mukherjee, "Longest Straight Line Paths on Water or Land on the Earth", arXiv:1804.07389 (2018).
+Map data: Natural Earth (public domain). Narration: synthetic voice (Matcha-TTS, trained on the public-domain LJ Speech dataset). Music and sound effects: original, generated in code.
+
+#geography #maps #ocean #earth #didyouknow #shorts

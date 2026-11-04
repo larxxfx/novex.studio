@@ -59,6 +59,16 @@ haftalık dağılım `plan/` dosyasında anlatıcı sütunuyla izlenir.
 | NØVEX | "Novex" (Ø = o) — testte doğru okunup okunmadığı Emir'in dinlemesiyle doğrulanacak |
 | Kamçatka, Madagaskar, Quanzhou | Testten sonra doldurulacak |
 
+## 4b. İngilizce kanal ana erkek anlatıcısı — ADAM (Emir kararı, 4 Kasım 2026)
+
+| Alan | Değer |
+|---|---|
+| Motor | Kokoro-82M v0.19 (hexgrad), sherpa-onnx `kokoro-en-v0_19` (`kurulum_ortam.sh` indirir) |
+| Ses | `am_adam` (sid 5) → `uretim.json` `ses_motoru: "kokoro:5"` |
+| Lisans | Ağırlıklar Apache 2.0, ticari kullanım serbest. ⚠️ Eğitim verisinin bir kısmı kapalı TTS çıktısı (model kartı) |
+| Onay | Emir, 4 Kasım 2026: 5 erkek ses örneğinden 3 numara seçildi |
+| Yayına uygun | Evet (`ses/LISANS.txt` → `yayin_uygun: evet`) |
+
 ## 5. Yedek ve taslak sesler
 
 | Kaynak | Rol | Lisans | Not |

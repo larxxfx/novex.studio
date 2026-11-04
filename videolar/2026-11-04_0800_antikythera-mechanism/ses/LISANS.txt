@@ -1,0 +1,8 @@
+motor: Kokoro-82M v0.19 (hexgrad), ses am_adam (sid 5) — sherpa-onnx kokoro-en-v0_19, NØVEX ses_motoru 'kokoro:5'
+model_sha256_ilk16: 10ff414106a038ce
+agirlik_lisansi: Apache 2.0 (huggingface.co/hexgrad/Kokoro-82M: "Apache-licensed weights ... deployed in numerous projects and commercial APIs")
+egitim_verisi: model kartına göre kamu malı, Apache/MIT vb. lisanslı ses ve büyük sağlayıcıların kapalı TTS modellerinden üretilmiş sentetik ses (açık model / ses klonu yok)
+lisans_dogrulandi: evet (4 Kasım 2026; kaynak: HF hexgrad/Kokoro-82M model kartı + paketteki LICENSE dosyası, Apache 2.0)
+emir_ses_onayi: evet (4 Kasım 2026, sohbette 5 erkek ses örneği arasından 3 numara 'Adam' seçildi)
+yayin_uygun: evet
+not: ⚠️ eğitim verisinin bir kısmı kapalı ticari TTS çıktısıdır; ağırlık lisansı ticari kullanıma izin verir ama bu kısım hukuken gri alan sayılabilir. YouTube'da 'sentetik içerik' beyanı işaretlenmeli.

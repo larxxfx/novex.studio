@@ -1,0 +1,119 @@
+{
+ "dil": "modern",
+ "doku": "gren",
+ "kamera": "kaydirma",
+ "kapanis_sn": 2.2,
+ "palet": {
+  "zemin0": "#04080b",
+  "zemin1": "#0c1c21",
+  "vurgu": "#5fe3b8",
+  "metin": "#e6f2ee",
+  "ikincil": "#7d9a94",
+  "kara": "#1f3d3c"
+ },
+ "kapak": {
+  "ust": "1,746 dead",
+  "ana": "The lake exhaled.",
+  "zemin_sahne": 2
+ },
+ "sahneler": [
+  {
+   "cumle": 1,
+   "tur": "baslik",
+   "ust": "21 August 1986 · Cameroon",
+   "ana": "The lake that exhaled",
+   "alt": "Lake Nyos"
+  },
+  {
+   "cumle": 2,
+   "tur": "liste",
+   "baslik": "What happened",
+   "maddeler": [
+    "No fire",
+    "No flood",
+    "No explosion"
+   ]
+  },
+  {
+   "cumle": 3,
+   "tur": "harita",
+   "bas_bolge": [
+    -20,
+    -35,
+    55,
+    38
+   ],
+   "bolge": [
+    5,
+    2,
+    16,
+    11
+   ],
+   "noktalar": [
+    [
+     10.3,
+     6.44,
+     "Lake Nyos"
+    ]
+   ],
+   "baslik": "North-west Cameroon"
+  },
+  {
+   "cumle": 4,
+   "tur": "karsilastir",
+   "baslik": "Density vs. air",
+   "birim": "×",
+   "ogeler": [
+    [
+     "Air",
+     1.0
+    ],
+    [
+     "Carbon dioxide",
+     1.5
+    ]
+   ]
+  },
+  {
+   "cumle": 6,
+   "tur": "sayi",
+   "bas": 0,
+   "son": 1746,
+   "birim": "PEOPLE",
+   "etiket": "and 3,500 animals, in one night",
+   "sure": 2.6
+  },
+  {
+   "cumle": 8,
+   "tur": "zaman",
+   "baslik": "After",
+   "olaylar": [
+    [
+     "1984",
+     "Lake Monoun gas release"
+    ],
+    [
+     "1986",
+     "Lake Nyos disaster"
+    ],
+    [
+     "2001",
+     "First degassing pipe"
+    ],
+    [
+     "2011",
+     "Two more pipes"
+    ]
+   ]
+  },
+  {
+   "cumle": 10,
+   "tur": "soru",
+   "metin": "Would you live beside a lake that can breathe?",
+   "secenekler": [
+    "YES",
+    "NO"
+   ]
+  }
+ ]
+}

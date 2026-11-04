@@ -1,0 +1,132 @@
+{
+ "dil": "daktilo",
+ "doku": "gren",
+ "kamera": "kaydirma",
+ "kapanis_sn": 2.2,
+ "palet": {
+  "zemin0": "#06141d",
+  "zemin1": "#1c3a4b",
+  "vurgu": "#f2c14e",
+  "metin": "#f4f1ea",
+  "ikincil": "#8fb3c4",
+  "kara": "#c9b48a"
+ },
+ "kapak": {
+  "ust": "What if…",
+  "ana": "Gibraltar closes?",
+  "zemin_sahne": 1
+ },
+ "sahneler": [
+  {
+   "cumle": 1,
+   "tur": "baslik",
+   "ust": "What if · a thought experiment",
+   "ana": "Close the Strait of Gibraltar",
+   "alt": "scenario, not prediction"
+  },
+  {
+   "cumle": 2,
+   "tur": "harita",
+   "bas_bolge": [
+    -20,
+    20,
+    45,
+    52
+   ],
+   "bolge": [
+    -9.5,
+    33.5,
+    -2.5,
+    38.5
+   ],
+   "noktalar": [
+    [
+     -5.6,
+     35.95,
+     "Strait of Gibraltar"
+    ]
+   ],
+   "baslik": "~13 km wide"
+  },
+  {
+   "cumle": 3,
+   "tur": "karsilastir",
+   "baslik": "Water budget (schematic)",
+   "birim": "",
+   "ogeler": [
+    [
+     "Rivers + rain in",
+     1
+    ],
+    [
+     "Evaporation out",
+     2
+    ]
+   ]
+  },
+  {
+   "cumle": 4,
+   "tur": "sayi",
+   "bas": 0,
+   "son": 1,
+   "birim": "METER / YEAR",
+   "etiket": "up to ~1 m fall per year (estimates 0.5–1 m)",
+   "sure": 1.6
+  },
+  {
+   "cumle": 5,
+   "tur": "sayi",
+   "bas": 0,
+   "son": 1000,
+   "birim": "YEARS",
+   "etiket": "to lose most of the sea",
+   "sure": 2.2
+  },
+  {
+   "cumle": 6,
+   "tur": "harita",
+   "bas_bolge": [
+    -10,
+    28,
+    40,
+    47
+   ],
+   "bolge": [
+    -6,
+    30,
+    37,
+    46
+   ],
+   "baslik": "Salt desert, 3–5 km deep",
+   "yakinlas": false
+  },
+  {
+   "cumle": 7,
+   "tur": "zaman",
+   "baslik": "It already happened",
+   "olaylar": [
+    [
+     "5.96 Ma",
+     "Gateway closes"
+    ],
+    [
+     "~5.6 Ma",
+     "Sea nearly dry"
+    ],
+    [
+     "5.33 Ma",
+     "Zanclean flood"
+    ]
+   ]
+  },
+  {
+   "cumle": 10,
+   "tur": "soru",
+   "metin": "Would you walk across the dry Mediterranean?",
+   "secenekler": [
+    "YES",
+    "NO"
+   ]
+  }
+ ]
+}

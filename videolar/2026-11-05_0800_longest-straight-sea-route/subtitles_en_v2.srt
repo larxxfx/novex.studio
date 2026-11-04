@@ -1,0 +1,43 @@
+1
+00:00:00,250 --> 00:00:04,414
+This line runs 32,000 km, and never touches land.
+
+2
+00:00:04,834 --> 00:00:08,321
+Point a ship west from Pakistan, and sail perfectly straight.
+
+3
+00:00:08,741 --> 00:00:11,552
+On a flat map, the route curves like a snake.
+
+4
+00:00:11,972 --> 00:00:14,827
+But wrap it around the globe, and it's one straight line.
+
+5
+00:00:15,247 --> 00:00:18,282
+First, you slip between Africa and Madagascar.
+
+6
+00:00:18,702 --> 00:00:21,909
+Then between the tip of South America and Antarctica.
+
+7
+00:00:22,329 --> 00:00:24,393
+Then across the entire Pacific.
+
+8
+00:00:24,813 --> 00:00:28,529
+And the first land you reach is Russia's Kamchatka Peninsula.
+
+9
+00:00:28,949 --> 00:00:32,944
+In 2018, two researchers confirmed it with an algorithm.
+
+10
+00:00:33,364 --> 00:00:38,784
+And the longest straight line on land? Portugal to China, over 11,000 km.
+
+11
+00:00:39,204 --> 00:00:43,039
+So, could a real ship sail it without stopping? Yes or no?

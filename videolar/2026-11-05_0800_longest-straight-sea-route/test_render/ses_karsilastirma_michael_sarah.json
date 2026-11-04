@@ -1,0 +1,30 @@
+{
+ "michael": {
+  "sure": 44.97,
+  "konusma_sn": 40.1,
+  "kelime_sn": 2.67,
+  "wer": 1.8,
+  "hatali_cumleler": [
+   [
+    4,
+    "But wrap it around the globe, and it's one straight line.",
+    "but wrap it around the globe in its one straight line."
+   ]
+  ],
+  "f0_hz": 121,
+  "perde_yt": 10.9,
+  "ham_lufs": -26.4,
+  "tepe_dbfs": -5.283758
+ },
+ "sarah": {
+  "sure": 43.46,
+  "konusma_sn": 38.59,
+  "kelime_sn": 2.77,
+  "wer": 0.0,
+  "hatali_cumleler": [],
+  "f0_hz": 188,
+  "perde_yt": 12.9,
+  "ham_lufs": -23.9,
+  "tepe_dbfs": -4.517846
+ }
+}

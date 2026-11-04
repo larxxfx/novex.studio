@@ -1,0 +1,295 @@
+{
+ "dil": "modern",
+ "doku": "yildiz",
+ "kamera": "itme",
+ "kapanis_sn": 2.4,
+ "parlama": true,
+ "palet": {
+  "zemin0": "#030101",
+  "zemin1": "#1a0904",
+  "vurgu": "#ffb347",
+  "metin": "#fff1dc",
+  "ikincil": "#d3a374",
+  "kara": "#5a3418"
+ },
+ "partikul": {
+  "tur": "toz",
+  "yogunluk": 140,
+  "renk": "#ffcf8a",
+  "guc": 0.45
+ },
+ "isik_huzme": {
+  "aci": 24,
+  "renk": "#ff9a3c",
+  "guc": 0.12
+ },
+ "vurgu_kelimeler": [
+  "day",
+  "year",
+  "Venus",
+  "243",
+  "225",
+  "backwards",
+  "west",
+  "east",
+  "117",
+  "sunrises",
+  "465",
+  "Mars",
+  "Mercury",
+  "slower"
+ ],
+ "kapak": {
+  "ust": "Venus",
+  "ana": "Day > Year",
+  "zemin_sahne": 0
+ },
+ "sahneler": [
+  {
+   "tur": "gezegen",
+   "doku": "venus",
+   "atmosfer": "#ffb45a",
+   "isik": [
+    -0.55,
+    0.3,
+    0.78
+   ],
+   "egim": 8,
+   "cumle": 1,
+   "merkez": [
+    540,
+    900
+   ],
+   "yaricap": [
+    150,
+    560
+   ],
+   "donus": 3,
+   "ust": "Venus",
+   "ana": "A day longer than a year"
+  },
+  {
+   "tur": "gezegen",
+   "doku": "venus",
+   "atmosfer": "#ffb45a",
+   "isik": [
+    -0.55,
+    0.3,
+    0.78
+   ],
+   "egim": 8,
+   "cumle": 2,
+   "merkez": [
+    540,
+    1050
+   ],
+   "yaricap": [
+    430,
+    470
+   ],
+   "donus": 4,
+   "sayi": {
+    "bas": 0,
+    "son": 225,
+    "birim": "EARTH DAYS",
+    "etiket": "one orbit = one Venus year",
+    "sure": 1.8
+   }
+  },
+  {
+   "tur": "gezegen",
+   "doku": "venus",
+   "atmosfer": "#ffb45a",
+   "isik": [
+    -0.55,
+    0.3,
+    0.78
+   ],
+   "egim": 8,
+   "cumle": 3,
+   "merkez": [
+    540,
+    1080
+   ],
+   "yaricap": [
+    460,
+    500
+   ],
+   "donus": 4,
+   "karsi": [
+    [
+     "Year",
+     225
+    ],
+    [
+     "Day",
+     243
+    ]
+   ]
+  },
+  {
+   "tur": "gezegen",
+   "doku": "venus",
+   "atmosfer": "#ffb45a",
+   "isik": [
+    -0.55,
+    0.3,
+    0.78
+   ],
+   "egim": 14,
+   "cumle": 4,
+   "merkez": [
+    540,
+    1250
+   ],
+   "yaricap": [
+    700,
+    900
+   ],
+   "donus": 1.5,
+   "ana": "No planet spins slower"
+  },
+  {
+   "tur": "gezegen",
+   "doku": "venus",
+   "atmosfer": "#ffb45a",
+   "isik": [
+    -0.55,
+    0.3,
+    0.78
+   ],
+   "egim": 8,
+   "cumle": 5,
+   "merkez": [
+    540,
+    900
+   ],
+   "yaricap": [
+    400,
+    420
+   ],
+   "donus": -14,
+   "ok": "saat",
+   "ana": "It spins backwards"
+  },
+  {
+   "tur": "gezegen",
+   "doku": "venus",
+   "atmosfer": "#ffb45a",
+   "isik": [
+    0.7,
+    0.25,
+    0.65
+   ],
+   "egim": 8,
+   "cumle": 6,
+   "merkez": [
+    540,
+    1000
+   ],
+   "yaricap": [
+    460,
+    480
+   ],
+   "donus": -6,
+   "ust": "Sunrise",
+   "ana": "In the west"
+  },
+  {
+   "tur": "gezegen",
+   "doku": "venus",
+   "atmosfer": "#ffb45a",
+   "isik": [
+    -0.55,
+    0.3,
+    0.78
+   ],
+   "egim": 8,
+   "cumle": 7,
+   "merkez": [
+    540,
+    1080
+   ],
+   "yaricap": [
+    440,
+    470
+   ],
+   "donus": -5,
+   "sayi": {
+    "bas": 0,
+    "son": 117,
+    "birim": "EARTH DAYS",
+    "etiket": "from one sunrise to the next",
+    "sure": 1.8
+   }
+  },
+  {
+   "tur": "gezegen",
+   "doku": "venus",
+   "atmosfer": "#ffb45a",
+   "isik": [
+    -0.55,
+    0.3,
+    0.78
+   ],
+   "egim": 8,
+   "cumle": 8,
+   "merkez": [
+    540,
+    1060
+   ],
+   "yaricap": [
+    460,
+    480
+   ],
+   "donus": -5,
+   "karsi": [
+    [
+     "Sunrises",
+     "2"
+    ],
+    [
+     "per year",
+     "☀"
+    ]
+   ]
+  },
+  {
+   "tur": "gezegen",
+   "doku": "venus",
+   "atmosfer": "#ff6a2a",
+   "isik": [
+    -0.55,
+    0.3,
+    0.78
+   ],
+   "egim": 8,
+   "cumle": 9,
+   "merkez": [
+    540,
+    1300
+   ],
+   "yaricap": [
+    760,
+    980
+   ],
+   "donus": 2,
+   "sayi": {
+    "bas": 0,
+    "son": 465,
+    "birim": "°C",
+    "etiket": "under clouds of sulfuric acid",
+    "sure": 2.0
+   }
+  },
+  {
+   "cumle": 10,
+   "tur": "soru",
+   "metin": "Which planet should NØVEX explore next?",
+   "secenekler": [
+    "MARS",
+    "MERCURY"
+   ]
+  }
+ ]
+}

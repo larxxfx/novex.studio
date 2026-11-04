@@ -1,0 +1,65 @@
+{
+ "wer_toplam": 1.9,
+ "cumleler": [
+  {
+   "i": 1,
+   "metin": "On the night of August twenty-first, nineteen eighty-six, a lake in Cameroon exhaled.",
+   "duyulan": "On the night of August 21, 1986, a lake in Cameroon exhaled.",
+   "wer": 7.7
+  },
+  {
+   "i": 2,
+   "metin": "There was no fire. No flood. No explosion.",
+   "duyulan": "There was no fire, no flood, no explosion.",
+   "wer": 0.0
+  },
+  {
+   "i": 3,
+   "metin": "Just a silent cloud of carbon dioxide, rising from the bottom of Lake Nyos.",
+   "duyulan": "just a silent cloud of carbon dioxide rising from the bottom of Lake Neos.",
+   "wer": 8.3
+  },
+  {
+   "i": 4,
+   "metin": "The gas was heavier than air.",
+   "duyulan": "The gas was heavier than air.",
+   "wer": 0.0
+  },
+  {
+   "i": 5,
+   "metin": "It flowed down the valleys, into the villages, while people slept.",
+   "duyulan": "It flowed down the valleys into the villages while people slept.",
+   "wer": 0.0
+  },
+  {
+   "i": 6,
+   "metin": "By morning, one thousand seven hundred and forty-six people were dead, and three thousand five hundred animals.",
+   "duyulan": "By morning 1,746 people were dead and 3,500 animals.",
+   "wer": 0.0
+  },
+  {
+   "i": 7,
+   "metin": "Volcanic gas had been slowly building up deep in the water, until the lake could not hold it.",
+   "duyulan": "Volcanic gas had been slowly building up deep in the water until the lake could not hold it.",
+   "wer": 0.0
+  },
+  {
+   "i": 8,
+   "metin": "Today, pipes vent that gas safely, shooting fountains high above the lake.",
+   "duyulan": "Today, pipes vent that gas safely, shooting fountains high above the lake.",
+   "wer": 0.0
+  },
+  {
+   "i": 9,
+   "metin": "And just two years earlier, nearby Lake Monoun had done the same.",
+   "duyulan": "And just two years earlier, nearby Lake Monoun had done the same.",
+   "wer": 0.0
+  },
+  {
+   "i": 10,
+   "metin": "Would you live beside a lake that can breathe?",
+   "duyulan": "Would you live beside a lake that can breathe?",
+   "wer": 0.0
+  }
+ ]
+}

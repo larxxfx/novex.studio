@@ -1,0 +1,10 @@
+# NØVEX görsel kayıt: tekrar kontrolü ve dersler
+
+| Video | Görsel dil | Palet | Kamera / geçiş | Tekrarlanmaması gereken | Ders |
+|---|---|---|---|---|---|
+| Türkiye Antarktika'da olsaydı? (TR, 3 Kas) | `kure_v1` ışın izlemeli gece küresi, buz dokusu, harita taşıma | Gece laciverti + elektrik mavisi + kırmızı/altın vurgu | Yörüngeden yakın çekime dalış, kesme geçiş | Gece küresi + beyaz parlayan çizgi + üstte büyük sayaç | — |
+| Okyanus rotası (EN Short, 3 Kas) | Aynı `kure_v1` küresi + düz harita ara sahnesi | Aynı gece paleti, beyaz rota, turkuaz kara rotası | Rota boyunca uçuş, v2'de ±0,3 sn çapraz geçiş, tek akan sayaç | **İkinci kez aynı küre estetiği: bir sonraki harita videosu farklı dil kullanmalı** (ör. kâğıt/arşiv harita, topografik kabartma, gündüz uydu paleti) | Sayaç + küre formülü işe yarıyor ama marka imzası hâline gelmemeli |
+| Antikythera (EN Short, 4 Kas 08:00) | sahne_v1 · **arsiv** (Caladea serif) · kağıt dokusu | Sepya/bronz (#1a120a → #d9a441) | Yavaş itme; başlık → sayaç → harita (Ege) → liste → alıntı kartı → zaman çizelgesi → soru | Arşiv/serif + kağıt dokusu bir sonraki tarih videosunda tekrar edilmemeli | Harita + alıntı kartı belgesel hissi veriyor; görsel imge yok (yalnız tipografi/harita) |
+| Lake Nyos (EN Short, 4 Kas 12:00) | sahne_v1 · **modern** · gren | Gece zehirli turkuaz (#04080b → #5fe3b8) | Yanal kaydırma; liste → harita (Kamerun) → yoğunluk çubukları → sayaç → zaman çizelgesi | Turkuaz-siyah gerilim paleti | 7. cümlede sahne yok → 1,746 sayacı uzun kaldı |
+| Venus (EN Short, 4 Kas 16:00) | sahne_v1 · **modern** · yıldız dokusu | Sıcak kükürt turuncusu (#070302 → #ffb347) | İtme; sayaç ağırlıklı (225 / 243 / 117 / 465) | Üç sayaç art arda → monoton; gezegen görseli yok | Bir sonraki uzay videosu: prosedürel gezegen/yörünge sahnesi eklenmeli |
+| What if Gibraltar (EN Short, 4 Kas 20:00) | sahne_v1 · **daktilo** (Liberation Mono) · gren | Derin deniz + tuz/kum (#06141d → #f2c14e) | Kaydırma; harita → su bütçesi → sayaç → harita → zaman çizelgesi | Daktilo "senaryo dosyası" dili | "Tuz çölü" sahnesinde deniz hâlâ dolu çiziliyor; zaman çizelgesi 3 cümle boyunca sabit |
