@@ -10,3 +10,4 @@
 - 2026-11-03 (Claude): claude/first-video-ocean-route 0bd5d52 — rota modu + ilk EN test MP4 (Sarah, QC 10/11, lisans ❌). PR #1 9b65404 — kimlik düzeltmesi, testler 15/15 · 11/11 · render_dogrula 10/10. main'e dokunulmadı.
 - 2026-11-03 23:20 (Claude): okyanus rotası alternatif final (Matcha/LJSpeech, ifadeli anlatım, olay tabanlı ses) render+QC; yayına hazır değil (ses ağırlık lisansı). Master status: strateji/MASTER_STATUS_2026-11-03.md
 - 2026-11-04 02:30 (Claude): Venus Short v2 — Norman (erkek, kamu malı veri) + ışın izlemeli 3D gezegen, partikül/ışık huzmesi, vurgu kelimeli altyazı, Mars/Mercury katılım sonu. Teknik QC 10/10, WER %1,0; lisans/Emir onayı bekliyor, yayına hazır değil. claude/uretim-hatti.
+- 2026-11-04 [claude] 08:00 antikythera-mechanism: MP4 bu oturumda yeniden render edildi (önceki MP4 git dışıydı), teknik QC 10/10, sha256 397aa6e029b64afb…; lisans hâlâ onaysız.
