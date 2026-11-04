@@ -2,7 +2,7 @@
 
 | Klasör | Teknik | Siyah/Donuk | Senkron | Ses/fon min | LUFS/TP | Telaffuz WER | Ses lisansı | Yayına hazır |
 |---|---|---|---|---|---|---|---|---|
-| `2026-11-04_0800_antikythera-mechanism` | 10/10 | 0/0 | 2.0 ms | 16.1 dB | [-13.9, -1.7] | 5.4% | Emir onayı bekliyor | HAYIR |
+| `2026-11-04_0800_antikythera-mechanism` | 10/10 | 0/0 | 2.0 ms | 15.9 dB | [-13.8, -1.8] | 2.7% | onaylı | EVET |
 | `2026-11-04_1200_lake-nyos` | 10/10 | 0/0 | 2.0 ms | 17.0 dB | [-13.9, -1.6] | 5.0% | Emir onayı bekliyor | HAYIR |
 | `2026-11-04_1600_venus-day-longer-than-year` | 10/10 | 0/0 | 2.0 ms | 15.5 dB | [-13.8, -1.6] | 1.0% | Emir onayı bekliyor | HAYIR |
 | `2026-11-04_2000_what-if-gibraltar-closed` | 10/10 | 0/0 | 2.0 ms | 14.7 dB | [-13.9, -1.7] | 4.3% | Emir onayı bekliyor | HAYIR |
@@ -13,10 +13,10 @@ MP4 + kapak + SRT + paket + zorunlu katılım sorusu + 3D sahne oranı + ses/lis
 
 | Video | MP4 | Süre | Kapak | SRT | Paket+katılım | 3D sahne | Ses | Teknik QC | Durum |
 |---|---|---|---|---|---|---|---|---|---|
-| 2026-11-04_0800_antikythera-mechanism | 196.0 MB · `10c817637ca4` | 49.1 sn | 1080×1920 | 10 satır | ✅ | 9/9 3D, harita 0 | piper-norman (Emir: bekliyor) | 10/10 | ⏳ onay bekliyor |
-| 2026-11-04_1200_lake-nyos | 146.7 MB · `e80950d2c8b9` | 51.0 sn | 1080×1920 | 10 satır | ✅ | 9/9 3D, harita 0 | piper-norman (Emir: bekliyor) | 10/10 | ⏳ onay bekliyor |
-| 2026-11-04_1600_venus-day-longer-than-year | 127.6 MB · `958de103d0c3` | 46.67 sn | 1080×1920 | 10 satır | ✅ | 9/9 3D, harita 0 | piper-norman (Emir: bekliyor) | 10/10 | ⏳ onay bekliyor |
-| 2026-11-04_2000_what-if-gibraltar-closed | 135.4 MB · `51d5ab666478` | 47.8 sn | 1080×1920 | 10 satır | ✅ | 9/9 3D, harita 0 | piper-norman (Emir: bekliyor) | 10/10 | ⏳ onay bekliyor |
+| 2026-11-04_0800_antikythera-mechanism | 193.2 MB · `707aaa154b77` | 48.3 sn | 1080×1920 | 10 satır | ✅ | 9/9 3D, harita 0 | kokoro:5 (Emir: evet) | 10/10 | ✅ yayına hazır |
+| 2026-11-04_1200_lake-nyos | — MB · `` | — sn | 1080×1920 | 10 satır | — | 9/9 3D, harita 0 | piper-norman (Emir: bekliyor) | 10/10 | ❌ cikti/VIDEO.mp4 yok — gerçek MP4 üretilmemiş |
+| 2026-11-04_1600_venus-day-longer-than-year | — MB · `` | — sn | 1080×1920 | 10 satır | — | 9/9 3D, harita 0 | piper-norman (Emir: bekliyor) | 10/10 | ❌ cikti/VIDEO.mp4 yok — gerçek MP4 üretilmemiş |
+| 2026-11-04_2000_what-if-gibraltar-closed | — MB · `` | — sn | 1080×1920 | 10 satır | — | 9/9 3D, harita 0 | piper-norman (Emir: bekliyor) | 10/10 | ❌ cikti/VIDEO.mp4 yok — gerçek MP4 üretilmemiş |
 
 ## Referansa göre: `2026-11-04_0800_antikythera-mechanism`
 

@@ -20,7 +20,8 @@ ChatGPT strateji, araştırma, sahne promptları ve eleştirel QC yapar (`CHATGP
 
 ## Ses ve lisans
 - Anlatıcı: doğal, sıcak, belgesel tonunda **erkek ses**; robotik değil. Sese agresif gürültü azaltma, keskinleştirme veya aşırı sıkıştırma uygulanmaz. Müzik anlatımı asla bastırmaz (konuşma fonun ≥ 12 dB üstünde).
-- Güncel aday: Piper `en_US-norman-medium` (`ses_motoru: piper-norman`, `hiz_carpani` ≈ 1.1). Lisans zinciri temiz (LibriVox kamu malı + MIT) — **Emir onaylamadan yayına uygun DEĞİL.**
+- **Ana anlatıcı (Emir onayı, 4 Kasım 2026): Kokoro-82M v0.19, ses `am_adam` → `ses_motoru: kokoro:5`, `hiz_carpani` 1.0.** Ağırlıklar Apache 2.0 (ticari serbest); ⚠️ eğitim verisinin bir kısmı kapalı TTS çıktısı (model kartı) — YouTube'da sentetik içerik beyanı işaretlenir. `ses/LISANS.txt` şablonu: `videolar/2026-11-04_0800_antikythera-mechanism/ses/LISANS.txt` (`yayin_uygun: evet`). Ses her videoda `anlatim_performans.json` ile geliştirilir; başka sese geçiş yalnız Emir onayıyla.
+- Yedek: Piper `en_US-norman-medium` (`piper-norman`, LibriVox kamu malı + MIT) — onaylanmadı.
 - Matcha **onaylanmadı**. Kadın ses (ljspeech) yalnızca taslak/yedek.
 - Bir sesin yayına uygun sayılması için ikisi birden gerekir: ticari + YouTube/Instagram/TikTok lisansı doğrulanmış **ve** Emir'in açık onayı. Kayıt: `videolar/<v>/ses/LISANS.txt` → `yayin_uygun: evet` yalnızca Emir onayından sonra yazılır.
 - Yeni ses modeli: aynı metinle karşılaştırılır, Emir örnekleri dinler; mevcut model onaysız değiştirilmez. Bir videoda anlatıcı sebepsiz değişmez.

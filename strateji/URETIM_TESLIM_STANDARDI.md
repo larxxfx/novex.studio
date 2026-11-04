@@ -106,9 +106,12 @@ Tam metin: `strateji/KALITE_STANDARDI_4KASIM.md`.
 - Kling, Higgsfield ve benzeri ücretli üretim araçları onaysız kullanılmaz. ChatGPT sahne promptlarını hazırlar; ücretli üretim Emir onayıyla yapılır.
 
 **Anlatıcı:**
-- Öncelik doğal, sıcak bir erkek ses.
-- Lisansı temiz aday: Piper `en_US-norman-medium` (`piper-norman`, hız çarpanı ~1.1).
-- **Emir dinleyip onaylayana kadar yayına hazır sayılmaz.**
+- **Ana anlatıcı (Emir kararı, 4 Kasım 2026): Kokoro-82M v0.19, ses `am_adam` → `ses_motoru: "kokoro:5"`, hız çarpanı 1.0.**
+  5 erkek ses (Michael, George, Adam, Lewis, Norman) aynı metinle dinletildi; Emir 3 numarayı (Adam) seçti: "her videoda tekrar tekrar geliştiririz".
+- Lisans: ağırlıklar Apache 2.0 (ticari kullanım serbest). ⚠️ Eğitim verisinin bir kısmı kapalı ticari TTS çıktısı (model kartı) — gri alan olarak not edilir; YouTube'da sentetik içerik beyanı işaretlenir.
+- `ses/LISANS.txt` şablonu: `videolar/2026-11-04_0800_antikythera-mechanism/ses/LISANS.txt` (yayin_uygun: evet).
+- Ses kimliği kilitli: başka sese geçiş yalnızca Emir onayıyla. Geliştirme her videoda `anlatim_performans.json` (hız, vurgu, duraklama, `soyle`) ile yapılır.
+- Yedek: Piper `en_US-norman-medium` (`piper-norman`).
 - Agresif gürültü azaltma, keskinleştirme ve aşırı sıkıştırma yapılmaz.
 
 **Tipografi:** Kilit kelimeler `vurgu_kelimeler` ile altyazıda vurgu rengiyle gösterilir. Mobilde okunabilirlik kontrol edilir.

@@ -2,63 +2,61 @@
  "asamalar": {
   "ses": {
    "durum": "tamam",
-   "zaman": "2026-11-04T10:03:31",
-   "sure": 46.91,
+   "zaman": "2026-11-04T08:02:11",
+   "sure": 46.09,
    "cumle": 10
   },
   "telaffuz": {
    "durum": "tamam",
-   "zaman": "2026-11-04T10:04:26",
-   "wer": 5.4,
+   "zaman": "2026-11-04T08:02:49",
+   "wer": 2.7,
    "sorunlu": [
     1,
-    2,
-    4,
-    5
+    4
    ]
   },
   "altyazi": {
    "durum": "tamam",
-   "zaman": "2026-11-04T10:04:26",
+   "zaman": "2026-11-04T08:02:49",
    "satir": 10
   },
   "render": {
    "durum": "tamam",
-   "zaman": "2026-11-04T10:09:50",
-   "sure": 49.108,
-   "kare": 1473,
+   "zaman": "2026-11-04T08:06:01",
+   "sure": 48.291,
+   "kare": 1449,
    "parca": 4
   },
   "ses_tasarim": {
    "durum": "tamam",
-   "zaman": "2026-11-04T10:09:57",
+   "zaman": "2026-11-04T08:06:04",
    "ruh": "gizem",
    "ortam": "okyanus"
   },
   "miks": {
    "durum": "tamam",
-   "zaman": "2026-11-04T10:10:04",
+   "zaman": "2026-11-04T08:06:08",
    "lufs_tp": [
-    -13.9,
-    -1.7
+    -13.8,
+    -1.8
    ],
-   "ses_fon_min": 16.1,
+   "ses_fon_min": 15.9,
    "uyarilar": []
   },
   "birlestir": {
    "durum": "tamam",
-   "zaman": "2026-11-04T10:10:08",
+   "zaman": "2026-11-04T08:06:10",
    "dosya": "/home/claude/novex.studio/videolar/2026-11-04_0800_antikythera-mechanism/cikti/VIDEO.mp4",
-   "mb": 196.0
+   "mb": 193.2
   },
   "qc": {
    "durum": "tamam",
-   "zaman": "2026-11-04T10:11:12",
+   "zaman": "2026-11-04T08:06:50",
    "teknik": "10/10",
    "siyah": 0,
    "donuk": 0,
    "senkron_ms": 2.0,
-   "lisans": "GEÇMEDİ",
+   "lisans": "geçti",
    "tablo": [
     "| Kontrol | Değer | Sonuç |",
     "|---|---|---|",
@@ -68,21 +66,21 @@
     "| Piksel formatı yuv420p | yuv420p | ✅ |",
     "| Rec.709 / SDR | bt709/bt709/bt709 | ✅ |",
     "| Ses AAC 48 kHz | aac 48000 | ✅ |",
-    "| Süre (Shorts ≤ 60 sn) | 49.100 sn | ✅ |",
-    "| Kare sayısı | 1473 | ✅ |",
+    "| Süre (Shorts ≤ 60 sn) | 48.300 sn | ✅ |",
+    "| Kare sayısı | 1449 | ✅ |",
     "| Tam çözümleme | hata yok | ✅ |",
     "| Ses yüksekliği ≈ −14 LUFS | -13.9 LUFS | ✅ |",
-    "| Ses lisansı yayına uygun | HF rhasspy/piper-voices MODEL_CARD + LibriVox kamu malı beyanı) | ❌ |"
+    "| Ses lisansı yayına uygun | HF hexgrad/Kokoro-82M model kartı + paketteki LICENSE dosyası, Apache 2.0) | ✅ |"
    ]
   },
   "kapak": {
    "durum": "tamam",
-   "zaman": "2026-11-04T10:11:13",
+   "zaman": "2026-11-04T08:06:51",
    "dosya": "teslim/THUMBNAIL.jpg"
   },
   "paket": {
    "durum": "tamam",
-   "zaman": "2026-11-04T10:33:44",
+   "zaman": "2026-11-04T08:06:51",
    "dosyalar": [
     "DESCRIPTION.txt",
     "HASHTAGS.txt",

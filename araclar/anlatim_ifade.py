@@ -2,7 +2,7 @@
 Duygu/vurgu kontrolü olmayan modellerde (VITS/Piper, Matcha, Kokoro) vurgu ve tonlama bu parçalı "performans" ile kurulur.
 
 Kullanım:  python3 araclar/anlatim_ifade.py performans.json motor cikti_klasoru/ [hiz_carpani]
-  motor: piper-ljspeech | matcha-ljspeech | kokoro:<sid>
+  motor: piper-ljspeech | matcha-ljspeech | kokoro:<sid>  (kokoro:5 = am_adam, NØVEX ana erkek anlatıcı — Emir, 4 Kas 2026)
 performans.json:
 {"bas_sessizlik": 0.3,
  "cumleler": [
@@ -26,7 +26,7 @@ MOTOR = {
                                   f"--matcha-data-dir={d}/matcha-icefall-en_US-ljspeech/espeak-ng-data"],
 }
 DIZIN = {"piper-ljspeech": f"{C}/dl_piper/vits-piper-en_US-ljspeech-high", "matcha-ljspeech": f"{C}/dl_matcha",
-         "kokoro": "/home/claude/tts_eval/dl/kokoro-en-v0_19"}
+         "kokoro": f"{C}/dl_kokoro/kokoro-en-v0_19"}   # kurulum_ortam.sh; Apache 2.0
 SR = 48000
 
 
