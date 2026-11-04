@@ -1,5 +1,5 @@
 {
- "wer_toplam": 3.0,
+ "wer_toplam": 2.0,
  "cumleler": [
   {
    "i": 1,
@@ -22,13 +22,13 @@
   {
    "i": 4,
    "metin": "This is the Antikythera Mechanism.",
-   "duyulan": "This is the anti-achipirum mechanism.",
-   "wer": 50.0
+   "duyulan": "This is the anticaterim mechanism.",
+   "wer": 25.0
   },
   {
    "i": 5,
    "metin": "Turn a handle, and it showed the Sun, the Moon, and the planets,",
-   "duyulan": "turn a handle and it showed the sun, the moon and the planets.",
+   "duyulan": "Turn the handle and it showed the Sun, the Moon and the planets.",
    "wer": 0.0
   },
   {
@@ -58,7 +58,7 @@
   {
    "i": 10,
    "metin": "So was it one of a kind, or the only one that survived?",
-   "duyulan": "So was it one of a kind or the only one that survived?",
+   "duyulan": "So was it one of a kind, or the only one that survived?",
    "wer": 0.0
   }
  ]
