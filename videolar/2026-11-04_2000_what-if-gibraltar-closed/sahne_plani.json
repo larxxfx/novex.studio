@@ -1,7 +1,7 @@
 {
  "dil": "daktilo",
  "doku": "gren",
- "kamera": "kaydirma",
+ "kamera": "itme",
  "kapanis_sn": 2.2,
  "palet": {
   "zemin0": "#06141d",
@@ -12,121 +12,396 @@
   "kara": "#c9b48a"
  },
  "kapak": {
-  "ust": "What if…",
-  "ana": "Gibraltar closes?",
-  "zemin_sahne": 1
+  "ust": "What if",
+  "ana": "Gibraltar closed?",
+  "zemin_sahne": 5
  },
  "sahneler": [
   {
+   "tur": "gezegen",
+   "doku": "dunya",
+   "atmosfer": "#6fb6ff",
+   "isik": [
+    -0.45,
+    0.35,
+    0.82
+   ],
    "cumle": 1,
-   "tur": "baslik",
+   "merkez": [
+    540,
+    1150
+   ],
+   "yaricap": [
+    420,
+    3000
+   ],
+   "dalis": 0.9,
+   "hedef_bas": [
+    -40,
+    20
+   ],
+   "hedef": [
+    -5.6,
+    35.95
+   ],
+   "kontur": 3,
    "ust": "What if · a thought experiment",
    "ana": "Close the Strait of Gibraltar",
-   "alt": "scenario, not prediction"
-  },
-  {
-   "cumle": 2,
-   "tur": "harita",
-   "bas_bolge": [
-    -20,
-    20,
-    45,
-    52
-   ],
-   "bolge": [
-    -9.5,
-    33.5,
-    -2.5,
-    38.5
-   ],
-   "noktalar": [
+   "boyut": 88,
+   "isaretler": [
     [
      -5.6,
      35.95,
-     "Strait of Gibraltar"
+     "Strait of Gibraltar",
+     "#ffb347"
     ]
-   ],
-   "baslik": "~13 km wide"
+   ]
   },
   {
+   "tur": "gezegen",
+   "doku": "dunya",
+   "atmosfer": "#6fb6ff",
+   "isik": [
+    -0.45,
+    0.35,
+    0.82
+   ],
+   "cumle": 2,
+   "merkez": [
+    540,
+    1250
+   ],
+   "yaricap": [
+    3000,
+    5200
+   ],
+   "hedef": [
+    -5.6,
+    35.95
+   ],
+   "kontur": 3,
+   "sayi": {
+    "bas": 0,
+    "son": 13,
+    "birim": "KM WIDE",
+    "etiket": "the sea's only link to the ocean",
+    "sure": 1.4
+   },
+   "cizgi": [
+    [
+     -5.62,
+     35.84
+    ],
+    [
+     -5.6,
+     35.95
+    ],
+    [
+     -5.58,
+     36.05
+    ]
+   ],
+   "cizgi_renk": "#ffb347",
+   "isaretler": [
+    [
+     -5.6,
+     35.95,
+     "",
+     "#ffb347"
+    ]
+   ]
+  },
+  {
+   "tur": "gezegen",
+   "doku": "dunya",
+   "atmosfer": "#6fb6ff",
+   "isik": [
+    -0.45,
+    0.35,
+    0.82
+   ],
    "cumle": 3,
-   "tur": "karsilastir",
-   "baslik": "Water budget (schematic)",
-   "birim": "",
-   "ogeler": [
-    [
-     "Rivers + rain in",
-     1
-    ],
-    [
-     "Evaporation out",
-     2
-    ]
-   ]
+   "merkez": [
+    540,
+    1150
+   ],
+   "yaricap": [
+    1500,
+    1700
+   ],
+   "hedef_bas": [
+    -5.6,
+    35.95
+   ],
+   "hedef": [
+    15,
+    37
+   ],
+   "kontur": 3,
+   "ust": "Every year",
+   "ana": "More evaporates than rivers bring",
+   "boyut": 84
   },
   {
+   "tur": "gezegen",
+   "doku": "dunya",
+   "atmosfer": "#6fb6ff",
+   "isik": [
+    -0.45,
+    0.35,
+    0.82
+   ],
    "cumle": 4,
-   "tur": "sayi",
-   "bas": 0,
-   "son": 1,
-   "birim": "METER / YEAR",
-   "etiket": "up to ~1 m fall per year (estimates 0.5–1 m)",
-   "sure": 1.6
+   "merkez": [
+    540,
+    1150
+   ],
+   "yaricap": [
+    1700,
+    1900
+   ],
+   "hedef": [
+    15,
+    37
+   ],
+   "kontur": 3,
+   "ust": "Cut off from the Atlantic",
+   "ana": "−1 meter per year",
+   "boyut": 104,
+   "cizgi": [
+    [
+     -5.75,
+     35.8
+    ],
+    [
+     -5.45,
+     36.1
+    ]
+   ],
+   "cizgi_renk": "#ff5a4a",
+   "cizgi_sure": 0.6
   },
   {
+   "tur": "gezegen",
+   "doku": "dunya",
+   "atmosfer": "#6fb6ff",
+   "isik": [
+    -0.45,
+    0.35,
+    0.82
+   ],
    "cumle": 5,
-   "tur": "sayi",
-   "bas": 0,
-   "son": 1000,
-   "birim": "YEARS",
-   "etiket": "to lose most of the sea",
-   "sure": 2.2
+   "merkez": [
+    540,
+    1150
+   ],
+   "yaricap": [
+    1900,
+    2100
+   ],
+   "hedef": [
+    15,
+    37
+   ],
+   "kontur": 3,
+   "sayi": {
+    "bas": 0,
+    "son": 1000,
+    "birim": "YEARS",
+    "etiket": "until most of it is gone",
+    "sure": 2.0
+   }
   },
   {
+   "tur": "gezegen",
+   "doku": "dunya_kuru",
+   "atmosfer": "#6fb6ff",
+   "isik": [
+    -0.45,
+    0.35,
+    0.82
+   ],
    "cumle": 6,
-   "tur": "harita",
-   "bas_bolge": [
-    -10,
-    28,
-    40,
-    47
+   "merkez": [
+    540,
+    1150
    ],
-   "bolge": [
-    -6,
-    30,
-    37,
-    46
+   "yaricap": [
+    1700,
+    2000
    ],
-   "baslik": "Salt desert, 3–5 km deep",
-   "yakinlas": false
+   "hedef": [
+    15,
+    37
+   ],
+   "kontur": 3,
+   "ust": "Kilometers below sea level",
+   "ana": "A salt desert",
+   "boyut": 110
   },
   {
+   "tur": "gezegen",
+   "doku": "dunya_kuru",
+   "atmosfer": "#6fb6ff",
+   "isik": [
+    -0.45,
+    0.35,
+    0.82
+   ],
    "cumle": 7,
-   "tur": "zaman",
-   "baslik": "It already happened",
-   "olaylar": [
+   "merkez": [
+    540,
+    1150
+   ],
+   "yaricap": [
+    2000,
+    2200
+   ],
+   "hedef": [
+    15,
+    37
+   ],
+   "kontur": 3,
+   "sayi": {
+    "bas": 0,
+    "son": 6,
+    "birim": "MILLION YEARS AGO",
+    "etiket": "it really happened",
+    "sure": 1.2
+   }
+  },
+  {
+   "tur": "gezegen",
+   "doku": "dunya_kuru",
+   "atmosfer": "#6fb6ff",
+   "isik": [
+    -0.45,
+    0.35,
+    0.82
+   ],
+   "cumle": 8,
+   "merkez": [
+    540,
+    1150
+   ],
+   "yaricap": [
+    2600,
+    2400
+   ],
+   "hedef_bas": [
+    -2,
+    36.5
+   ],
+   "hedef": [
+    4,
+    37
+   ],
+   "kontur": 3,
+   "ust": "The Atlantic broke through",
+   "ana": "The biggest flood?",
+   "boyut": 96,
+   "cizgi": [
     [
-     "5.96 Ma",
-     "Gateway closes"
+     -9,
+     36
     ],
     [
-     "~5.6 Ma",
-     "Sea nearly dry"
+     -5.6,
+     35.95
     ],
     [
-     "5.33 Ma",
-     "Zanclean flood"
+     -2,
+     36.3
+    ],
+    [
+     2,
+     37.2
+    ],
+    [
+     6,
+     37.8
+    ],
+    [
+     10,
+     37.5
+    ]
+   ],
+   "cizgi_renk": "#4fb6ff",
+   "cizgi_sure": 2.0,
+   "isaretler": [
+    [
+     -5.6,
+     35.95,
+     "",
+     "#4fb6ff"
     ]
    ]
+  },
+  {
+   "tur": "gezegen",
+   "doku": "dunya",
+   "atmosfer": "#6fb6ff",
+   "isik": [
+    -0.45,
+    0.35,
+    0.82
+   ],
+   "cumle": 9,
+   "merkez": [
+    540,
+    1150
+   ],
+   "yaricap": [
+    1700,
+    1500
+   ],
+   "hedef": [
+    15,
+    37
+   ],
+   "kontur": 3,
+   "sayi": {
+    "bas": 0,
+    "son": 2,
+    "birim": "YEARS",
+    "etiket": "to refill most of the sea",
+    "sure": 1.0
+   },
+   "ust": "In as little as"
   },
   {
    "cumle": 10,
    "tur": "soru",
-   "metin": "Would you walk across the dry Mediterranean?",
+   "metin": "Which strait should NØVEX close next?",
    "secenekler": [
-    "YES",
-    "NO"
+    "BOSPHORUS",
+    "MALACCA"
    ]
   }
+ ],
+ "parlama": true,
+ "partikul": {
+  "tur": "toz",
+  "yogunluk": 110,
+  "renk": "#ffe2b0",
+  "guc": 0.35
+ },
+ "vurgu_kelimeler": [
+  "Gibraltar",
+  "tomorrow",
+  "13",
+  "Mediterranean",
+  "evaporation",
+  "Atlantic",
+  "meter",
+  "1,000",
+  "salt",
+  "desert",
+  "six",
+  "million",
+  "flood",
+  "two",
+  "Bosphorus",
+  "Malacca"
  ]
 }

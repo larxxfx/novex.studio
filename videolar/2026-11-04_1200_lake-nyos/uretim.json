@@ -3,8 +3,8 @@
  "slot": "12:00",
  "kategori": "D Mysteries & Earth",
  "mod": "REALITY",
- "ses_motoru": "piper-ljspeech",
- "hiz_carpani": 1.0,
+ "ses_motoru": "piper-norman",
+ "hiz_carpani": 1.12,
  "ruh": "gerilim",
  "ortam": "ruzgar"
 }

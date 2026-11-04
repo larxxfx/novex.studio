@@ -93,7 +93,8 @@ Tam metin: `strateji/KALITE_STANDARDI_4KASIM.md`.
 
 **Referans:** İlk "What If Turkey Were in America?" / Antarktika videolarının sinematik kalitesi. Tam ekran ışın izlemeli küre, kamera dalışı, partikül, parlayan çizgiler, kelime vurgulu altyazı.
 - Yeni videolar bunun altına düşmez.
-- **4 Kasım'da üretilen 4 Short (sahne_v1 düz slayt) bu standardın ALTINDADIR.** Bu yüzden onları "standarda uygun" saymıyorum.
+- Referans kaydı ve kontrol kareleri: `strateji/GORSEL_REFERANS.md`.
+- 4 Kasım'ın 4 Short'u ilk hâlinde (düz slayt) bu standardın altındaydı; 4 Kasım'da 3D sahnelerle yeniden üretildi (bkz. `QUALITY_CONTROL.md`).
 
 **Görsel:**
 - Her videoda baskın görsel 3D/sinematik olmalı:
@@ -128,3 +129,7 @@ Tam metin: `strateji/KALITE_STANDARDI_4KASIM.md`.
 - Ara sıra iki seçenek sunulur (ör. "Mars, or Mercury?").
 - Soru kapanış anlatımına ve sinematik ekran tipografisine (`soru` sahnesi) entegre edilir; duygusal kapanışı zayıflatmaz.
 - Jenerik "abone ol / yorum yap" kalıbı kullanılmaz.
+
+## 10. Kalıcılık (Emir, 4 Kasım 2026 08:47)
+§8 kalite standardı ve §9 katılım sorusu oturuma özel değildir; `CLAUDE.md`, `NOVEX_MASTER.md`, zamanlanmış görev talimatları ve
+`araclar/teslim_dogrula.py` (otomatik denetim) bu iki kuralı taşır. Bir video bu denetimden geçmeden "yayına hazır" sayılmaz.

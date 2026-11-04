@@ -153,6 +153,12 @@
      "metin": "Would you live beside a lake that can breathe?",
      "hiz": 1.04,
      "perde": 0.5
+    },
+    {
+     "metin": "And which deadly place on Earth should we explore next?",
+     "hiz": 1.04,
+     "kazanc_db": 1.5,
+     "once": 0.45
     }
    ]
   }

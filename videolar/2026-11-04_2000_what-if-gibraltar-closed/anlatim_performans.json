@@ -148,6 +148,18 @@
      "metin": "Would you walk across the dry Mediterranean?",
      "hiz": 1.04,
      "perde": 0.5
+    },
+    {
+     "metin": "And which strait should we close next:",
+     "hiz": 1.02,
+     "once": 0.45
+    },
+    {
+     "metin": "the Bosphorus, or Malacca?",
+     "soyle": "the Bosphorus, or Malacca?",
+     "hiz": 1.08,
+     "kazanc_db": 2.0,
+     "once": 0.12
     }
    ]
   }
