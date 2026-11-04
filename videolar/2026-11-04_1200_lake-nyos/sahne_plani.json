@@ -29,7 +29,7 @@
    "cumle": 1,
    "merkez": [
     540,
-    1150
+    1000
    ],
    "yaricap": [
     420,
@@ -68,7 +68,7 @@
    "cumle": 2,
    "merkez": [
     540,
-    1250
+    1000
    ],
    "yaricap": [
     3600,
@@ -94,7 +94,7 @@
    "cumle": 3,
    "merkez": [
     540,
-    1250
+    1000
    ],
    "yaricap": [
     3800,
@@ -117,18 +117,45 @@
    ]
   },
   {
+   "tur": "gezegen",
+   "doku": "dunya",
+   "atmosfer": "#5fe3b8",
+   "merkez": [
+    540,
+    1000
+   ],
+   "hedef": [
+    10.3,
+    6.44
+   ],
+   "kontur": 3,
    "cumle": 4,
-   "tur": "karsilastir",
-   "baslik": "Density vs. air",
-   "birim": "×",
-   "ogeler": [
+   "isik": [
+    -0.25,
+    0.3,
+    0.92
+   ],
+   "yaricap": [
+    4400,
+    4900
+   ],
+   "ust": "Heavier than air",
+   "karsi": [
     [
      "Air",
-     1.0
+     "1.0×"
     ],
     [
-     "Carbon dioxide",
-     1.5
+     "CO₂",
+     "1.5×"
+    ]
+   ],
+   "isaretler": [
+    [
+     10.3,
+     6.44,
+     "",
+     "#5fe3b8"
     ]
    ]
   },
@@ -144,7 +171,7 @@
    "cumle": 5,
    "merkez": [
     540,
-    1250
+    1000
    ],
    "yaricap": [
     4400,
@@ -177,7 +204,7 @@
    "cumle": 6,
    "merkez": [
     540,
-    1300
+    1000
    ],
    "yaricap": [
     2600,
@@ -208,7 +235,7 @@
    "cumle": 7,
    "merkez": [
     540,
-    1250
+    1000
    ],
    "yaricap": [
     3000,
@@ -232,27 +259,43 @@
    ]
   },
   {
+   "tur": "gezegen",
+   "doku": "dunya",
+   "atmosfer": "#5fe3b8",
+   "merkez": [
+    540,
+    1000
+   ],
+   "hedef": [
+    10.3,
+    6.44
+   ],
+   "kontur": 3,
    "cumle": 8,
-   "tur": "zaman",
-   "baslik": "After",
-   "olaylar": [
+   "isik": [
+    -0.25,
+    0.3,
+    0.92
+   ],
+   "yaricap": [
+    3600,
+    3200
+   ],
+   "isaretler": [
     [
-     "1984",
-     "Lake Monoun gas release"
-    ],
-    [
-     "1986",
-     "Lake Nyos disaster"
-    ],
-    [
-     "2001",
-     "First degassing pipe"
-    ],
-    [
-     "2011",
-     "Two more pipes"
+     10.3,
+     6.44,
+     "Lake Nyos",
+     "#8ff0cf"
     ]
-   ]
+   ],
+   "sayi": {
+    "bas": 0,
+    "son": 3,
+    "birim": "DEGASSING PIPES",
+    "etiket": "first in 2001, two more in 2011",
+    "sure": 1.2
+   }
   },
   {
    "tur": "gezegen",
@@ -266,7 +309,7 @@
    "cumle": 9,
    "merkez": [
     540,
-    1150
+    1000
    ],
    "yaricap": [
     2400,

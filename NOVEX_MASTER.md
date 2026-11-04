@@ -12,6 +12,8 @@ Bu dosya kuralları tekrar etmez; doğru belgeye yönlendirir.
 | Ana operasyon talimatı (Emir) / ChatGPT master talimatı | `strateji/ANA_OPERASYON_TALIMATI.md` · `strateji/CHATGPT_MASTER_DIRECTIVE.md` |
 | Editoryal strateji, kategoriler, REALITY/SPECULATION/FICTION | `strateji/EDITORIAL_STRATEGY.md`, `strateji/kategoriler.json` |
 | **Görsel kalite referansı** (What If Turkey Were in America? / kure_v1) | `strateji/GORSEL_REFERANS.md` · `strateji/KALITE_STANDARDI_4KASIM.md` |
+| **Görsel üretim sistemi** (somut görsel zorunlu, foto/AI/arşiv ayrımı, ChatGPT prompt akışı, erişilebilen araçlar) | `strateji/GORSEL_URETIM_SISTEMI.md` |
+| **Sürekli gelişim** (gelişim hedefi, haftalık değerlendirme) | `strateji/SUREKLI_GELISIM.md` · `strateji/haftalik/` |
 | Görsel tekrar kaydı | `strateji/GORSEL_KAYIT.md` |
 | Ses lisansı araştırması | `marka/SES_LISANS_ARASTIRMASI_EN.md` |
 | Çalışma düzeni ve inceleme biçimi | `CALISMA_DUZENI.md` · `CHATGPT_TALIMATLARI.md` |
@@ -38,4 +40,6 @@ python3 araclar/short_uret.py videolar/<klasör>     # ses → telaffuz → alty
 - Yapılmayan iş yapılmış gibi raporlanmaz; gerçek MP4 yoksa video hazır değildir.
 - **Her video**, konuya özel doğal bir İngilizce "sırada neyi keşfedelim?" sorusuyla biter (anlatım + ekran). Jenerik abone ol çağrısı yok.
 - Erkek anlatıcı (Piper Norman) Emir onaylamadan yayına uygun değildir.
-- Baskın görsel 3D/sinematik; düz slayt veya yalnız harita videosu yok.
+- Baskın görsel 3D/sinematik; `soru` kartı dışında her sahnede somut görsel varlık; düz slayt veya yalnız harita videosu yok.
+- Gerçek / arşiv / AI görselleri ayrılır, kaynak ve lisans kaydedilir; AI görseli gerçek gibi sunulmaz.
+- Her videoda bir `gelisim_hedefi`; kapanış soruları tekrar etmez (teslim_dogrula).

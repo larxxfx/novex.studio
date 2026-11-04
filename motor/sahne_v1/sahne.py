@@ -27,6 +27,9 @@ Türler:
             isaretler [[lon,lat,"etiket","#renk","ust|alt"]] (parlayan nabızlı nokta), cizgi [[lon,lat],...] + cizgi_renk/cizgi_bas/cizgi_sure
             disliler [[x,y,r,dis,yon]] + disli_renk/disli_hiz/disli_guc (dönen dişliler)
             yazılar: ust, ana, boyut, sayi {bas,son,birim,etiket,sure}, karsi [[et,deger],[et,deger]], ok "saat", kontur (okunurluk)
+  foto      somut görsel (fotoğraf/arşiv/AI/prosedürel) 2.5D parallax: dosya (plan klasörüne göre), koken fotograf|arsiv|ai|prosedurel,
+            kaynak, lisans (ZORUNLU; teslim_dogrula denetler), kredi (ekranda kısa), hareket itme|cekme|sol|sag|yukari, derinlik, zum, sis, ton;
+            yazılar gezegen ile aynı (ust, ana, sayi, karsi). koken=ai → ekranda "AI-GENERATED ILLUSTRATION" etiketi kapatılamaz.
 Plan düzeyi sinematik katmanlar: partikul {tur: toz|kar|kor|yildiz_akisi, yogunluk, renk, guc}, isik_huzme {aci, renk, guc},
   parlama true/false, vurgu_kelimeler [...] (altyazıda vurgu rengi). Örnekler: videolar/2026-11-04_*/sahne_plani.json.
 """
@@ -406,6 +409,58 @@ def c_gezegen(L, dr, plan, s, u, ts):
         ang = math.radians(son_a); tip = (cx + R * math.cos(ang), cy + R * math.sin(ang)); dd = 1 if s["ok"] == "saat" else -1
         dr.polygon([tip, (tip[0] - 28 * dd, tip[1] - 22), (tip[0] - 6 * dd, tip[1] + 30)], fill=renk(p["vurgu"], int(255 * a)))
 
+# ---------- foto: fotoğraf / arşiv / yapay zekâ görseli, 2.5D parallax ----------
+PLAN_DIZIN = "."   # main() plan dosyasının klasörüne ayarlar; foto `dosya` yolu buna göredir
+FOTO_ETIKET = {"ai": "AI-GENERATED ILLUSTRATION", "arsiv": "ARCHIVE IMAGE", "fotograf": "PHOTO", "prosedurel": ""}
+_FOTO = {}
+def foto_yukle(yol):
+    if yol not in _FOTO:
+        tam = yol if os.path.isabs(yol) else os.path.join(PLAN_DIZIN, yol)
+        im = cv2.imread(tam, cv2.IMREAD_COLOR)
+        if im is None: raise SystemExit(f"foto bulunamadı: {tam}")
+        im = cv2.cvtColor(im, cv2.COLOR_BGR2RGB).astype(np.float32)
+        Wb, Hb = int(W * 1.18), int(H * 1.18); k = max(Wb / im.shape[1], Hb / im.shape[0])   # ekranı doldur (+%18 hareket payı)
+        im = cv2.resize(im, (int(im.shape[1] * k + 1), int(im.shape[0] * k + 1)), interpolation=cv2.INTER_AREA if k < 1 else cv2.INTER_CUBIC)
+        y0, x0 = (im.shape[0] - Hb) // 2, (im.shape[1] - Wb) // 2; im = im[y0:y0 + Hb, x0:x0 + Wb]
+        uzak = cv2.GaussianBlur(im, (0, 0), 2.2)   # uzak katman hafif yumuşak (alan derinliği)
+        yy = np.linspace(0, 1, Hb, dtype=np.float32)[:, None]
+        lum = cv2.GaussianBlur(im.mean(2) / 255.0, (0, 0), 25)
+        m = np.clip((yy - 0.42) * 2.4, 0, 1) * (0.7 + 0.3 * lum)   # derinlik vekili: alt kısım ve parlak ön plan yakın
+        _FOTO[yol] = (im, uzak, cv2.GaussianBlur(m, (0, 0), 30)[..., None])
+    return _FOTO[yol]
+
+def foto_katman(s, ts, u):
+    """RGBA float (0..255). s: dosya, koken (fotograf|arsiv|ai|prosedurel), hareket (itme|cekme|sol|sag|yukari), derinlik 0..1, zum [z0,z1], sis 0..1, ton hex."""
+    im, uzak, m = foto_yukle(s["dosya"]); Hb, Wb = im.shape[:2]; e = ease(u)
+    z0, z1 = s.get("zum", [1.0, 1.08]); z = z0 + (z1 - z0) * e
+    hk = s.get("hareket", "itme"); d = s.get("derinlik", 0.6) * 60
+    dx = {"sol": -1, "sag": 1}.get(hk, 0) * (e - 0.5) * 70; dy = {"yukari": -1}.get(hk, 0) * (e - 0.5) * 70
+    if hk == "cekme": z = z1 + (z0 - z1) * e
+    def yerlestir(img, kat):   # katman başına farklı kayma = parallax
+        ox = dx * kat + (e - 0.5) * d * kat * (1 if hk != "sol" else -1); oy = dy * kat
+        M = np.float32([[z, 0, W / 2 - z * Wb / 2 + ox], [0, z, H / 2 - z * Hb / 2 + oy]])
+        return cv2.warpAffine(img, M, (W, H), flags=cv2.INTER_LINEAR, borderMode=cv2.BORDER_REFLECT)
+    yakin, uz, mm = yerlestir(im, 1.0), yerlestir(uzak, 0.45), yerlestir(m, 1.0)[..., None] if m.ndim == 3 else yerlestir(m, 1.0)
+    if mm.ndim == 2: mm = mm[..., None]
+    rgb = uz * (1 - mm) + yakin * mm
+    if s.get("sis", 0.25) > 0:   # atmosfer: uzak katmanda sis
+        ton = np.array(renk(s.get("ton", "#b8c4d0"))[:3], np.float32)
+        rgb = rgb * (1 - (1 - mm) * s.get("sis", 0.25)) + ton * (1 - mm) * s.get("sis", 0.25)
+    yy, xx = np.mgrid[0:H, 0:W].astype(np.float32); v = 1 - 0.55 * (((xx - W / 2) / W) ** 2 + ((yy - H * 0.45) / H) ** 2) * 2.2
+    rgb = rgb * np.clip(v, 0.35, 1)[..., None]
+    out = np.zeros((H, W, 4), np.float32); out[..., :3] = np.clip(rgb, 0, 255); out[..., 3] = 255
+    return out
+
+def c_foto(L, dr, plan, s, u, ts):
+    """Somut görsel sahnesi: foto katmanı + (gezegen sahnesindeki gibi) ust/ana/sayi/karsi yazıları + zorunlu köken etiketi."""
+    p = plan["palet"]; et = FOTO_ETIKET.get(s.get("koken", "fotograf"), "")
+    ek = s.get("kredi", "")   # ör. "NASA/JPL · public domain"
+    if et or ek:
+        metin = " · ".join(x for x in (et, ek) if x)
+        yazi(dr, (W / 2, 208), metin.upper() if et == FOTO_ETIKET["ai"] else metin, font("modern", "kalin" if et == FOTO_ETIKET["ai"] else "orta", 30),
+             renk(p["metin"]), 0.9, kontur=3)
+    c_gezegen(L, dr, plan, dict(s, kontur=s.get("kontur", 4)), u, ts)
+
 # ---------- sinematik katmanlar: partikül, ışık huzmesi, parlama ----------
 _PART = {}
 def partikul(img, t, plan):
@@ -438,7 +493,7 @@ def parlama(img, plan):
     return img + cv2.resize(cv2.GaussianBlur(k, (0, 0), 6), (W, H)) * 0.55
 
 CIZ = {"baslik": c_baslik, "sayi": c_sayi, "harita": c_harita, "zaman": c_zaman, "karsilastir": c_karsilastir,
-       "alinti": c_alinti, "liste": c_liste, "soru": c_soru, "gezegen": c_gezegen}
+       "alinti": c_alinti, "liste": c_liste, "soru": c_soru, "gezegen": c_gezegen, "foto": c_foto}
 
 # ---------- zamanlama ----------
 def sahne_araliklari(plan, z):
@@ -464,8 +519,8 @@ def tek_sahne(plan, sc, t, a, b):
     L = Image.new("RGBA", (W, H), (0, 0, 0, 0)); dr = ImageDraw.Draw(L)
     CIZ[sc["tur"]](L, dr, plan, sc, cl((t - a) / (b - a)), t - a)
     arr = np.asarray(L).astype(np.float32)
-    if sc["tur"] == "gezegen" and sc.get("doku") != "yok":   # 3D küre metnin altında; metin üstte
-        g = gezegen_katman(sc, t - a, cl((t - a) / (b - a))); ta = arr[..., 3:4] / 255
+    if (sc["tur"] == "gezegen" and sc.get("doku") != "yok") or sc["tur"] == "foto":   # görsel katman metnin altında; metin üstte
+        g = (foto_katman if sc["tur"] == "foto" else gezegen_katman)(sc, t - a, cl((t - a) / (b - a))); ta = arr[..., 3:4] / 255
         arr = np.concatenate([g[..., :3] * (1 - ta) + arr[..., :3] * ta, np.maximum(g[..., 3:4], arr[..., 3:4])], -1)
     # kamera: yavaş itme / kaydırma (sahne başına yön değişir)
     k = plan.get("kamera", "itme"); u = cl((t - a) / max(b - a, 1e-6))
@@ -528,7 +583,8 @@ def kapak_ciz(plan, z, out):
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("mod"); ap.add_argument("plan"); ap.add_argument("zaman"); ap.add_argument("args", nargs="*")
     ap.add_argument("--srt"); ap.add_argument("--bas", type=float, default=0.0); ap.add_argument("--son", type=float); ap.add_argument("--kapak", action="store_true")
-    a = ap.parse_args(); plan = json.load(open(a.plan, encoding="utf-8")); z = json.load(open(a.zaman, encoding="utf-8"))
+    a = ap.parse_args(); plan = json.load(open(a.plan, encoding="utf-8"))
+    global PLAN_DIZIN; PLAN_DIZIN = os.path.dirname(os.path.abspath(a.plan)); z = json.load(open(a.zaman, encoding="utf-8"))
     caps = srt_oku(a.srt); ara, toplam = sahne_araliklari(plan, z)
     if a.mod == "kapak": kapak_ciz(plan, z, a.args[0]); return
     if a.mod == "kare":

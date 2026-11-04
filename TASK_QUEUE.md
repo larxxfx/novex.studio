@@ -32,10 +32,16 @@
 | T-20261104-07 | Haftalık uzun video (Pazar 8 Kas 19:00) senaryosu + bölümler; aday `plan/en/longform_2026-11-08_voyager.md` | ChatGPT | P1 | açık | 04.11 | |
 | T-20261104-08 | Uzun video render hattı (8–12 dk, `short_uret.py` 16:9 / bölüm desteği) | Claude | P1 | açık | 04.11 | |
 | T-20261104-09 | Piper sesini dinle; onay ya da ret | Emir | P0 | açık | 04.11 | `ses/LISANS.txt` → `yayin_uygun` |
-| T-20261104-10 | Depoyu Private yap (GitHub → Settings → Danger zone) | Emir | P0 | açık | 04.11 | Claude'un isteği güvenlik denetimi tarafından engellendi |
+| T-20261104-10 | Depoyu Private yap (GitHub → Settings → Danger zone) | Emir | P0 | açık | 04.11 | 4 Kas 09:05 hâlâ PUBLIC; `strateji/DEPO_GUVENLIK_2026-11-04.md` |
 | T-20261104-11 | YouTube kanalını vidIQ'da yetkilendir | Emir | P1 | açık | 04.11 | `vidiq_user_channels` boş |
 | T-20261104-12 | Claude ↔ ChatGPT canlı mesajlaşma (Cloudflare) | Claude | P2 | engelli | 04.11 | Claude ortamı workers.dev erişemiyor; strateji/CANLI_ILETISIM_MIMARISI.md |
 | T-20261104-13 | Telaffuz düzeltmesi (en iyi 3 seçim + fonetik yazım), 4 Short sesini yeniden üret | Claude | P1 | tamam | 04.11 | `cikti/anlatim/secim.json` |
 | T-20261104-14 | Venus Short v2: Norman erkek ses + 3D gezegen sahnesi + katılım sorusu (Mars/Mercury) | Claude | P0 | tamam | 04.11 02:30 | `videolar/2026-11-04_1600_venus-day-longer-than-year/cikti/qc_rapor.md` (teknik 10/10) |
 | T-20261104-15 | Norman sesini (en_US-norman-medium) dinle; onay ya da ret | Emir | P0 | açık | 04.11 | lisans: LibriVox kamu malı + MIT; `ses/LISANS.txt` |
-| T-20261104-16 | Diğer 3 Short'u yeni kalite standardına taşı (3D sahne, erkek ses, katılım sonu) | Claude | P1 | açık | 04.11 | Norman onayına bağlı |
+| T-20261104-16 | Diğer 3 Short'u yeni kalite standardına taşı (3D sahne, erkek ses, katılım sonu) | Claude | P1 | devam | 04.11 10:10 | planlar + Norman sesi dalda (`d6fddc5`, `84ed3e0`); final MP4'ler üretiliyor |
+| T-20261104-17 | Kalite standardı + katılım sorusu kalıcı belgelere (CLAUDE.md, NOVEX_MASTER, standart §10, referans kaydı) | Claude | P0 | tamam | 04.11 09:00 | `CLAUDE.md`, `strateji/GORSEL_REFERANS.md`, `d6fddc5` |
+| T-20261104-18 | Teslim doğrulayıcı (MP4/kapak/SRT/paket/katılım/3D/lisans) + testler | Claude | P0 | tamam | 04.11 09:00 | `araclar/teslim_dogrula.py`, `testler/test_teslim_dogrula.py` 12/12 |
+| T-20261104-19 | 5 zamanlanmış görevi yeni standarda güncelle; çalışma kanıtı | Claude | P0 | tamam | 04.11 09:02 | 08:00 çalıştı → `596d53e` (eski stil); talimatlar 09:02'de güncellendi |
+| T-20261104-20 | Depo PUBLIC güvenlik kontrolü | Claude | P0 | tamam | 04.11 09:05 | `strateji/DEPO_GUVENLIK_2026-11-04.md` (anahtar yok, e-posta çıkarıldı) |
+| T-20261104-22 | "What If Turkey Were in America?" MP4'ünü sohbete ekle (referans kaydı) | Emir | P2 | açık | 04.11 | `strateji/GORSEL_REFERANS.md` |
+| T-20261104-23 | Uzun video hattı (16:9, bölümler, uzun QC) | Claude | P1 | açık | 04.11 | N-06; haftalık görev Cmt 10:13'te önce hattı kuracak |

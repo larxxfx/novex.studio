@@ -9,19 +9,39 @@ Denetimler (hata = teslim edilemez; uyarı = bakılmalı; yayına hazır = hata 
               plan ve anlatım dosyalarından YENİ (eski plandan kalma MP4 yakalanır); durum.json'da tüm aşamalar 'tamam'.
   2. Kapak    teslim/THUMBNAIL.jpg geçerli görüntü, 9:16, ≥ 1080×1920.
   3. Altyazı  teslim/SUBTITLES.srt ayrıştırılır; zamanlar sıralı; son satır video süresini aşmaz.
-  4. Paket    TITLE, DESCRIPTION, TAGS, HASHTAGS, PINNED_COMMENT, SOURCES, YOUTUBE, INSTAGRAM_REELS, TIKTOK, QC_REPORT boş değil.
+  4. Paket    TITLE, DESCRIPTION, TAGS, HASHTAGS, PINNED_COMMENT, SOURCES (görsel kaynak/lisans dahil), YOUTUBE, INSTAGRAM_REELS,
+              TIKTOK, QC_REPORT, NARRATION (tam seslendirme metni) boş değil.
   5. Katılım  son anlatım cümlesi + son altyazı "next" içeren bir soru; sahne planı `soru` sahnesiyle biter;
               sabitlenmiş yorum soru içerir; jenerik "subscribe / like and" kalıbı yok (CLAUDE.md, zorunlu kural).
   6. Görsel   sahnelerin en az yarısı 3D/sinematik (`gezegen`); harita en fazla 2 sahne; `vurgu_kelimeler` var.
   7. Ses      uretim.json ses_motoru ile ses/LISANS.txt motoru aynı model; `yayin_uygun: evet` değilse yayına hazır değil.
+  8. Somut görsel (Emir, 4 Kas 10:16)  `soru` dışındaki HER sahnede somut görsel varlık: `foto` (dosya + koken + kaynak + lisans)
+              veya `gezegen` (doku ya da disliler). Yalnız yazı/sayaç/harita/grafik sahnesi = hata.
+  9. Gelişim  uretim.json `gelisim_hedefi` (bu videonun önceki videolara göre somut gelişim hedefi) dolu.
+ 10. Tekrar   kapanış sorusu başka bir videonun kapanış sorusuyla aynı değil.
 """
 import hashlib, json, os, re, subprocess, sys
 
 PAKET = ["TITLE.txt", "DESCRIPTION.txt", "TAGS.txt", "HASHTAGS.txt", "PINNED_COMMENT.txt", "SOURCES.txt",
-         "YOUTUBE.txt", "INSTAGRAM_REELS.txt", "TIKTOK.txt", "QC_REPORT.txt"]
+         "YOUTUBE.txt", "INSTAGRAM_REELS.txt", "TIKTOK.txt", "QC_REPORT.txt", "NARRATION.txt"]
 ASAMALAR = ["ses", "telaffuz", "altyazi", "render", "ses_tasarim", "miks", "birlestir", "qc", "kapak", "paket"]
 JENERIK = re.compile(r"\b(subscribe|smash (the )?like|like and (comment|share)|hit the bell)\b", re.I)
-SINEMATIK = {"gezegen"}   # 3D/sinematik sahne türleri (sahne_v1)
+SINEMATIK = {"gezegen", "foto"}   # 3D/sinematik/görsel sahne türleri (sahne_v1)
+KOKENLER = {"fotograf", "arsiv", "ai", "prosedurel"}
+
+
+def somut_mu(s):
+    """Sahnede somut bir görsel varlık var mı (yalnız yazı/sayaç/harita/grafik değil)?"""
+    if s.get("tur") == "foto": return bool(s.get("dosya"))
+    if s.get("tur") == "gezegen": return s.get("doku", "venus") != "yok" or bool(s.get("disliler"))
+    return False
+
+
+def kapanis_metni(perf):
+    son = perf["cumleler"][-1]; return son.get("altyazi") or " ".join(p["metin"] for p in son["parcalar"])
+
+
+def nrm_soru(t): return re.sub(r"[^a-z0-9 ]", "", t.lower()).strip()
 
 
 def ffprobe(yol):
@@ -156,6 +176,29 @@ def dogrula(klasor):
         if turler and sin / len(turler) < 0.5: H.append(f"3D/sinematik sahne oranı düşük ({sin}/{len(turler)}) — düz slayt videosu")
         if har > 2: H.append(f"harita sahnesi fazla ({har})")
         if not plan.get("vurgu_kelimeler"): U.append("vurgu_kelimeler tanımlı değil")
+        bos_sahne = [f"{s.get('cumle')}:{s.get('tur')}" for s in plan["sahneler"] if s.get("tur") != "soru" and not somut_mu(s)]
+        if bos_sahne: H.append(f"somut görseli olmayan sahne (yalnız yazı/sayaç/harita/grafik): {', '.join(bos_sahne)}")
+        for s in plan["sahneler"]:
+            if s.get("tur") != "foto": continue
+            eksik = [k for k in ("kaynak", "lisans") if not str(s.get(k, "")).strip()]
+            if s.get("koken") not in KOKENLER: eksik.append("koken (fotograf|arsiv|ai|prosedurel)")
+            if eksik: H.append(f"foto sahnesi {s.get('cumle')}: eksik {', '.join(eksik)}")
+            if s.get("dosya") and not os.path.isfile(s["dosya"] if os.path.isabs(s["dosya"]) else j(s["dosya"])): H.append(f"foto dosyası yok: {s['dosya']}")
+        B["gorsel_koken"] = sorted({s.get("koken") for s in plan["sahneler"] if s.get("tur") == "foto"}) or ["prosedurel 3D"]
+
+    # 9. Gelişim hedefi
+    if uretim is not None and not str(uretim.get("gelisim_hedefi", "")).strip():
+        H.append("uretim.json `gelisim_hedefi` yok (her videoda önceki videolara göre somut bir gelişim hedefi)")
+
+    # 10. Kapanış sorusu tekrar etmiyor
+    if perf:
+        bu = nrm_soru(kapanis_metni(perf)); kok = os.path.dirname(os.path.abspath(klasor.rstrip("/")))
+        for diger in sorted(os.listdir(kok)) if os.path.isdir(kok) else []:
+            yol = os.path.join(kok, diger, "anlatim_performans.json")
+            if diger == os.path.basename(os.path.abspath(klasor.rstrip("/"))) or not os.path.isfile(yol): continue
+            try:
+                if nrm_soru(kapanis_metni(json.load(open(yol, encoding="utf-8")))) == bu: H.append(f"kapanış sorusu {diger} ile aynı"); break
+            except Exception: pass
 
     # 7. Ses ve lisans
     lis = j("ses/LISANS.txt"); yayin_uygun = False

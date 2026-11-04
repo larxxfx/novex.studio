@@ -24,7 +24,7 @@ def klasor_kur(d, **deg):
     os.makedirs(os.path.join(d, "cikti"), exist_ok=True); os.makedirs(os.path.join(d, "teslim"), exist_ok=True); os.makedirs(os.path.join(d, "ses"), exist_ok=True)
     w = lambda ad, s: open(os.path.join(d, ad), "w", encoding="utf-8").write(s if isinstance(s, str) else json.dumps(s))
     son = deg.get("son", "And which planet should we explore next: Mars, or Mercury?")
-    w("uretim.json", {"ses_motoru": deg.get("motor", "piper-norman")})
+    w("uretim.json", {"ses_motoru": deg.get("motor", "piper-norman"), **({"gelisim_hedefi": deg.get("gelisim", "daha güçlü kanca")} if deg.get("gelisim", "x") else {})})
     w("anlatim_performans.json", {"cumleler": [{"parcalar": [{"metin": "Venus spins backwards."}]}, {"parcalar": [{"metin": son}]}]})
     sh = deg.get("sahneler", [{"cumle": 1, "tur": "gezegen"}, {"cumle": 2, "tur": "soru"}])
     w("sahne_plani.json", {"sahneler": sh, "vurgu_kelimeler": ["Venus"]})
@@ -40,7 +40,7 @@ def klasor_kur(d, **deg):
 
 
 class TestTeslimDogrula(unittest.TestCase):
-    def setUp(self): self.d = tempfile.mkdtemp()
+    def setUp(self): self.d = os.path.join(tempfile.mkdtemp(), "v")   # kardeş klasör yok: kapanış sorusu tekrar denetimi izole
     def tearDown(self): shutil.rmtree(self.d, ignore_errors=True)
 
     def test_saglam_klasor_hatasiz_ama_onaysiz_yayina_hazir_degil(self):
@@ -96,6 +96,38 @@ class TestTeslimDogrula(unittest.TestCase):
         subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", ornek_mp4(), "-vf", "scale=720:1280", "-c:v", "libx264", "-profile:v", "high",
                         "-pix_fmt", "yuv420p", "-colorspace", "bt709", "-c:a", "copy", os.path.join(self.d, "cikti/VIDEO.mp4")], check=True)
         self.assertTrue(any("çözünürlük" in h for h in td.dogrula(self.d)["hatalar"]))
+
+
+    def test_yalniz_yazi_sahnesi_reddedilir(self):
+        klasor_kur(self.d, sahneler=[{"cumle": 1, "tur": "gezegen"}, {"cumle": 1, "tur": "sayi"}, {"cumle": 2, "tur": "soru"}])
+        self.assertTrue(any("somut görseli olmayan" in h for h in td.dogrula(self.d)["hatalar"]))
+
+    def test_dislisiz_bos_gezegen_reddedilir(self):
+        klasor_kur(self.d, sahneler=[{"cumle": 1, "tur": "gezegen", "doku": "yok"}, {"cumle": 2, "tur": "soru"}])
+        self.assertTrue(any("somut görseli olmayan" in h for h in td.dogrula(self.d)["hatalar"]))
+
+    def test_foto_kaynak_lisans_koken_zorunlu(self):
+        klasor_kur(self.d, sahneler=[{"cumle": 1, "tur": "foto", "dosya": "g.jpg", "koken": "ai", "kaynak": "ChatGPT prompt #3"},
+                                     {"cumle": 2, "tur": "soru"}])
+        open(os.path.join(self.d, "g.jpg"), "wb").write(b"x")
+        h = td.dogrula(self.d)["hatalar"]
+        self.assertTrue(any("foto sahnesi 1: eksik lisans" in x for x in h))
+        self.assertFalse(any("somut görseli olmayan" in x for x in h))
+
+    def test_foto_dosyasi_yoksa_hata(self):
+        klasor_kur(self.d, sahneler=[{"cumle": 1, "tur": "foto", "dosya": "yok.jpg", "koken": "fotograf", "kaynak": "NASA", "lisans": "PD"},
+                                     {"cumle": 2, "tur": "soru"}])
+        self.assertTrue(any("foto dosyası yok" in h for h in td.dogrula(self.d)["hatalar"]))
+
+    def test_gelisim_hedefi_zorunlu(self):
+        klasor_kur(self.d, gelisim="")
+        self.assertTrue(any("gelisim_hedefi" in h for h in td.dogrula(self.d)["hatalar"]))
+
+    def test_kapanis_sorusu_tekrar_edemez(self):
+        kok = os.path.dirname(self.d); klasor_kur(self.d); klasor_kur(os.path.join(kok, "onceki"))
+        self.assertTrue(any("kapanış sorusu onceki ile aynı" in h for h in td.dogrula(self.d)["hatalar"]))
+        klasor_kur(os.path.join(kok, "onceki"), son="And which moon should we explore next: Europa, or Titan?")
+        self.assertEqual(td.dogrula(self.d)["hatalar"], [])
 
 
 if __name__ == "__main__":

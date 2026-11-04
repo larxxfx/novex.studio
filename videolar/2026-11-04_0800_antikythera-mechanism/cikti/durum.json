@@ -2,56 +2,58 @@
  "asamalar": {
   "ses": {
    "durum": "tamam",
-   "zaman": "2026-11-04T01:06:18",
-   "sure": 45.51,
+   "zaman": "2026-11-04T10:03:31",
+   "sure": 46.91,
    "cumle": 10
   },
   "telaffuz": {
    "durum": "tamam",
-   "zaman": "2026-11-04T01:07:12",
-   "wer": 3.0,
+   "zaman": "2026-11-04T10:04:26",
+   "wer": 5.4,
    "sorunlu": [
     1,
-    4
+    2,
+    4,
+    5
    ]
   },
   "altyazi": {
    "durum": "tamam",
-   "zaman": "2026-11-04T01:07:12",
+   "zaman": "2026-11-04T10:04:26",
    "satir": 10
   },
   "render": {
    "durum": "tamam",
-   "zaman": "2026-11-04T01:10:08",
-   "sure": 47.705,
-   "kare": 1431,
+   "zaman": "2026-11-04T10:09:50",
+   "sure": 49.108,
+   "kare": 1473,
    "parca": 4
   },
   "ses_tasarim": {
    "durum": "tamam",
-   "zaman": "2026-11-04T01:10:11",
+   "zaman": "2026-11-04T10:09:57",
    "ruh": "gizem",
    "ortam": "okyanus"
   },
   "miks": {
    "durum": "tamam",
-   "zaman": "2026-11-04T01:10:16",
+   "zaman": "2026-11-04T10:10:04",
    "lufs_tp": [
     -13.9,
-    -1.9
+    -1.7
    ],
-   "ses_fon_min": 19.9,
+   "ses_fon_min": 16.1,
    "uyarilar": []
   },
   "birlestir": {
    "durum": "tamam",
-   "zaman": "2026-11-04T01:10:19",
+   "zaman": "2026-11-04T10:10:08",
    "dosya": "/home/claude/novex.studio/videolar/2026-11-04_0800_antikythera-mechanism/cikti/VIDEO.mp4",
-   "mb": 190.4
+   "mb": 196.0
   },
   "qc": {
    "durum": "tamam",
-   "zaman": "2026-11-04T01:11:05",
+   "zaman": "2026-11-04T10:11:12",
    "teknik": "10/10",
    "siyah": 0,
    "donuk": 0,
@@ -66,30 +68,32 @@
     "| Piksel formatı yuv420p | yuv420p | ✅ |",
     "| Rec.709 / SDR | bt709/bt709/bt709 | ✅ |",
     "| Ses AAC 48 kHz | aac 48000 | ✅ |",
-    "| Süre (Shorts ≤ 60 sn) | 47.700 sn | ✅ |",
-    "| Kare sayısı | 1431 | ✅ |",
+    "| Süre (Shorts ≤ 60 sn) | 49.100 sn | ✅ |",
+    "| Kare sayısı | 1473 | ✅ |",
     "| Tam çözümleme | hata yok | ✅ |",
     "| Ses yüksekliği ≈ −14 LUFS | -13.9 LUFS | ✅ |",
-    "| Ses lisansı yayına uygun | HF rhasspy/piper-voices lisans etiketi + MODEL_CARD) | ❌ |"
+    "| Ses lisansı yayına uygun | HF rhasspy/piper-voices MODEL_CARD + LibriVox kamu malı beyanı) | ❌ |"
    ]
   },
   "kapak": {
    "durum": "tamam",
-   "zaman": "2026-11-04T01:11:06",
+   "zaman": "2026-11-04T10:11:13",
    "dosya": "teslim/THUMBNAIL.jpg"
   },
   "paket": {
    "durum": "tamam",
-   "zaman": "2026-11-04T01:11:06",
+   "zaman": "2026-11-04T10:33:44",
    "dosyalar": [
     "DESCRIPTION.txt",
     "HASHTAGS.txt",
     "INSTAGRAM_REELS.txt",
+    "NARRATION.txt",
     "PINNED_COMMENT.txt",
     "QC_REPORT.txt",
     "SOURCES.txt",
     "SUBTITLES.srt",
     "TAGS.txt",
+    "TESLIM.txt",
     "THUMBNAIL.jpg",
     "TIKTOK.txt",
     "TITLE.txt",

@@ -1,13 +1,16 @@
 NØVEX QC REPORT — The Lake That Killed 1,746 People in One Night
-Slot: 2026-11-04 12:00 (Europe/Istanbul) · rendered 2026-11-04T01:22:14
-VIDEO.mp4 150.6 MB sha256 1f5271c830b7883f2272494a1567b5f36ebabc4a293774060ab23c0c8864ee22
+Slot: 2026-11-04 12:00 (Europe/Istanbul) · rendered 2026-11-04T10:31:13
+VIDEO.mp4 146.7 MB sha256 e80950d2c8b927120ace83cb9c45462fb79fb03030607fd13834ace55386b285
 
-VIDEO   technical checks 10/10 · black segments 1 · frozen segments 0 · 1573 frames / 52.419 s
-AUDIO   loudness/true peak [-13.9, -1.7] · min speech-over-background 19.4 dB (need >= 12) · warnings []
+VIDEO   technical checks 10/10 · black segments 0 · frozen segments 0 · 1530 frames / 50.998 s
+AUDIO   loudness/true peak [-13.9, -1.6] · min speech-over-background 17.0 dB (need >= 12) · warnings []
 SYNC    narration vs MP4 offset 2.0 ms
-VOICE   piper-ljspeech · Whisper small.en WER 1.9% · flagged sentences [1, 3]
-        s1: heard "On the night of August 21, 1986, a lake in Cameroon exhaled."
-        s3: heard "just a silent cloud of carbon dioxide rising from the bottom of Lake Neos."
+VOICE   piper-norman · Whisper small.en WER 5.0% · flagged sentences [1, 3, 7, 8, 9]
+        s1: heard "On the night of August 21, 1986, a lake in the hills of Cameroon excelled."
+        s3: heard "Just a silent cloud of carbon dioxide rising from the bottom of Lake Neos."
+        s7: heard "Volcanic gas had been slowly building up deep in the water until the light could not hold it."
+        s8: heard "Today, pipes vent the gas safely, shooting fountains high above the lake."
+        s9: heard "and just two years earlier, nearby Lake Monand had done the same."
 SUBS    SUBTITLES.srt, 10 cues, timing from synthesis (exact); burned-in inside safe area
 LICENCE voice: GEÇMEDİ (see ses/LISANS.txt) · visuals: own code + Natural Earth (public domain) · fonts: OFL/Apache · music/SFX: own synthesis
 HUMAN   listening/viewing by Emir: PENDING (Claude cannot listen)
@@ -29,8 +32,8 @@ qc.py table:
 | Piksel formatı yuv420p | yuv420p | ✅ |
 | Rec.709 / SDR | bt709/bt709/bt709 | ✅ |
 | Ses AAC 48 kHz | aac 48000 | ✅ |
-| Süre (Shorts ≤ 60 sn) | 52.433 sn | ✅ |
-| Kare sayısı | 1573 | ✅ |
+| Süre (Shorts ≤ 60 sn) | 51.000 sn | ✅ |
+| Kare sayısı | 1530 | ✅ |
 | Tam çözümleme | hata yok | ✅ |
 | Ses yüksekliği ≈ −14 LUFS | -13.9 LUFS | ✅ |
-| Ses lisansı yayına uygun | HF rhasspy/piper-voices lisans etiketi + MODEL_CARD) | ❌ |
+| Ses lisansı yayına uygun | HF rhasspy/piper-voices MODEL_CARD + LibriVox kamu malı beyanı) | ❌ |
