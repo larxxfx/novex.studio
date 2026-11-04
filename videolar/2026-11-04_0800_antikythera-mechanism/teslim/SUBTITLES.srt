@@ -1,39 +1,39 @@
 1
-00:00:00,350 --> 00:00:06,313
+00:00:00,350 --> 00:00:06,039
 In 1901, sponge divers pulled a lump of corroded bronze from a Roman-era shipwreck.
 
 2
-00:00:06,813 --> 00:00:08,374
+00:00:06,539 --> 00:00:07,844
 Inside it were gears.
 
 3
-00:00:08,924 --> 00:00:14,052
+00:00:08,394 --> 00:00:12,054
 At least 30 of them, cut by hand, more than 2,000 years ago.
 
 4
-00:00:14,502 --> 00:00:16,461
+00:00:12,504 --> 00:00:14,491
 This is the Antikythera Mechanism.
 
 5
-00:00:16,911 --> 00:00:20,565
+00:00:14,941 --> 00:00:18,339
 Turn a handle, and it showed the Sun, the Moon, and the planets,
 
 6
-00:00:20,765 --> 00:00:25,378
+00:00:18,539 --> 00:00:22,315
 predicted eclipses, and even tracked the dates of the Olympic Games.
 
 7
-00:00:25,878 --> 00:00:29,776
+00:00:22,815 --> 00:00:25,948
 Only about a third of it survived, in 82 fragments.
 
 8
-00:00:30,196 --> 00:00:36,633
+00:00:26,368 --> 00:00:31,787
 In 2021, a team at University College London rebuilt its front display from X-ray scans.
 
 9
-00:00:37,083 --> 00:00:41,492
+00:00:32,237 --> 00:00:36,390
 Nothing this complex appears again for more than 1,000 years.
 
 10
-00:00:42,092 --> 00:00:46,013
-So was it one of a kind, or the only one that survived?
+00:00:36,990 --> 00:00:46,908
+So was it one of a kind, or the only one that survived? And which lost technology should we uncover next: Damascus steel, or Roman concrete?

@@ -1,5 +1,5 @@
 {
- "wer_toplam": 0.0,
+ "wer_toplam": 4.3,
  "cumleler": [
   {
    "i": 1,
@@ -28,25 +28,25 @@
   {
    "i": 5,
    "metin": "In about a thousand years, most of it would be gone.",
-   "duyulan": "in about a thousand years. Most of it would be gone.",
-   "wer": 0.0
+   "duyulan": "in about a thousand years, most of it would be done.",
+   "wer": 10.0
   },
   {
    "i": 6,
-   "metin": "A salt desert, kilometers below sea level.",
-   "duyulan": "A salt desert, kilometers below sea level.",
-   "wer": 0.0
+   "metin": "A desert of salt, kilometers below sea level.",
+   "duyulan": "A digit of salt, kilometers below sea level.",
+   "wer": 14.3
   },
   {
    "i": 7,
    "metin": "And this isn't just a thought experiment. It happened, about six million years ago.",
-   "duyulan": "And this isn't just a thought experiment. It happened about six million years ago.",
+   "duyulan": "And this isn't just a thought experiment. It happened about 6 million years ago.",
    "wer": 0.0
   },
   {
    "i": 8,
    "metin": "Then the Atlantic broke back through, in what may have been the biggest flood in Earth's history.",
-   "duyulan": "Then the Atlantic broke back through in what may have been the biggest flood in Earth's history.",
+   "duyulan": "Then, the Atlantic broke back through in what may have been the biggest flood in Earth's history.",
    "wer": 0.0
   },
   {
@@ -57,9 +57,9 @@
   },
   {
    "i": 10,
-   "metin": "Would you walk across the dry Mediterranean?",
-   "duyulan": "Would you walk across the dry Mediterranean?",
-   "wer": 0.0
+   "metin": "Would you walk across the dry Mediterranean? And which strait should we close next: the Bosphorus Strait, or the Strait of Malacca?",
+   "duyulan": "Would you walk across the dry Mediterranean? And which strait should we close next to? The bosphorous strait or the strait of Molacal?",
+   "wer": 16.7
   }
  ]
 }

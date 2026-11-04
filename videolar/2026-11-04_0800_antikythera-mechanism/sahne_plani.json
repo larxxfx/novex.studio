@@ -13,100 +13,384 @@
  },
  "kapak": {
   "ust": "2,000 years old",
-  "ana": "It had gears.",
+  "ana": "Ancient gears",
   "zemin_sahne": 1
  },
  "sahneler": [
   {
+   "tur": "gezegen",
+   "doku": "dunya",
+   "atmosfer": "#6fb6ff",
+   "isik": [
+    -0.2,
+    0.25,
+    0.95
+   ],
    "cumle": 1,
-   "tur": "baslik",
-   "ust": "1901 · Antikythera, Greece",
-   "ana": "A lump of bronze from the sea",
-   "alt": "Roman-era shipwreck"
-  },
-  {
-   "cumle": 2,
-   "tur": "sayi",
-   "bas": 0,
-   "son": 30,
-   "birim": "BRONZE GEARS",
-   "etiket": "at least 30 survive, cut by hand",
-   "sure": 2.4
-  },
-  {
-   "cumle": 4,
-   "tur": "harita",
-   "bas_bolge": [
-    -15,
-    25,
-    45,
-    50
+   "merkez": [
+    540,
+    1000
    ],
-   "bolge": [
-    19,
-    33,
-    30,
-    41
+   "yaricap": [
+    420,
+    2300
    ],
-   "noktalar": [
+   "dalis": 0.9,
+   "hedef_bas": [
+    -10,
+    25
+   ],
+   "hedef": [
+    23.3,
+    35.87
+   ],
+   "kontur": 3,
+   "ust": "1901 · Aegean Sea",
+   "ana": "A lump of bronze",
+   "isaretler": [
     [
      23.3,
      35.87,
-     "Antikythera"
+     "Antikythera wreck",
+     "#ffcf7a"
     ]
-   ],
-   "baslik": "Found off Antikythera"
-  },
-  {
-   "cumle": 5,
-   "tur": "liste",
-   "baslik": "What it calculated",
-   "maddeler": [
-    "The Sun",
-    "The Moon & its phases",
-    "The planets",
-    "Eclipses",
-    "Olympic Games dates"
    ]
   },
   {
-   "cumle": 7,
-   "tur": "sayi",
-   "bas": 0,
-   "son": 82,
-   "birim": "FRAGMENTS",
-   "etiket": "only about a third survives",
-   "sure": 1.8
-  },
-  {
-   "cumle": 8,
-   "tur": "alinti",
-   "metin": "The first model that conforms to all the physical evidence.",
-   "kaynak": "Prof. Tony Freeth, UCL, 2021"
-  },
-  {
-   "cumle": 9,
-   "tur": "zaman",
-   "baslik": "The gap",
-   "olaylar": [
+   "tur": "gezegen",
+   "doku": "yok",
+   "cumle": 2,
+   "disliler": [
     [
-     "c. 100 BC",
-     "Antikythera Mechanism"
+     540,
+     860,
+     270,
+     40,
+     1
     ],
     [
-     "1300s",
-     "Astronomical clocks in Europe"
+     870,
+     690,
+     130,
+     19,
+     -1
+    ],
+    [
+     235,
+     1095,
+     150,
+     23,
+     -1
+    ],
+    [
+     865,
+     1110,
+     105,
+     15,
+     -1
     ]
-   ]
+   ],
+   "ana": "Inside it were gears",
+   "disli_renk": "#e0a85a"
+  },
+  {
+   "tur": "gezegen",
+   "doku": "yok",
+   "cumle": 3,
+   "disliler": [
+    [
+     540,
+     860,
+     270,
+     40,
+     1
+    ],
+    [
+     870,
+     690,
+     130,
+     19,
+     -1
+    ],
+    [
+     235,
+     1095,
+     150,
+     23,
+     -1
+    ],
+    [
+     865,
+     1110,
+     105,
+     15,
+     -1
+    ]
+   ],
+   "disli_hiz": 18,
+   "disli_renk": "#e0a85a",
+   "sayi": {
+    "bas": 0,
+    "son": 30,
+    "birim": "GEARS, AT LEAST",
+    "etiket": "cut by hand, 2,000+ years ago",
+    "sure": 1.6
+   }
+  },
+  {
+   "tur": "gezegen",
+   "doku": "yok",
+   "cumle": 4,
+   "disliler": [
+    [
+     540,
+     860,
+     270,
+     40,
+     1
+    ],
+    [
+     870,
+     690,
+     130,
+     19,
+     -1
+    ],
+    [
+     235,
+     1095,
+     150,
+     23,
+     -1
+    ],
+    [
+     865,
+     1110,
+     105,
+     15,
+     -1
+    ]
+   ],
+   "disli_hiz": 8,
+   "disli_renk": "#ffcf7a",
+   "ust": "The",
+   "ana": "Antikythera Mechanism",
+   "boyut": 104
+  },
+  {
+   "tur": "gezegen",
+   "doku": "ay",
+   "atmosfer": "#cfd6e6",
+   "isik": [
+    -0.7,
+    0.3,
+    0.65
+   ],
+   "cumle": 5,
+   "egim": 6,
+   "merkez": [
+    540,
+    1080
+   ],
+   "yaricap": [
+    380,
+    460
+   ],
+   "donus": 3,
+   "ust": "Turn a handle",
+   "ana": "Sun · Moon · Planets",
+   "boyut": 88
+  },
+  {
+   "tur": "gezegen",
+   "doku": "ay",
+   "atmosfer": "#ff9a5a",
+   "isik": [
+    0.95,
+    0.05,
+    -0.25
+   ],
+   "cumle": 6,
+   "egim": 6,
+   "merkez": [
+    540,
+    1080
+   ],
+   "yaricap": [
+    460,
+    500
+   ],
+   "donus": 2,
+   "ana": "It predicted eclipses",
+   "ust": "and the Olympic Games"
+  },
+  {
+   "tur": "gezegen",
+   "doku": "yok",
+   "cumle": 7,
+   "disliler": [
+    [
+     540,
+     860,
+     270,
+     40,
+     1
+    ],
+    [
+     870,
+     690,
+     130,
+     19,
+     -1
+    ],
+    [
+     235,
+     1095,
+     150,
+     23,
+     -1
+    ],
+    [
+     865,
+     1110,
+     105,
+     15,
+     -1
+    ]
+   ],
+   "disli_hiz": 3,
+   "disli_guc": 0.45,
+   "disli_renk": "#a07a48",
+   "sayi": {
+    "bas": 0,
+    "son": 82,
+    "birim": "FRAGMENTS",
+    "etiket": "only about a third survived",
+    "sure": 1.6
+   }
+  },
+  {
+   "tur": "gezegen",
+   "doku": "yok",
+   "cumle": 8,
+   "disliler": [
+    [
+     540,
+     860,
+     270,
+     40,
+     1
+    ],
+    [
+     870,
+     690,
+     130,
+     19,
+     -1
+    ],
+    [
+     235,
+     1095,
+     150,
+     23,
+     -1
+    ],
+    [
+     865,
+     1110,
+     105,
+     15,
+     -1
+    ]
+   ],
+   "disli_hiz": 10,
+   "disli_renk": "#7fd6ff",
+   "ust": "2021 · University College London",
+   "ana": "Rebuilt from X-ray scans",
+   "boyut": 88
+  },
+  {
+   "tur": "gezegen",
+   "doku": "yok",
+   "cumle": 9,
+   "disliler": [
+    [
+     540,
+     860,
+     270,
+     40,
+     1
+    ],
+    [
+     870,
+     690,
+     130,
+     19,
+     -1
+    ],
+    [
+     235,
+     1095,
+     150,
+     23,
+     -1
+    ],
+    [
+     865,
+     1110,
+     105,
+     15,
+     -1
+    ]
+   ],
+   "disli_hiz": 14,
+   "disli_renk": "#ffcf7a",
+   "sayi": {
+    "bas": 0,
+    "son": 1000,
+    "birim": "YEARS+",
+    "etiket": "before anything this complex appears again",
+    "sure": 2.0
+   }
   },
   {
    "cumle": 10,
    "tur": "soru",
-   "metin": "One of a kind, or the only survivor?",
+   "metin": "Which lost technology should NØVEX uncover next?",
    "secenekler": [
-    "ONE",
-    "MANY"
+    "DAMASCUS STEEL",
+    "ROMAN CONCRETE"
    ]
   }
+ ],
+ "parlama": true,
+ "partikul": {
+  "tur": "toz",
+  "yogunluk": 120,
+  "renk": "#e8c48a",
+  "guc": 0.4
+ },
+ "isik_huzme": {
+  "aci": 22,
+  "renk": "#d9a45c",
+  "guc": 0.1
+ },
+ "vurgu_kelimeler": [
+  "1901",
+  "gears",
+  "30",
+  "2,000",
+  "Antikythera",
+  "Sun",
+  "Moon",
+  "planets",
+  "eclipses",
+  "Olympic",
+  "82",
+  "2021",
+  "X-ray",
+  "1,000",
+  "Damascus",
+  "Roman"
  ]
 }

@@ -6,3 +6,6 @@
 
 Mode: REALITY
 Full claim list: 02_sources.md
+
+VISUALS
+- All other scenes: original 3D renders made in code (sahne_v1; Earth texture from Natural Earth, public domain). No stock footage.

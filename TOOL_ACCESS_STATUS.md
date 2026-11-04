@@ -13,7 +13,7 @@ Her satır bu oturumda **gerçek çağrıyla** test edildi. ChatGPT tarafı yaln
 | Whisper telaffuz kontrolü (small.en) | ÇALIŞIYOR | `cikti/telaffuz.json` | |
 | sahne_v1 görsel motoru | ÇALIŞIYOR (8 sahne türü, 3 tipografi dili) | 08:00 render | AI görsel/video üretimi yok (ücretsiz erişim yok) |
 | kure_v1 küre motoru | ÇALIŞIYOR | Okyanus rotası MP4'leri | Yavaş (~20 dk / 50 sn) |
-| vidIQ | BAĞLI, kanal YOK | `vidiq_user_channels` → boş (hesap: kamillarx33@gmail.com); 80 kredi (ücretsiz plan) | NØVEX kanalını vidIQ'da yetkilendir. Kredi harcayan çağrılar onaysız yapılmaz. |
+| vidIQ | BAĞLI, kanal YOK | `vidiq_user_channels` → boş (Emir'in vidIQ hesabı); 80 kredi (ücretsiz plan) | NØVEX kanalını vidIQ'da yetkilendir. Kredi harcayan çağrılar onaysız yapılmaz. |
 | vidIQ Instagram | BAĞLI HESAP YOK | `vidiq_instagram_connected_accounts` → boş | |
 | TikTok | BAĞLAYICI YOK | Kayıtta TikTok bağlayıcısı yok | |
 | YouTube yükleme | YOK (vidIQ'da `video_upload` aracı var ama kanal yetkisiz ve onaysız kullanılmaz) | | |

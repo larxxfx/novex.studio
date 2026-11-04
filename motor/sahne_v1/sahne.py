@@ -19,9 +19,21 @@ Türler:
   karsilastir {ogeler:[["Label", 120], ...], birim, baslik}       büyüyen çubuklar
   alinti    {metin, kaynak}                          belge/alıntı kartı
   liste     {baslik, maddeler:[...]}                 sırayla beliren maddeler
-  soru      {metin, secenekler:["YES","NO"]}         kapanış katılım sorusu
+  soru      {metin, secenekler:["MARS","MERCURY"]}   ZORUNLU kapanış: "sırada ne?" sorusu (uzun seçenekler otomatik alt alta)
+  gezegen   3D ışın izlemeli küre (yeni standartta baskın sahne türü):
+            doku: venus|mars|ay|buz|gaz|dunya|dunya_kuru (Akdeniz tuz çölü)|yok (küre yok; yalnız dişli/yazı)
+            merkez [x,y], yaricap [r0,r1] (zum), donus °/sn, egim °, isik [x,y,z], atmosfer hex
+            hedef [lon,lat] (o nokta ekran ortasına döner), hedef_bas [lon,lat] (kamera oradan kayar), dalis 0..1 (üstel zum = dalış)
+            isaretler [[lon,lat,"etiket","#renk","ust|alt"]] (parlayan nabızlı nokta), cizgi [[lon,lat],...] + cizgi_renk/cizgi_bas/cizgi_sure
+            disliler [[x,y,r,dis,yon]] + disli_renk/disli_hiz/disli_guc (dönen dişliler)
+            yazılar: ust, ana, boyut, sayi {bas,son,birim,etiket,sure}, karsi [[et,deger],[et,deger]], ok "saat", kontur (okunurluk)
+  foto      somut görsel (fotoğraf/arşiv/AI/prosedürel) 2.5D parallax: dosya (plan klasörüne göre), koken fotograf|arsiv|ai|prosedurel,
+            kaynak, lisans (ZORUNLU; teslim_dogrula denetler), kredi (ekranda kısa), hareket itme|cekme|sol|sag|yukari, derinlik, zum, sis, ton;
+            yazılar gezegen ile aynı (ust, ana, sayi, karsi). koken=ai → ekranda "AI-GENERATED ILLUSTRATION" etiketi kapatılamaz.
+Plan düzeyi sinematik katmanlar: partikul {tur: toz|kar|kor|yildiz_akisi, yogunluk, renk, guc}, isik_huzme {aci, renk, guc},
+  parlama true/false, vurgu_kelimeler [...] (altyazıda vurgu rengi). Örnekler: videolar/2026-11-04_*/sahne_plani.json.
 """
-import argparse, json, math, os, re, subprocess, sys
+import argparse, json, math, os, re, subprocess, sys, zlib
 import numpy as np, cv2
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
 
@@ -49,6 +61,7 @@ def cl(x): return max(0.0, min(1.0, x))
 def seg(t, a, b): return cl((t - a) / max(b - a, 1e-6))
 def ease(x): x = cl(x); return x * x * (3 - 2 * x)
 def eout(x): x = cl(x); return 1 - (1 - x) ** 3
+def eio3(x): x = cl(x); return 4 * x ** 3 if x < 0.5 else 1 - (-2 * x + 2) ** 3 / 2
 
 # ---------- dünya haritası (Natural Earth 50m, kure_v1 varlıklarından) ----------
 _DUNYA = None
@@ -223,6 +236,13 @@ def c_soru(L, dr, plan, s, u, ts):
     f = font(dil, "agir", 72); sat = satirla(s["metin"], f, 860)
     for i, sa in enumerate(sat): yazi(dr, (W / 2, 620 + i * 90), sa, f, renk(p["metin"]), ease(seg(ts, 0.1 + i * 0.15, 0.5 + i * 0.15)))
     sec = s.get("secenekler", []); y = 640 + len(sat) * 90 + 60
+    fo0 = font(dil, "agir", 58); logo_y = 1180
+    if sec and max(dr.textlength(o, font=fo0) for o in sec) > 300:   # uzun seçenek: tam genişlikte alt alta
+        for i, o in enumerate(sec):
+            b = ease(seg(ts, 0.7 + i * 0.25, 1.0 + i * 0.25)); yy = y + i * 135; yg = min(390, (dr.textlength(o, font=fo0) + 80) / 2)
+            dr.rounded_rectangle((W / 2 - yg, yy - 55, W / 2 + yg, yy + 55), 28, outline=renk(p["vurgu"], int(255 * b)), width=4, fill=renk(p["zemin1"], int(150 * b)))
+            yazi(dr, (W / 2, yy), o, fo0, renk(p["vurgu"]), b, golge=False)
+        logo_y = 470 if yy + 150 > 1200 else yy + 150; sec = []   # alt altyazı bandına (y ≥ 1250) girmesin
     for i, o in enumerate(sec):
         b = ease(seg(ts, 0.7 + i * 0.25, 1.0 + i * 0.25)); x = W / 2 + (i - (len(sec) - 1) / 2) * 380
         fo = font(dil, "agir", 58); yg = max(140, (dr.textlength(o, font=fo) + 70) / 2)   # kutu yazıya göre genişler (MERCURY taşmasın)
@@ -230,7 +250,7 @@ def c_soru(L, dr, plan, s, u, ts):
         if dr.textlength(o, font=fo) > 2 * yg - 50: fo = font(dil, "agir", 48)
         dr.rounded_rectangle((x - yg, y - 55, x + yg, y + 55), 28, outline=renk(p["vurgu"], int(255 * b)), width=4, fill=renk(p["zemin1"], int(150 * b)))
         yazi(dr, (x, y), o, fo, renk(p["vurgu"]), b, golge=False)
-    yazi(dr, (W / 2, 1180), "NØVEX", font("modern", "agir", 64), renk(p["metin"]), ease(seg(ts, 1.4, 2.0)))
+    yazi(dr, (W / 2, logo_y), "NØVEX", font("modern", "agir", 64), renk(p["metin"]), ease(seg(ts, 1.4, 2.0)))
 
 
 # ---------- 3D gezegen (ışın izlemeli küre, prosedürel/gerçek doku) ----------
@@ -249,9 +269,19 @@ def fbm(h, w, oktav, seed, yatay=1.0):
 def gezegen_dokusu(tur):
     if tur in _DOKU: return _DOKU[tur]
     H_, W_ = 1024, 2048
+    if tur == "dunya_kuru":   # Mesiniyen tuzluluk krizi: Akdeniz havzası tuz çölü (Karadeniz ve Atlantik hariç)
+        d = gezegen_dokusu("dunya")[0].copy(); th, tw = d.shape[:2]
+        lon = (np.arange(tw) / tw * 360 - 180)[None, :]; lat = (90 - np.arange(th) / th * 180)[:, None]
+        r_, g_, b_ = d[..., 0], d[..., 1], d[..., 2]
+        su = (b_ - r_ > 0.065) & (r_ < 0.14)   # ölçüm: deniz ~(3,10,26), kara ~(33–49, 37–57, 38–60) /255
+        hav = (lon > -5.4) & (lon < 36.5) & (lat > 30.0) & (lat < 46.0) & ~((lon > 26.8) & (lat > 40.6)) & ~((lon < 2.5) & (lat > 41.5))   # Karadeniz ve Biskay (Atlantik) hariç
+        m = (su & hav).astype(np.float32); m = cv2.GaussianBlur(m, (0, 0), 1.2)[..., None]
+        n = cv2.resize(fbm(512, 1024, 6, 55), (tw, th))[..., None]
+        tuz = np.array([0.86, 0.82, 0.72], np.float32) * (0.75 + 0.35 * n) + np.array([0.0, -0.05, -0.12], np.float32) * (n > 0.6)
+        _DOKU[tur] = (d * (1 - m) + tuz * m, None); return _DOKU[tur]
     if tur == "dunya":
         im = cv2.imread(os.path.join(DEPO, "motor/kure_v1/build/world_tex.jpg"))
-        d = cv2.resize(cv2.cvtColor(im, cv2.COLOR_BGR2RGB), (W_, H_)).astype(np.float32) / 255; bulut = None
+        d = cv2.resize(cv2.cvtColor(im, cv2.COLOR_BGR2RGB), (4096, 2048), interpolation=cv2.INTER_AREA).astype(np.float32) / 255; bulut = None   # dalış için 4096'lık
     else:
         renkler = {"venus": ((0.55, 0.36, 0.16), (0.98, 0.86, 0.58)), "mars": ((0.35, 0.12, 0.06), (0.85, 0.45, 0.25)),
                    "ay": ((0.25, 0.25, 0.26), (0.78, 0.77, 0.74)), "buz": ((0.55, 0.68, 0.80), (0.95, 0.98, 1.0)),
@@ -265,17 +295,39 @@ def gezegen_dokusu(tur):
         bulut = fbm(H_, W_, 5, 41, yatay=4.0) if tur == "venus" else None
     _DOKU[tur] = (d, bulut); return _DOKU[tur]
 
+def gz_param(s, ts, u):
+    """Küre kamerası: merkez, yarıçap (zum), eğim ve dönüş. `hedef` [lon, lat] verilirse o nokta ekranın ortasına döner;
+    `hedef_bas` verilirse kamera ondan hedefe kayar (yarıçap büyümesiyle birlikte = dalış)."""
+    cx, cy = s.get("merkez", [W / 2, 820]); r0, r1 = s.get("yaricap", [380, 520])
+    e = ease(u) if not s.get("dalis") else eio3(seg(u, 0.0, s["dalis"]))
+    R = r0 * (r1 / r0) ** e if s.get("dalis") else r0 + (r1 - r0) * e   # dalışta üstel zum: sabit hız hissi
+    if s.get("hedef"):
+        lo, la = s["hedef"]; lb, ab = s.get("hedef_bas", s["hedef"]); k = e
+        lon_c = lb + (lo - lb) * k; lat_c = ab + (la - ab) * k
+        return cx, cy, R, math.radians(-lat_c), math.radians(lon_c + s.get("donus", 0) * ts)
+    return cx, cy, R, math.radians(s.get("egim", 12)), math.radians(s.get("donus", 4) * ts + s.get("lon0", 0))
+
+def gz_izdusum(s, ts, u, lon, lat):
+    """lon/lat (°) → ekran (x, y, görünür mü). gezegen_katman'daki eşlemenin tersi."""
+    cx, cy, R, eg, rot = gz_param(s, ts, u)
+    lr = math.radians(lon) - rot; ar = math.radians(lat)
+    X = math.cos(ar) * math.sin(lr); Yt = math.sin(ar); Zt = math.cos(ar) * math.cos(lr)
+    Y = Yt * math.cos(eg) + Zt * math.sin(eg); Z = -Yt * math.sin(eg) + Zt * math.cos(eg)
+    return cx + X * R, cy - Y * R, Z > 0.02
+
 def gezegen_katman(s, ts, u):
-    """RGBA float katman (W×H×4, 0..255): küre + atmosfer halesi. s: tur, merkez[x,y], yaricap[r0,r1], donus (°/sn), isik[x,y,z], atmosfer hex, egim (°)."""
+    """RGBA float katman (W×H×4, 0..255): küre + atmosfer halesi. s: tur, merkez[x,y], yaricap[r0,r1], donus (°/sn), isik[x,y,z], atmosfer hex, egim (°),
+    hedef/hedef_bas/dalis (Dünya'ya dalış)."""
     d, bulut = gezegen_dokusu(s.get("doku", "venus"))
-    cx, cy = s.get("merkez", [W / 2, 820]); r0, r1 = s.get("yaricap", [380, 520]); R = r0 + (r1 - r0) * ease(u)
+    cx, cy, R, eg, rot = gz_param(s, ts, u)
     pad = int(R * 0.35); x0, x1 = int(max(0, cx - R - pad)), int(min(W, cx + R + pad)); y0, y1 = int(max(0, cy - R - pad)), int(min(H, cy + R + pad))
     out = np.zeros((H, W, 4), np.float32)
     if x1 <= x0 or y1 <= y0: return out
     yy, xx = np.mgrid[y0:y1, x0:x1].astype(np.float32); X = (xx - cx) / R; Y = (cy - yy) / R; r2 = X * X + Y * Y; ic = r2 <= 1
-    Z = np.sqrt(np.clip(1 - r2, 0, 1)); eg = math.radians(s.get("egim", 12)); rot = math.radians(s.get("donus", 4) * ts + s.get("lon0", 0))
+    Z = np.sqrt(np.clip(1 - r2, 0, 1))
     Yt = Y * math.cos(eg) - Z * math.sin(eg); Zt = Y * math.sin(eg) + Z * math.cos(eg)
     lon = np.arctan2(X, Zt) + rot; lat = np.arcsin(np.clip(Yt, -1, 1))
+    if s.get("doku", "venus").startswith("dunya"): lon = lon + np.pi   # eşdikdörtgen Dünya dokusunun sol kenarı 180°B
     th, tw = d.shape[:2]; mx = ((lon / (2 * np.pi)) % 1.0 * tw).astype(np.float32); my = ((0.5 - lat / np.pi) * th).astype(np.float32)
     col = cv2.remap(d, mx, my, cv2.INTER_LINEAR, borderMode=cv2.BORDER_WRAP)
     if bulut is not None:
@@ -291,17 +343,60 @@ def gezegen_katman(s, ts, u):
     out[y0:y1, x0:x1, :3] = np.clip(rgb, 0, 1.6) * 255; out[y0:y1, x0:x1, 3] = a * 255
     return out
 
+def disli_ciz(dr, s, ts, p):
+    """Birbirine geçen dönen dişliler (Antikythera). disliler: [[x, y, r, dis_sayisi, yon(+1/-1)], ...]; disli_renk hex."""
+    cc = s.get("disli_renk", p["vurgu"]); a0 = ease(seg(ts, 0.0, 0.5)) * s.get("disli_guc", 1.0); hiz = s.get("disli_hiz", 12)
+    for j, (x, y, r, n, yon) in enumerate(s["disliler"]):
+        aci = math.radians(yon * hiz * ts * 60 / n); pts = []
+        for k in range(n * 4):
+            t_ = aci + k * math.pi / (n * 2); rr = r if (k % 4) in (1, 2) else r * (1 - 1.6 / n * 2.2)
+            pts.append((x + rr * math.cos(t_), y + rr * math.sin(t_)))
+        for gen, al in ((22, 30), (10, 70)): dr.line(pts + [pts[0]], fill=renk(cc, int(al * a0)), width=gen, joint="curve")
+        dr.polygon(pts, fill=renk(p.get("zemin1", "#000000"), int(200 * a0)), outline=renk(cc, int(255 * a0)), width=4)
+        ri = r * 0.72; dr.ellipse((x - ri, y - ri, x + ri, y + ri), outline=renk(cc, int(150 * a0)), width=3)
+        for q in range(4 if r > 120 else 3):   # kollar
+            t_ = aci + q * 2 * math.pi / (4 if r > 120 else 3)
+            dr.line([(x + r * 0.14 * math.cos(t_), y + r * 0.14 * math.sin(t_)), (x + ri * math.cos(t_), y + ri * math.sin(t_))], fill=renk(cc, int(170 * a0)), width=max(4, int(r * 0.06)))
+        rh = r * 0.12; dr.ellipse((x - rh, y - rh, x + rh, y + rh), outline=renk(cc, int(255 * a0)), width=4)
+
 def c_gezegen(L, dr, plan, s, u, ts):
     dil, p = plan["dil"], plan["palet"]
-    if s.get("ust"): yazi(dr, (W / 2, 250), s["ust"].upper(), font(dil, "orta", 40), renk(p["vurgu"]), ease(seg(ts, 0.2, 0.6)))
+    if s.get("cizgi"):   # küre üzerinde zamanla çizilen parlayan hat (kıyı, boğaz, rota)
+        pts = s["cizgi"]; k = eout(seg(ts, s.get("cizgi_bas", 0.3), s.get("cizgi_bas", 0.3) + s.get("cizgi_sure", 1.4)))
+        n = max(2, int(round(len(pts) * k))); xy = [gz_izdusum(s, ts, u, lo, la) for lo, la in pts[:n]]
+        par = []; cur = []
+        for x, y, g in xy:
+            if g: cur.append((x, y))
+            elif cur: par.append(cur); cur = []
+        if cur: par.append(cur)
+        cc = s.get("cizgi_renk", p["vurgu"])
+        for q in par:
+            if len(q) < 2: continue
+            for gen, al in ((26, 40), (14, 90), (5, 255)): dr.line(q, fill=renk(cc, al), width=gen, joint="curve")
+    for i, m in enumerate(s.get("isaretler", [])):   # parlayan, nabız atan nokta + etiket
+        x, y, g = gz_izdusum(s, ts, u, m[0], m[1]); a = ease(seg(ts, 0.4 + i * 0.3, 0.9 + i * 0.3))
+        if not g or a <= 0.01: continue
+        cc = m[3] if len(m) > 3 else p["vurgu"]
+        for rr, al in ((34, 40), (22, 80), (12, 255)): dr.ellipse((x - rr, y - rr, x + rr, y + rr), fill=renk(cc, int(al * a)))
+        nb = (ts * 0.8 + i * 0.3) % 1.0; rr = 18 + 70 * nb
+        dr.ellipse((x - rr, y - rr, x + rr, y + rr), outline=renk(cc, int(220 * a * (1 - nb))), width=4)
+        if len(m) > 2 and m[2]:
+            fe = font(dil, "kalin", 44); tw = dr.textlength(m[2], font=fe); lx = min(max(x, 160 + tw / 2), 920 - tw / 2)
+            ly = (y + 80 if m[4] == "alt" else y - 80) if len(m) > 4 else (y - 80 if y > 420 else y + 80)
+            yazi(dr, (lx, ly), m[2], fe, renk(p["metin"]), a, kontur=4)
+    if s.get("disliler"): disli_ciz(dr, s, ts, p)
+    kt = s.get("kontur", 0)   # parlak zemin (Dünya yakın plan) üstünde okunurluk
+    if s.get("ust"): yazi(dr, (W / 2, 250), s["ust"].upper(), font(dil, "orta", 40), renk(p["vurgu"]), ease(seg(ts, 0.2, 0.6)), kontur=kt)
     if s.get("ana"):
         f = font(dil, "agir", s.get("boyut", 96))
-        for i, sa in enumerate(satirla(s["ana"], f, 880)): yazi(dr, (W / 2, 330 + i * 106), sa, f, renk(p["metin"]), ease(seg(ts, 0.35 + i * 0.15, 0.8 + i * 0.15)))
+        for i, sa in enumerate(satirla(s["ana"], f, 880)): yazi(dr, (W / 2, 330 + i * 106), sa, f, renk(p["metin"]), ease(seg(ts, 0.35 + i * 0.15, 0.8 + i * 0.15)), kontur=kt)
     if s.get("sayi"):
         z = s["sayi"]; v = z["bas"] + (z["son"] - z["bas"]) * eout(seg(ts, 0.3, z.get("sure", 2.0))); f = font(dil, "agir", 170)
         yazi(dr, (W / 2, 330), f"{v:,.0f}", f, renk(p["vurgu"]), ease(seg(ts, 0.1, 0.4)))
         if z.get("birim"): yazi(dr, (W / 2, 450), z["birim"], font(dil, "kalin", 58), renk(p["metin"]), ease(seg(ts, 0.4, 0.7)))
-        if z.get("etiket"): yazi(dr, (W / 2, 520), z["etiket"], font(dil, "orta", 42), renk(p["metin"]), ease(seg(ts, 0.6, 1.0)), kontur=4)   # gezegen üstünde okunur kalsın
+        if z.get("etiket"):   # gezegen üstünde okunur kalsın; güvenli alan için satıra böl
+            fe = font(dil, "orta", 42)
+            for j, sa in enumerate(satirla(z["etiket"], fe, 780)): yazi(dr, (W / 2, 520 + j * 52), sa, fe, renk(p["metin"]), ease(seg(ts, 0.6, 1.0)), kontur=4)
     if s.get("karsi"):   # iki değer karşılaştırması (ör. YIL 225 · GÜN 243)
         for i, (et, v) in enumerate(s["karsi"]):
             x = W / 2 + (i - 0.5) * 420; a = ease(seg(ts, 0.3 + i * 0.6, 0.7 + i * 0.6))
@@ -313,6 +408,58 @@ def c_gezegen(L, dr, plan, s, u, ts):
         dr.arc((cx - R, cy - R, cx + R, cy + R), min(bas_a, son_a), max(bas_a, son_a), fill=renk(p["vurgu"], int(230 * a)), width=8)
         ang = math.radians(son_a); tip = (cx + R * math.cos(ang), cy + R * math.sin(ang)); dd = 1 if s["ok"] == "saat" else -1
         dr.polygon([tip, (tip[0] - 28 * dd, tip[1] - 22), (tip[0] - 6 * dd, tip[1] + 30)], fill=renk(p["vurgu"], int(255 * a)))
+
+# ---------- foto: fotoğraf / arşiv / yapay zekâ görseli, 2.5D parallax ----------
+PLAN_DIZIN = "."   # main() plan dosyasının klasörüne ayarlar; foto `dosya` yolu buna göredir
+FOTO_ETIKET = {"ai": "AI-GENERATED ILLUSTRATION", "arsiv": "ARCHIVE IMAGE", "fotograf": "PHOTO", "prosedurel": ""}
+_FOTO = {}
+def foto_yukle(yol):
+    if yol not in _FOTO:
+        tam = yol if os.path.isabs(yol) else os.path.join(PLAN_DIZIN, yol)
+        im = cv2.imread(tam, cv2.IMREAD_COLOR)
+        if im is None: raise SystemExit(f"foto bulunamadı: {tam}")
+        im = cv2.cvtColor(im, cv2.COLOR_BGR2RGB).astype(np.float32)
+        Wb, Hb = int(W * 1.18), int(H * 1.18); k = max(Wb / im.shape[1], Hb / im.shape[0])   # ekranı doldur (+%18 hareket payı)
+        im = cv2.resize(im, (int(im.shape[1] * k + 1), int(im.shape[0] * k + 1)), interpolation=cv2.INTER_AREA if k < 1 else cv2.INTER_CUBIC)
+        y0, x0 = (im.shape[0] - Hb) // 2, (im.shape[1] - Wb) // 2; im = im[y0:y0 + Hb, x0:x0 + Wb]
+        uzak = cv2.GaussianBlur(im, (0, 0), 2.2)   # uzak katman hafif yumuşak (alan derinliği)
+        yy = np.linspace(0, 1, Hb, dtype=np.float32)[:, None]
+        lum = cv2.GaussianBlur(im.mean(2) / 255.0, (0, 0), 25)
+        m = np.clip((yy - 0.42) * 2.4, 0, 1) * (0.7 + 0.3 * lum)   # derinlik vekili: alt kısım ve parlak ön plan yakın
+        _FOTO[yol] = (im, uzak, cv2.GaussianBlur(m, (0, 0), 30)[..., None])
+    return _FOTO[yol]
+
+def foto_katman(s, ts, u):
+    """RGBA float (0..255). s: dosya, koken (fotograf|arsiv|ai|prosedurel), hareket (itme|cekme|sol|sag|yukari), derinlik 0..1, zum [z0,z1], sis 0..1, ton hex."""
+    im, uzak, m = foto_yukle(s["dosya"]); Hb, Wb = im.shape[:2]; e = ease(u)
+    z0, z1 = s.get("zum", [1.0, 1.08]); z = z0 + (z1 - z0) * e
+    hk = s.get("hareket", "itme"); d = s.get("derinlik", 0.6) * 60
+    dx = {"sol": -1, "sag": 1}.get(hk, 0) * (e - 0.5) * 70; dy = {"yukari": -1}.get(hk, 0) * (e - 0.5) * 70
+    if hk == "cekme": z = z1 + (z0 - z1) * e
+    def yerlestir(img, kat):   # katman başına farklı kayma = parallax
+        ox = dx * kat + (e - 0.5) * d * kat * (1 if hk != "sol" else -1); oy = dy * kat
+        M = np.float32([[z, 0, W / 2 - z * Wb / 2 + ox], [0, z, H / 2 - z * Hb / 2 + oy]])
+        return cv2.warpAffine(img, M, (W, H), flags=cv2.INTER_LINEAR, borderMode=cv2.BORDER_REFLECT)
+    yakin, uz, mm = yerlestir(im, 1.0), yerlestir(uzak, 0.45), yerlestir(m, 1.0)[..., None] if m.ndim == 3 else yerlestir(m, 1.0)
+    if mm.ndim == 2: mm = mm[..., None]
+    rgb = uz * (1 - mm) + yakin * mm
+    if s.get("sis", 0.25) > 0:   # atmosfer: uzak katmanda sis
+        ton = np.array(renk(s.get("ton", "#b8c4d0"))[:3], np.float32)
+        rgb = rgb * (1 - (1 - mm) * s.get("sis", 0.25)) + ton * (1 - mm) * s.get("sis", 0.25)
+    yy, xx = np.mgrid[0:H, 0:W].astype(np.float32); v = 1 - 0.55 * (((xx - W / 2) / W) ** 2 + ((yy - H * 0.45) / H) ** 2) * 2.2
+    rgb = rgb * np.clip(v, 0.35, 1)[..., None]
+    out = np.zeros((H, W, 4), np.float32); out[..., :3] = np.clip(rgb, 0, 255); out[..., 3] = 255
+    return out
+
+def c_foto(L, dr, plan, s, u, ts):
+    """Somut görsel sahnesi: foto katmanı + (gezegen sahnesindeki gibi) ust/ana/sayi/karsi yazıları + zorunlu köken etiketi."""
+    p = plan["palet"]; et = FOTO_ETIKET.get(s.get("koken", "fotograf"), "")
+    ek = s.get("kredi", "")   # ör. "NASA/JPL · public domain"
+    if et or ek:
+        metin = " · ".join(x for x in (et, ek) if x)
+        yazi(dr, (W / 2, 208), metin.upper() if et == FOTO_ETIKET["ai"] else metin, font("modern", "kalin" if et == FOTO_ETIKET["ai"] else "orta", 30),
+             renk(p["metin"]), 0.9, kontur=3)
+    c_gezegen(L, dr, plan, dict(s, kontur=s.get("kontur", 4)), u, ts)
 
 # ---------- sinematik katmanlar: partikül, ışık huzmesi, parlama ----------
 _PART = {}
@@ -346,7 +493,7 @@ def parlama(img, plan):
     return img + cv2.resize(cv2.GaussianBlur(k, (0, 0), 6), (W, H)) * 0.55
 
 CIZ = {"baslik": c_baslik, "sayi": c_sayi, "harita": c_harita, "zaman": c_zaman, "karsilastir": c_karsilastir,
-       "alinti": c_alinti, "liste": c_liste, "soru": c_soru, "gezegen": c_gezegen}
+       "alinti": c_alinti, "liste": c_liste, "soru": c_soru, "gezegen": c_gezegen, "foto": c_foto}
 
 # ---------- zamanlama ----------
 def sahne_araliklari(plan, z):
@@ -372,13 +519,13 @@ def tek_sahne(plan, sc, t, a, b):
     L = Image.new("RGBA", (W, H), (0, 0, 0, 0)); dr = ImageDraw.Draw(L)
     CIZ[sc["tur"]](L, dr, plan, sc, cl((t - a) / (b - a)), t - a)
     arr = np.asarray(L).astype(np.float32)
-    if sc["tur"] == "gezegen":   # 3D küre metnin altında; metin üstte
-        g = gezegen_katman(sc, t - a, cl((t - a) / (b - a))); ta = arr[..., 3:4] / 255
+    if (sc["tur"] == "gezegen" and sc.get("doku") != "yok") or sc["tur"] == "foto":   # görsel katman metnin altında; metin üstte
+        g = (foto_katman if sc["tur"] == "foto" else gezegen_katman)(sc, t - a, cl((t - a) / (b - a))); ta = arr[..., 3:4] / 255
         arr = np.concatenate([g[..., :3] * (1 - ta) + arr[..., :3] * ta, np.maximum(g[..., 3:4], arr[..., 3:4])], -1)
     # kamera: yavaş itme / kaydırma (sahne başına yön değişir)
     k = plan.get("kamera", "itme"); u = cl((t - a) / max(b - a, 1e-6))
     if k != "sabit":
-        sc_ = 1.0 + (0.05 * u if k == "itme" else 0.03); dx = (18 * (u - 0.5) * (1 if hash(sc["tur"]) % 2 else -1)) if k == "kaydirma" else 0
+        sc_ = 1.0 + (0.05 * u if k == "itme" else 0.03); dx = (18 * (u - 0.5) * (1 if zlib.crc32(sc["tur"].encode()) % 2 else -1)) if k == "kaydirma" else 0
         M = np.float32([[sc_, 0, (1 - sc_) * W / 2 + dx], [0, sc_, (1 - sc_) * H * 0.45]])
         arr = cv2.warpAffine(arr, M, (W, H), flags=cv2.INTER_LINEAR)
     return arr
@@ -436,7 +583,8 @@ def kapak_ciz(plan, z, out):
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("mod"); ap.add_argument("plan"); ap.add_argument("zaman"); ap.add_argument("args", nargs="*")
     ap.add_argument("--srt"); ap.add_argument("--bas", type=float, default=0.0); ap.add_argument("--son", type=float); ap.add_argument("--kapak", action="store_true")
-    a = ap.parse_args(); plan = json.load(open(a.plan, encoding="utf-8")); z = json.load(open(a.zaman, encoding="utf-8"))
+    a = ap.parse_args(); plan = json.load(open(a.plan, encoding="utf-8"))
+    global PLAN_DIZIN; PLAN_DIZIN = os.path.dirname(os.path.abspath(a.plan)); z = json.load(open(a.zaman, encoding="utf-8"))
     caps = srt_oku(a.srt); ara, toplam = sahne_araliklari(plan, z)
     if a.mod == "kapak": kapak_ciz(plan, z, a.args[0]); return
     if a.mod == "kare":

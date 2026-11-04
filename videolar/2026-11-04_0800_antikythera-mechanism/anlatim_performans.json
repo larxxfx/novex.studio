@@ -7,7 +7,8 @@
    "parcalar": [
     {
      "metin": "In nineteen-oh-one, sponge divers pulled a lump of corroded bronze",
-     "hiz": 1.0
+     "hiz": 1.0,
+     "soyle": "In nineteen oh one, sponge divers pulled a lump of corroded bronze"
     },
     {
      "metin": "from a Roman-era shipwreck.",
@@ -143,6 +144,18 @@
      "hiz": 1.08,
      "kazanc_db": 1.5,
      "once": 0.3
+    },
+    {
+     "metin": "And which lost technology should we uncover next:",
+     "hiz": 1.02,
+     "once": 0.5
+    },
+    {
+     "metin": "Damascus steel, or Roman concrete?",
+     "soyle": "Damascus steel, or Roman concrete?",
+     "hiz": 1.06,
+     "kazanc_db": 2.0,
+     "once": 0.35
     }
    ]
   }

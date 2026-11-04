@@ -1,19 +1,26 @@
 NØVEX QC REPORT — A 2,000-Year-Old Machine With Gears Inside
-Slot: 2026-11-04 08:00 (Europe/Istanbul) · rendered 2026-11-04T05:54:12
-VIDEO.mp4 191.8 MB sha256 397aa6e029b64afb38cf141136728d6e11efb688d33c062f98d0e2582fbd2207
+Slot: 2026-11-04 08:00 (Europe/Istanbul) · rendered 2026-11-04T10:10:08
+VIDEO.mp4 196.0 MB sha256 10c817637ca45a5c10a3d738421006ff1f009d773119bdd55acaf063127eb08b
 
-VIDEO   technical checks 10/10 · black segments 0 · frozen segments 0 · 1446 frames / 48.213 s
-AUDIO   loudness/true peak [-13.9, -2.0] · min speech-over-background 19.6 dB (need >= 12) · warnings []
+VIDEO   technical checks 10/10 · black segments 0 · frozen segments 0 · 1473 frames / 49.108 s
+AUDIO   loudness/true peak [-13.9, -1.7] · min speech-over-background 16.1 dB (need >= 12) · warnings []
 SYNC    narration vs MP4 offset 2.0 ms
-VOICE   piper-ljspeech · Whisper small.en WER 2.0% · flagged sentences [1, 4]
-        s1: heard "In 1901, sponge divers pulled a lump of corroded bronze from a Roman era shipwreck."
-        s4: heard "This is the anticaterim mechanism."
+VOICE   piper-norman · Whisper small.en WER 5.4% · flagged sentences [1, 2, 4, 5]
+        s1: heard "In 1901, sponge divers pulled a lump of corroded bronze from a Roman-era chipric."
+        s2: heard "Inside it were years."
+        s4: heard "This is the anti-kithera mechanism."
+        s5: heard "turn a handle and it show the sun, the moon, and the planets."
 SUBS    SUBTITLES.srt, 10 cues, timing from synthesis (exact); burned-in inside safe area
 LICENCE voice: GEÇMEDİ (see ses/LISANS.txt) · visuals: own code + Natural Earth (public domain) · fonts: OFL/Apache · music/SFX: own synthesis
 HUMAN   listening/viewing by Emir: PENDING (Claude cannot listen)
 
 TITLE LINT (yt-package/title.py):
-(yt-package/title.py bu oturumda yok)
+"A 2,000-Year-Old Machine With Gears Inside"
+  42 chars   score 80/100
+    x  mobile       a mobile feed shows about "A 2,000-Year-Old Machine With Gears..." - check the subject survives
+    x  duplicate    thumbnail repeats the title on gears - the thumbnail should say what the title does not
+    ok              42 characters, inside the 60-character desktop cut
+    ok              carries a concrete figure (2,000)
 
 qc.py table:
 | Kontrol | Değer | Sonuç |
@@ -24,8 +31,8 @@ qc.py table:
 | Piksel formatı yuv420p | yuv420p | ✅ |
 | Rec.709 / SDR | bt709/bt709/bt709 | ✅ |
 | Ses AAC 48 kHz | aac 48000 | ✅ |
-| Süre (Shorts ≤ 60 sn) | 48.200 sn | ✅ |
-| Kare sayısı | 1446 | ✅ |
+| Süre (Shorts ≤ 60 sn) | 49.100 sn | ✅ |
+| Kare sayısı | 1473 | ✅ |
 | Tam çözümleme | hata yok | ✅ |
 | Ses yüksekliği ≈ −14 LUFS | -13.9 LUFS | ✅ |
-| Ses lisansı yayına uygun | HF rhasspy/piper-voices lisans etiketi + MODEL_CARD) | ❌ |
+| Ses lisansı yayına uygun | HF rhasspy/piper-voices MODEL_CARD + LibriVox kamu malı beyanı) | ❌ |

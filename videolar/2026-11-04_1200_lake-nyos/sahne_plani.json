@@ -1,7 +1,7 @@
 {
  "dil": "modern",
  "doku": "gren",
- "kamera": "kaydirma",
+ "kamera": "itme",
  "kapanis_sn": 2.2,
  "palet": {
   "zemin0": "#04080b",
@@ -13,107 +13,365 @@
  },
  "kapak": {
   "ust": "1,746 dead",
-  "ana": "The lake exhaled.",
-  "zemin_sahne": 2
+  "ana": "The lake exhaled",
+  "zemin_sahne": 0
  },
  "sahneler": [
   {
+   "tur": "gezegen",
+   "doku": "dunya",
+   "atmosfer": "#5fe3b8",
+   "isik": [
+    -0.25,
+    0.3,
+    0.92
+   ],
    "cumle": 1,
-   "tur": "baslik",
+   "merkez": [
+    540,
+    1000
+   ],
+   "yaricap": [
+    420,
+    3600
+   ],
+   "dalis": 0.9,
+   "hedef_bas": [
+    -15,
+    30
+   ],
+   "hedef": [
+    10.3,
+    6.44
+   ],
+   "kontur": 3,
    "ust": "21 August 1986 · Cameroon",
    "ana": "The lake that exhaled",
-   "alt": "Lake Nyos"
-  },
-  {
-   "cumle": 2,
-   "tur": "liste",
-   "baslik": "What happened",
-   "maddeler": [
-    "No fire",
-    "No flood",
-    "No explosion"
-   ]
-  },
-  {
-   "cumle": 3,
-   "tur": "harita",
-   "bas_bolge": [
-    -20,
-    -35,
-    55,
-    38
-   ],
-   "bolge": [
-    5,
-    2,
-    16,
-    11
-   ],
-   "noktalar": [
+   "isaretler": [
     [
      10.3,
      6.44,
-     "Lake Nyos"
-    ]
-   ],
-   "baslik": "North-west Cameroon"
-  },
-  {
-   "cumle": 4,
-   "tur": "karsilastir",
-   "baslik": "Density vs. air",
-   "birim": "×",
-   "ogeler": [
-    [
-     "Air",
-     1.0
-    ],
-    [
-     "Carbon dioxide",
-     1.5
+     "Lake Nyos",
+     "#5fe3b8"
     ]
    ]
   },
   {
-   "cumle": 6,
-   "tur": "sayi",
-   "bas": 0,
-   "son": 1746,
-   "birim": "PEOPLE",
-   "etiket": "and 3,500 animals, in one night",
-   "sure": 2.6
+   "tur": "gezegen",
+   "doku": "dunya",
+   "atmosfer": "#5fe3b8",
+   "isik": [
+    -0.25,
+    0.3,
+    0.92
+   ],
+   "cumle": 2,
+   "merkez": [
+    540,
+    1000
+   ],
+   "yaricap": [
+    3600,
+    3800
+   ],
+   "hedef": [
+    10.3,
+    6.44
+   ],
+   "kontur": 3,
+   "ana": "No fire. No flood. No explosion.",
+   "boyut": 84
   },
   {
+   "tur": "gezegen",
+   "doku": "dunya",
+   "atmosfer": "#5fe3b8",
+   "isik": [
+    -0.25,
+    0.3,
+    0.92
+   ],
+   "cumle": 3,
+   "merkez": [
+    540,
+    1000
+   ],
+   "yaricap": [
+    3800,
+    4400
+   ],
+   "hedef": [
+    10.3,
+    6.44
+   ],
+   "kontur": 3,
+   "ust": "A silent cloud",
+   "ana": "Carbon dioxide",
+   "isaretler": [
+    [
+     10.3,
+     6.44,
+     "Lake Nyos",
+     "#5fe3b8"
+    ]
+   ]
+  },
+  {
+   "tur": "gezegen",
+   "doku": "dunya",
+   "atmosfer": "#5fe3b8",
+   "merkez": [
+    540,
+    1000
+   ],
+   "hedef": [
+    10.3,
+    6.44
+   ],
+   "kontur": 3,
+   "cumle": 4,
+   "isik": [
+    -0.25,
+    0.3,
+    0.92
+   ],
+   "yaricap": [
+    4400,
+    4900
+   ],
+   "ust": "Heavier than air",
+   "karsi": [
+    [
+     "Air",
+     "1.0×"
+    ],
+    [
+     "CO₂",
+     "1.5×"
+    ]
+   ],
+   "isaretler": [
+    [
+     10.3,
+     6.44,
+     "",
+     "#5fe3b8"
+    ]
+   ]
+  },
+  {
+   "tur": "gezegen",
+   "doku": "dunya",
+   "atmosfer": "#5fe3b8",
+   "isik": [
+    -0.15,
+    0.1,
+    0.3
+   ],
+   "cumle": 5,
+   "merkez": [
+    540,
+    1000
+   ],
+   "yaricap": [
+    4400,
+    5000
+   ],
+   "hedef": [
+    10.3,
+    6.44
+   ],
+   "kontur": 3,
+   "ana": "While people slept",
+   "isaretler": [
+    [
+     10.3,
+     6.44,
+     "",
+     "#5fe3b8"
+    ]
+   ]
+  },
+  {
+   "tur": "gezegen",
+   "doku": "dunya",
+   "atmosfer": "#5fe3b8",
+   "isik": [
+    -0.15,
+    0.1,
+    0.3
+   ],
+   "cumle": 6,
+   "merkez": [
+    540,
+    1000
+   ],
+   "yaricap": [
+    2600,
+    2400
+   ],
+   "hedef": [
+    10.3,
+    6.44
+   ],
+   "kontur": 3,
+   "sayi": {
+    "bas": 0,
+    "son": 1746,
+    "birim": "PEOPLE",
+    "etiket": "and 3,500 animals, in one night",
+    "sure": 2.6
+   }
+  },
+  {
+   "tur": "gezegen",
+   "doku": "dunya",
+   "atmosfer": "#5fe3b8",
+   "isik": [
+    -0.25,
+    0.3,
+    0.92
+   ],
+   "cumle": 7,
+   "merkez": [
+    540,
+    1000
+   ],
+   "yaricap": [
+    3000,
+    3400
+   ],
+   "hedef": [
+    10.3,
+    6.44
+   ],
+   "kontur": 3,
+   "ust": "Volcanic gas",
+   "ana": "Building up, deep in the water",
+   "boyut": 84,
+   "isaretler": [
+    [
+     10.3,
+     6.44,
+     "",
+     "#ffcf7a"
+    ]
+   ]
+  },
+  {
+   "tur": "gezegen",
+   "doku": "dunya",
+   "atmosfer": "#5fe3b8",
+   "merkez": [
+    540,
+    1000
+   ],
+   "hedef": [
+    10.3,
+    6.44
+   ],
+   "kontur": 3,
    "cumle": 8,
-   "tur": "zaman",
-   "baslik": "After",
-   "olaylar": [
+   "isik": [
+    -0.25,
+    0.3,
+    0.92
+   ],
+   "yaricap": [
+    3600,
+    3200
+   ],
+   "isaretler": [
     [
-     "1984",
-     "Lake Monoun gas release"
+     10.3,
+     6.44,
+     "Lake Nyos",
+     "#8ff0cf"
+    ]
+   ],
+   "sayi": {
+    "bas": 0,
+    "son": 3,
+    "birim": "DEGASSING PIPES",
+    "etiket": "first in 2001, two more in 2011",
+    "sure": 1.2
+   }
+  },
+  {
+   "tur": "gezegen",
+   "doku": "dunya",
+   "atmosfer": "#5fe3b8",
+   "isik": [
+    -0.25,
+    0.3,
+    0.92
+   ],
+   "cumle": 9,
+   "merkez": [
+    540,
+    1000
+   ],
+   "yaricap": [
+    2400,
+    6000
+   ],
+   "hedef_bas": [
+    10.3,
+    6.44
+   ],
+   "hedef": [
+    10.45,
+    6.0
+   ],
+   "kontur": 3,
+   "ust": "Two years earlier",
+   "isaretler": [
+    [
+     10.3,
+     6.44,
+     "Lake Nyos",
+     "#5fe3b8",
+     "ust"
     ],
     [
-     "1986",
-     "Lake Nyos disaster"
-    ],
-    [
-     "2001",
-     "First degassing pipe"
-    ],
-    [
-     "2011",
-     "Two more pipes"
+     10.58,
+     5.58,
+     "Lake Monoun",
+     "#ff8a6a",
+     "alt"
     ]
    ]
   },
   {
    "cumle": 10,
    "tur": "soru",
-   "metin": "Would you live beside a lake that can breathe?",
-   "secenekler": [
-    "YES",
-    "NO"
-   ]
+   "metin": "Which deadly place on Earth should NØVEX explore next?",
+   "secenekler": []
   }
+ ],
+ "parlama": true,
+ "partikul": {
+  "tur": "toz",
+  "yogunluk": 150,
+  "renk": "#8ff0cf",
+  "guc": 0.35
+ },
+ "vurgu_kelimeler": [
+  "1986",
+  "Cameroon",
+  "exhaled",
+  "fire",
+  "flood",
+  "explosion",
+  "carbon",
+  "dioxide",
+  "Nyos",
+  "heavier",
+  "slept",
+  "1,746",
+  "3,500",
+  "pipes",
+  "Monoun",
+  "deadly"
  ]
 }

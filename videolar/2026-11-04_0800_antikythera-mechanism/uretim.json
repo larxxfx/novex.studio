@@ -3,8 +3,9 @@
  "slot": "08:00",
  "kategori": "A History & Ancient Civilizations",
  "mod": "REALITY",
- "ses_motoru": "piper-ljspeech",
- "hiz_carpani": 1.0,
+ "ses_motoru": "piper-norman",
+ "hiz_carpani": 1.12,
  "ruh": "gizem",
- "ortam": "okyanus"
+ "ortam": "okyanus",
+ "gelisim_hedefi": "Nesne konusunu da 3D anlatmak: Dünya'ya dalış + dönen dişliler + Ay; 1901 kancasının telaffuzunu düzeltmek (v1'de '9/9/01' duyuluyordu)."
 }

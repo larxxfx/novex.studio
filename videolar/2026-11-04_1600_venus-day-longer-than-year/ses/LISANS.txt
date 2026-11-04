@@ -1,6 +1,6 @@
-motor: piper en_US-ljspeech-high (rhasspy/piper-voices, MIT; Piper motoru MIT)
-veri: LJ Speech (keithito.com) — kamu malı; model kartı: 'trained from scratch' (lessac türevi değil)
-lisans_dogrulandi: evet (3 Kasım 2026; kaynak: HF rhasspy/piper-voices lisans etiketi + MODEL_CARD)
+motor: piper en_US-norman-medium (rhasspy/piper-voices, MIT; Piper motoru MIT; çalıştırıcı sherpa-onnx Apache-2.0)
+veri: LibriVox "Norman" kayıtları — kamu malı; model kartı: sıfırdan eğitim (lessac türevi değil)
+lisans_dogrulandi: evet (4 Kasım 2026; kaynak: HF rhasspy/piper-voices MODEL_CARD + LibriVox kamu malı beyanı)
 emir_ses_onayi: bekliyor
 yayin_uygun: hayir
-not: lisans zinciri doğrulandı; Emir sesi dinleyip onaylayınca yayin_uygun alanı değiştirilir.
+not: erkek anlatıcı adayı. Emir dinleyip açıkça onaylamadan yayin_uygun "evet" yapılmaz (CLAUDE.md, ses kuralı).

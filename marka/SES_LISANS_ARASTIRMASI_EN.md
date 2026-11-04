@@ -43,3 +43,10 @@ Michael/Sarah ile karşılaştırmak. Modeller sherpa-onnx GitHub sürümlerinde
 - rhasspy/piper-voices tartışma #105 (lessac lisansı, libritts_r sıfırdan eğitim); Piper README (MODEL_CARD lisansları)
 - YouTube altered/synthetic content ve inauthentic content özetleri (2026)
 - Not: hexgrad model kartının özgün sayfası bu oturumda doğrudan açılamadı (onay bekledi); aynı içerikli HF aynaları ve arama özetleri kullanıldı.
+
+## Piper `en_US-norman-medium` (erkek aday) — 4 Kasım 2026
+- **Model kartı (indirilen pakette `MODEL_CARD`):** Dataset URL librivox.org, *License: public domain*; "Trained from scratch … about 15.5 hours of recordings. All recordings came from LibriVox.org." (eğitimci: Bryce Beattie).
+- **Ağırlıklar:** rhasspy/piper-voices deposu (MIT). Çalıştırıcı sherpa-onnx (Apache-2.0).
+- **Sonuç:** Lisans zinciri temiz görünüyor (lessac türevi değil). Ticari / YouTube / Instagram / TikTok kullanımı için ek kısıt bulunmadı.
+- **Durum:** `emir_ses_onayi: bekliyor` → `yayin_uygun: hayir`. Emir dinleyip açıkça onaylamadan hiçbir video bu sesle yayına hazır sayılmaz.
+- Ölçüm: aynı metinde Whisper WER %0,9; Venus v2'de %1,0.

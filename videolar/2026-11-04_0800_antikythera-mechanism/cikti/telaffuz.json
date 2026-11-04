@@ -1,35 +1,35 @@
 {
- "wer_toplam": 2.0,
+ "wer_toplam": 5.4,
  "cumleler": [
   {
    "i": 1,
    "metin": "In nineteen-oh-one, sponge divers pulled a lump of corroded bronze from a Roman-era shipwreck.",
-   "duyulan": "In 1901, sponge divers pulled a lump of corroded bronze from a Roman era shipwreck.",
-   "wer": 6.7
+   "duyulan": "In 1901, sponge divers pulled a lump of corroded bronze from a Roman-era chipric.",
+   "wer": 13.3
   },
   {
    "i": 2,
    "metin": "Inside it were gears.",
-   "duyulan": "Inside it were gears.",
-   "wer": 0.0
+   "duyulan": "Inside it were years.",
+   "wer": 25.0
   },
   {
    "i": 3,
    "metin": "At least thirty of them, cut by hand, more than two thousand years ago.",
-   "duyulan": "At least 30 of them cut by hand more than 2,000 years ago.",
+   "duyulan": "at least 30 of them, cut by hand more than 2,000 years ago.",
    "wer": 0.0
   },
   {
    "i": 4,
    "metin": "This is the Antikythera Mechanism.",
-   "duyulan": "This is the anticaterim mechanism.",
-   "wer": 25.0
+   "duyulan": "This is the anti-kithera mechanism.",
+   "wer": 50.0
   },
   {
    "i": 5,
    "metin": "Turn a handle, and it showed the Sun, the Moon, and the planets,",
-   "duyulan": "Turn the handle and it showed the Sun, the Moon and the planets.",
-   "wer": 0.0
+   "duyulan": "turn a handle and it show the sun, the moon, and the planets.",
+   "wer": 14.3
   },
   {
    "i": 6,
@@ -46,7 +46,7 @@
   {
    "i": 8,
    "metin": "In twenty twenty-one, a team at University College London rebuilt its front display from X-ray scans.",
-   "duyulan": "In 2021, a team at University College London rebuilt its front display from X-ray scans.",
+   "duyulan": "In 2021, a team at University College London rebuilt its front display from x-ray scans.",
    "wer": 0.0
   },
   {
@@ -57,8 +57,8 @@
   },
   {
    "i": 10,
-   "metin": "So was it one of a kind, or the only one that survived?",
-   "duyulan": "So was it one of a kind, or the only one that survived?",
+   "metin": "So was it one of a kind, or the only one that survived? And which lost technology should we uncover next: Damascus steel, or Roman concrete?",
+   "duyulan": "So was it one of a kind, or the only one that survived? And which lost technology should we uncover next? Damascus Steel or Roman Concrete?",
    "wer": 0.0
   }
  ]

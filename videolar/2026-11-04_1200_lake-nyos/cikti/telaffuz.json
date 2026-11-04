@@ -1,11 +1,11 @@
 {
- "wer_toplam": 1.9,
+ "wer_toplam": 5.0,
  "cumleler": [
   {
    "i": 1,
-   "metin": "On the night of August twenty-first, nineteen eighty-six, a lake in Cameroon exhaled.",
-   "duyulan": "On the night of August 21, 1986, a lake in Cameroon exhaled.",
-   "wer": 7.7
+   "metin": "On the night of August twenty-first, nineteen eighty-six, a lake in the hills of Cameroon exhaled.",
+   "duyulan": "On the night of August 21, 1986, a lake in the hills of Cameroon excelled.",
+   "wer": 13.3
   },
   {
    "i": 2,
@@ -16,7 +16,7 @@
   {
    "i": 3,
    "metin": "Just a silent cloud of carbon dioxide, rising from the bottom of Lake Nyos.",
-   "duyulan": "just a silent cloud of carbon dioxide rising from the bottom of Lake Neos.",
+   "duyulan": "Just a silent cloud of carbon dioxide rising from the bottom of Lake Neos.",
    "wer": 8.3
   },
   {
@@ -34,31 +34,31 @@
   {
    "i": 6,
    "metin": "By morning, one thousand seven hundred and forty-six people were dead, and three thousand five hundred animals.",
-   "duyulan": "By morning 1,746 people were dead and 3,500 animals.",
+   "duyulan": "By morning, 1,746 people were dead and 3,500 animals.",
    "wer": 0.0
   },
   {
    "i": 7,
    "metin": "Volcanic gas had been slowly building up deep in the water, until the lake could not hold it.",
-   "duyulan": "Volcanic gas had been slowly building up deep in the water until the lake could not hold it.",
-   "wer": 0.0
+   "duyulan": "Volcanic gas had been slowly building up deep in the water until the light could not hold it.",
+   "wer": 6.2
   },
   {
    "i": 8,
    "metin": "Today, pipes vent that gas safely, shooting fountains high above the lake.",
-   "duyulan": "Today, pipes vent that gas safely, shooting fountains high above the lake.",
-   "wer": 0.0
+   "duyulan": "Today, pipes vent the gas safely, shooting fountains high above the lake.",
+   "wer": 9.1
   },
   {
    "i": 9,
    "metin": "And just two years earlier, nearby Lake Monoun had done the same.",
-   "duyulan": "And just two years earlier, nearby Lake Monoun had done the same.",
-   "wer": 0.0
+   "duyulan": "and just two years earlier, nearby Lake Monand had done the same.",
+   "wer": 10.0
   },
   {
    "i": 10,
-   "metin": "Would you live beside a lake that can breathe?",
-   "duyulan": "Would you live beside a lake that can breathe?",
+   "metin": "Would you live beside a lake that can breathe? And which deadly place on Earth should we explore next?",
+   "duyulan": "Would you live beside a lake that can breathe? And which deadly place on Earth should we explore next?",
    "wer": 0.0
   }
  ]

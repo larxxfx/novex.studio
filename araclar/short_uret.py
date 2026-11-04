@@ -91,9 +91,9 @@ class Uretim:
         z = json.load(open(f"{self.c}/anlatim/zaman.json")); wav = f"{self.c}/anlatim/anlatim.wav"; env = dict(os.environ, LD_LIBRARY_PATH=f"{SH}/lib")
         sat, R, Hh = [], [], []
         for s in z:
-            run(["ffmpeg", "-v", "error", "-y", "-ss", str(max(0, s["bas"] - 0.1)), "-to", str(s["son"] + 0.15), "-i", wav, "-ar", "16000", "-ac", "1", "/tmp/_tlf.wav"])
+            run(["ffmpeg", "-v", "error", "-y", "-ss", str(max(0, s["bas"] - 0.1)), "-to", str(s["son"] + 0.15), "-i", wav, "-ar", "16000", "-ac", "1", f"{self.c}/_tlf.wav"])   # klasöre özel: eşzamanlı üretimler çakışmasın
             o = subprocess.run([f"{SH}/bin/sherpa-onnx-offline", f"--whisper-encoder={WH}/small.en-encoder.int8.onnx",
-                                f"--whisper-decoder={WH}/small.en-decoder.int8.onnx", f"--tokens={WH}/small.en-tokens.txt", "--num-threads=2", "/tmp/_tlf.wav"],
+                                f"--whisper-decoder={WH}/small.en-decoder.int8.onnx", f"--tokens={WH}/small.en-tokens.txt", "--num-threads=2", f"{self.c}/_tlf.wav"],
                                capture_output=True, text=True, env=env)
             h = (re.findall(r'"text":\s*"(.*?)"', o.stdout + o.stderr) or [""])[-1].strip()
             r_, h_ = nrm(s["metin"]), nrm(h); R += r_; Hh += h_; w = wer(r_, h_)
@@ -185,7 +185,15 @@ class Uretim:
         open(f"{t}/DESCRIPTION.txt", "w").write(p["aciklama"].strip() + "\n\n" + " ".join(p["hashtag"]) + "\n")
         open(f"{t}/TAGS.txt", "w").write(", ".join(p["etiketler"]) + "\n"); open(f"{t}/HASHTAGS.txt", "w").write(" ".join(p["hashtag"]) + "\n")
         open(f"{t}/PINNED_COMMENT.txt", "w").write(p["sabit_yorum"].strip() + "\n")
-        open(f"{t}/SOURCES.txt", "w").write("".join(f"{i+1}. {s}\n" for i, s in enumerate(p["kaynaklar"])) + f"\nMode: {p.get('mod','REALITY')}\nFull claim list: 02_sources.md\n")
+        plan = json.load(open(f"{self.k}/sahne_plani.json", encoding="utf-8"))
+        KOKEN_EN = {"fotograf": "Photograph", "arsiv": "Archive image", "ai": "AI-generated illustration (not a real photograph)", "prosedurel": "Procedural render"}
+        gorseller = [f"- Scene {s_['cumle']}: {KOKEN_EN.get(s_.get('koken'), s_.get('koken'))} — {s_.get('kaynak', '?')} — license: {s_.get('lisans', '?')}\n"
+                     for s_ in plan["sahneler"] if s_.get("tur") == "foto"]
+        gorsel_blok = "\nVISUALS\n" + ("".join(gorseller) if gorseller else "") + \
+            "- All other scenes: original 3D renders made in code (sahne_v1; Earth texture from Natural Earth, public domain). No stock footage.\n"
+        open(f"{t}/SOURCES.txt", "w").write("".join(f"{i+1}. {s}\n" for i, s in enumerate(p["kaynaklar"])) + f"\nMode: {p.get('mod','REALITY')}\nFull claim list: 02_sources.md\n" + gorsel_blok)
+        perf = json.load(open(f"{self.k}/anlatim_performans.json", encoding="utf-8"))   # tam seslendirme metni (TTS'e giden fonetik yazım değil, okunan metin)
+        open(f"{t}/NARRATION.txt", "w").write("".join(f"{i+1}. [{c.get('duygu', '')}] " + " ".join(p_['metin'] for p_ in c["parcalar"]) + "\n" for i, c in enumerate(perf["cumleler"])))
         ig, tk = p["instagram"], p["tiktok"]
         open(f"{t}/INSTAGRAM_REELS.txt", "w").write(f"COVER TEXT: {ig['kapak']}\nCAPTION:\n{ig['aciklama'].strip()}\n\n{' '.join(ig['hashtag'])}\n\nNOTE: upload the clean VIDEO.mp4 (no watermark); choose cover frame with the text above.\n")
         open(f"{t}/TIKTOK.txt", "w").write(f"ON-SCREEN TITLE: {tk['kapak']}\nCAPTION:\n{tk['aciklama'].strip()} {' '.join(tk['hashtag'])}\n\nNOTE: upload the clean VIDEO.mp4 (no watermark).\n")

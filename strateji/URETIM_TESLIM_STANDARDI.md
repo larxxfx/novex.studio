@@ -93,7 +93,8 @@ Tam metin: `strateji/KALITE_STANDARDI_4KASIM.md`.
 
 **Referans:** İlk "What If Turkey Were in America?" / Antarktika videolarının sinematik kalitesi. Tam ekran ışın izlemeli küre, kamera dalışı, partikül, parlayan çizgiler, kelime vurgulu altyazı.
 - Yeni videolar bunun altına düşmez.
-- **4 Kasım'da üretilen 4 Short (sahne_v1 düz slayt) bu standardın ALTINDADIR.** Bu yüzden onları "standarda uygun" saymıyorum.
+- Referans kaydı ve kontrol kareleri: `strateji/GORSEL_REFERANS.md`.
+- 4 Kasım'ın 4 Short'u ilk hâlinde (düz slayt) bu standardın altındaydı; 4 Kasım'da 3D sahnelerle yeniden üretildi (bkz. `QUALITY_CONTROL.md`).
 
 **Görsel:**
 - Her videoda baskın görsel 3D/sinematik olmalı:
@@ -128,3 +129,15 @@ Tam metin: `strateji/KALITE_STANDARDI_4KASIM.md`.
 - Ara sıra iki seçenek sunulur (ör. "Mars, or Mercury?").
 - Soru kapanış anlatımına ve sinematik ekran tipografisine (`soru` sahnesi) entegre edilir; duygusal kapanışı zayıflatmaz.
 - Jenerik "abone ol / yorum yap" kalıbı kullanılmaz.
+
+## 10. Kalıcılık (Emir, 4 Kasım 2026 08:47)
+§8 kalite standardı ve §9 katılım sorusu oturuma özel değildir; `CLAUDE.md`, `NOVEX_MASTER.md`, zamanlanmış görev talimatları ve
+`araclar/teslim_dogrula.py` (otomatik denetim) bu iki kuralı taşır. Bir video bu denetimden geçmeden "yayına hazır" sayılmaz.
+
+## 11. Kalıcı üretim kalite yükseltmesi (Emir, 4 Kasım 2026 10:16)
+- Yalnızca yazıya dayalı video yasak: `soru` kartı dışındaki her sahnede somut görsel (3D küre/gezegen/dişli veya `foto`). Kod: `foto` sahnesi (2.5D parallax), teslim_dogrula kural 8.
+- Gerçek / arşiv / AI ayrımı ve lisans kaydı zorunlu; AI görseline ekranda etiket. Sistem ve erişilebilen araçlar: `strateji/GORSEL_URETIM_SISTEMI.md`.
+- Ses: doğal, etkileyici erkek anlatıcı; robotik ses kabul edilmez; lisansı doğrulanmamış ses yayına onaylanmaz (§8, CLAUDE.md).
+- Final: konuya özel, tekrar etmeyen "next" sorusu; yorumda öneri bırakmaya davet (§9, teslim_dogrula kural 10).
+- Sürekli gelişim: `gelisim_hedefi` + haftalık değerlendirme (`strateji/SUREKLI_GELISIM.md`).
+- Teslim paketi: + `NARRATION.txt` (tam seslendirme metni), `SOURCES.txt` VISUALS bölümü, `REFERANS_QC.md` (görsel QC).

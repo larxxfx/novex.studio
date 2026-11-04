@@ -51,3 +51,18 @@ Her oturum en üste eklenir. Biçim: ne yapıldı → kanıt (commit, dosya, tes
 - QC: teknik 10/10, −13.9 LUFS, TP −1.6, konuşma/fon ≥ 15.5 dB, telaffuz WER %1,0. Lisans: GEÇMEDİ (onay yok) → yayına hazır DEĞİL.
 - Düzeltilen: MERCURY kutu taşması, gezegen üstü etiket kontrastı, kapakta çift yazı. Eski 3 Short'un kapakları byte-aynı (regresyon yok).
 - Referansla fark: kure_v1 (Antarktika) kamera dalışları ve parlak kıta hatları burada yok; gezegen dokusu prosedürel ve yumuşak. Sonraki adım: Dünya konulu Short'larda kure_v1 / `dunya` dokusu.
+
+## 2026-11-04 10:50 · Kalite standardı kalıcı + 4 Short yeni standartta + kalite yükseltmesi (dal `claude/kalite-standardi`)
+**Tamamlanan (kanıtlı)**
+- Kalıcı kurallar: `CLAUDE.md` (eskimiş Türkçe/Yusuf-Zeynep/main'e commit kuralları güncellendi), `NOVEX_MASTER.md`, `strateji/URETIM_TESLIM_STANDARDI.md` §10–11, `strateji/GORSEL_REFERANS.md` (+3 kontrol karesi), `strateji/GORSEL_URETIM_SISTEMI.md`, `strateji/SUREKLI_GELISIM.md`, `strateji/haftalik/2026-W45.md`.
+- Motor: `gezegen` Dünya'ya dalış (`hedef/hedef_bas/dalis`), nabızlı işaret, parlayan hat, dişliler, kurumuş Akdeniz (`dunya_kuru`), Dünya dokusu boylam hatası düzeltildi (180° kayma: kamera Pasifik'e dalıyordu), uzun seçenekler alt alta; **yeni `foto` sahnesi** (2.5D parallax, Ken Burns, sis; AI görseline kapatılamaz etiket). Eski planlar piksel piksel aynı (Venüs, Nyos fark 0).
+- Hata düzeltmeleri: kamera yönü `hash()` → belirlenimli (paralel parçalarda sıçrama); Whisper sabit geçici dosyası (eşzamanlı üretimde yanlış çekim seçimi) ×2; Venüs `LISANS.txt` yanlış sesi (ljspeech) gösteriyordu → Norman.
+- `araclar/teslim_dogrula.py`: MP4/kapak/SRT/paket/katılım sorusu/3D oranı/ses-lisans tutarlılığı/**somut görsel**/foto kaynak-lisans-köken/**gelişim hedefi**/**tekrarsız kapanış sorusu**. Paket: `NARRATION.txt` + SOURCES `VISUALS`.
+- 4 Short (gerçek MP4, Norman, 9/9 somut 3D sahne, konuya özel "next" sorusu): teslim_dogrula çıkış 0; teknik QC 10/10; kareler referansla incelendi (`videolar/*/REFERANS_QC.md`).
+- Zamanlanmış görevler: 08:00 görevi 05:47'de gerçekten çalıştı (`596d53e`, eski stil yeniden render) → 5 görevin talimatı 09:02'de yeni standarda güncellendi.
+- Depo güvenliği: PUBLIC; 34 commit'te anahtar yok; kişisel e-posta güncel dosyalardan çıkarıldı (`strateji/DEPO_GUVENLIK_2026-11-04.md`).
+- Testler: `python3 -m unittest discover -s testler` → **36/36 OK**; `kuyruk_dogrula` OK.
+
+**Yayına hazır video: YOK** — Norman sesi Emir onayı bekliyor (`yayin_uygun: hayir`).
+**Engeller:** gerçek/arşiv görsel kaynaklarına erişim yok (N-17); uzun video hattı yok (N-06); depo public (N-09); Instagram/TikTok/R2/vidIQ kanal yetkisi yok.
+**Geri dönüş:** `claude/kalite-standardi` birleştirilmezse `claude/uretim-hatti` (`596d53e`) olduğu gibi kalır; motor değişikliği geri alınacaksa `2b8ee07`.
