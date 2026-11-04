@@ -74,9 +74,14 @@ def whisper_wer(wav, metin):
     W = f"{C}/sherpa-onnx-whisper-small.en"
     if not os.path.exists(f"{W}/small.en-encoder.int8.onnx"): return None, ""
     sys.path.insert(0, os.path.dirname(os.path.abspath(__file__))); from short_uret import nrm, wer
-    run(["ffmpeg", "-v", "error", "-y", "-i", wav, "-ar", "16000", "-ac", "1", "/tmp/_secim.wav"])
-    o = subprocess.run([f"{S}/bin/sherpa-onnx-offline", f"--whisper-encoder={W}/small.en-encoder.int8.onnx", f"--whisper-decoder={W}/small.en-decoder.int8.onnx",
-                        f"--tokens={W}/small.en-tokens.txt", "--num-threads=2", "/tmp/_secim.wav"], capture_output=True, text=True, env=ENV)
+    import tempfile as _tf   # her çağrıya ayrı dosya: eşzamanlı üretimler birbirinin sesini değerlendirmesin (4 Kas hatası)
+    fd, gecici = _tf.mkstemp(suffix=".wav", prefix="secim_"); os.close(fd)
+    try:
+        run(["ffmpeg", "-v", "error", "-y", "-i", wav, "-ar", "16000", "-ac", "1", gecici])
+        o = subprocess.run([f"{S}/bin/sherpa-onnx-offline", f"--whisper-encoder={W}/small.en-encoder.int8.onnx", f"--whisper-decoder={W}/small.en-decoder.int8.onnx",
+                            f"--tokens={W}/small.en-tokens.txt", "--num-threads=2", gecici], capture_output=True, text=True, env=ENV)
+    finally:
+        os.remove(gecici)
     import re as _re
     h = (_re.findall(r'"text":\s*"(.*?)"', o.stdout + o.stderr) or [""])[-1].strip()
     return wer(nrm(metin), nrm(h)), h

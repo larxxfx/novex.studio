@@ -239,7 +239,7 @@ def c_soru(L, dr, plan, s, u, ts):
             b = ease(seg(ts, 0.7 + i * 0.25, 1.0 + i * 0.25)); yy = y + i * 135; yg = min(390, (dr.textlength(o, font=fo0) + 80) / 2)
             dr.rounded_rectangle((W / 2 - yg, yy - 55, W / 2 + yg, yy + 55), 28, outline=renk(p["vurgu"], int(255 * b)), width=4, fill=renk(p["zemin1"], int(150 * b)))
             yazi(dr, (W / 2, yy), o, fo0, renk(p["vurgu"]), b, golge=False)
-        logo_y = max(1180, yy + 150); sec = []
+        logo_y = 470 if yy + 150 > 1200 else yy + 150; sec = []   # alt altyazı bandına (y ≥ 1250) girmesin
     for i, o in enumerate(sec):
         b = ease(seg(ts, 0.7 + i * 0.25, 1.0 + i * 0.25)); x = W / 2 + (i - (len(sec) - 1) / 2) * 380
         fo = font(dil, "agir", 58); yg = max(140, (dr.textlength(o, font=fo) + 70) / 2)   # kutu yazıya göre genişler (MERCURY taşmasın)

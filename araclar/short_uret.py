@@ -91,9 +91,9 @@ class Uretim:
         z = json.load(open(f"{self.c}/anlatim/zaman.json")); wav = f"{self.c}/anlatim/anlatim.wav"; env = dict(os.environ, LD_LIBRARY_PATH=f"{SH}/lib")
         sat, R, Hh = [], [], []
         for s in z:
-            run(["ffmpeg", "-v", "error", "-y", "-ss", str(max(0, s["bas"] - 0.1)), "-to", str(s["son"] + 0.15), "-i", wav, "-ar", "16000", "-ac", "1", "/tmp/_tlf.wav"])
+            run(["ffmpeg", "-v", "error", "-y", "-ss", str(max(0, s["bas"] - 0.1)), "-to", str(s["son"] + 0.15), "-i", wav, "-ar", "16000", "-ac", "1", f"{self.c}/_tlf.wav"])   # klasöre özel: eşzamanlı üretimler çakışmasın
             o = subprocess.run([f"{SH}/bin/sherpa-onnx-offline", f"--whisper-encoder={WH}/small.en-encoder.int8.onnx",
-                                f"--whisper-decoder={WH}/small.en-decoder.int8.onnx", f"--tokens={WH}/small.en-tokens.txt", "--num-threads=2", "/tmp/_tlf.wav"],
+                                f"--whisper-decoder={WH}/small.en-decoder.int8.onnx", f"--tokens={WH}/small.en-tokens.txt", "--num-threads=2", f"{self.c}/_tlf.wav"],
                                capture_output=True, text=True, env=env)
             h = (re.findall(r'"text":\s*"(.*?)"', o.stdout + o.stderr) or [""])[-1].strip()
             r_, h_ = nrm(s["metin"]), nrm(h); R += r_; Hh += h_; w = wer(r_, h_)

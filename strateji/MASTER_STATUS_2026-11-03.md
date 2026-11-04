@@ -41,7 +41,7 @@ Hazırlayan: Claude.
 | yt-audit, yt-comment, yt-plan, yt-seo, yt-shorts | DOĞRULANAMADI | Betiksiz talimat paketleri; kanal verisi olmadan sınırlı |
 | GitHub (dal, push, PR REST) | ÇALIŞIYOR | GraphQL 403 → `gh pr create` çalışmıyor; REST çalışıyor |
 | Sohbete dosya teslimi | ÇALIŞIYOR | 200 MB'a kadar gönderildi |
-| vidIQ bağlayıcısı | ÇALIŞIYOR (kısmi) | Hesap kamillarx33@gmail.com; **kanal yetkili değil**; 80 kredi (ücretsiz plan) |
+| vidIQ bağlayıcısı | ÇALIŞIYOR (kısmi) | Emir'in vidIQ hesabı; **kanal yetkili değil**; 80 kredi (ücretsiz plan) |
 
 ## C. Eksik işler
 | Eksik | Durum |

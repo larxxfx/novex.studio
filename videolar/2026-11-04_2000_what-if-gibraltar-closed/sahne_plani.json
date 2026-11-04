@@ -166,8 +166,8 @@
    ],
    "kontur": 3,
    "ust": "Cut off from the Atlantic",
-   "ana": "−1 meter per year",
-   "boyut": 104,
+   "ana": "Up to 1 meter lower, every year",
+   "boyut": 88,
    "cizgi": [
     [
      -5.75,
@@ -236,7 +236,7 @@
    ],
    "kontur": 3,
    "ust": "Kilometers below sea level",
-   "ana": "A salt desert",
+   "ana": "A desert of salt",
    "boyut": 110
   },
   {

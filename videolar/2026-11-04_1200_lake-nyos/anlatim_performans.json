@@ -10,15 +10,14 @@
      "hiz": 1.02
     },
     {
-     "metin": "a lake in Cameroon exhaled.",
-     "soyle": "a lake, in Cameroon, exhaled.",
+     "metin": "a lake in the hills of Cameroon exhaled.",
      "hiz": 1.1,
      "kazanc_db": 2.5,
      "perde": -0.6,
      "once": 0.3
     }
    ],
-   "altyazi": "On the night of 21 August 1986, a lake in Cameroon exhaled."
+   "altyazi": "On the night of 21 August 1986, a lake in the hills of Cameroon exhaled."
   },
   {
    "duygu": "gizem",
@@ -141,7 +140,7 @@
      "hiz": 1.04,
      "kazanc_db": 2.0,
      "once": 0.15,
-     "soyle": "nearby Lake Mo-noon had done the same."
+     "soyle": "nearby Lake Mon-oon had done the same."
     }
    ]
   },
