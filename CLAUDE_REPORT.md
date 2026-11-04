@@ -66,3 +66,9 @@ Her oturum en üste eklenir. Biçim: ne yapıldı → kanıt (commit, dosya, tes
 **Yayına hazır video: YOK** — Norman sesi Emir onayı bekliyor (`yayin_uygun: hayir`).
 **Engeller:** gerçek/arşiv görsel kaynaklarına erişim yok (N-17); uzun video hattı yok (N-06); depo public (N-09); Instagram/TikTok/R2/vidIQ kanal yetkisi yok.
 **Geri dönüş:** `claude/kalite-standardi` birleştirilmezse `claude/uretim-hatti` (`596d53e`) olduğu gibi kalır; motor değişikliği geri alınacaksa `2b8ee07`.
+
+## 2026-11-04 11:20 · Gerçek referans video kaydedildi ve analiz edildi
+- "What If Turkey Were in America?" (Emir'in MOV'u): SHA-256 `8850c1d6…a76b`, 720×1280 HEVC, 35,6 sn; 12 kontrol karesi `strateji/referans/turkey_america_*.jpg`; özellik analizi + 4 Short ile dürüst karşılaştırma `strateji/GORSEL_REFERANS.md`.
+- Sonuç: 4 Short referansın **altında** — en büyük fark gerçekçi uydu Dünya dokusu (bizimki prosedürel gri), arazi uçuşları ve gerçek görsel varlıklar.
+- Motora eklenenler (eski planlar piksel piksel aynı, fark 0): `bolge` ülke vurgusu (Natural Earth, parlayan sınır + dolgu), `tasi` What If taşıma (kuzey yukarıda, gerçek boyut; ilk sürümdeki 90° dönme hatası düzeltildi), `yorum_rozeti`, `bitis_karti`. Testler: `test_bolge_bitis.py` 3/3.
+- Engel: NASA Blue Marble dokusu bu ortamdan indirilemiyor → Emir eklemeli (N-19).

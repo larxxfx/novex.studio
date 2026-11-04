@@ -20,12 +20,15 @@ Türler:
   alinti    {metin, kaynak}                          belge/alıntı kartı
   liste     {baslik, maddeler:[...]}                 sırayla beliren maddeler
   soru      {metin, secenekler:["MARS","MERCURY"]}   ZORUNLU kapanış: "sırada ne?" sorusu (uzun seçenekler otomatik alt alta)
+            yorum_rozeti true|"metin" (soru altında davet rozeti), bitis_karti true|"slogan" (son ~1,2 sn tam ekran NØVEX + BEYOND THE ORDINARY)
   gezegen   3D ışın izlemeli küre (yeni standartta baskın sahne türü):
             doku: venus|mars|ay|buz|gaz|dunya|dunya_kuru (Akdeniz tuz çölü)|yok (küre yok; yalnız dişli/yazı)
             merkez [x,y], yaricap [r0,r1] (zum), donus °/sn, egim °, isik [x,y,z], atmosfer hex
             hedef [lon,lat] (o nokta ekran ortasına döner), hedef_bas [lon,lat] (kamera oradan kayar), dalis 0..1 (üstel zum = dalış)
             isaretler [[lon,lat,"etiket","#renk","ust|alt"]] (parlayan nabızlı nokta), cizgi [[lon,lat],...] + cizgi_renk/cizgi_bas/cizgi_sure
             disliler [[x,y,r,dis,yon]] + disli_renk/disli_hiz/disli_guc (dönen dişliler)
+            bolge [{"ulke": "Turkey", "renk": "#ff3b3b", "dolgu": 0.6, "tasi": [lon,lat], "bas": 0.3}] (Natural Earth ülkesi: parlayan sınır + dolgu;
+                  tasi = What If taşıma, kuzey yukarıda, gerçek boyut; dolgu 0 = yalnız sınır)
             yazılar: ust, ana, boyut, sayi {bas,son,birim,etiket,sure}, karsi [[et,deger],[et,deger]], ok "saat", kontur (okunurluk)
   foto      somut görsel (fotoğraf/arşiv/AI/prosedürel) 2.5D parallax: dosya (plan klasörüne göre), koken fotograf|arsiv|ai|prosedurel,
             kaynak, lisans (ZORUNLU; teslim_dogrula denetler), kredi (ekranda kısa), hareket itme|cekme|sol|sag|yukari, derinlik, zum, sis, ton;
@@ -236,20 +239,34 @@ def c_soru(L, dr, plan, s, u, ts):
     f = font(dil, "agir", 72); sat = satirla(s["metin"], f, 860)
     for i, sa in enumerate(sat): yazi(dr, (W / 2, 620 + i * 90), sa, f, renk(p["metin"]), ease(seg(ts, 0.1 + i * 0.15, 0.5 + i * 0.15)))
     sec = s.get("secenekler", []); y = 640 + len(sat) * 90 + 60
-    fo0 = font(dil, "agir", 58); logo_y = 1180
+    fo0 = font(dil, "agir", 58); logo_y = 1180; alt_y = y - 40
     if sec and max(dr.textlength(o, font=fo0) for o in sec) > 300:   # uzun seçenek: tam genişlikte alt alta
         for i, o in enumerate(sec):
             b = ease(seg(ts, 0.7 + i * 0.25, 1.0 + i * 0.25)); yy = y + i * 135; yg = min(390, (dr.textlength(o, font=fo0) + 80) / 2)
             dr.rounded_rectangle((W / 2 - yg, yy - 55, W / 2 + yg, yy + 55), 28, outline=renk(p["vurgu"], int(255 * b)), width=4, fill=renk(p["zemin1"], int(150 * b)))
             yazi(dr, (W / 2, yy), o, fo0, renk(p["vurgu"]), b, golge=False)
-        logo_y = 470 if yy + 150 > 1200 else yy + 150; sec = []   # alt altyazı bandına (y ≥ 1250) girmesin
+        logo_y = 470 if yy + 150 > 1200 else yy + 150; alt_y = yy + 55; sec = []   # alt altyazı bandına (y ≥ 1250) girmesin
     for i, o in enumerate(sec):
         b = ease(seg(ts, 0.7 + i * 0.25, 1.0 + i * 0.25)); x = W / 2 + (i - (len(sec) - 1) / 2) * 380
         fo = font(dil, "agir", 58); yg = max(140, (dr.textlength(o, font=fo) + 70) / 2)   # kutu yazıya göre genişler (MERCURY taşmasın)
         if len(sec) > 1: yg = min(yg, 185)
         if dr.textlength(o, font=fo) > 2 * yg - 50: fo = font(dil, "agir", 48)
         dr.rounded_rectangle((x - yg, y - 55, x + yg, y + 55), 28, outline=renk(p["vurgu"], int(255 * b)), width=4, fill=renk(p["zemin1"], int(150 * b)))
-        yazi(dr, (x, y), o, fo, renk(p["vurgu"]), b, golge=False)
+        yazi(dr, (x, y), o, fo, renk(p["vurgu"]), b, golge=False); alt_y = y + 55
+    if s.get("yorum_rozeti"):   # konuya özel sorunun altında küçük davet (jenerik CTA değil; soru zaten konuya özel)
+        yy0 = alt_y + 75
+        if logo_y != 470 and logo_y < yy0 + 90: logo_y = yy0 + 100
+        b = ease(seg(ts, 1.1, 1.5)); fr = font("modern", "kalin", 34); t_ = s["yorum_rozeti"] if isinstance(s["yorum_rozeti"], str) else "TELL US IN THE COMMENTS"
+        tw = dr.textlength(t_, font=fr); dr.rounded_rectangle((W / 2 - tw / 2 - 30, yy0 - 30, W / 2 + tw / 2 + 30, yy0 + 30), 30, fill=renk(p["vurgu"], int(230 * b)))
+        yazi(dr, (W / 2, yy0), t_, fr, renk(p.get("zemin0", "#000000")), b, golge=False)
+    kart = s.get("bitis_karti")   # son ~1,2 sn: büyük logo + slogan (referans videonun kapanışı gibi)
+    if kart:
+        sure_ = plan.get("_sahne_sure", 3.0); kb = ease(seg(ts, sure_ - 1.3, sure_ - 0.8))
+        if kb > 0.01:
+            L.paste(Image.new("RGBA", (W, H), renk(p.get("zemin0", "#000000"), int(255 * kb))), (0, 0), Image.new("L", (W, H), int(255 * kb)))
+            yazi(dr, (W / 2, 840), "NØVEX", font("modern", "agir", 190), renk(p["metin"]), kb)
+            yazi(dr, (W / 2, 990), (kart if isinstance(kart, str) else "BEYOND THE ORDINARY"), font("modern", "kalin", 38), renk(p["vurgu"]), kb)
+            return
     yazi(dr, (W / 2, logo_y), "NØVEX", font("modern", "agir", 64), renk(p["metin"]), ease(seg(ts, 1.4, 2.0)))
 
 
@@ -359,8 +376,60 @@ def disli_ciz(dr, s, ts, p):
             dr.line([(x + r * 0.14 * math.cos(t_), y + r * 0.14 * math.sin(t_)), (x + ri * math.cos(t_), y + ri * math.sin(t_))], fill=renk(cc, int(170 * a0)), width=max(4, int(r * 0.06)))
         rh = r * 0.12; dr.ellipse((x - rh, y - rh, x + rh, y + rh), outline=renk(cc, int(255 * a0)), width=4)
 
+_ULKE = {}
+def ulke_halkalari(ad):
+    """Natural Earth 50m (kamu malı) ülke poligon halkaları; ad = ADMIN / NAME / ISO_A3."""
+    if not _ULKE:
+        g = json.load(open(os.path.join(DEPO, "motor/kure_v1/data/ne/geojson/ne_50m_admin_0_countries.geojson"), encoding="utf-8"))
+        for ft in g["features"]:
+            geo = ft["geometry"]; polys = geo["coordinates"] if geo["type"] == "MultiPolygon" else [geo["coordinates"]]
+            hal = [np.array(pl[0], np.float64) for pl in polys]
+            for k in ("ADMIN", "NAME", "ISO_A3"): _ULKE[str(ft["properties"].get(k, "")).lower()] = hal
+    if ad.lower() not in _ULKE: raise SystemExit(f"ülke bulunamadı (Natural Earth ADMIN/NAME/ISO_A3): {ad}")
+    return _ULKE[ad.lower()]
+
+def _birim(lon, lat):
+    lo, la = np.radians(lon), np.radians(lat); return np.stack([np.cos(la) * np.sin(lo), np.sin(la), np.cos(la) * np.cos(lo)], -1)
+
+def bolge_tasi(halkalar, hedef):
+    """Poligonları ağırlık merkezi `hedef` [lon,lat]'a gelecek şekilde küre üzerinde taşır; kuzey yukarıda kalır, şekil ve gerçek boyut korunur
+    (önce kutup ekseni etrafında Δboylam, sonra hedef boylamdaki doğu ekseni etrafında Δenlem). What If 'ülkeyi taşı' sahnesi."""
+    tum = np.concatenate([_birim(h[:, 0], h[:, 1]) for h in halkalar]); c = tum.mean(0); c /= np.linalg.norm(c)
+    lo_c, la_c = np.degrees(np.arctan2(c[0], c[2])), np.degrees(np.arcsin(c[1]))
+    dlo, dla = np.radians(hedef[0] - lo_c), np.radians(hedef[1] - la_c)
+    Ry = np.array([[np.cos(dlo), 0, np.sin(dlo)], [0, 1, 0], [-np.sin(dlo), 0, np.cos(dlo)]])   # x=sin(lo)…, z=cos(lo)…: boylam artışı
+    lt = np.radians(hedef[0]); k = np.array([np.cos(lt), 0.0, -np.sin(lt)])                       # hedef boylamda doğu yönü
+    K = np.array([[0, -k[2], k[1]], [k[2], 0, -k[0]], [-k[1], k[0], 0]]); Rk = np.eye(3) + np.sin(-dla) * K + (1 - np.cos(dla)) * K @ K
+    out = []
+    for h in halkalar:
+        v = _birim(h[:, 0], h[:, 1]) @ Ry.T @ Rk.T
+        out.append(np.stack([np.degrees(np.arctan2(v[:, 0], v[:, 2])), np.degrees(np.arcsin(np.clip(v[:, 1], -1, 1)))], -1))
+    return out
+
+def bolge_ciz(dr, s, ts, u, p):
+    """bolge: [{"ulke": "Cameroon", "renk": "#ff3b3b", "dolgu": 0.55, "tasi": [lon,lat], "bas": 0.3}] — parlayan sınır + yarı saydam dolgu."""
+    for b in s.get("bolge", []):
+        a = ease(seg(ts, b.get("bas", 0.3), b.get("bas", 0.3) + 0.6)); cc = b.get("renk", "#ff3b3b")
+        if a <= 0.01: continue
+        hal = ulke_halkalari(b["ulke"])
+        if b.get("tasi"): hal = bolge_tasi(hal, b["tasi"])
+        for h in hal:
+            xy = [gz_izdusum(s, ts, u, lo, la) for lo, la in h]
+            if len(xy) < 3: continue
+            pts = [(x, y) for x, y, g in xy]; gor = [g for _, _, g in xy]
+            if all(gor) and b.get("dolgu", 0.5) > 0: dr.polygon(pts, fill=renk(cc, int(255 * b.get("dolgu", 0.5) * a)))   # dolgu 0 = yalnız sınır (ImageDraw saydamı karıştırmaz, üzerine yazar)
+            parca, cur = [], []
+            for (x, y, g) in xy + [xy[0]]:
+                if g: cur.append((x, y))
+                elif cur: parca.append(cur); cur = []
+            if cur: parca.append(cur)
+            for q in parca:
+                if len(q) < 2: continue
+                for gen, al in ((18, 50), (8, 120), (3, 255)): dr.line(q, fill=renk(cc if gen > 3 else "#ffd0c8", int(al * a)), width=gen, joint="curve")
+
 def c_gezegen(L, dr, plan, s, u, ts):
     dil, p = plan["dil"], plan["palet"]
+    if s.get("bolge"): bolge_ciz(dr, s, ts, u, p)
     if s.get("cizgi"):   # küre üzerinde zamanla çizilen parlayan hat (kıyı, boğaz, rota)
         pts = s["cizgi"]; k = eout(seg(ts, s.get("cizgi_bas", 0.3), s.get("cizgi_bas", 0.3) + s.get("cizgi_sure", 1.4)))
         n = max(2, int(round(len(pts) * k))); xy = [gz_izdusum(s, ts, u, lo, la) for lo, la in pts[:n]]
@@ -517,7 +586,7 @@ def srt_oku(yol):
 GECIS = 0.3
 def tek_sahne(plan, sc, t, a, b):
     L = Image.new("RGBA", (W, H), (0, 0, 0, 0)); dr = ImageDraw.Draw(L)
-    CIZ[sc["tur"]](L, dr, plan, sc, cl((t - a) / (b - a)), t - a)
+    CIZ[sc["tur"]](L, dr, dict(plan, _sahne_sure=b - a), sc, cl((t - a) / (b - a)), t - a)
     arr = np.asarray(L).astype(np.float32)
     if (sc["tur"] == "gezegen" and sc.get("doku") != "yok") or sc["tur"] == "foto":   # görsel katman metnin altında; metin üstte
         g = (foto_katman if sc["tur"] == "foto" else gezegen_katman)(sc, t - a, cl((t - a) / (b - a))); ta = arr[..., 3:4] / 255
