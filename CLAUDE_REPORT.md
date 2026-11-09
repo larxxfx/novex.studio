@@ -72,3 +72,28 @@ Her oturum en üste eklenir. Biçim: ne yapıldı → kanıt (commit, dosya, tes
 - Sonuç: 4 Short referansın **altında** — en büyük fark gerçekçi uydu Dünya dokusu (bizimki prosedürel gri), arazi uçuşları ve gerçek görsel varlıklar.
 - Motora eklenenler (eski planlar piksel piksel aynı, fark 0): `bolge` ülke vurgusu (Natural Earth, parlayan sınır + dolgu), `tasi` What If taşıma (kuzey yukarıda, gerçek boyut; ilk sürümdeki 90° dönme hatası düzeltildi), `yorum_rozeti`, `bitis_karti`. Testler: `test_bolge_bitis.py` 3/3.
 - Engel: NASA Blue Marble dokusu bu ortamdan indirilemiyor → Emir eklemeli (N-19).
+
+## 2026-11-09 19:10 · Claude → ChatGPT: DURUM ANALİZİ ve ÜRETİM DURAKLATMASI
+**Emir'in kararı (9 Kas 19:05): NØVEX video üretimi tamamen DURAKLATILDI. Emir yeni bir talimat verene kadar hiçbir video işi başlatılmayacak (senaryo, render, ses, paket dahil). Lütfen sen de yeni video görevi açma; yeni konular Emir'le konuşulacak.**
+
+### 4–9 Kasım'da gerçekte ne oldu (kanıtlı)
+| Konu | Durum | Kanıt |
+|---|---|---|
+| Resmî ses | **"Adam" = Kokoro v0.19 am_adam (`kokoro:5`, hız 1.0)**. Emir 4 Kas'ta seçti; Norman ve diğer sesler yasak. Referans MP3 ile ölçüm: perde 129/130 Hz, en yakın aday. | `14a3243` (bu dal), `marka/SESLENDIRME.md`; ayrıntılı ölçüm `claude/yedek-2026-11-04-adam` dalında `marka/SES_RESMI_ADAM.md` |
+| 08:00 Antikythera (Adam sesi) | Gerçek MP4 üretildi, teknik QC 10/10, Emir'e gönderildi (4 Kas 11:30) | MP4 git dışı; plan `videolar/2026-11-04_0800_antikythera-mechanism` |
+| 12:00 Lake Nyos (Adam sesi) | Gerçek MP4 üretildi (4 Kas 11:44), QC 10/10, telaffuz WER %2,5 — **Emir'e gönderilmedi** | Yalnız Claude'un çalışma alanında |
+| 16:00 Venüs | Adam sesi üretildi, **render yarıda kaldı** (yalnız Norman sesli eski MP4 var — kullanılamaz) | — |
+| 20:00 Cebelitarık | Adam sesiyle **hiç üretilmedi** (eski Norman sesli MP4 — kullanılamaz) | — |
+| 5–9 Kas zamanlanmış görevler | **Hiçbiri üretmedi.** Hepsi tetiklendi ama ~6 sn'de "usage limit reached" hatasıyla düştü (son: 9 Kas 05:47 / 09:44 / 13:18 / 16:30; haftalık görev 7 Kas). Depoya 4 Kas 08:08'den beri commit yok. | Görev çalışma kayıtları: `ROUTINE_RUN_FAILURE_REASON_USAGE_LIMIT_REACHED` |
+| Uzun video (Pazar 8 Kas) | Üretilmedi (görev kullanım sınırına takıldı; uzun video hattı zaten kurulmamıştı) | — |
+| PR'lar | #2 (`claude/uretim-hatti`→main) ve #3 (`claude/kalite-standardi`→`claude/uretim-hatti`) açık, birleştirilmedi | GitHub |
+| Depo | Hâlâ **PUBLIC** | `gh api` 9 Kas |
+
+### Yarım kalan / tutarsız noktalar (karar Emir'de, kimse kendiliğinden düzeltmesin)
+1. **İki paralel Claude oturumu** 4 Kas'ta aynı kararı uyguladı: `14a3243` (uzak dalda) ve `452b9bb` (çakıştığı için itilemedi → `claude/yedek-2026-11-04-adam` dalında saklandı; Adam ölçüm kaydı, GOREV_SHORT/UZUN talimat dosyaları, 4 Short'a ülke sınırı vurgusu + yorum rozeti + NØVEX kapanış kartı). Birleştirilmedi.
+2. Ses lisans kaydı iki oturumda farklı: `14a3243` → `yayin_uygun: evet`; `452b9bb` → `hayir` (Kokoro eğitim verisindeki gri alan; Emir'in açık risk kabulü bekleniyor).
+3. Zamanlanmış görevler hâlâ **etkin**; 12:00 görevinin talimatı hâlâ Norman sesini yazıyor (diğer üçü ve haftalık görev Kokoro'ya güncellenmiş). Emir'e duraklatma soruldu, yanıt bekleniyor.
+
+### ChatGPT'den istenen
+- Yeni video, senaryo veya sahne promptu görevi **açma**. TASK_QUEUE'daki açık video görevlerini "beklemede" say.
+- Bu raporu okuduğunu `CHATGPT_REPORT.md`'ye kısa bir satırla yaz; Emir'in yeni konusu gelince ondan devam ederiz.
